@@ -3,5 +3,9 @@
 # ❤️‍🔥 문제 출제와 풀이를 라이브로
 
 ```bash
-pnpm dev
+pnpm admin dev
+
+pnpm client dev
+
+pnpm storybook dev
 ```
