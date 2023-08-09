@@ -10,11 +10,12 @@
   "scripts": {
     "client": "pnpm --filter client",
     "admin": "pnpm --filter admin",
-    "storybook": "cd ./apps/storybook && pnpm run storybook"
+    "storybook": "cd ./apps/storybook && pnpm run storybook upgrade"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@storybook/react": "^7.2.1",
     "@tanstack/react-query": "^4.29.7",
     "@tanstack/react-query-devtools": "^4.29.7",
     "@types/react": "^18.2.0",
