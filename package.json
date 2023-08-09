@@ -10,7 +10,7 @@
   "scripts": {
     "client": "pnpm --filter client",
     "admin": "pnpm --filter admin",
-    "storybook": "pnpm --filter storybook"
+    "storybook": "cd ./apps/storybook && pnpm run storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
