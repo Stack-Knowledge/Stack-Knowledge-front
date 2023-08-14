@@ -1,3 +1,10 @@
+import { Example } from "common";
+
 export default function Home() {
-  return <div>admin</div>;
+  return (
+    <>
+      <Example />
+      <div>admin</div>
+    </>
+  );
 }

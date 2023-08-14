@@ -15,6 +15,7 @@ const config = {
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../../client/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
     "../../admin/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
+    "../../../packages/common/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
