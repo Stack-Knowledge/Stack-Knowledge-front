@@ -11,8 +11,6 @@ function getAbsolutePath(value) {
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: [
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../../client/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
     "../../admin/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
     "../../../packages/common/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
