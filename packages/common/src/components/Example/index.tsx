@@ -1,14 +1,10 @@
 "use client";
 
-const Example = () => (
-  <A>
-    <h1>ㅎㅇ</h1>
-  </A>
-);
+const Example = () => <A>ㅎㅇ</A>;
 
 import styled from "@emotion/styled";
 
-const A = styled.div`
+const A = styled.h1`
   color: ${({ theme }) => theme.color.primary};
 `;
 

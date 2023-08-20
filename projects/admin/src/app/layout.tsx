@@ -1,9 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@emotion/react";
 
-import { theme } from "common";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <ThemeProvider theme={theme}>
+      <Providers>
         <body className={inter.className}>{children}</body>
-      </ThemeProvider>
+      </Providers>
     </html>
   );
 }
