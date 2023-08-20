@@ -4,6 +4,10 @@
   "compilerOptions": {
     "jsx": "preserve"
   },
+  "paths": {
+    "@/*": ["./src/*"],
+    "common/*": ["../../packages/common/src/*"]
+  },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
