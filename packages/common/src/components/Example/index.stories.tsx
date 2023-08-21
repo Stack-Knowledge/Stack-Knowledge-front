@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Example from ".";
+import Example from '.';
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "common/Example",
+  title: 'common/Example',
   component: Example,
 } as Meta<typeof Example>;
 

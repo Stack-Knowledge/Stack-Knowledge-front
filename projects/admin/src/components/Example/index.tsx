@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 const Example = () => (
   <A>
@@ -6,9 +6,10 @@ const Example = () => (
   </A>
 );
 
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const A = styled.div`
+  ${({ theme }) => theme.typo.h1}
   color: ${({ theme }) => theme.color.primary};
 `;
 

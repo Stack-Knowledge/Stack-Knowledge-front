@@ -1,11 +1,14 @@
-"use client";
+'use client';
 
-const Example = () => <A>ㅎㅇ</A>;
+import styled from '@emotion/styled';
 
-import styled from "@emotion/styled";
+const Example = () => {
+  return <A>ㅎㅇ</A>;
+};
 
-const A = styled.h1`
-  color: ${({ theme }) => theme.color.primary};
+const A = styled.span`
+  ${({ theme }) => theme.typo.title}
+  color: ${({ theme }) => theme.color.black};
 `;
 
 export default Example;
