@@ -145,6 +145,10 @@ importers:
         version: 5.1.6
 
   projects/storybook:
+    dependencies:
+      common:
+        specifier: workspace:^
+        version: link:../../packages/common
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.2.1
