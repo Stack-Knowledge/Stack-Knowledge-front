@@ -15,44 +15,44 @@ const color = {
 
 const typo = {
   h1: {
-    fontSize: '40px',
-    lineHeight: '48px',
+    fontSize: '2.5rem',
+    lineHeight: '3rem',
   },
   h2: {
-    fontSize: '32px',
-    lineHeight: '38px',
+    fontSize: '2rem',
+    lineHeight: '2.375rem',
   },
   h3: {
-    fontSize: '248px',
-    lineHeight: '33px',
+    fontSize: '15.5rem',
+    lineHeight: '2.0625rem',
   },
   h4: {
-    fontSize: '24px',
-    lineHeight: '29px',
+    fontSize: '1.5rem',
+    lineHeight: '1.8125rem',
   },
   h5: {
-    fontSize: '22px',
-    lineHeight: '26px',
+    fontSize: '1.375rem',
+    lineHeight: '1.625rem',
   },
   title: {
-    fontSize: '50px',
-    lineHeight: '60px',
+    fontSize: '3.125rem',
+    lineHeight: '3.75rem',
   },
   button: {
-    fontSize: '20px',
-    lineHeight: '24px',
+    fontSize: '1.25rem',
+    lineHeight: '1.5rem',
   },
   body1: {
-    fontSize: '18px',
-    lineHeight: '21px',
+    fontSize: '1.125rem',
+    lineHeight: '1.3125rem',
   },
   body2: {
-    fontSize: '16px',
-    lineHeight: '19px',
+    fontSize: '1rem',
+    lineHeight: '1.1875rem',
   },
   body3: {
-    fontSize: '14px',
-    lineHeight: '17px',
+    fontSize: '0.875rem',
+    lineHeight: '1.0625rem',
   },
 } as const;
 
