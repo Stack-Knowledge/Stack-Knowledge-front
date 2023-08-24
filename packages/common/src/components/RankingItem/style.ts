@@ -27,11 +27,12 @@ export const Ranking = styled.span`
   ${({ theme }) => theme.typo.h3};
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
+  width: 1.125rem;
 `;
 
 export const ProfileImage = styled(Image)`
   border-radius: 50%;
-  margin: 0 1rem 0 1.25rem;
+  margin: 0 1rem 0 0.9375rem;
 `;
 
 export const UserName = styled.span`
