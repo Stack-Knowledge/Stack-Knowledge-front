@@ -1,5 +1,10 @@
 {
   "extends": "tsconfig/react-components.json",
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "paths": {
+      "common/*": ["./src"]
+    }
+  }
 }

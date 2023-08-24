@@ -4,6 +4,8 @@ import * as S from './style';
 
 import { RankingPropsType } from 'types';
 
+import { slicePoint } from '../../utils';
+
 interface RankingItemProps extends RankingPropsType {
   ranking: number;
 }
@@ -20,7 +22,7 @@ const RankingItem: React.FC<RankingItemProps> = ({
       <S.UserName>{name}</S.UserName>
     </S.FlexWrapper>
     <S.FlexWrapper>
-      <S.Point>{cumulatePoint}</S.Point>
+      <S.Point>{slicePoint(cumulatePoint)}</S.Point>
       <S.PointUnit>M</S.PointUnit>
     </S.FlexWrapper>
   </S.ItemWrapper>
