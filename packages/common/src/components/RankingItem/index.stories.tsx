@@ -25,3 +25,33 @@ export const Primary: Story = {
     },
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    ranking: 2,
+    id: 'sampleId',
+    cumulatePoint: 800,
+    user: {
+      id: 'sampleId',
+      email: 'sample@gmail.com',
+      name: '이태랑',
+      profileImage:
+        'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
+    },
+  },
+};
+
+export const Tertiary: Story = {
+  args: {
+    ranking: 3,
+    id: 'sampleId',
+    cumulatePoint: 700,
+    user: {
+      id: 'sampleId',
+      email: 'sample@gmail.com',
+      name: '하제우와이정우와정찬교',
+      profileImage:
+        'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
+    },
+  },
+};
