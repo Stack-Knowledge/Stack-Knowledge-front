@@ -1,3 +1,5 @@
+"use client";
+
 import { Example } from "common";
 
 export default function Home() {
