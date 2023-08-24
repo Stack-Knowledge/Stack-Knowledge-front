@@ -3,13 +3,13 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 
 export const ItemWrapper = styled.div`
-  width: 456px;
-  height: 70px;
-  border-radius: 10px;
+  width: 28.25rem;
+  height: 4.375rem;
+  border-radius: 0.625rem;
   display: flex;
-  padding: 0 44px;
+  padding: 0 2.75rem;
+  justify-content: space-between;
   align-items: center;
-  gap: 231px;
   transition: ease-in-out 0.2s;
   cursor: pointer;
 
@@ -31,7 +31,7 @@ export const Ranking = styled.span`
 
 export const ProfileImage = styled(Image)`
   border-radius: 50%;
-  margin: 0 16px 0 20px;
+  margin: 0 1rem 0 1.25rem;
 `;
 
 export const UserName = styled.span`
@@ -44,7 +44,7 @@ export const Point = styled.span`
   ${({ theme }) => theme.typo.button};
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
-  margin-right: 4px;
+  margin-right: 0.25rem;
 `;
 
 export const PointUnit = styled.span`
