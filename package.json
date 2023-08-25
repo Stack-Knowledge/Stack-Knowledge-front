@@ -26,6 +26,6 @@
   "author": "",
   "license": "ISC",
   "resolutions": {
-    "@types/react": "^17.0.39"
+    "@types/react": "^18.2.0"
   }
 }
