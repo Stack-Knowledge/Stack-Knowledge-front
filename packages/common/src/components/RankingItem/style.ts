@@ -32,7 +32,7 @@ export const Ranking = styled.span`
 
 export const ProfileImage = styled(Image)`
   border-radius: 50%;
-  margin: 0 1rem 0 0.9375rem;
+  margin: 0 1rem 0 2.25rem;
 `;
 
 export const UserName = styled.span`
