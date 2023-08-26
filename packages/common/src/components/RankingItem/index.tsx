@@ -1,10 +1,9 @@
 'use client';
 
 import * as S from './style';
+import { slicePoint } from '../../utils';
 
 import { RankingPropsType } from 'types';
-
-import { slicePoint } from '../../utils';
 
 interface RankingItemProps extends RankingPropsType {
   ranking: number;
