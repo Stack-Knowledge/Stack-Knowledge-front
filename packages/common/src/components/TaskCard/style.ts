@@ -1,23 +1,24 @@
 import styled from '@emotion/styled';
 
 export const CardWrapper = styled.div<{ isShadow: boolean }>`
-  width: 224px;
-  height: 304px;
-  border-radius: 20px;
+  width: 14rem;
+  height: 19rem;
+  border-radius: 1.25rem;
   background: #fbfbfb;
   display: flex;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
   ${({ isShadow }) =>
-    isShadow && 'box-shadow: 4px 4px 4px 0px rgba(151, 151, 151, 0.25);'}
+    isShadow &&
+    'box-shadow: 0.25rem 0.25rem 0.25rem 0rem rgba(151, 151, 151, 0.25);'}
 `;
 
 export const UserName = styled.span`
   ${({ theme }) => theme.typo.h5};
   color: ${({ theme }) => theme.color.black};
   font-weight: 700;
-  margin: 40px 0 36px;
+  margin: 2.5rem 0 2.25rem;
 `;
 
 export const TaskTitle = styled.span`
@@ -28,8 +29,8 @@ export const TaskTitle = styled.span`
 
 export const MiledgeWrapper = styled.div`
   display: flex;
-  gap: 4px;
-  margin-top: 128px;
+  gap: 0.25rem;
+  margin-top: 8rem;
   align-items: center;
 `;
 
