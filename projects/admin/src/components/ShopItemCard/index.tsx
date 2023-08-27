@@ -26,7 +26,7 @@ const ShopItemCard: React.FC<OrderdItemType> = ({
       <S.Details>{item.name}</S.Details>
       <S.PriceWrapper>
         <S.Price>{slicePoint(price)}</S.Price>
-        <S.WonText>원</S.WonText>
+        <S.WonText>M</S.WonText>
       </S.PriceWrapper>
     </S.TextWrapper>
   </S.CardWrapper>
