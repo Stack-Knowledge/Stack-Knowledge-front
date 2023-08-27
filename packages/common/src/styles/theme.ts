@@ -23,7 +23,7 @@ const typo = {
     lineHeight: '2.375rem',
   },
   h3: {
-    fontSize: '15.5rem',
+    fontSize: '1.75rem',
     lineHeight: '2.0625rem',
   },
   h4: {
