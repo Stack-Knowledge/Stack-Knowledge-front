@@ -20,7 +20,7 @@ const ShopItemCard: React.FC<OrderdItemType> = ({
     </S.ImageWrapper>
     <S.TextWrapper>
       <S.UserName>{user.name}</S.UserName>
-      <S.Details>{count}</S.Details>
+      <S.Details>{count}개</S.Details>
     </S.TextWrapper>
     <S.TextWrapper>
       <S.Details>{item.name}</S.Details>
