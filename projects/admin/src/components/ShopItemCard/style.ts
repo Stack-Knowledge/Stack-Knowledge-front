@@ -1,24 +1,24 @@
 import styled from '@emotion/styled';
 
 export const CardWrapper = styled.div`
-  width: 200px;
-  height: 270px;
-  border-radius: 20px;
+  width: 12.5rem;
+  height: 16.875rem;
+  border-radius: 1.25rem;
   background: #fbfbfb;
-  box-shadow: 4px 4px 4px 0px rgba(151, 151, 151, 0.25);
-  padding: 12px;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0rem rgba(151, 151, 151, 0.25);
+  padding: 0.75rem;
   cursor: pointer;
 `;
 
 export const ImageWrapper = styled.div`
-  width: 200px;
-  height: 190px;
+  width: 12.5rem;
+  height: 11.875rem;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: ${({ theme }) => theme.color.gray['040']};
   overflow: hidden;
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 
   img {
     object-fit: cover;
@@ -31,7 +31,7 @@ export const TextWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 `;
 
 export const UserName = styled.span`
@@ -57,5 +57,5 @@ export const WonText = styled(Price)`
 
 export const PriceWrapper = styled.div`
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
 `;
