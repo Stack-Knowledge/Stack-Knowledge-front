@@ -1,13 +1,13 @@
-import type { Preview } from "@storybook/react";
-import { ThemeProvider } from "@emotion/react";
-import { theme } from "common";
-import React from "react";
-import Providers from "./providers";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import type { Preview } from '@storybook/react';
+import { ThemeProvider } from '@emotion/react';
+import { GlobalStyle, theme } from 'common';
+import React from 'react';
+import Providers from './providers';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -15,15 +15,15 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: "light",
+      default: 'light',
       values: [
         {
-          name: "light",
-          value: "#ffffff",
+          name: 'light',
+          value: '#ffffff',
         },
         {
-          name: "dark",
-          value: "#050505",
+          name: 'dark',
+          value: '#050505',
         },
       ],
     },
@@ -34,6 +34,7 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Providers>
           <ReactQueryDevtools />
           <Story />
