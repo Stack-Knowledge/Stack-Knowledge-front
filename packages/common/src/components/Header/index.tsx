@@ -27,7 +27,6 @@ const Header: React.FC<HeaderProps> = ({ role }) => (
           <HomeIcon />
           <S.ItemTitle>홈</S.ItemTitle>
         </S.MenuItemWrapper>
-
         {role === 'client' ? (
           <S.MenuItemWrapper>
             <QuestionIcon />
