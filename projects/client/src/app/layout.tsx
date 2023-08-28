@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google';
 
 import Providers from './providers';
 
+import { GlobalStyle } from 'common';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -18,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
+      <GlobalStyle />
       <Providers>
         <body className={inter.className}>{children}</body>
       </Providers>
