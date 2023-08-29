@@ -42,4 +42,5 @@ export const MenuItemWrapper = styled.div`
 export const ItemTitle = styled.span`
   ${({ theme }) => theme.typo.button}
   margin-left:15px;
+  color: #000;
 `;
