@@ -30,7 +30,7 @@ export const Title = styled.span`
 export const MenuNav = styled.div`
   display: flex;
   padding-right: 300px;
-  gap: ${(props) => (props.role === 'admin' ? '50px' : '60px')};
+  gap: ${({ role }) => (role === 'admin' ? '50px' : '60px')};
 `;
 
 export const MenuItemWrapper = styled.div`
