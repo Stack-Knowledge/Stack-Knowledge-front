@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const HeaderWrapper = styled.div`
   width: 100vw;
   height: 130px;
-  background-color: #f7f9fb;
+  background: ${({ theme }) => theme.color.gray['010']};
 `;
 
 export const HeaderContainer = styled.div`
@@ -40,7 +40,7 @@ export const MenuItemWrapper = styled.div`
 `;
 
 export const ItemTitle = styled.span`
-  ${({ theme }) => theme.typo.button}
-  margin-left:15px;
-  color: #000;
+  ${({ theme }) => theme.typo.button};
+  color: ${({ theme }) => theme.color.black};
+  margin-left: 15px;
 `;
