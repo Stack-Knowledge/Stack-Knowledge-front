@@ -9,7 +9,7 @@ const Timer = () => (
       <S.Collon>:</S.Collon>
       <S.Input maxLength={2} placeholder='00' />
     </S.TimerWrapper>
-    <S.NoticeText>* 문제는 12:30 ~ 19:30분까지 남아있습니다.</S.NoticeText>
+    <S.NoticeText>* 문제는 12:30 ~ 19:30분까지 풀 수 있습니다.</S.NoticeText>
   </S.Wrapper>
 );
 
