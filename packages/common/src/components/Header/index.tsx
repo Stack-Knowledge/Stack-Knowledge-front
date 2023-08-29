@@ -27,12 +27,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => (
           <HomeIcon />
           <S.ItemTitle>홈</S.ItemTitle>
         </S.MenuItemWrapper>
-        {role === 'client' ? (
-          <S.MenuItemWrapper>
-            <QuestionIcon />
-            <S.ItemTitle>문제</S.ItemTitle>
-          </S.MenuItemWrapper>
-        ) : role === 'admin' ? (
+        {role === 'admin' ? (
           <>
             <S.MenuItemWrapper>
               <QuestionIcon />
@@ -43,7 +38,12 @@ const Header: React.FC<HeaderProps> = ({ role }) => (
               <S.ItemTitle>만들기</S.ItemTitle>
             </S.MenuItemWrapper>
           </>
-        ) : null}
+        ) : (
+          <S.MenuItemWrapper>
+            <QuestionIcon />
+            <S.ItemTitle>문제</S.ItemTitle>
+          </S.MenuItemWrapper>
+        )}
 
         <S.MenuItemWrapper>
           <ShopIcon />
