@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const HeaderWrapper = styled.div`
-  width: 120rem;
+  width: 100vw;
   height: 8.125rem;
   background: ${({ theme }) => theme.color.gray['010']};
 `;
