@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 export const HeaderWrapper = styled.div`
   width: 100vw;
@@ -32,10 +33,9 @@ export const MenuNav = styled.div`
   gap: ${({ role }) => (role === 'admin' ? '3.125rem' : '3.75rem')};
 `;
 
-export const MenuItemWrapper = styled.div`
+export const MenuItemWrapper = styled(Link)`
   display: flex;
   align-items: center;
-  cursor: pointer;
 `;
 
 export const ItemTitle = styled.span`

@@ -1,6 +1,7 @@
 'use client';
 
 import * as S from './style';
+import Link from 'next/link';
 
 import {
   HomeIcon,
@@ -23,33 +24,32 @@ const Header: React.FC<HeaderProps> = ({ role }) => (
         <S.Title>Stack Knowledge</S.Title>
       </S.LogoContainer>
       <S.MenuNav role={role}>
-        <S.MenuItemWrapper>
+        <S.MenuItemWrapper href='/'>
           <HomeIcon />
           <S.ItemTitle>홈</S.ItemTitle>
         </S.MenuItemWrapper>
         {role === 'admin' ? (
           <>
-            <S.MenuItemWrapper>
+            <S.MenuItemWrapper href='#'>
               <QuestionIcon />
               <S.ItemTitle>채점하기</S.ItemTitle>
             </S.MenuItemWrapper>
-            <S.MenuItemWrapper>
+            <S.MenuItemWrapper href='#'>
               <MadeIcon />
               <S.ItemTitle>만들기</S.ItemTitle>
             </S.MenuItemWrapper>
           </>
         ) : (
-          <S.MenuItemWrapper>
+          <S.MenuItemWrapper href='#'>
             <QuestionIcon />
             <S.ItemTitle>문제</S.ItemTitle>
           </S.MenuItemWrapper>
         )}
-
-        <S.MenuItemWrapper>
+        <S.MenuItemWrapper href='#'>
           <ShopIcon />
           <S.ItemTitle>상점</S.ItemTitle>
         </S.MenuItemWrapper>
-        <S.MenuItemWrapper>
+        <S.MenuItemWrapper href='#'>
           <RankingIcon />
           <S.ItemTitle>랭킹</S.ItemTitle>
         </S.MenuItemWrapper>
