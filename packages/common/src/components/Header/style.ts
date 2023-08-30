@@ -12,7 +12,6 @@ export const HeaderContainer = styled.div`
   height: 100%;
   justify-content: space-between;
   padding-left: 18.75rem;
-  cursor: pointer;
 `;
 
 export const LogoContainer = styled.div`
