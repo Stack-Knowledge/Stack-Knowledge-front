@@ -14,6 +14,7 @@ export const ButtonWrapper = styled.button`
   ${({ theme }) => theme.typo.button}
   color: ${({ theme }) => theme.color.white};
   font-weight: 500;
+  cursor: pointer;
 `;
 
 export const GAuthIconWrapper = styled.div`
