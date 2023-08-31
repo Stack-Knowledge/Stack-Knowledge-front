@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const ButtonWrapper = styled.button`
-  width: 328px;
-  height: 60px;
-  border-radius: 10px;
+  width: 20.5rem;
+  height: 3.75rem;
+  border-radius: 0.625rem;
   background: #66a3ff;
   display: flex;
   align-items: center;
@@ -17,8 +17,8 @@ export const ButtonWrapper = styled.button`
 `;
 
 export const GAuthIconWrapper = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   position: absolute;
-  left: 12px;
+  left: 0.75rem;
 `;

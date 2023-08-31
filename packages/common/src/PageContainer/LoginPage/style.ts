@@ -27,5 +27,5 @@ export const StackKnowledge = styled.p`
   color: ${({ theme }) => theme.color.black};
   font-family: Roboto;
   font-weight: 700;
-  margin: 20px 0 25vh;
+  margin: 1.25rem 0 25vh;
 `;
