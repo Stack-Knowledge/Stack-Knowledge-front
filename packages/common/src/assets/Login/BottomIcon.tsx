@@ -7,8 +7,8 @@ const BottomIcon = () => (
     fill='none'
   >
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M0.891357 447C89.4995 256.526 285.252 12.3036 426 0.448975V447H0.891357Z'
       fill='#FFDBBA'
     />
