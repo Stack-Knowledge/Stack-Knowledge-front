@@ -1,27 +1,27 @@
 const MadeIcon = () => (
   <svg
-    width='28'
-    height='28'
-    viewBox='0 0 28 28'
+    width='20'
+    height='20'
+    viewBox='0 0 20 20'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <circle cx='14' cy='14' r='13.4' stroke='black' stroke-width='1.2' />
+    <circle cx='10' cy='10' r='9.4' stroke='black' stroke-width='1.2' />
     <rect
-      x='13.4399'
-      y='7.84009'
-      width='1.12'
-      height='12.32'
-      rx='0.56'
+      x='9.59998'
+      y='5.6001'
+      width='0.8'
+      height='8.8'
+      rx='0.4'
       fill='black'
     />
     <rect
-      x='7.83984'
-      y='14.5601'
-      width='1.12'
-      height='12.32'
-      rx='0.56'
-      transform='rotate(-90 7.83984 14.5601)'
+      x='5.59985'
+      y='10.4001'
+      width='0.8'
+      height='8.8'
+      rx='0.4'
+      transform='rotate(-90 5.59985 10.4001)'
       fill='black'
     />
   </svg>

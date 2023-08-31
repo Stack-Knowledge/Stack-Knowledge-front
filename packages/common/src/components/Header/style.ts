@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const HeaderWrapper = styled.div`
   width: 100vw;
-  height: 8.125rem;
+  height: 5.625rem;
   background: ${({ theme }) => theme.color.gray['010']};
 `;
 
@@ -30,7 +30,7 @@ export const Title = styled.span`
 export const MenuNav = styled.div`
   display: flex;
   padding-right: 18.75rem;
-  gap: ${({ role }) => (role === 'admin' ? '3.125rem' : '3.75rem')};
+  gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 
 export const MenuItemWrapper = styled(Link)`
@@ -39,7 +39,7 @@ export const MenuItemWrapper = styled(Link)`
 `;
 
 export const ItemTitle = styled.span`
-  ${({ theme }) => theme.typo.button};
+  ${({ theme }) => theme.typo.body3};
   color: ${({ theme }) => theme.color.black};
   margin-left: 0.9375rem;
 `;
