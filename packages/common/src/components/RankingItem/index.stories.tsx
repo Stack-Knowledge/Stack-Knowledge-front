@@ -7,6 +7,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   title: 'common/RankingItem',
   component: RankingItem,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
 } as Meta<typeof RankingItem>;
 
 type Story = StoryObj<typeof RankingItem>;
