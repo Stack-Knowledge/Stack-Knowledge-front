@@ -25,8 +25,8 @@ export const FlexWrapper = styled.div<{ profileImage?: string | null }>`
     !profileImage &&
     `
     svg {
-      width: 40px;
-      height:40px;
+      width: 2.5rem;
+      height:2.5rem;
       margin: 0 1rem 0 2.25rem;
     }
     `}

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const CardWrapper = styled.div`
-  width: 224px;
-  height: 304px;
-  border-radius: 20px;
+  width: 14rem;
+  height: 19rem;
+  border-radius: 1.25rem;
   background: ${({ theme }) => theme.color.white};
   display: flex;
   align-items: center;
@@ -13,8 +13,8 @@ export const CardWrapper = styled.div`
 `;
 
 export const ProfileWrapper = styled.div`
-  width: 90px;
-  height: 90px;
+  width: 5.625rem;
+  height: 5.625rem;
   border-radius: 50%;
 
   overflow: hidden;
@@ -28,7 +28,7 @@ export const UserName = styled.span`
   ${({ theme }) => theme.typo.h5};
   color: ${({ theme }) => theme.color.black};
   font-weight: 700;
-  margin: 12px 0 83px;
+  margin: 0.75rem 0 5.1875rem;
 `;
 
 export const FlexWrapper = styled.div`
@@ -54,12 +54,12 @@ export const Medal = styled.div<{ rank: number }>`
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
 
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   position: absolute;
-  top: -12px;
-  left: -12px;
+  top: -0.75rem;
+  left: -0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
