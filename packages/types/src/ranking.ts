@@ -5,6 +5,6 @@ export interface RankingPropsType {
     id: string;
     email: string;
     name: string;
-    profileImage: string;
+    profileImage: string | null;
   };
 }

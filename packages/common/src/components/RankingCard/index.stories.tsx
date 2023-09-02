@@ -75,3 +75,17 @@ export const Fourth: Story = {
     },
   },
 };
+
+export const NoIMG: Story = {
+  args: {
+    rank: 4,
+    id: 'userId',
+    cumulatePoint: 600,
+    user: {
+      id: 'userId',
+      email: 'moondgod@gmail.com',
+      name: '이정우교수',
+      profileImage: null,
+    },
+  },
+};
