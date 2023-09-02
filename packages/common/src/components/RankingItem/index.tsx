@@ -16,7 +16,7 @@ const RankingItem: React.FC<RankingItemProps> = ({
   user: { name, profileImage },
 }) => (
   <S.ItemWrapper>
-    <S.FlexWrapper>
+    <S.FlexWrapper profileImage={profileImage}>
       <S.Ranking>{ranking}</S.Ranking>
       {profileImage ? (
         <S.ProfileImage

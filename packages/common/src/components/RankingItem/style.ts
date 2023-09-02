@@ -18,9 +18,18 @@ export const ItemWrapper = styled.div`
   }
 `;
 
-export const FlexWrapper = styled.div`
+export const FlexWrapper = styled.div<{ profileImage?: string | null }>`
   display: flex;
   align-items: center;
+  ${({ profileImage }) =>
+    !profileImage &&
+    `
+    svg {
+      width: 40px;
+      height:40px;
+      margin: 0 1rem 0 2.25rem;
+    }
+    `}
 `;
 
 export const Ranking = styled.span`

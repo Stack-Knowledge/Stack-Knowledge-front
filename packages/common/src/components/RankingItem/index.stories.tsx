@@ -70,3 +70,17 @@ export const Hund: Story = {
     },
   },
 };
+
+export const NoIMG: Story = {
+  args: {
+    ranking: 100,
+    id: '100등',
+    cumulatePoint: 0,
+    user: {
+      id: '100등',
+      email: 'sample@gmail.com',
+      name: '100등',
+      profileImage: null,
+    },
+  },
+};
