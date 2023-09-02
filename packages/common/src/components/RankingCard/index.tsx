@@ -1,12 +1,11 @@
 'use client';
 
 import * as S from './style';
-
-import Image from 'next/image';
-
 import { DefaultProfile } from '../../assets';
 
 import { RankingPropsType } from 'types';
+
+import Image from 'next/image';
 
 interface RankingCardType extends RankingPropsType {
   rank: number;
