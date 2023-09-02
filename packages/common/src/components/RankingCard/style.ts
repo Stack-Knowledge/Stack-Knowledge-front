@@ -5,6 +5,10 @@ export const CardWrapper = styled.div`
   height: 304px;
   border-radius: 20px;
   background: ${({ theme }) => theme.color.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const ProfileWrapper = styled.div`
@@ -23,6 +27,7 @@ export const UserName = styled.span`
   ${({ theme }) => theme.typo.h5};
   color: ${({ theme }) => theme.color.black};
   font-weight: 700;
+  margin: 12px 0 83px;
 `;
 
 export const FlexWrapper = styled.div`
