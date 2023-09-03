@@ -1,7 +1,8 @@
 'use client';
 
 import * as S from './style';
-import { GiftIcon } from '../../../assets';
+import Image from 'next/image';
+import GiftIcon from '../../../assets/Banner/GiftIcon.png';
 
 const Banner3 = () => (
   <S.BannerWrapper>
@@ -10,7 +11,7 @@ const Banner3 = () => (
       <S.BannerTitle>상품까지 챙기자!!</S.BannerTitle>
     </S.BannerTitleContainer>
     <S.GiftIconWrapper>
-      <GiftIcon />
+      <Image src={GiftIcon} alt='Gift Icon' width={287} height={287} />
     </S.GiftIconWrapper>
   </S.BannerWrapper>
 );

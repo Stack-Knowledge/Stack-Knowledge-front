@@ -1,7 +1,8 @@
 'use client';
 
 import * as S from './style';
-import { SunIcon, LetGoIcon, DocumentIcon } from '../../../assets';
+import Image from 'next/image';
+import DocumentIcon from '../../../assets/Banner/DocumentIcon.png';
 
 const Banner2 = () => (
   <S.BannerWrapper>
@@ -10,8 +11,9 @@ const Banner2 = () => (
       <S.BannerTitle>시험 점수도 챙기자!!</S.BannerTitle>
     </S.BannerTitleContainer>
     <S.DocumentIconWrapper>
-      <DocumentIcon />
+      <Image src={DocumentIcon} alt='Doucument Icon' width={300} height={250} />
     </S.DocumentIconWrapper>
   </S.BannerWrapper>
 );
+
 export default Banner2;
