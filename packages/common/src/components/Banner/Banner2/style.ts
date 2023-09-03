@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import DocumentIcon from '../../../assets/Banner/DocumentIcon';
 
 export const BannerWrapper = styled.div`
   background: ${({ theme }) => theme.color.banner2};

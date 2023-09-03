@@ -17,19 +17,18 @@ const Banner = () => {
   ];
 
   const [currentBanner, setCurrentBanner] = useState<number>(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null); // setInterval 함수를 제어?함
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const showBanner = (index: number) => {
     setCurrentBanner(index);
     if (intervalRef.current) {
-      // setinterval 재정의
       clearInterval(intervalRef.current);
     }
     startInterval();
   };
 
   const startInterval = () => {
-    intervalRef.current = setInterval(showNextBanner, 5000);
+    intervalRef.current = setInterval(showNextBanner, 3000);
   };
 
   const showNextBanner = () => {
@@ -48,6 +47,16 @@ const Banner = () => {
 
   return (
     <S.BannerWrapper>
+      <S.BannerContainer
+        currentBanner={currentBanner}
+        bannerCount={banners.length}
+      >
+        {banners.map((_, index) => (
+          <S.BannerItem key={`banner-${index}`} currentBanner={currentBanner}>
+            {banners[index].component}
+          </S.BannerItem>
+        ))}
+      </S.BannerContainer>
       <S.DotWrapper>
         {banners.map((_, index) => (
           <S.Dot
@@ -57,8 +66,6 @@ const Banner = () => {
           />
         ))}
       </S.DotWrapper>
-
-      {banners[currentBanner].component}
     </S.BannerWrapper>
   );
 };

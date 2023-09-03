@@ -7,6 +7,23 @@ export const BannerWrapper = styled.div`
   border-radius: 1.25rem;
   display: flex;
   position: relative;
+  overflow: hidden;
+`;
+
+export const BannerContainer = styled.div`
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(
+    -${({ currentBanner, bannerCount }) => currentBanner * ((bannerCount * 80) / bannerCount)}rem
+  );
+`;
+
+export const BannerItem = styled.div<{ index: number; currentBanner: number }>`
+  width: 80rem;
+  flex-shrink: 0;
+  transform: translateX(
+    ${({ index, currentBanner }) => (index - currentBanner) * 80}rem
+  );
 `;
 
 export const DotWrapper = styled.div`
@@ -22,8 +39,8 @@ export const DotWrapper = styled.div`
 export const Dot = styled.div`
   background-color: ${({ active }) => (active ? 'black' : 'white')};
   border-radius: 50px;
-  height: 7px;
-  width: 7px;
+  height: 6px;
+  width: 6px;
   cursor: pointer;
   margin-bottom: 16px;
 `;
