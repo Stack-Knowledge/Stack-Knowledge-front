@@ -6,50 +6,21 @@ import Banner3 from './Banner3';
 
 import * as S from './style';
 
-type BannerType = {
-  key: string;
-  component: JSX.Element;
-};
-
 type BannerProps = {
   bannerCount: number;
 };
 
 const Banner: React.FC<BannerProps> = ({ bannerCount }) => {
-  const banners: BannerType[] = [
-    { key: '1', component: <Banner1 key='banner1' /> },
-    { key: '2', component: <Banner2 key='banner2' /> },
-    { key: '3', component: <Banner3 key='banner3' /> },
-  ];
-
+  const banners: JSX.Element[] = [<Banner1 />, <Banner2 />, <Banner3 />];
   const [currentBanner, setCurrentBanner] = useState<number>(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  const showBanner = (index: number) => {
-    setCurrentBanner(index);
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-    startInterval();
-  };
-
-  const startInterval = () => {
-    intervalRef.current = setInterval(showNextBanner, 3000);
-  };
-
-  const showNextBanner = () => {
-    setCurrentBanner((prev) => (prev + 1) % banners.length);
-  };
 
   useEffect(() => {
-    startInterval();
+    const timeout = setTimeout(() => {
+      setCurrentBanner((prev) => (prev + 1) % banners.length);
+    }, 5000);
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [currentBanner]);
 
   return (
     <S.BannerWrapper>
@@ -59,7 +30,7 @@ const Banner: React.FC<BannerProps> = ({ bannerCount }) => {
       >
         {banners.map((_, index) => (
           <S.BannerItem key={`banner-${index}`} currentBanner={currentBanner}>
-            {banners[index].component}
+            {banners[index]}
           </S.BannerItem>
         ))}
       </S.BannerContainer>
@@ -68,7 +39,7 @@ const Banner: React.FC<BannerProps> = ({ bannerCount }) => {
           <S.Dot
             key={`dot-${index}`}
             active={index === currentBanner}
-            onClick={() => showBanner(index)}
+            onClick={() => setCurrentBanner(index)}
           />
         ))}
       </S.DotWrapper>
