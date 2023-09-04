@@ -33,14 +33,14 @@ export const DotWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 20px;
+  gap: 1.25rem;
 `;
 
 export const Dot = styled.div`
   background-color: ${({ active }) => (active ? 'black' : 'white')};
-  border-radius: 50px;
-  height: 6px;
-  width: 6px;
+  border-radius: 3.125rem;
+  height: 0.375rem;
+  width: 0.375rem;
   cursor: pointer;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 `;
