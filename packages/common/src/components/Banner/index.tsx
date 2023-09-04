@@ -9,7 +9,11 @@ type BannerType = {
   component: JSX.Element;
 };
 
-const Banner = () => {
+type BannerProps = {
+  bannerCount: number;
+};
+
+const Banner: React.FC<BannerProps> = ({ bannerCount }) => {
   const banners: BannerType[] = [
     { key: '1', component: <Banner1 key='banner1' /> },
     { key: '2', component: <Banner2 key='banner2' /> },

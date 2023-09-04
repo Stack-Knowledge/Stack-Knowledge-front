@@ -10,7 +10,10 @@ export const BannerWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const BannerContainer = styled.div`
+export const BannerContainer = styled.div<{
+  currentBanner: number;
+  bannerCount: number;
+}>`
   display: flex;
   transition: transform 0.5s ease-in-out;
   transform: translateX(
