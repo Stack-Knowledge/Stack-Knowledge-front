@@ -21,12 +21,9 @@ export const BannerContainer = styled.div<{
   );
 `;
 
-export const BannerItem = styled.div<{ index: number; currentBanner: number }>`
+export const BannerItem = styled.div`
   width: 80rem;
   flex-shrink: 0;
-  transform: translateX(
-    ${({ index, currentBanner }) => (index - currentBanner) * 80}rem
-  );
 `;
 
 export const DotWrapper = styled.div`
