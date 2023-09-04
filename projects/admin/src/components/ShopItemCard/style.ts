@@ -53,6 +53,7 @@ export const Price = styled(UserName)`
 export const WonText = styled(Price)`
   ${({ theme }) => theme.typo.body3};
   font-weight: 400;
+  margin-top: 0.125rem;
 `;
 
 export const PriceWrapper = styled.div`
