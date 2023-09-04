@@ -17,7 +17,8 @@ export const BannerContainer = styled.div<{
   display: flex;
   transition: transform 0.5s ease-in-out;
   transform: translateX(
-    -${({ currentBanner, bannerCount }) => currentBanner * ((bannerCount * 80) / bannerCount)}rem
+    ${({ currentBanner, bannerCount }) =>
+      -currentBanner * ((bannerCount * 80) / bannerCount)}rem
   );
 `;
 
@@ -36,7 +37,7 @@ export const DotWrapper = styled.div`
   gap: 1.25rem;
 `;
 
-export const Dot = styled.div`
+export const Dot = styled.div<{ active: boolean }>`
   background-color: ${({ active }) => (active ? 'black' : 'white')};
   border-radius: 3.125rem;
   height: 0.375rem;
