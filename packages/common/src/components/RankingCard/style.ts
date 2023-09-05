@@ -11,7 +11,8 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   position: relative;
 
-  .medal:nth-child(1n) {
+  // 후에 리스트 래퍼에 이 코드를 작성합니다.
+  /* .medal:nth-child(1n) {
     background-color: #ffd79b;
   }
   .medal:nth-child(2n) {
@@ -19,7 +20,7 @@ export const CardWrapper = styled.div`
   }
   .medal:nth-child(3n) {
     background-color: #ce865d;
-  }
+  } */
 `;
 
 export const ProfileWrapper = styled.div`
