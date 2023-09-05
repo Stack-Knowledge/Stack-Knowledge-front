@@ -10,6 +10,16 @@ export const CardWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   position: relative;
+
+  .medal:nth-child(1n) {
+    background-color: #ffd79b;
+  }
+  .medal:nth-child(2n) {
+    background-color: ${({ theme }) => theme.color.gray['040']};
+  }
+  .medal:nth-child(3n) {
+    background-color: #ce865d;
+  }
 `;
 
 export const ProfileWrapper = styled.div`
@@ -49,7 +59,7 @@ export const PointUnit = styled.span`
   font-weight: 500;
 `;
 
-export const Medal = styled.div<{ rank: number }>`
+export const Medal = styled.div`
   ${({ theme }) => theme.typo.body2}
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
@@ -63,6 +73,4 @@ export const Medal = styled.div<{ rank: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({ rank, theme }) =>
-    rank === 1 ? '#FFD79B' : rank === 2 ? theme.color.gray['040'] : '#ce865d'};
 `;
