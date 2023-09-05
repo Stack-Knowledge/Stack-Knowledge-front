@@ -2,7 +2,8 @@
 
 import * as S from './style';
 import { slicePoint } from '../../utils';
-import { DefaultProfile } from '../../assets';
+
+import DefaultProfile from '../../assets/svg/DefaultProfile.svg';
 
 import { RankingPropsType } from 'types';
 
@@ -18,16 +19,12 @@ const RankingItem: React.FC<RankingItemProps> = ({
   <S.ItemWrapper>
     <S.FlexWrapper profileImage={profileImage}>
       <S.Ranking>{ranking}</S.Ranking>
-      {profileImage ? (
-        <S.ProfileImage
-          alt='profile image'
-          width={40}
-          height={40}
-          src={profileImage}
-        />
-      ) : (
-        <DefaultProfile />
-      )}
+      <S.ProfileImage
+        alt='profile image'
+        width={40}
+        height={40}
+        src={profileImage ?? DefaultProfile}
+      />
       <S.UserName>{name}</S.UserName>
     </S.FlexWrapper>
     <S.FlexWrapper>
