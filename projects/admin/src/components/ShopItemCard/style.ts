@@ -22,7 +22,6 @@ export const ImageWrapper = styled.div`
 
   img {
     object-fit: cover;
-    transition: filter ease-in-out 0.3s;
   }
 `;
 
