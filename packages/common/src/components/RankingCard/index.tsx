@@ -1,9 +1,10 @@
 'use client';
 
 import * as S from './style';
-import { DefaultProfile } from '../../assets';
 
 import { RankingPropsType } from 'types';
+
+import { DefaultProfile } from '../../assets/svg/DefaultProfile.svg';
 
 import Image from 'next/image';
 
@@ -20,11 +21,12 @@ const RankingCard: React.FC<RankingCardType> = ({
     <S.CardWrapper>
       {rank <= 3 && <S.Medal className='medal'>{rank}</S.Medal>}
       <S.ProfileWrapper>
-        {profileImage ? (
-          <Image fill alt='profile' src={profileImage} />
-        ) : (
-          <DefaultProfile />
-        )}
+        <Image
+          fill
+          alt='profile'
+          src={profileImage ?? ''}
+          blurDataURL={DefaultProfile}
+        />
       </S.ProfileWrapper>
       <S.UserName>{name}</S.UserName>
       <S.FlexWrapper>
