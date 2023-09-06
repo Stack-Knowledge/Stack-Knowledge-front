@@ -19,6 +19,12 @@ export const SubmitInput = styled.textarea`
   margin-top: 22px;
   resize: none;
   border: 0;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.gray['040']};
+    font-size: ${({ theme }) => theme.typo.body1};
+    font-weight: 500;
+  }
 `;
 
 export const SubmitButtonWrapper = styled.div`
