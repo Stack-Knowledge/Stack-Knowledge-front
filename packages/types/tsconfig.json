@@ -1,6 +1,13 @@
 {
   "extends": "tsconfig/base.json",
   "main": "index.ts",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "api/*": ["./*"]
+    }
+  },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
