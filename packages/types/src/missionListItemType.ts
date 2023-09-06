@@ -2,7 +2,7 @@ export interface MissionListItemType {
   id: string;
   title: string;
   point: number;
-  missionStatus: MissionStatus;
+  missionStatus: 'CLOSED' | 'OPENED' | 'AVAILABLE_OPEN';
   user: {
     id: string;
     email: string;
