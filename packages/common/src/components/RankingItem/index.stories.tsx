@@ -7,6 +7,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   title: 'common/RankingItem',
   component: RankingItem,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
 } as Meta<typeof RankingItem>;
 
 type Story = StoryObj<typeof RankingItem>;
@@ -67,6 +72,20 @@ export const Hund: Story = {
       name: '100등',
       profileImage:
         'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
+    },
+  },
+};
+
+export const NoIMG: Story = {
+  args: {
+    ranking: 100,
+    id: '100등',
+    cumulatePoint: 0,
+    user: {
+      id: '100등',
+      email: 'sample@gmail.com',
+      name: '100등',
+      profileImage: null,
     },
   },
 };
