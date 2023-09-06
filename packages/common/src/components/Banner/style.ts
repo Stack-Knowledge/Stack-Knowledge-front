@@ -24,7 +24,6 @@ export const BannerContainer = styled.div<{
 
 export const BannerItem = styled.div`
   width: 80rem;
-  flex-shrink: 0;
 `;
 
 export const DotWrapper = styled.div`
