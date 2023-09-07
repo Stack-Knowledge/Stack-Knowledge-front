@@ -22,8 +22,8 @@ const Banner = () => {
         currentBanner={currentBanner}
         bannerCount={banners.length}
       >
-        {banners.map((_, index) => (
-          <S.BannerItem key={`banner-${index}`}>{banners[index]}</S.BannerItem>
+        {banners.map((banner, index) => (
+          <S.BannerItem key={`banner-${index}`}>{banner}</S.BannerItem>
         ))}
       </S.BannerContainer>
       <S.DotWrapper>
