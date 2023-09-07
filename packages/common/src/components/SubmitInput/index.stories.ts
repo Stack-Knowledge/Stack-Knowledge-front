@@ -10,4 +10,14 @@ export default {
 
 type Story = StoryObj<typeof SubmitInput>;
 
-export const Primary: Story = {};
+export const Admin: Story = {
+  args: {
+    role: 'admin',
+  },
+};
+
+export const Client: Story = {
+  args: {
+    role: 'client',
+  },
+};
