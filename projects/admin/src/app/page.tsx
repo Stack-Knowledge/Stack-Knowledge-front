@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Example } from "common";
+import { Example } from 'common';
 
 export default function Home() {
   return (
