@@ -9,12 +9,12 @@ export const RankingText = styled.h3`
 export const ItemListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 0.8125rem;
 `;
 
 export const Line = styled.div`
-  width: 540px;
+  width: 33.75rem;
   height: 1px;
-  margin-top: 13px;
+  margin-top: 0.8125rem;
   background-color: ${({ theme }) => theme.color.gray['030']};
 `;
