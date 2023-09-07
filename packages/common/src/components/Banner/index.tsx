@@ -4,11 +4,7 @@ import { Banner1, Banner2, Banner3 } from '../index';
 
 import * as S from './style';
 
-type BannerProps = {
-  bannerCount: number;
-};
-
-const Banner: React.FC<BannerProps> = ({ bannerCount }) => {
+const Banner = () => {
   const banners: JSX.Element[] = [<Banner1 />, <Banner2 />, <Banner3 />];
   const [currentBanner, setCurrentBanner] = useState<number>(0);
 
