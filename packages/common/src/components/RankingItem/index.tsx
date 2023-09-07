@@ -7,14 +7,17 @@ import DefaultProfile from '../../assets/svg/DefaultProfile.svg';
 
 import { RankingPropsType } from 'types';
 
-interface RankingItemProps extends RankingPropsType {
+interface RankingItemProps {
   ranking: number;
+  item: RankingPropsType;
 }
 
 const RankingItem: React.FC<RankingItemProps> = ({
-  cumulatePoint,
   ranking,
-  user: { name, profileImage },
+  item: {
+    cumulatePoint,
+    user: { name, profileImage },
+  },
 }) => (
   <S.ItemWrapper>
     <S.FlexWrapper>
