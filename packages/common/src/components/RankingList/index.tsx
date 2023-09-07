@@ -1,7 +1,6 @@
 'use client';
 
 import * as S from './style';
-
 import { RankingItem } from '../../components';
 
 import { RankingPropsType } from 'types';
@@ -11,14 +10,17 @@ interface RankingListProps {
 }
 
 const RankingList: React.FC<RankingListProps> = ({ list }) => (
-  <S.RankingListWrapper>
-    {list.map((item, index) => (
-      <>
-        <RankingItem key={item.id} item={item} ranking={index + 1} />
-        {index !== list.length - 1 && <S.Line />}
-      </>
-    ))}
-  </S.RankingListWrapper>
+  <>
+    <S.RankingText>랭킹</S.RankingText>
+    <S.ItemListWrapper>
+      {list.map((item, index) => (
+        <>
+          <RankingItem key={item.id} item={item} ranking={index + 1} />
+          {index !== list.length - 1 && <S.Line />}
+        </>
+      ))}
+    </S.ItemListWrapper>
+  </>
 );
 
 export default RankingList;
