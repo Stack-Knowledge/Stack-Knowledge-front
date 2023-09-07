@@ -7,18 +7,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   title: 'common/RankingList',
   component: RankingList,
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
-  },
+  parameters: {},
 } as Meta<typeof RankingList>;
 
 type Story = StoryObj<typeof RankingList>;
 
 const list = [
   {
-    ranking: 1,
     id: 'sampleId',
     cumulatePoint: 1000,
     user: {
@@ -30,7 +25,6 @@ const list = [
     },
   },
   {
-    ranking: 2,
     id: 'sampleId',
     cumulatePoint: 800,
     user: {
@@ -42,19 +36,6 @@ const list = [
     },
   },
   {
-    ranking: 100,
-    id: '100등',
-    cumulatePoint: 0,
-    user: {
-      id: '100등',
-      email: 'sample@gmail.com',
-      name: '100등',
-      profileImage:
-        'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
-    },
-  },
-  {
-    ranking: 3,
     id: 'sampleId',
     cumulatePoint: 700,
     user: {
@@ -66,7 +47,16 @@ const list = [
     },
   },
   {
-    ranking: 100,
+    id: '정찬교',
+    cumulatePoint: 50,
+    user: {
+      id: '정찬교',
+      email: 'sample@gmail.com',
+      name: '정찬교',
+      profileImage: null,
+    },
+  },
+  {
     id: '100등',
     cumulatePoint: 0,
     user: {

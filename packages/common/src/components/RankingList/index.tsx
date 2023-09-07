@@ -15,7 +15,7 @@ const RankingList: React.FC<RankingListProps> = ({ list }) => (
     {list.map((item, index) => (
       <>
         <RankingItem key={item.id} item={item} ranking={index + 1} />
-        <S.Line />
+        {index !== list.length - 1 && <S.Line />}
       </>
     ))}
   </S.RankingListWrapper>
