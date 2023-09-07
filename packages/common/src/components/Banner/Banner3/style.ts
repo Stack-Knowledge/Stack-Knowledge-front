@@ -24,8 +24,8 @@ export const BannerTitle = styled.span`
 `;
 
 export const GiftIconWrapper = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 18.75rem;
+  height: 18.75rem;
   position: relative;
 `;
 
