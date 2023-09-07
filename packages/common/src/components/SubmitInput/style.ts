@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 
 export const SubmitContainer = styled.div`
   background: ${({ theme }) => theme.color.gray['010']};
-  width: 950px;
-  height: 300px;
-  border-radius: 10px;
+  width: 59.375rem;
+  height: 18.75rem;
+  border-radius: 0.625rem;
 `;
 export const SubmitInputWrapper = styled.div`
   display: flex;
@@ -14,9 +14,9 @@ export const SubmitInputWrapper = styled.div`
 export const SubmitInput = styled.textarea`
   background: ${({ theme }) => theme.color.gray['010']};
   outline: none;
-  width: 914px;
-  height: 220px;
-  margin-top: 22px;
+  width: 57.125rem;
+  height: 13.75rem;
+  margin-top: 1.375rem;
   resize: none;
   border: 0;
 
@@ -30,16 +30,16 @@ export const SubmitInput = styled.textarea`
 export const SubmitButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin: 0 38px 20px 0;
+  margin: 0 2.375rem 1.25rem 0;
 `;
 
 export const SubmitButton = styled.button`
   background: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.white};
   font-size: ${({ theme }) => theme.typo.body1};
-  width: 123px;
-  height: 40px;
-  border-radius: 10px;
+  width: 7.6875rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
   font-weight: 400;
   border: 0;
   cursor: pointer;
