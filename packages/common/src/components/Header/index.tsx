@@ -10,7 +10,7 @@ import {
   RankingIcon,
   ShopIcon,
   MadeIcon,
-} from '../../assets';
+} from 'common/assets';
 
 interface HeaderProps {
   role: 'admin' | 'client';
