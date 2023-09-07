@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { get, authUrl } from 'api/common';
+import { usePatchAccessToken, authUrl } from 'api/common';
 
 export const apiInstance = axios.create({
   baseURL: '/api',
@@ -39,19 +39,19 @@ apiInstance.interceptors.response.use(
       return Promise.reject(error);
     }
 
-    // if (error.response.status === 401) {
-    //   if (isRefreshing) {
-    //     await waitRefreshEnd();
+    if (error.response.status === 401) {
+      if (isRefreshing) {
+        await waitRefreshEnd();
 
-    //     return apiInstance(error.config);
-    //   }
+        return apiInstance(error.config);
+      }
 
-    //   isRefreshing = true;
+      isRefreshing = true;
 
-    //   await get(authUrl.refresh());
+      await usePatchAccessToken();
 
-    //   return apiInstance(error.config);
-    // }
+      return apiInstance(error.config);
+    }
 
     return Promise.reject(error);
   }
