@@ -38,7 +38,7 @@ export const DotWrapper = styled.div`
 
 export const Dot = styled.div<{ active: boolean }>`
   background-color: ${({ active, theme }) =>
-    theme.color[active ? 'black' : 'white'];
+    theme.color[active ? 'black' : 'white']};
   border-radius: 3.125rem;
   height: 0.375rem;
   width: 0.375rem;

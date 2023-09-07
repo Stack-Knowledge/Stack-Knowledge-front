@@ -24,9 +24,15 @@ export const BannerTitle = styled.span`
 `;
 
 export const GiftIconWrapper = styled.div`
+  width: 300px;
+  height: 300px;
+  position: relative;
+`;
+
+export const GiftContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  padding-right: 10rem;
+  padding-right: 6.25rem;
 `;

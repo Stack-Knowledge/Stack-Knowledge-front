@@ -24,6 +24,12 @@ export const BannerTitle = styled.span`
 `;
 
 export const DocumentIconWrapper = styled.div`
+  width: 18.75rem;
+  height: 15.625rem;
+  position: relative;
+`;
+
+export const DocumentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;

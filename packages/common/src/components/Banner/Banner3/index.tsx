@@ -10,9 +10,11 @@ const Banner3 = () => (
       <S.BannerTitle>문제 풀고</S.BannerTitle>
       <S.BannerTitle>상품까지 챙기자!!</S.BannerTitle>
     </S.BannerTitleContainer>
-    <S.GiftIconWrapper>
-      <Image src={GiftIcon} alt='Gift Icon' width={287} height={287} />
-    </S.GiftIconWrapper>
+    <S.GiftContainer>
+      <S.GiftIconWrapper>
+        <Image src={GiftIcon} alt='Gift Icon' fill />
+      </S.GiftIconWrapper>
+    </S.GiftContainer>
   </S.BannerWrapper>
 );
 export default Banner3;

@@ -24,10 +24,18 @@ export const SunIconWrapper = styled.div`
   position: relative;
   bottom: 0.625rem;
   right: 1.25rem;
+  width: 18.1875rem;
+  height: 12rem;
 `;
 
-export const LetgoIconWrapper = styled.div`
+export const LetgoIconContainer = styled.div`
   width: 40rem;
   height: 18.75rem;
   padding: 1.5rem 3.75rem 1rem 11.25rem;
+`;
+
+export const LetgoIconWrapper = styled.div`
+  position: relative;
+  width: 25rem;
+  height: 16.25rem;
 `;
