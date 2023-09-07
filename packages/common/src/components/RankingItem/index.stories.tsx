@@ -78,13 +78,13 @@ export const Hund: Story = {
 
 export const NoIMG: Story = {
   args: {
-    ranking: 100,
-    id: '100등',
-    cumulatePoint: 0,
+    ranking: 4,
+    id: '정찬교',
+    cumulatePoint: 50,
     user: {
-      id: '100등',
+      id: '정찬교',
       email: 'sample@gmail.com',
-      name: '100등',
+      name: '정찬교',
       profileImage: null,
     },
   },
