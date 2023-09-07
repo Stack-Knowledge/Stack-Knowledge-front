@@ -2,7 +2,7 @@
 
 import * as S from './style';
 
-import { RankingItem } from 'common/components';
+import { RankingItem } from '../../components';
 
 import { RankingPropsType } from 'types';
 
