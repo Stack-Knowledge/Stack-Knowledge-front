@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import Banner1 from './Banner1';
-import Banner2 from './Banner2';
-import Banner3 from './Banner3';
+import { Banner1, Banner2, Banner3 } from '../index';
 
 import * as S from './style';
 
