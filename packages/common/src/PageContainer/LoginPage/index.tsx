@@ -1,8 +1,8 @@
 'use client';
 
 import * as S from './style';
-import { LoginButton } from '../../components';
-import { BottomIcon, TopIcon, LoginLogoIcon } from '../../assets';
+import { LoginButton } from 'common/components';
+import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
 
 const LoginPage = () => {
   return (

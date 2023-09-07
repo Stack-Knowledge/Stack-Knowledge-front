@@ -34,6 +34,7 @@ export const Input = styled.input`
   font-weight: 500;
   border: 0;
   outline: none;
+  padding: 0;
   ::placeholder {
     color: ${({ theme }) => theme.color.black};
   }

@@ -12,6 +12,7 @@ export const ItemWrapper = styled.div`
   align-items: center;
   transition: ease-in-out 0.2s;
   cursor: pointer;
+  background-color: ${({ theme }) => theme.color.white};
 
   &:hover {
     background: #ffd79b;

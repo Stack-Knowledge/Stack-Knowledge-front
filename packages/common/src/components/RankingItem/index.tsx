@@ -1,7 +1,8 @@
 'use client';
 
 import * as S from './style';
-import { slicePoint } from '../../utils';
+import { slicePoint } from 'common/utils';
+import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
 
 import { RankingPropsType } from 'types';
 
@@ -21,7 +22,7 @@ const RankingItem: React.FC<RankingItemProps> = ({
         alt='profile image'
         width={40}
         height={40}
-        src={profileImage}
+        src={profileImage ?? DefaultProfile}
       />
       <S.UserName>{name}</S.UserName>
     </S.FlexWrapper>

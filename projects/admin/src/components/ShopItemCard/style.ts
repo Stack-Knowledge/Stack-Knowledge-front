@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const CardWrapper = styled.div`
-  width: 12.5rem;
-  height: 16.875rem;
+  width: 14rem;
+  height: 18.375rem;
   border-radius: 1.25rem;
   background: #fbfbfb;
   box-shadow: 0.25rem 0.25rem 0.25rem 0rem rgba(151, 151, 151, 0.25);
@@ -22,7 +22,6 @@ export const ImageWrapper = styled.div`
 
   img {
     object-fit: cover;
-    transition: filter ease-in-out 0.3s;
   }
 `;
 
