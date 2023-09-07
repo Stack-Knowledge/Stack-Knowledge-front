@@ -27,9 +27,7 @@ const Banner: React.FC<BannerProps> = ({ bannerCount }) => {
         bannerCount={banners.length}
       >
         {banners.map((_, index) => (
-          <S.BannerItem key={`banner-${index}`} currentBanner={currentBanner}>
-            {banners[index]}
-          </S.BannerItem>
+          <S.BannerItem key={`banner-${index}`}>{banners[index]}</S.BannerItem>
         ))}
       </S.BannerContainer>
       <S.DotWrapper>
