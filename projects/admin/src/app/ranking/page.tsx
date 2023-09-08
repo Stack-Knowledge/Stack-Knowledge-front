@@ -1,4 +1,3 @@
-'use client';
 import { RankingList } from 'common';
 
 const list = [
