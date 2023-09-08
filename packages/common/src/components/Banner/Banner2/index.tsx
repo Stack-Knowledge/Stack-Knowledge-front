@@ -2,7 +2,7 @@
 
 import * as S from './style';
 import Image from 'next/image';
-import DocumentIcon from '../../../assets/Banner/DocumentIcon.png';
+import DocumentIcon from 'common/assets/Banner/DocumentIcon.png';
 
 const Banner2 = () => (
   <S.BannerWrapper>

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 
 import { Banner1, Banner2, Banner3 } from '../index';
