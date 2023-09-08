@@ -6,7 +6,7 @@ const MadeIcon = () => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <circle cx='10' cy='10' r='9.4' stroke='black' stroke-width='1.2' />
+    <circle cx='10' cy='10' r='9.4' stroke='black' strokeWidth='1.2' />
     <rect
       x='9.59998'
       y='5.6001'

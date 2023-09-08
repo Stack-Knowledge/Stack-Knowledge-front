@@ -1,9 +1,8 @@
 'use client';
 
 import * as S from './style';
-import { slicePoint } from '../../utils';
-
-import DefaultProfile from '../../assets/svg/DefaultProfile.svg';
+import { slicePoint } from 'common/utils';
+import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
 
 import { RankingPropsType } from 'types';
 

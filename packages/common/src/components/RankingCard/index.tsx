@@ -4,7 +4,7 @@ import * as S from './style';
 
 import { RankingPropsType } from 'types';
 
-import DefaultProfile from '../../assets/svg/DefaultProfile.svg';
+import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
 
 import Image from 'next/image';
 

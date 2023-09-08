@@ -1,7 +1,7 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { Header } from 'common';
 import { GlobalStyle } from 'common';
 
 import Providers from './providers';
@@ -22,7 +22,10 @@ export default function RootLayout({
     <html lang='ko'>
       <GlobalStyle />
       <Providers>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Header role='admin' />
+          {children}
+        </body>
       </Providers>
     </html>
   );

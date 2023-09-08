@@ -2,7 +2,7 @@
 
 import * as S from './style';
 
-import { slicePoint } from '../../utils';
+import { slicePoint } from 'common/utils';
 
 interface RankingItemProps {
   userName: string;

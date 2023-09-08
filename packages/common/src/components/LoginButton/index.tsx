@@ -4,7 +4,7 @@ import * as S from './style';
 
 import Image from 'next/image';
 
-import GAuthIcon from '../../assets/Login/GAuthIcon.png';
+import GAuthIcon from 'common/assets/Login/GAuthIcon.png';
 
 const LoginButton = ({ ...attributes }) => (
   <S.ButtonWrapper {...attributes}>

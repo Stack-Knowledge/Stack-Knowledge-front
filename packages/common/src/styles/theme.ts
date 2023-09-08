@@ -11,6 +11,10 @@ const color = {
   },
   white: '#FFFFFF',
   black: '#000000',
+  banner1: '#F4CCBA',
+  banner2:
+    'linear-gradient(93deg, #8F9BFF 0.28%, #A3B7FF 48.06%, #F6F7FF 100%)',
+  banner3: '#FFBE71',
 } as const;
 
 const typo = {
