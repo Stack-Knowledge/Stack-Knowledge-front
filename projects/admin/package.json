@@ -21,6 +21,5 @@
   },
   "devDependencies": {
     "tsconfig": "workspace:^"
-    test:'tes'
   }
 }
