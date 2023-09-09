@@ -10,6 +10,7 @@ export const CardWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
 `;
 
 export const ProfileWrapper = styled.div`
