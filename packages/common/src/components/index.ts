@@ -9,3 +9,4 @@ export { default as Banner3 } from './Banner/Banner3';
 export { default as Banner } from './Banner';
 export { default as Header } from './Header';
 export { default as MainContents } from './MainContents';
+export { default as RankingCard } from './RankingCard';
