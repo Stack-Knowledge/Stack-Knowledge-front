@@ -15,26 +15,26 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Contents = styled.div`
-  width: 1279px;
+  width: 1280px;
   height: 380px;
   border-radius: 20px;
   background-color: rgba(217, 217, 217, 0.48);
   display: flex;
   padding: 38px 40px;
   gap: 48px;
-  overflow: scroll;
+  overflow-x: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
 
   // 후에 리스트 래퍼에 이 코드를 작성합니다.
-  .medal:nth-child(1n) {
+  .medalWrapper:nth-child(1n) .medal {
     background-color: #ffd79b;
   }
-  .medal:nth-child(2n) {
+  .medalWrapper:nth-child(2n) .medal {
     background-color: ${({ theme }) => theme.color.gray['040']};
   }
-  .medal:nth-child(3n) {
+  .medalWrapper:nth-child(3n) .medal {
     background-color: #ce865d;
   }
 `;
