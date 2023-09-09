@@ -21,7 +21,7 @@ export const ItemListWrapper = styled.div`
 
 export const Line = styled.div`
   width: 33.75rem;
-  height: 1px;
+  height: 0.0625rem;
   margin-top: 0.8125rem;
   background-color: ${({ theme }) => theme.color.gray['030']};
 `;
