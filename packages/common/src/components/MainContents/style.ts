@@ -17,6 +17,7 @@ export const ContentWrapper = styled.div`
 export const Contents = styled.div`
   width: 1280px;
   height: 380px;
+  position: relative;
   border-radius: 20px;
   background-color: rgba(217, 217, 217, 0.48);
   display: flex;
@@ -27,7 +28,6 @@ export const Contents = styled.div`
     display: none;
   }
 
-  // 후에 리스트 래퍼에 이 코드를 작성합니다.
   .medalWrapper:nth-child(1n) .medal {
     background-color: #ffd79b;
   }

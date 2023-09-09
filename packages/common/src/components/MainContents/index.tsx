@@ -166,7 +166,47 @@ const rankingList = [
     user: {
       id: 'sampleId',
       email: 'sample@gmail.com',
-      name: '하제우와이정우와정찬교',
+      name: '하제우',
+      profileImage: null,
+    },
+  },
+  {
+    id: 'sampleId',
+    cumulatePoint: 600,
+    user: {
+      id: 'sampleId',
+      email: 'sample@gmail.com',
+      name: '이태랑',
+      profileImage: null,
+    },
+  },
+  {
+    id: 'sampleId',
+    cumulatePoint: 500,
+    user: {
+      id: 'sampleId',
+      email: 'sample@gmail.com',
+      name: '하제우',
+      profileImage: null,
+    },
+  },
+  {
+    id: 'sampleId',
+    cumulatePoint: 400,
+    user: {
+      id: 'sampleId',
+      email: 'sample@gmail.com',
+      name: '이태랑',
+      profileImage: null,
+    },
+  },
+  {
+    id: 'sampleId',
+    cumulatePoint: 300,
+    user: {
+      id: 'sampleId',
+      email: 'sample@gmail.com',
+      name: '하제우',
       profileImage: null,
     },
   },
@@ -197,12 +237,12 @@ const Banner = () => (
     <S.MissionText>문제</S.MissionText>
     <S.ContentWrapper>
       <S.Contents>
-        {missionList.map((mission) => (
+        {missionList.map((mission, index) => (
           <TaskCard
             userName={mission.user.name}
             taskTitle={mission.title}
             miledge={mission.point}
-            key={mission.id}
+            key={mission.id + index}
           />
         ))}
       </S.Contents>
@@ -213,7 +253,7 @@ const Banner = () => (
             cumulatePoint={ranking.cumulatePoint}
             rank={index + 1}
             id={ranking.id}
-            key={ranking.id}
+            key={ranking.id + index}
           />
         ))}
       </S.Contents>

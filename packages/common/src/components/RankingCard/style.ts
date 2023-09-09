@@ -34,6 +34,8 @@ export const UserName = styled.span`
 export const FlexWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 14rem;
+  justify-content: center;
 `;
 
 export const Point = styled.span`
