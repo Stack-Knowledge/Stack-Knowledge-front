@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 
 export const ItemWrapper = styled.div`
-  width: 28.25rem;
+  width: 33.75rem;
   height: 4.375rem;
   border-radius: 0.625rem;
   display: flex;

@@ -2,8 +2,8 @@
 
 import * as S from './style';
 import Image from 'next/image';
-import SunIcon from '../../../assets/Banner/SunIcon.png';
-import LetgoIcon from '../../../assets/Banner/LetgoIcon.png';
+import SunIcon from 'common/assets/Banner/SunIcon.png';
+import LetgoIcon from 'common/assets/Banner/LetgoIcon.png';
 
 const Banner1 = () => (
   <S.BannerWrapper>

@@ -1,7 +1,6 @@
 {
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
-    "jsxImportSource": "@emotion/react",
     "jsx": "preserve",
     "paths": {
       "common/*": ["../../packages/common/src/*"],
