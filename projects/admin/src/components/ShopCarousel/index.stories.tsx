@@ -10,4 +10,4 @@ export default {
 
 type Story = StoryObj<typeof ShopCarousel>;
 
-export const Admin: Story = {};
+export const Primary: Story = {};
