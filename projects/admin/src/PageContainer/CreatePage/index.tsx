@@ -4,7 +4,7 @@ import { Timer, TitleInput } from 'admin/components';
 import { SubmitInput } from 'common';
 
 import * as S from './style';
-const CreatPage = () => (
+const CreatePage = () => (
   <>
     <S.PageWrapper>
       <div>
@@ -22,4 +22,4 @@ const CreatPage = () => (
   </>
 );
 
-export default CreatPage;
+export default CreatePage;
