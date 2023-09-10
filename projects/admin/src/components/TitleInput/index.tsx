@@ -12,7 +12,7 @@ const TitleInput = () => {
   };
 
   return (
-    <S.TitleInputWrapper>
+    <S.TitleInputWrapper inputValue={inputValue.length}>
       <S.TitleInput
         placeholder='제목을 작성해 주시기 바랍니다.'
         onChange={onInputHandler}
