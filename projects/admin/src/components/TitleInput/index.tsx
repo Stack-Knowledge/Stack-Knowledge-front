@@ -6,7 +6,7 @@ const TitleInput = () => {
 
   const onInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-    if (inputValue.length <= 20) {
+    if (inputValue.length <= 50) {
       setInputValue(inputValue);
     }
   };
@@ -18,7 +18,7 @@ const TitleInput = () => {
         onChange={onInputHandler}
         value={inputValue}
       />
-      <span>{inputValue.length} / 20</span>
+      <span>{inputValue.length} / 50</span>
     </S.TitleInputWrapper>
   );
 };

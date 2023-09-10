@@ -10,10 +10,8 @@ export const TitleInputWrapper = styled.div<{ inputValue: number }>`
   box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
 
   span {
-    color: ${(props) =>
-      props.inputValue === 20
-        ? 'var(--maincolor, #FFA927)'
-        : 'var(--darkgray_3, #6c6c6c)'};
+    color: ${({ inputValue, theme }) =>
+      inputValue === 50 ? theme.color.primary : theme.color.gray['050']};
   }
 `;
 
