@@ -44,7 +44,7 @@ export const SubmitButtonWrapper = styled.div<{ inputValue: number }>`
 export const SubmitButton = styled.button`
   background: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.typo.body1};
+  ${({ theme }) => theme.typo.body1};
   width: 7.6875rem;
   height: 2.5rem;
   border-radius: 0.625rem;
