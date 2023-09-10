@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const CarouselWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 3rem;
 `;
 
 export const ContentWrapper = styled.div`
