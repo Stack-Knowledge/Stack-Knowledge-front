@@ -11,7 +11,7 @@ export const TitleInputWrapper = styled.div<{ inputValue: number }>`
 
   span {
     color: ${({ inputValue, theme }) =>
-      inputValue === 50 ? theme.color.primary : theme.color.gray['050']};
+      inputValue >= 50 ? theme.color.primary : theme.color.gray['050']};
   }
 `;
 
