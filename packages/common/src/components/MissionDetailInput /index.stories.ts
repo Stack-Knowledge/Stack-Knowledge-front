@@ -1,14 +1,14 @@
 'use client';
 
-import SubmitInput from '.';
+import MissionDetailInput from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'common/SubmitInput',
-  component: SubmitInput,
-} as Meta<typeof SubmitInput>;
+  title: 'common/MissionDetailInput ',
+  component: MissionDetailInput,
+} as Meta<typeof MissionDetailInput>;
 
-type Story = StoryObj<typeof SubmitInput>;
+type Story = StoryObj<typeof MissionDetailInput>;
 
 export const Admin: Story = {
   args: {

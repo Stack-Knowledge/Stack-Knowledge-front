@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import * as S from './style';
 
-interface SubmitInputProps {
+interface MissionDetailInputProps {
   role: 'admin' | 'client';
 }
 
-const SubmitInput: React.FC<SubmitInputProps> = ({ role }) => {
+const MissionDetailInput: React.FC<MissionDetailInputProps> = ({ role }) => {
   const [inputValue, setInputValue] = useState<string>('');
   const MAXLENGTH = 500 as const;
 
@@ -20,8 +20,8 @@ const SubmitInput: React.FC<SubmitInputProps> = ({ role }) => {
 
   return (
     <S.SubmitContainer>
-      <S.SubmitInputWrapper>
-        <S.SubmitInput
+      <S.MissionDetailInputWrapper>
+        <S.MissionDetailInput
           placeholder={
             role === 'admin'
               ? '문제를 작성해주시기 바랍니다.'
@@ -31,7 +31,7 @@ const SubmitInput: React.FC<SubmitInputProps> = ({ role }) => {
           value={inputValue}
           onChange={onInputHandler}
         />
-      </S.SubmitInputWrapper>
+      </S.MissionDetailInputWrapper>
       <S.SubmitButtonWrapper inputValue={inputValue.length}>
         <span>
           {inputValue.length} / {MAXLENGTH}
@@ -42,4 +42,4 @@ const SubmitInput: React.FC<SubmitInputProps> = ({ role }) => {
   );
 };
 
-export default SubmitInput;
+export default MissionDetailInput;
