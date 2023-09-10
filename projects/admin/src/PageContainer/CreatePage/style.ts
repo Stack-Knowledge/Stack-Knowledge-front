@@ -7,7 +7,7 @@ export const PageWrapper = styled.div`
 `;
 
 export const TimerWrapper = styled.div`
-  margin: 3.75rem 0 3.75rem 0;
+  margin: 3.75rem 0;
 `;
 
 export const Section = styled.div`
