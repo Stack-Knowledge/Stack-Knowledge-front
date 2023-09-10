@@ -23,7 +23,6 @@ export const SubmitInput = styled.textarea`
 
   &::placeholder {
     color: ${({ theme }) => theme.color.gray['050']};
-    font-size: ${({ theme }) => theme.typo.body1};
     font-weight: 500;
   }
 `;
