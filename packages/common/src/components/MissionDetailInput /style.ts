@@ -7,12 +7,12 @@ export const SubmitContainer = styled.div`
   border-radius: 0.625rem;
   box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
 `;
-export const SubmitInputWrapper = styled.div`
+export const MissionDetailInputWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-export const SubmitInput = styled.textarea`
+export const MissionDetailInput = styled.textarea`
   background: ${({ theme }) => theme.color.gray['010']};
   ${({ theme }) => theme.typo.body1};
   outline: none;
