@@ -2,12 +2,13 @@
 
 import * as S from './style';
 
-import { MissionCarousel } from 'admin/components';
+import { ShopCarousel } from 'admin/components';
 
 const ShopPage = () => (
-  <>
-    <S.ScoringText>상점</S.ScoringText>
-  </>
+  <S.PageWrapper>
+    <S.ShopText>상점</S.ShopText>
+    <ShopCarousel />
+  </S.PageWrapper>
 );
 
 export default ShopPage;
