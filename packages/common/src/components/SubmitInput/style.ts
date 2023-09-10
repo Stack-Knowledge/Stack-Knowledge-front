@@ -27,10 +27,18 @@ export const SubmitInput = styled.textarea`
   }
 `;
 
-export const SubmitButtonWrapper = styled.div`
+export const SubmitButtonWrapper = styled.div<{ inputValue: number }>`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin: 0 2.375rem 1.25rem 0;
+
+  span {
+    color: ${({ inputValue, theme }) =>
+      inputValue >= 500 ? theme.color.primary : theme.color.gray['050']};
+    display: flex;
+    align-items: flex-end;
+    margin-left: 1.125rem;
+  }
 `;
 
 export const SubmitButton = styled.button`
