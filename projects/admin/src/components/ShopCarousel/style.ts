@@ -12,3 +12,7 @@ export const ContentWrapper = styled.div`
   grid-template-rows: repeat(2, 1fr);
   gap: 4.125rem 3rem;
 `;
+
+export const PointerWrapper = styled.div`
+  cursor: pointer;
+`;

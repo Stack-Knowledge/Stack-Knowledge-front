@@ -215,13 +215,17 @@ const ShopCarousel = () => {
   // api 로직 구현
   return (
     <S.CarouselWrapper>
-      <VectorIcon direction='left' />
+      <S.PointerWrapper>
+        <VectorIcon direction='left' />
+      </S.PointerWrapper>
       <S.ContentWrapper>
         {list.map((item, index) => (
           <ShopItemCard key={item.id + index} data={item} />
         ))}
       </S.ContentWrapper>
-      <VectorIcon direction='right' />
+      <S.PointerWrapper>
+        <VectorIcon direction='right' />
+      </S.PointerWrapper>
     </S.CarouselWrapper>
   );
 };
