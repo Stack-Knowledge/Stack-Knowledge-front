@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const TitleInputWrapper = styled.div<{ inputContent: number }>`
+export const TitleInputWrapper = styled.div`
   background: ${({ theme }) => theme.color.gray['010']};
   width: 59.375rem;
   height: 6.25rem;
@@ -9,12 +9,12 @@ export const TitleInputWrapper = styled.div<{ inputContent: number }>`
   align-items: center;
   box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
 
-  span {
+  /* span {
     color: ${(props) =>
-      props.inputContent === 20
-        ? 'var(--maincolor, #FFA927)'
-        : 'var(--darkgray_3, #6c6c6c)'};
-  }
+    props.inputContent === 20
+      ? 'var(--maincolor, #FFA927)'
+      : 'var(--darkgray_3, #6c6c6c)'};
+  } */
 `;
 
 export const TitleInput = styled.input`

@@ -1,24 +1,24 @@
-`use client`;
-
 import { useState } from 'react';
 import * as S from './style';
 
 const TitleInput = () => {
-  const [inputCount, setInputCount] = useState<number>(0);
+  const [inputValue, setInputValue] = useState<string>('');
 
   const onInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-    setInputCount(inputValue.length <= 20 ? inputValue.length : 20);
+    if (inputValue.length <= 20) {
+      setInputValue(inputValue);
+    }
   };
 
   return (
-    <S.TitleInputWrapper inputContent={inputCount}>
+    <S.TitleInputWrapper>
       <S.TitleInput
         placeholder='제목을 작성해 주시기 바랍니다.'
-        maxLength={20}
         onChange={onInputHandler}
+        value={inputValue}
       />
-      <span>{inputCount} / 20</span>
+      <span>{inputValue.length} / 20</span>
     </S.TitleInputWrapper>
   );
 };
