@@ -33,11 +33,11 @@ export const SubmitButtonWrapper = styled.div<{ inputValue: number }>`
   margin: 0 2.375rem 1.25rem 0;
 
   span {
+    color: ${({ inputValue, theme }) =>
+      inputValue >= 500 ? theme.color.primary : theme.color.gray['050']};
     display: flex;
     align-items: flex-end;
     margin-left: 1.125rem;
-    color: ${({ inputValue, theme }) =>
-      inputValue >= 500 ? theme.color.primary : theme.color.gray['050']};
   }
 `;
 
