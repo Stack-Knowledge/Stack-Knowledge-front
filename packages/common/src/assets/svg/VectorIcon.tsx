@@ -1,10 +1,15 @@
-const VectorIcon = () => (
+interface VectorIconProps {
+  direction: 'left' | 'right';
+}
+
+const VectorIcon: React.FC<VectorIconProps> = ({ direction }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='80'
     height='80'
     viewBox='0 0 80 80'
     fill='none'
+    transform={`${direction === 'right' ? 'rotate(-180)' : ''}`}
   >
     <circle cx='40' cy='40' r='40' fill='#D9D9D9' />
     <rect
