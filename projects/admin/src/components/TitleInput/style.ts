@@ -28,6 +28,5 @@ export const TitleInput = styled.input`
 
   &::placeholder {
     color: ${({ theme }) => theme.color.gray['050']};
-    font-weight: 500;
   }
 `;
