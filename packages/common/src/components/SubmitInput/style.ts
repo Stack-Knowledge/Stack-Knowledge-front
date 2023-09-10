@@ -13,6 +13,7 @@ export const SubmitInputWrapper = styled.div`
 
 export const SubmitInput = styled.textarea`
   background: ${({ theme }) => theme.color.gray['010']};
+  ${({ theme }) => theme.typo.body1};
   outline: none;
   width: 57.125rem;
   height: 13.75rem;
