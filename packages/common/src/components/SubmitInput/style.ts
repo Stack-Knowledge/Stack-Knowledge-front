@@ -5,6 +5,7 @@ export const SubmitContainer = styled.div`
   width: 59.375rem;
   height: 18.75rem;
   border-radius: 0.625rem;
+  box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
 `;
 export const SubmitInputWrapper = styled.div`
   display: flex;
