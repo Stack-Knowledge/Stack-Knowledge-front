@@ -18,7 +18,7 @@ const RankingCard: React.FC<RankingCardType> = ({
   user: { profileImage, name },
 }) => {
   return (
-    <S.CardWrapper>
+    <S.CardWrapper className='medalWrapper'>
       {rank <= 3 && <S.Medal className='medal'>{rank}</S.Medal>}
       <S.ProfileWrapper>
         <Image fill alt='profile' src={profileImage ?? DefaultProfile} />

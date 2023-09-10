@@ -10,17 +10,7 @@ export const CardWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   position: relative;
-
-  // 후에 리스트 래퍼에 이 코드를 작성합니다.
-  /* .medal:nth-child(1n) {
-    background-color: #ffd79b;
-  }
-  .medal:nth-child(2n) {
-    background-color: ${({ theme }) => theme.color.gray['040']};
-  }
-  .medal:nth-child(3n) {
-    background-color: #ce865d;
-  } */
+  cursor: pointer;
 `;
 
 export const ProfileWrapper = styled.div`
@@ -45,6 +35,8 @@ export const UserName = styled.span`
 export const FlexWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 14rem;
+  justify-content: center;
 `;
 
 export const Point = styled.span`
