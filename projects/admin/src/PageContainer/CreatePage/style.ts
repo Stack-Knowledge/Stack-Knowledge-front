@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const PageWrapper = styled.div`
   width: 100vw;
-
   display: flex;
   justify-content: center;
 `;
@@ -20,4 +19,5 @@ export const Section = styled.div`
 
 export const MissionWrapper = styled.div`
   margin-top: 1.875rem;
+  margin-bottom: 4rem;
 `;
