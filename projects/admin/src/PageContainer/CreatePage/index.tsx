@@ -1,6 +1,6 @@
 'use client';
 
-import { SubmitInput } from 'common';
+import { MissionDetailInput } from 'common';
 
 import { Timer, TitleInput } from 'admin/components';
 import * as S from './style';
@@ -15,7 +15,7 @@ const CreatePage = () => (
       <TitleInput />
       <S.MissionWrapper>
         <S.Section>[문제]</S.Section>
-        <SubmitInput role='admin' />
+        <MissionDetailInput role='admin' />
       </S.MissionWrapper>
     </div>
   </S.PageWrapper>
