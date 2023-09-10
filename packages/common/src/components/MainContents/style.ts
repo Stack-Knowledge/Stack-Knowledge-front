@@ -4,25 +4,25 @@ export const MissionText = styled.h4`
   ${({ theme }) => theme.typo.h4};
   color: ${({ theme }) => theme.color.black};
   font-weight: 600;
-  margin: 65px 0 20px;
-  width: 1280px;
+  margin: 4.0625rem 0 1.25rem;
+  width: 80rem;
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 3.125rem;
 `;
 
 export const Contents = styled.div`
-  width: 1280px;
-  height: 380px;
+  width: 80rem;
+  height: 23.75rem;
   position: relative;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: rgba(217, 217, 217, 0.48);
   display: flex;
-  padding: 38px 40px;
-  gap: 48px;
+  padding: 2.375rem 2.5rem;
+  gap: 3rem;
   overflow-x: scroll;
   &::-webkit-scrollbar {
     display: none;
