@@ -3,6 +3,7 @@ import * as S from './style';
 
 const TitleInput = () => {
   const [inputValue, setInputValue] = useState<string>('');
+  const MAXLENGTH = 20 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -18,7 +19,9 @@ const TitleInput = () => {
         onChange={onInputHandler}
         value={inputValue}
       />
-      <span>{inputValue.length} / 50</span>
+      <span>
+        {inputValue.length} / {MAXLENGTH}
+      </span>
     </S.TitleInputWrapper>
   );
 };
