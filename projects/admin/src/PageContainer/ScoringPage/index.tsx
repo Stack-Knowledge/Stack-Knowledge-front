@@ -2,13 +2,13 @@
 
 import * as S from './style';
 
-import { ShopCarousel } from 'admin/components';
+import { MissionCarousel } from 'common';
 
-const ShopPage = () => (
+const ScoringPage = () => (
   <S.PageWrapper>
-    <S.ShopText>채점하기</S.ShopText>
-    <ShopCarousel />
+    <S.ScoringText>채점하기</S.ScoringText>
+    <MissionCarousel />
   </S.PageWrapper>
 );
 
-export default ShopPage;
+export default ScoringPage;
