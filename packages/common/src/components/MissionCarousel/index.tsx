@@ -211,7 +211,7 @@ const list: OrderdItemType[] = [
   },
 ];
 
-const ShopCarousel = () => {
+const MissionCarousel = () => {
   // api 로직 구현
   return (
     <S.CarouselWrapper>
@@ -230,4 +230,4 @@ const ShopCarousel = () => {
   );
 };
 
-export default ShopCarousel;
+export default MissionCarousel;
