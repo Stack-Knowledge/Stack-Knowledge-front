@@ -3,7 +3,7 @@ import * as S from './style';
 
 const TitleInput = () => {
   const [inputValue, setInputValue] = useState<string>('');
-  const MAXLENGTH = 20 as const;
+  const MAXLENGTH = 50 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
