@@ -10,7 +10,7 @@
   "scripts": {
     "client": "pnpm --filter client",
     "admin": "pnpm --filter admin",
-    "storybook": "cd ./apps/storybook && pnpm run storybook upgrade"
+    "storybook": "pnpm --filter storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -24,5 +24,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "resolutions": {
+    "@types/react": "^18.2.0"
+  }
 }

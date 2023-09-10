@@ -1,9 +1,12 @@
 {
-  "extends": "tsconfig/base.json",
-  "main": "index.ts",
+  "extends": "tsconfig/react-components.json",
+  "include": ["**/*.ts", "**/*.tsx", "src", "src/custom.d.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "jsx": "preserve"
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+    "rootDir": ".",
+    "baseUrl": "./src",
+    "paths": {
+      "common/*": ["./*"]
+    }
+  }
 }
