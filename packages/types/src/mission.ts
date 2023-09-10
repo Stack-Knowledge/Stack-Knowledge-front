@@ -10,6 +10,6 @@ export interface Mission {
     id: string;
     email: string;
     name: string;
-    profileImage: string;
+    profileImage: string | null;
   };
 }
