@@ -28,10 +28,12 @@ export const TaskTitle = styled.span`
 `;
 
 export const MiledgeWrapper = styled.div`
+  width: 14rem;
   display: flex;
   gap: 0.25rem;
   margin-top: 8rem;
   align-items: center;
+  justify-content: center;
 `;
 
 export const Mildege = styled.span`
