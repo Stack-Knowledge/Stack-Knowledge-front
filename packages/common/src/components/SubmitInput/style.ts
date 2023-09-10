@@ -22,7 +22,7 @@ export const SubmitInput = styled.textarea`
   resize: none;
   border: 0;
 
-  &::placeholder {
+  ::placeholder {
     color: ${({ theme }) => theme.color.gray['050']};
     font-weight: 500;
   }

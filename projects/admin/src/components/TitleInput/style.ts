@@ -26,7 +26,7 @@ export const TitleInput = styled.input`
   text-indent: 1.125rem;
   border: 0;
 
-  &::placeholder {
+  ::placeholder {
     color: ${({ theme }) => theme.color.gray['050']};
   }
 `;
