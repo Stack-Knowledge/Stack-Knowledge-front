@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+export const PageWrapper = styled.div``;
+
 export const ShopText = styled.h2`
   ${({ theme }) => theme.typo.h2}
   color: ${({ theme }) => theme.color.black};
