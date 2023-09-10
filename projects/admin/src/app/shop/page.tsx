@@ -1,9 +1,5 @@
-import { LoginPage } from 'common';
+import { ShopPage } from 'admin/PageContainer';
 
 export default function Login() {
-  return (
-    <>
-      <LoginPage />
-    </>
-  );
+  return <ShopPage />;
 }
