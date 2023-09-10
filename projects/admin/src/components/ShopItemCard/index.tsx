@@ -8,15 +8,16 @@ import { slicePoint } from 'common';
 
 import { OrderdItemType } from 'types';
 
-const ShopItemCard: React.FC<OrderdItemType> = ({
-  item,
-  price,
-  count,
-  user,
+interface ShopItemCardProps {
+  data: OrderdItemType;
+}
+
+const ShopItemCard: React.FC<ShopItemCardProps> = ({
+  data: { item, price, count, user },
 }) => (
   <S.CardWrapper>
     <S.ImageWrapper>
-      <Image src={item.image} alt='item image' fill />
+      <Image src={item.image} alt='item image' unoptimized fill />
     </S.ImageWrapper>
     <S.TextWrapper>
       <S.UserName>{user.name}</S.UserName>
