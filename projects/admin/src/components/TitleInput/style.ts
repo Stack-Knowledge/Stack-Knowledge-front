@@ -25,4 +25,9 @@ export const TitleInput = styled.input`
   outline: none;
   text-indent: 1.125rem;
   border: 0;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.gray['050']};
+    font-weight: 500;
+  }
 `;
