@@ -5,7 +5,7 @@ export const PageWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 3.75rem;
+  padding: 3.75rem 0 14.75rem;
 `;
 
 export const MiledgeTitle = styled.h2`
@@ -42,6 +42,19 @@ export const SelectButton = styled.button`
   border: 0;
   cursor: pointer;
   margin-top: 6.25rem;
+`;
+
+export const ListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 100px;
+`;
+
+export const ItemText = styled.span`
+  ${({ theme }) => theme.typo.h4};
+  color: ${({ theme }) => theme.color.black};
+  font-weight: 600;
 `;
 
 export const ItemList = styled.div`

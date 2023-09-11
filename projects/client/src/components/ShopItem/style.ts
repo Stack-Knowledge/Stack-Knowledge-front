@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 12.5rem;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 export const ImageWrapper = styled.div`

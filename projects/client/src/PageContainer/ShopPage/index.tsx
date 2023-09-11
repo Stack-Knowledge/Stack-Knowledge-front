@@ -48,11 +48,14 @@ const ShopPage = () => (
       <S.MilidgePoint>{slicePoint(1000)}</S.MilidgePoint>
       <S.MilidgeUnit>M</S.MilidgeUnit>
     </S.FlexWrapper>
-    <S.ItemList>
-      {list.map((item, index) => (
-        <ShopItem key={item.itemId + index} data={item} />
-      ))}
-    </S.ItemList>
+    <S.ListWrapper>
+      <S.ItemText>상품</S.ItemText>
+      <S.ItemList>
+        {list.map((item, index) => (
+          <ShopItem key={item.itemId + index} data={item} />
+        ))}
+      </S.ItemList>
+    </S.ListWrapper>
     <S.SelectButton>선택하기</S.SelectButton>
   </S.PageWrapper>
 );
