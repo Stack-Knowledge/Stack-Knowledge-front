@@ -8,18 +8,25 @@ import { ShopItemType } from 'types';
 
 import { CheckBoxIcon, CheckedBoxIcon } from 'client/assets';
 import { slicePoint } from 'common';
+import { useEffect } from 'react';
 
 interface ShopItemProps {
   data: ShopItemType;
   onItemClick: (index: number) => void;
   index: number;
+  itemStatus: boolean;
 }
 
-const ShopItem: React.FC<ShopItemProps> = ({ data, onItemClick, index }) => (
+const ShopItem: React.FC<ShopItemProps> = ({
+  data,
+  onItemClick,
+  index,
+  itemStatus,
+}) => (
   <S.Wrapper onClick={() => onItemClick(index)}>
     <S.ImageWrapper>
       <S.CheckBox>
-        <CheckBoxIcon />
+        {itemStatus ? <CheckedBoxIcon /> : <CheckBoxIcon />}
       </S.CheckBox>
       <Image unoptimized src={data.image} alt={data.name} fill />
     </S.ImageWrapper>

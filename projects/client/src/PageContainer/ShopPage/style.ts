@@ -47,8 +47,8 @@ export const SelectButton = styled.button`
 export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 100px;
+  gap: 1.5rem;
+  margin-top: 6.25rem;
 `;
 
 export const ItemText = styled.span`
@@ -59,5 +59,5 @@ export const ItemText = styled.span`
 
 export const ItemList = styled.div`
   display: flex;
-  gap: 52px;
+  gap: 3.25rem;
 `;

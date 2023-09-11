@@ -5,7 +5,7 @@ import { ShopItem } from 'client/components';
 
 import { slicePoint } from 'common';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const list = [
   {
@@ -45,7 +45,15 @@ const list = [
 const ShopPage = () => {
   const [itemStatus, setItemStatus] = useState<boolean[]>([]);
 
-  const onItemClick = (index: number) => {};
+  const onItemClick = (index: number) => {
+    const newItemStatus = [...itemStatus];
+    newItemStatus[index] = !newItemStatus[index];
+    setItemStatus(newItemStatus);
+  };
+
+  useEffect(() => {
+    setItemStatus(new Array(list.length).fill(false));
+  }, []);
 
   return (
     <S.PageWrapper>
@@ -63,6 +71,7 @@ const ShopPage = () => {
               onItemClick={onItemClick}
               key={item.itemId + index}
               data={item}
+              itemStatus={itemStatus[index]}
             />
           ))}
         </S.ItemList>
