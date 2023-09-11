@@ -6,15 +6,17 @@ import Image from 'next/image';
 
 import { ShopItemType } from 'types';
 
+import { CheckBoxIcon, CheckedBoxIcon } from 'client/assets';
+
 interface ShopItemProps {
   data: ShopItemType;
 }
 
-const ShopItem = () => (
+const ShopItem: React.FC<ShopItemProps> = ({ data }) => (
   <div>
     <S.ImageWrapper>
       <S.CheckBox></S.CheckBox>
-      <Image />
+      <Image src={data.image} alt={data.name} fill />
     </S.ImageWrapper>
   </div>
 );
