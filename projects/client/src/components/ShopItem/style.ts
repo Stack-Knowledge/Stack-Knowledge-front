@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const ImageWrapper = styled.div`
   width: 12.5rem;
   height: 12.5rem;
@@ -27,6 +32,7 @@ export const ItemName = styled.span`
 export const FlexWrapper = styled.div`
   display: flex;
   gap: 4px;
+  align-items: center;
 `;
 
 export const MilidgePoint = styled.span`

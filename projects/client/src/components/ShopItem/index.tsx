@@ -14,14 +14,19 @@ interface ShopItemProps {
 }
 
 const ShopItem: React.FC<ShopItemProps> = ({ data }) => (
-  <div>
+  <S.Wrapper>
     <S.ImageWrapper>
       <S.CheckBox>
         <CheckedBoxIcon />
       </S.CheckBox>
       <Image unoptimized src={data.image} alt={data.name} fill />
     </S.ImageWrapper>
-  </div>
+    <S.ItemName>{data.name}</S.ItemName>
+    <S.FlexWrapper>
+      <S.MilidgePoint>{slicePoint(data.price)}</S.MilidgePoint>
+      <S.MilidgeUnit>M</S.MilidgeUnit>
+    </S.FlexWrapper>
+  </S.Wrapper>
 );
 
 export default ShopItem;
