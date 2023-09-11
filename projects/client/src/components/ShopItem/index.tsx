@@ -4,7 +4,13 @@ import * as S from './style';
 
 import Image from 'next/image';
 
-const Example = () => (
+import { ShopItemType } from 'types';
+
+interface ShopItemProps {
+  data: ShopItemType;
+}
+
+const ShopItem = () => (
   <div>
     <S.ImageWrapper>
       <S.CheckBox></S.CheckBox>
@@ -13,4 +19,4 @@ const Example = () => (
   </div>
 );
 
-export default Example;
+export default ShopItem;
