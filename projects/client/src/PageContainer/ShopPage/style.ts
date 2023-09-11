@@ -43,3 +43,8 @@ export const SelectButton = styled.button`
   cursor: pointer;
   margin-top: 6.25rem;
 `;
+
+export const ItemList = styled.div`
+  display: flex;
+  gap: 52px;
+`;
