@@ -11,13 +11,15 @@ import { slicePoint } from 'common';
 
 interface ShopItemProps {
   data: ShopItemType;
+  onItemClick: (index: number) => void;
+  index: number;
 }
 
-const ShopItem: React.FC<ShopItemProps> = ({ data }) => (
-  <S.Wrapper>
+const ShopItem: React.FC<ShopItemProps> = ({ data, onItemClick, index }) => (
+  <S.Wrapper onClick={() => onItemClick(index)}>
     <S.ImageWrapper>
       <S.CheckBox>
-        <CheckedBoxIcon />
+        <CheckBoxIcon />
       </S.CheckBox>
       <Image unoptimized src={data.image} alt={data.name} fill />
     </S.ImageWrapper>

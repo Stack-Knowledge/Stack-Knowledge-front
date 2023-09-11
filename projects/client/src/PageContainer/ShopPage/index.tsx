@@ -1,10 +1,11 @@
 'use client';
 
 import * as S from './style';
+import { ShopItem } from 'client/components';
 
 import { slicePoint } from 'common';
 
-import { ShopItem } from 'client/components';
+import { useState } from 'react';
 
 const list = [
   {
@@ -41,23 +42,34 @@ const list = [
   },
 ];
 
-const ShopPage = () => (
-  <S.PageWrapper>
-    <S.MiledgeTitle>현재 마일리지</S.MiledgeTitle>
-    <S.FlexWrapper>
-      <S.MilidgePoint>{slicePoint(1000)}</S.MilidgePoint>
-      <S.MilidgeUnit>M</S.MilidgeUnit>
-    </S.FlexWrapper>
-    <S.ListWrapper>
-      <S.ItemText>상품</S.ItemText>
-      <S.ItemList>
-        {list.map((item, index) => (
-          <ShopItem key={item.itemId + index} data={item} />
-        ))}
-      </S.ItemList>
-    </S.ListWrapper>
-    <S.SelectButton>선택하기</S.SelectButton>
-  </S.PageWrapper>
-);
+const ShopPage = () => {
+  const [itemStatus, setItemStatus] = useState<boolean[]>([]);
+
+  const onItemClick = (index: number) => {};
+
+  return (
+    <S.PageWrapper>
+      <S.MiledgeTitle>현재 마일리지</S.MiledgeTitle>
+      <S.FlexWrapper>
+        <S.MilidgePoint>{slicePoint(1000)}</S.MilidgePoint>
+        <S.MilidgeUnit>M</S.MilidgeUnit>
+      </S.FlexWrapper>
+      <S.ListWrapper>
+        <S.ItemText>상품</S.ItemText>
+        <S.ItemList>
+          {list.map((item, index) => (
+            <ShopItem
+              index={index}
+              onItemClick={onItemClick}
+              key={item.itemId + index}
+              data={item}
+            />
+          ))}
+        </S.ItemList>
+      </S.ListWrapper>
+      <S.SelectButton>선택하기</S.SelectButton>
+    </S.PageWrapper>
+  );
+};
 
 export default ShopPage;
