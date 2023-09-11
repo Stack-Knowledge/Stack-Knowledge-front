@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
+  width: 200px;
   flex-direction: column;
 `;
 
@@ -20,6 +21,9 @@ export const ImageWrapper = styled.div`
 
 export const CheckBox = styled.div`
   position: absolute;
+  z-index: 2;
+  top: 8px;
+  left: 8px;
 `;
 
 export const ItemName = styled.span`
