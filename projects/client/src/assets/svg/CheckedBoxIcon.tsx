@@ -11,8 +11,8 @@ const CheckedBoxIcon = () => (
     <path
       d='M5 8.88889L8.2 12L13 5'
       stroke='#FFA927'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
