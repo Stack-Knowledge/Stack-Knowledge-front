@@ -34,26 +34,26 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           </S.MenuItemWrapper>
           {role === 'admin' ? (
             <>
-              <S.MenuItemWrapper href='#'>
+              <S.MenuItemWrapper href='/mission/scoring'>
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
               </S.MenuItemWrapper>
-              <S.MenuItemWrapper href='#'>
+              <S.MenuItemWrapper href='/mission/create'>
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
               </S.MenuItemWrapper>
             </>
           ) : (
-            <S.MenuItemWrapper href='#'>
+            <S.MenuItemWrapper href='/mission/list'>
               <QuestionIcon />
               <S.ItemTitle>문제</S.ItemTitle>
             </S.MenuItemWrapper>
           )}
-          <S.MenuItemWrapper href='#'>
+          <S.MenuItemWrapper href='/shop'>
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
           </S.MenuItemWrapper>
-          <S.MenuItemWrapper href='#'>
+          <S.MenuItemWrapper href='/ranking'>
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
           </S.MenuItemWrapper>
