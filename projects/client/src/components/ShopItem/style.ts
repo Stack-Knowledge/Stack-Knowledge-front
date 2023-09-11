@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 200px;
+  width: 12.5rem;
   flex-direction: column;
 `;
 
@@ -22,20 +22,20 @@ export const ImageWrapper = styled.div`
 export const CheckBox = styled.div`
   position: absolute;
   z-index: 2;
-  top: 8px;
-  left: 8px;
+  top: 0.5rem;
+  left: 0.5rem;
 `;
 
 export const ItemName = styled.span`
   ${({ theme }) => theme.typo.body2};
   color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 400;
-  margin: 12px 0 4px;
+  margin: 0.75rem 0 0.25rem;
 `;
 
 export const FlexWrapper = styled.div`
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   align-items: center;
 `;
 

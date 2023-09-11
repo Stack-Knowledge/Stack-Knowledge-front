@@ -5,7 +5,7 @@ export const PageWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 60px;
+  padding-top: 3.75rem;
 `;
 
 export const MiledgeTitle = styled.h2`
@@ -16,8 +16,8 @@ export const MiledgeTitle = styled.h2`
 
 export const FlexWrapper = styled.div`
   display: flex;
-  gap: 4px;
-  margin-top: 27px;
+  gap: 0.25rem;
+  margin-top: 1.6875rem;
 `;
 
 export const MilidgePoint = styled.span`
@@ -27,7 +27,7 @@ export const MilidgePoint = styled.span`
 `;
 
 export const MilidgeUnit = styled(MiledgeTitle)`
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 `;
 
 export const SelectButton = styled.button`
@@ -35,11 +35,11 @@ export const SelectButton = styled.button`
   color: ${({ theme }) => theme.color.white};
   font-weight: 600;
 
-  width: 400px;
-  height: 70px;
-  border-radius: 10px;
+  width: 25rem;
+  height: 4.375rem;
+  border-radius: 0.625rem;
   background: ${({ theme }) => theme.color.primary};
   border: 0;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top: 6.25rem;
 `;
