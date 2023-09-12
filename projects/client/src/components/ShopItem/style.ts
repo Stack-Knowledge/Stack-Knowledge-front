@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  display: flex;
   width: 12.5rem;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
 `;
@@ -22,9 +22,9 @@ export const ImageWrapper = styled.div`
 
 export const CheckBox = styled.div`
   position: absolute;
-  z-index: 2;
   top: 0.5rem;
   left: 0.5rem;
+  z-index: 2;
 `;
 
 export const ItemName = styled.span`
