@@ -1,14 +1,13 @@
 'use client';
 
 import * as S from './style';
-
-import Image from 'next/image';
+import { CheckBoxIcon, CheckedBoxIcon } from 'client/assets';
 
 import { ShopItemType } from 'types';
 
-import { CheckBoxIcon, CheckedBoxIcon } from 'client/assets';
 import { slicePoint } from 'common';
-import { useEffect } from 'react';
+
+import Image from 'next/image';
 
 interface ShopItemProps {
   data: ShopItemType;
