@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 export const PageWrapper = styled.div`
   width: 100vw;
+  padding: 3.75rem 0 14.75rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 3.75rem 0 14.75rem;
 `;
 
 export const MiledgeTitle = styled.h2`
@@ -38,10 +38,10 @@ export const SelectButton = styled.button`
   width: 25rem;
   height: 4.375rem;
   border-radius: 0.625rem;
-  background: ${({ theme }) => theme.color.primary};
   border: 0;
-  cursor: pointer;
   margin-top: 6.25rem;
+  background: ${({ theme }) => theme.color.primary};
+  cursor: pointer;
 `;
 
 export const ListWrapper = styled.div`
