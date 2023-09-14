@@ -12,6 +12,10 @@ export const ItemWrapper = styled.div`
   justify-content: space-between;
 `;
 
+export const Span = styled.span`
+  height: 80px;
+`;
+
 export const FlexBox = styled.div`
   display: flex;
   gap: 4px;

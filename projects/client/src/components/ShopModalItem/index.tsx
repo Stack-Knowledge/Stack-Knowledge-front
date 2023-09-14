@@ -14,6 +14,7 @@ const ShopItem = () => (
         <S.MilidgeUnit>M</S.MilidgeUnit>
       </S.FlexBox>
     </S.TextBox>
+    <S.Span />
     <S.Counter>
       <S.CounterContents>
         <S.PointerWrapper>

@@ -9,6 +9,7 @@ export const ModalWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 74px;
+  padding-bottom: 70px;
   position: relative;
 `;
 
@@ -41,4 +42,16 @@ export const CloseButton = styled.button`
   cursor: pointer;
   border: 0;
   background: none;
+`;
+
+export const ItemList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 92px 0 73px;
+  height: 392px;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
