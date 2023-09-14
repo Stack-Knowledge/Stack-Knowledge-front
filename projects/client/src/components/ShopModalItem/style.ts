@@ -1,29 +1,29 @@
 import styled from '@emotion/styled';
 
 export const ItemWrapper = styled.div`
-  width: 400px;
-  height: 80px;
-  border-radius: 10px;
+  width: 25rem;
+  height: 5rem;
+  border-radius: 0.625rem;
   background: #ffd79b;
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 0 18px;
+  padding: 0 1.125rem;
   justify-content: space-between;
 `;
 
 export const Span = styled.span`
-  height: 80px;
+  height: 5rem;
 `;
 
 export const FlexBox = styled.div`
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
 `;
 
 export const TextBox = styled(FlexBox)`
   flex-direction: column;
-  gap: 6px;
+  gap: 0.375rem;
 `;
 
 export const ItemName = styled.span`
@@ -39,21 +39,21 @@ export const PointText = styled(ItemName)`
 export const MilidgeUnit = styled(ItemName)`
   ${({ theme }) => theme.typo.body2};
   font-weight: 400;
-  margin-top: 1px;
+  margin-top: 0.0625rem;
 `;
 
 export const Counter = styled.div`
-  width: 81px;
-  height: 28px;
+  width: 5.0625rem;
+  height: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: ${({ theme }) => theme.color.white};
 `;
 
 export const CounterContents = styled(FlexBox)`
-  gap: 12px;
+  gap: 0.75rem;
   align-items: center;
 `;
 

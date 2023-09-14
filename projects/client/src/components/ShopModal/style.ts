@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 
 export const ModalWrapper = styled.div`
-  width: 540px;
-  height: 800px;
-  border-radius: 20px;
+  width: 33.75rem;
+  height: 50rem;
+  border-radius: 1.25rem;
   background: ${({ theme }) => theme.color.white};
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 74px;
-  padding-bottom: 70px;
+  padding-top: 4.625rem;
+  padding-bottom: 4.375rem;
   position: relative;
 `;
 
@@ -27,9 +27,9 @@ export const PurchusButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 70px;
-  border-radius: 10px;
+  width: 25rem;
+  height: 4.375rem;
+  border-radius: 0.625rem;
   border: 0;
   background: ${({ theme }) => theme.color.primary};
   cursor: pointer;
@@ -37,8 +37,8 @@ export const PurchusButton = styled.button`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 33px;
-  right: 33px;
+  top: 2.0625rem;
+  right: 2.0625rem;
   cursor: pointer;
   border: 0;
   background: none;
@@ -47,9 +47,9 @@ export const CloseButton = styled.button`
 export const ItemList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin: 92px 0 73px;
-  height: 392px;
+  gap: 1.125rem;
+  margin: 5.75rem 0 4.5625rem;
+  height: 24.5rem;
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
