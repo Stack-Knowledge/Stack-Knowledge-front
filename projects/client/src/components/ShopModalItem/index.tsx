@@ -1,6 +1,7 @@
 'use client';
 
 import * as S from './style';
+import { MinusIcon, PlusIcon } from 'client/assets';
 
 import { slicePoint } from 'common';
 
@@ -13,6 +14,17 @@ const ShopItem = () => (
         <S.MilidgeUnit>M</S.MilidgeUnit>
       </S.FlexBox>
     </S.TextBox>
+    <S.Counter>
+      <S.CounterContents>
+        <S.PointerWrapper>
+          <PlusIcon />
+        </S.PointerWrapper>
+        <S.CountText>{1}</S.CountText>
+        <S.PointerWrapper>
+          <MinusIcon />
+        </S.PointerWrapper>
+      </S.CounterContents>
+    </S.Counter>
   </S.ItemWrapper>
 );
 
