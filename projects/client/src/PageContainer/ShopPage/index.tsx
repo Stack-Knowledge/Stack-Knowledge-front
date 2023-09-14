@@ -1,11 +1,11 @@
 'use client';
 
 import * as S from './style';
-import { ShopItem } from 'client/components';
+import { ShopItem, ShopModal } from 'client/components';
 
 import { slicePoint } from 'common';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const list = [
   {
@@ -43,6 +43,8 @@ const list = [
 ];
 
 const ShopPage = () => {
+  const dialog = useRef<HTMLDialogElement>(null);
+
   const [itemStatus, setItemStatus] = useState<boolean[]>([]);
 
   const onItemClick = (index: number) => {
@@ -76,7 +78,12 @@ const ShopPage = () => {
           ))}
         </S.ItemList>
       </S.ListWrapper>
-      <S.SelectButton>선택하기</S.SelectButton>
+      <S.SelectButton onClick={() => dialog.current?.showModal()}>
+        선택하기
+      </S.SelectButton>
+      <S.ModalWrapper ref={dialog}>
+        <ShopModal />
+      </S.ModalWrapper>
     </S.PageWrapper>
   );
 };
