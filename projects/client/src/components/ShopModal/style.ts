@@ -9,6 +9,7 @@ export const ModalWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 74px;
+  position: relative;
 `;
 
 export const ModalTitle = styled.p`
@@ -31,4 +32,13 @@ export const PurchusButton = styled.button`
   border: 0;
   background: ${({ theme }) => theme.color.primary};
   cursor: pointer;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 33px;
+  right: 33px;
+  cursor: pointer;
+  border: 0;
+  background: none;
 `;
