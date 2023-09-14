@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 const list = [
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면1',
     text: '자장면',
     price: 5000,
     image:
@@ -18,7 +18,7 @@ const list = [
   },
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면2',
     text: '자장면',
     price: 5000,
     image:
@@ -26,7 +26,7 @@ const list = [
   },
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면3',
     text: '자장면',
     price: 5000,
     image:
@@ -34,7 +34,7 @@ const list = [
   },
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면4',
     text: '자장면',
     price: 5000,
     image:
@@ -82,7 +82,9 @@ const ShopPage = () => {
         선택하기
       </S.SelectButton>
       <S.ModalWrapper ref={dialog}>
-        <ShopModal />
+        <ShopModal
+          selectedList={list.filter((_, index) => itemStatus[index])}
+        />
       </S.ModalWrapper>
     </S.PageWrapper>
   );

@@ -5,12 +5,20 @@ import { MinusIcon, PlusIcon } from 'client/assets';
 
 import { slicePoint } from 'common';
 
-const ShopItem = () => (
+import { ShopItemType } from 'types';
+
+interface ShopModalItemProps {
+  data: ShopItemType;
+}
+
+const ShopModalItem: React.FC<ShopModalItemProps> = ({
+  data: { name, price },
+}) => (
   <S.ItemWrapper>
     <S.TextBox>
-      <S.ItemName>외출증</S.ItemName>
+      <S.ItemName>{name}</S.ItemName>
       <S.FlexBox>
-        <S.PointText>{slicePoint(1000)}</S.PointText>
+        <S.PointText>{slicePoint(price)}</S.PointText>
         <S.MilidgeUnit>M</S.MilidgeUnit>
       </S.FlexBox>
     </S.TextBox>
@@ -29,4 +37,4 @@ const ShopItem = () => (
   </S.ItemWrapper>
 );
 
-export default ShopItem;
+export default ShopModalItem;
