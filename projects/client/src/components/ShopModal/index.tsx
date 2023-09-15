@@ -20,7 +20,9 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
 
   const calculateCount = (index: number, isPlus: boolean) => {
     const newCountList = [...countList];
-    isPlus ? newCountList[index]++ : newCountList[index]--;
+    isPlus
+      ? newCountList[index]++
+      : newCountList[index] !== 0 && newCountList[index]--;
     setCountList(newCountList);
   };
 
