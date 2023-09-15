@@ -9,10 +9,16 @@ import { ShopItemType } from 'types';
 
 interface ShopModalItemProps {
   data: ShopItemType;
+  count: number;
+  calculateCount: (index: number, isPlus: boolean) => void;
+  index: number;
 }
 
 const ShopModalItem: React.FC<ShopModalItemProps> = ({
   data: { name, price },
+  count,
+  calculateCount,
+  index,
 }) => (
   <S.ItemWrapper>
     <S.TextBox>
@@ -25,11 +31,11 @@ const ShopModalItem: React.FC<ShopModalItemProps> = ({
     <S.Span />
     <S.Counter>
       <S.CounterContents>
-        <S.PointerWrapper>
+        <S.PointerWrapper onClick={() => calculateCount(index, true)}>
           <PlusIcon />
         </S.PointerWrapper>
-        <S.CountText>{1}</S.CountText>
-        <S.PointerWrapper>
+        <S.CountText>{count}</S.CountText>
+        <S.PointerWrapper onClick={() => calculateCount(index, false)}>
           <MinusIcon />
         </S.PointerWrapper>
       </S.CounterContents>
