@@ -18,9 +18,9 @@ const Timer: React.FC<TimerProps> = ({ hour, minute }) => {
         setCurrentHour((prevHour) => prevHour - 1);
         setCurrentMinute(59);
       }
-    }, 600); // 매 분마다 실행
+    }, 60000);
 
-    return () => clearInterval(intervalId); // 컴포넌트 언마운트 시 인터벌 해제
+    return () => clearInterval(intervalId);
   }, [currentHour, currentMinute]);
 
   return (
