@@ -5,8 +5,6 @@ import { MissionDetailInput } from 'common';
 import { Timer, TitleInput } from 'admin/components';
 import * as S from './style';
 
-import { useRef } from 'react';
-
 const CreatePage = () => {
   return (
     <S.PageWrapper>
