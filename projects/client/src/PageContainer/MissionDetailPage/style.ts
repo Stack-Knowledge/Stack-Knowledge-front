@@ -21,3 +21,21 @@ export const MissionWrapper = styled.div`
   margin-top: 1.875rem;
   margin-bottom: 4rem;
 `;
+
+export const ModalWrapper = styled.dialog`
+  position: absolute;
+  margin-top: 16rem;
+  margin-left: 30.4rem;
+  border-radius: 1.25rem;
+  border: 0;
+  padding: 0;
+  box-shadow: 0.25rem 0.25rem 0.625rem 0rem rgba(169, 169, 169, 0.6);
+  ::backdrop {
+    opacity: 0;
+  }
+`;
+
+export const SectionWrapper = styled.span`
+  display: flex;
+  gap: 10px;
+`;

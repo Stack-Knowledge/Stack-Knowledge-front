@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const ModalWrapper = styled.div`
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: #fbfbfb;
   ${({ theme }) => theme.color.black};
   width: 17.5rem;
   height: 9.375rem;
-  box-shadow: 0.25rem 0.25rem 0.625rem 0rem rgba(169, 169, 169, 0.6);
+
   border-radius: 1.25rem;
 `;
 
