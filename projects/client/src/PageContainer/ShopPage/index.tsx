@@ -1,16 +1,16 @@
 'use client';
 
 import * as S from './style';
-import { ShopItem } from 'client/components';
+import { ShopItem, ShopModal } from 'client/components';
 
 import { slicePoint } from 'common';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const list = [
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면1',
     text: '자장면',
     price: 5000,
     image:
@@ -18,7 +18,7 @@ const list = [
   },
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면2',
     text: '자장면',
     price: 5000,
     image:
@@ -26,7 +26,7 @@ const list = [
   },
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면3',
     text: '자장면',
     price: 5000,
     image:
@@ -34,7 +34,7 @@ const list = [
   },
   {
     itemId: 'id',
-    name: '자장면',
+    name: '자장면4',
     text: '자장면',
     price: 5000,
     image:
@@ -43,6 +43,8 @@ const list = [
 ];
 
 const ShopPage = () => {
+  const dialog = useRef<HTMLDialogElement>(null);
+
   const [itemStatus, setItemStatus] = useState<boolean[]>([]);
 
   const onItemClick = (index: number) => {
@@ -76,7 +78,14 @@ const ShopPage = () => {
           ))}
         </S.ItemList>
       </S.ListWrapper>
-      <S.SelectButton>선택하기</S.SelectButton>
+      <S.SelectButton onClick={() => dialog.current?.showModal()}>
+        선택하기
+      </S.SelectButton>
+      <S.ModalWrapper ref={dialog}>
+        <ShopModal
+          selectedList={list.filter((_, index) => itemStatus[index])}
+        />
+      </S.ModalWrapper>
     </S.PageWrapper>
   );
 };
