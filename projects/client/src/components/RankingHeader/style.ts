@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const RankingHeaderWrapper = styled.div`
-  gap: 40px;
-  width: 250px;
+  gap: 2.5rem;
+  width: 16.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@ export const ProfileImageWrapper = styled.div`
   height: 7.5rem;
   overflow: hidden;
   position: relative;
-  right: 8px;
+  right: 0.5rem;
   border-radius: 6.25rem;
   img {
     object-fit: cover;
