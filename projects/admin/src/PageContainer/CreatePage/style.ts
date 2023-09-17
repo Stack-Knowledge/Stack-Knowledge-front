@@ -11,7 +11,7 @@ export const TimerWrapper = styled.div`
 `;
 
 export const Section = styled.div`
-  color: ${({ theme }) => theme.color.black};
+  ${({ theme }) => theme.color.black};
   ${({ theme }) => theme.typo.button};
   margin-bottom: 1.25rem;
   font-weight: 400;
