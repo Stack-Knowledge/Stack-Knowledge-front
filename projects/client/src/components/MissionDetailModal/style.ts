@@ -22,7 +22,7 @@ export const ModalContent = styled.span`
   font-weight: 500;
 `;
 
-export const ModalButtonWrapper = styled.div`
+export const ModalButtonWrapper = styled.form`
   display: flex;
   justify-content: center;
   gap: 1rem;
