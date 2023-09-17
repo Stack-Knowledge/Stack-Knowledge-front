@@ -1,10 +1,11 @@
 'use client';
 
 import { MissionDetailInput } from 'common';
-import { MissionDetailModal } from 'client/components';
 
+import { MissionDetailModal } from 'client/components';
 import { Timer } from 'client/components';
 import * as S from './style';
+
 import { useRef } from 'react';
 
 const timerData = {

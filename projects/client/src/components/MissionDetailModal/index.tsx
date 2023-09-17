@@ -7,13 +7,9 @@ const MissionDetailModal = () => {
       <S.ModalContentWrapper>
         <S.ModalContent>문제를 제출하시겠습니까?</S.ModalContent>
       </S.ModalContentWrapper>
-      <S.ModalButtonWrapper>
-        <form method='dialog'>
-          <S.ModalDeleted>취소</S.ModalDeleted>
-        </form>
-        <form method='dialog'>
-          <S.ModalConfirm>확인</S.ModalConfirm>
-        </form>
+      <S.ModalButtonWrapper method='dialog'>
+        <S.ModalDeleted>취소</S.ModalDeleted>
+        <S.ModalConfirm>확인</S.ModalConfirm>
       </S.ModalButtonWrapper>
     </S.ModalWrapper>
   );

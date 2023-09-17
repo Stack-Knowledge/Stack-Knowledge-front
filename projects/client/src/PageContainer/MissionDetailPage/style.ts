@@ -37,5 +37,5 @@ export const ModalWrapper = styled.dialog`
 
 export const SectionWrapper = styled.span`
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 `;

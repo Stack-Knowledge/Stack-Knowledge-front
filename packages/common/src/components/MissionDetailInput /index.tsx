@@ -1,9 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 import * as S from './style';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
-  onClick: () => void; // Add this line
+  onClick?: () => void;
 }
 
 const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
