@@ -21,6 +21,7 @@ const sectionContents = [
 
 const MissionDetailPage = () => {
   const dialog = useRef<HTMLDialogElement>(null);
+
   return (
     <S.PageWrapper>
       <div>
