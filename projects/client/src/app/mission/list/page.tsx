@@ -1,5 +1,5 @@
-import { MissionDetailPage } from 'client/PageContainer';
+import { MissionListPage } from 'client/PageContainer';
 
 export default function MissionDetail() {
-  return <MissionDetailPage />;
+  return <MissionListPage />;
 }
