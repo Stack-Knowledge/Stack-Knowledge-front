@@ -10,8 +10,6 @@ const MissionDetailModal = () => {
       <S.ModalButtonWrapper>
         <form method='dialog'>
           <S.ModalDeleted>취소</S.ModalDeleted>
-        </form>
-        <form method='dialog'>
           <S.ModalConfirm>확인</S.ModalConfirm>
         </form>
       </S.ModalButtonWrapper>
