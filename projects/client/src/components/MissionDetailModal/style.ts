@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const ModalWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   ${({ theme }) => theme.color.black};
+
   width: 280px;
   height: 150px;
   box-shadow: 4px 4px 10px 0px rgba(169, 169, 169, 0.6);
@@ -12,39 +13,43 @@ export const ModalWrapper = styled.div`
 export const ModalContentWrapper = styled.div`
   display: flex;
   height: 98px;
-  height: 100%;
 
   justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.span`
   font-weight: 500;
-  color: green;
+  color: ${({ theme }) => theme.color.black};
 `;
 
 export const ModalButtonWrapper = styled.div`
   display: flex;
-  margin-top: 35px;
+  justify-content: center;
+  gap: 16px;
 `;
 
 export const ModalDeleted = styled.button`
   background-color: ${({ theme }) => theme.color.primary};
-  ${({ theme }) => theme.color.white};
-
+  color: ${({ theme }) => theme.color.white};
+  ${({ theme }) => theme.typo.body2};
   width: 116px;
   border-radius: 10px;
   border: 0;
   padding: 10px;
   margin-left: 8px;
+  cursor: pointer;
 `;
 export const ModalConfirm = styled.button`
-  ${({ theme }) => theme.color.primary};
-  border-color: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.white};
+  border: 1px solid ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
+  ${({ theme }) => theme.typo.body2};
   width: 116px;
   border-radius: 10px;
   padding: 10px;
-  border: 0;
+
   margin-right: 8px;
+  cursor: pointer;
 `;
