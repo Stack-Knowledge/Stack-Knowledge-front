@@ -7,8 +7,8 @@ import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
 import { RankingPropsType } from 'types';
 
 interface RankingItemProps {
-  ranking: number;
   item: RankingPropsType;
+  ranking: number;
 }
 
 const RankingItem: React.FC<RankingItemProps> = ({
