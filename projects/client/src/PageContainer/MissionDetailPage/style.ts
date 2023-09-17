@@ -25,7 +25,6 @@ export const MissionWrapper = styled.div`
 export const ModalWrapper = styled.dialog`
   position: absolute;
   margin-top: 16rem;
-  margin-left: 30.4rem;
   border-radius: 1.25rem;
   border: 0;
   padding: 0;
