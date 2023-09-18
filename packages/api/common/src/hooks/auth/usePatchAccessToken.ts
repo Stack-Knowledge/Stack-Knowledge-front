@@ -1,14 +1,14 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { refreshQueryKeys, authUrl, patch } from 'api/common';
+import { authQueryKeys, authUrl, patch } from 'api/common';
 
-import { tokenResponseType } from 'types';
+import { TokenResponseType } from 'types';
 
 export const usePatchAccessToken = () =>
-  useMutation<tokenResponseType>(
-    refreshQueryKeys.patchAccessToken(),
+  useMutation<TokenResponseType>(
+    authQueryKeys.patchAccessToken(),
     () =>
-      patch(authUrl.refresh(), {
+      patch(authUrl.auth(), {
         headers: {
           RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
         },

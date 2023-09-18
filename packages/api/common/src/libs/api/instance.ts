@@ -20,7 +20,7 @@ const waitRefreshEnd = () =>
 
 apiInstance.interceptors.response.use(
   (response) => {
-    if (response.config.url === authUrl.refresh()) {
+    if (response.config.url === authUrl.auth()) {
       isRefreshing = false;
     }
 
@@ -31,7 +31,7 @@ apiInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   async (error) => {
-    if (error.config.url === authUrl.refresh()) {
+    if (error.config.url === authUrl.auth()) {
       isRefreshing = false;
 
       location.replace('/auth/login');

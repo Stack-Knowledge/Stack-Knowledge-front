@@ -4,5 +4,5 @@ export const missionUrl = {
 } as const;
 
 export const authUrl = {
-  refresh: () => `/auth`,
+  auth: () => `/auth`,
 } as const;
