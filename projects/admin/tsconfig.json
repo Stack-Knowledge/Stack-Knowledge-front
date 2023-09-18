@@ -4,7 +4,8 @@
     "jsx": "preserve",
     "paths": {
       "common/*": ["../../packages/common/src/*"],
-      "admin/*": ["./src/*"]
+      "admin/*": ["./src/*"],
+      "api/*": ["../../packages/api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
