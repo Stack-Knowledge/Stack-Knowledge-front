@@ -11,6 +11,11 @@ export const useGetUserInfo = (
 ) =>
   useQuery<MissionListItemType[]>(
     missionQueryKeys.getMissionList(),
-    () => get(missionUrl.missionList()),
+    () =>
+      get(missionUrl.missionList(), {
+        headers: {
+          Authorization: localStorage.getItem('access_token'),
+        },
+      }),
     options
   );
