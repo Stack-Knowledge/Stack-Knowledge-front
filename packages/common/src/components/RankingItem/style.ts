@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 
 export const ItemWrapper = styled.div`
-  width: 28.25rem;
+  width: 33.75rem;
   height: 4.375rem;
   border-radius: 0.625rem;
   display: flex;
@@ -12,6 +12,7 @@ export const ItemWrapper = styled.div`
   align-items: center;
   transition: ease-in-out 0.2s;
   cursor: pointer;
+  background-color: ${({ theme }) => theme.color.white};
 
   &:hover {
     background: #ffd79b;

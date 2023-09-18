@@ -3,4 +3,5 @@ export interface ShopItemType {
   name: string;
   text: string;
   price: number;
+  image: string;
 }

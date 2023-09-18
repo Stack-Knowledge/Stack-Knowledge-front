@@ -12,8 +12,10 @@ function getAbsolutePath(value) {
 const config = {
   stories: [
     '../../client/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
+    '../../client/src/PageContainer/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
     '../../admin/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
-    '../../../packages/common/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
+    '../../admin/src/PageContainer/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
+    '../../../packages/common/src/components/**/*.stories.@(js|jsx|ts|tsx)',
     '../../../packages/common/src/PageContainer/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
