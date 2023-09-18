@@ -7,7 +7,7 @@ import { TokenResponseType } from 'types';
 export const usePostLoginCode = () =>
   useMutation<TokenResponseType, Error, { code: string }>(
     authQueryKeys.postLoginCode(),
-    (loginCode) => post(authUrl.auth(), loginCode),
+    (loginCode) => post(`${process.env.NEXT_PUBLIC_API_URL}auth`, loginCode),
     {
       onSuccess: (data) => {
         localStorage.setItem('refresh_token', data.refreshToken);
