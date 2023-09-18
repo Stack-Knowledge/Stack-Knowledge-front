@@ -1,9 +1,9 @@
 'use client';
 
-import { RankingHeader } from 'client/components';
 import { RankingList } from 'common';
 import { RankingItem } from 'common';
 
+import { RankingHeader } from 'client/components';
 import * as S from './style';
 
 const rankingData = {
@@ -26,7 +26,7 @@ const rankingData = {
       user: {
         id: 'User1_id',
         email: 'user1@example.com',
-        name: 'ㅎㅇ 희철리송',
+        name: 'ㅎㅇ 희찰리송',
         profileImage:
           'https://cdn.discordapp.com/attachments/956190154454876183/1114199263220617316/image.png',
       },
