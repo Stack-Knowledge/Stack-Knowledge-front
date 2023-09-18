@@ -8,11 +8,15 @@ export const usePatchAccessToken = () =>
   useMutation<TokenResponseType>(
     authQueryKeys.patchAccessToken(),
     () =>
-      patch(authUrl.auth(), {
-        headers: {
-          RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
-        },
-      }),
+      patch(
+        authUrl.auth(),
+        {},
+        {
+          headers: {
+            RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
+          },
+        }
+      ),
     {
       onSuccess: (data) => {
         localStorage.setItem('refresh_token', data.refreshToken);

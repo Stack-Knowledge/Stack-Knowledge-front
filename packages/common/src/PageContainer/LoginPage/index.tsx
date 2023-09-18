@@ -4,11 +4,7 @@ import * as S from './style';
 import { LoginButton } from 'common/components';
 import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
 
-import {
-  usePostLoginCode,
-  usePatchAccessToken,
-  useGetUserInfo,
-} from 'api/common';
+import { usePostLoginCode, usePatchAccessToken } from 'api/common';
 
 import { useSearchParams } from 'next/navigation';
 
@@ -17,7 +13,6 @@ import { useEffect } from 'react';
 const LoginPage = () => {
   const { get } = useSearchParams();
   const { mutate } = usePostLoginCode();
-  const { data } = useGetUserInfo();
   const hook = usePatchAccessToken();
 
   const handleLogin = () => {
@@ -30,6 +25,10 @@ const LoginPage = () => {
     }
   }, []);
 
+  const onClick = () => {
+    hook.mutate();
+  };
+
   return (
     <S.MainWrapper>
       <S.TopImageWrapper>
@@ -41,6 +40,7 @@ const LoginPage = () => {
       <LoginLogoIcon />
       <S.StackKnowledge>Stack Knowledge</S.StackKnowledge>
       <LoginButton onClick={handleLogin} />
+      <h1 onClick={onClick}>이거 누르면 됨</h1>
     </S.MainWrapper>
   );
 };
