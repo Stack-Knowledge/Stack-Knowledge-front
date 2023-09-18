@@ -1,7 +1,13 @@
 import styled from '@emotion/styled';
 
 export const BannerWrapper = styled.div`
-  background: ${({ theme }) => theme.color.banner2};
+  background: linear-gradient(
+    93deg,
+    #8f9bff 0.28%,
+    #a3b7ff 48.06%,
+    #f6f7ff 100%
+  );
+
   width: 80rem;
   height: 18.75rem;
   border-radius: 1.25rem;
