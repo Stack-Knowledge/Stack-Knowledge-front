@@ -5,9 +5,14 @@ import { post, authQueryKeys, authUrl } from 'api/common';
 import { TokenResponseType } from 'types';
 
 export const usePostLoginCode = () =>
-  useMutation<TokenResponseType, Error, { loginCode: string }>(
+  useMutation<TokenResponseType, Error, { code: string }>(
     authQueryKeys.postLoginCode(),
-    (loginCode) => post(authUrl.auth(), { code: loginCode }),
+    (loginCode) =>
+      post(authUrl.auth(), JSON.stringify(loginCode), {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }),
     {
       onSuccess: (data) => {
         localStorage.setItem('refresh_token', data.refreshToken);
