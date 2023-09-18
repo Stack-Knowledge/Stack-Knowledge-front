@@ -14,7 +14,7 @@ export const useGetUserInfo = (
     () =>
       get(missionUrl.missionList(), {
         headers: {
-          Authorization: localStorage.getItem('access_token'),
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
         },
       }),
     options
