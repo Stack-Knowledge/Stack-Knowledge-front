@@ -60,6 +60,9 @@ importers:
 
   packages/common:
     dependencies:
+      api:
+        specifier: workspace:^
+        version: link:../api
       emotion-reset:
         specifier: ^3.0.1
         version: 3.0.1(@emotion/react@11.10.6)
