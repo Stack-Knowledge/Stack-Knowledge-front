@@ -1,8 +1,10 @@
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+
 export const missionUrl = {
-  missionList: () => `/mission`,
-  missionDetail: (missionId: string) => `/mission/${missionId}`,
+  missionList: () => `${baseURL}/mission`,
+  missionDetail: (missionId: string) => `${baseURL}/mission/${missionId}`,
 } as const;
 
 export const authUrl = {
-  auth: () => `/auth`,
+  auth: () => `${baseURL}/auth`,
 } as const;
