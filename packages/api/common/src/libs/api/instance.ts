@@ -3,7 +3,7 @@ import axios from 'axios';
 import { usePatchAccessToken, authUrl } from 'api/common';
 
 export const apiInstance = axios.create({
-  baseURL: '/',
+  baseURL: '/api',
   withCredentials: true,
 });
 
