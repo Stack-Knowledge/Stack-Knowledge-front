@@ -6,8 +6,3 @@ export const RankingWrapper = styled.div`
   flex-direction: column;
   padding: 3.75rem 0;
 `;
-
-export const RankingTitle = styled.span`
-  color: ${({ theme }) => theme.color.black};
-  ${({ theme }) => theme.typo.h3};
-`;

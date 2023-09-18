@@ -18,7 +18,7 @@ const rankingData = {
         'https://cdn.mhnse.com/news/photo/202210/147617_140985_1213.jpg',
     },
   },
-  ranking: 1,
+  ranking: 2,
   list: [
     {
       id: 'User1',
