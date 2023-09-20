@@ -16,9 +16,8 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary:: Story = {
+export const Secondary: Story = {
   args: {
-    content: '법흥왕과 김구가 결혼했습니다.',
+    content: '법흥왕과 김구가 결혼했습니다. ',
   },
 };
-
