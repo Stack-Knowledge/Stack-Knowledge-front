@@ -12,12 +12,12 @@ type Story = StoryObj<typeof GradingContainer>;
 
 export const Primary: Story = {
   args: {
-    content: '아 하나도 모르겠어요 ... ㅠㅠ',
+    child: '아 하나도 모르겠어요 ... ㅠㅠ',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    content: '법흥왕과 김구가 결혼했습니다. ',
+    child: '법흥왕과 김구가 결혼했습니다. ',
   },
 };

@@ -1,16 +1,14 @@
-'use client';
-
 import * as S from './style';
 
 interface GradingProps {
-  content: string;
+  child: React.ReactNode;
 }
 
-const GradingContainer: React.FC<GradingProps> = ({ content }) => {
+const GradingContainer: React.FC<GradingProps> = ({ child }) => {
   return (
     <S.GradingtContainer>
       <S.MissionDetailInputWrapper>
-        <S.GradingWrapper>{content}</S.GradingWrapper>
+        <S.GradingWrapper>{child}</S.GradingWrapper>
       </S.MissionDetailInputWrapper>
       <S.SubmitButtonWrapper>
         <S.SubmitButton>제출하기</S.SubmitButton>
