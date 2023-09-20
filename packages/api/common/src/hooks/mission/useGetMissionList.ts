@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { missionQueryKeys, missionUrl, get } from 'api/common';
+import { missionQueryKeys, missionUrl, get, getHeaders } from 'api/common';
 
 import type { MissionListItemType } from 'types';
 
@@ -11,11 +11,6 @@ export const useGetUserInfo = (
 ) =>
   useQuery<MissionListItemType[]>(
     missionQueryKeys.getMissionList(),
-    () =>
-      get(missionUrl.missionList(), {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-        },
-      }),
+    () => get(missionUrl.missionList(), getHeaders()),
     options
   );
