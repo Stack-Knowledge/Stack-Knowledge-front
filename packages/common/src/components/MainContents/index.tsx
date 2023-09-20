@@ -4,6 +4,8 @@ import * as S from './style';
 
 import { TaskCard, RankingCard } from 'common/components';
 
+import { useGetRankingList } from 'api/common';
+
 const missionList = [
   {
     id: 'new id',
@@ -139,126 +141,38 @@ const missionList = [
   },
 ];
 
-const rankingList = [
-  {
-    id: 'sampleId',
-    cumulatePoint: 1000,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: 'user',
-      profileImage: null,
-    },
-  },
-  {
-    id: 'sampleId',
-    cumulatePoint: 800,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: '이태랑',
-      profileImage: null,
-    },
-  },
-  {
-    id: 'sampleId',
-    cumulatePoint: 700,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: '하제우',
-      profileImage: null,
-    },
-  },
-  {
-    id: 'sampleId',
-    cumulatePoint: 600,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: '이태랑',
-      profileImage: null,
-    },
-  },
-  {
-    id: 'sampleId',
-    cumulatePoint: 500,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: '하제우',
-      profileImage: null,
-    },
-  },
-  {
-    id: 'sampleId',
-    cumulatePoint: 400,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: '이태랑',
-      profileImage: null,
-    },
-  },
-  {
-    id: 'sampleId',
-    cumulatePoint: 300,
-    user: {
-      id: 'sampleId',
-      email: 'sample@gmail.com',
-      name: '하제우',
-      profileImage: null,
-    },
-  },
-  {
-    id: '정찬교',
-    cumulatePoint: 50,
-    user: {
-      id: '정찬교',
-      email: 'sample@gmail.com',
-      name: '정찬교',
-      profileImage: null,
-    },
-  },
-  {
-    id: '100등',
-    cumulatePoint: 0,
-    user: {
-      id: '100등',
-      email: 'sample@gmail.com',
-      name: '100등',
-      profileImage: null,
-    },
-  },
-];
+const Banner = () => {
+  const { data } = useGetRankingList();
 
-const Banner = () => (
-  <>
-    <S.MissionText>문제</S.MissionText>
-    <S.ContentWrapper>
-      <S.Contents>
-        {missionList.map((mission, index) => (
-          <TaskCard
-            userName={mission.user.name}
-            taskTitle={mission.title}
-            miledge={mission.point}
-            key={mission.id + index}
-          />
-        ))}
-      </S.Contents>
-      <S.Contents>
-        {rankingList.map((ranking, index) => (
-          <RankingCard
-            user={ranking.user}
-            cumulatePoint={ranking.cumulatePoint}
-            rank={index + 1}
-            id={ranking.id}
-            key={ranking.id + index}
-          />
-        ))}
-      </S.Contents>
-    </S.ContentWrapper>
-  </>
-);
+  return (
+    <>
+      <S.MissionText>문제</S.MissionText>
+      <S.ContentWrapper>
+        <S.Contents>
+          {missionList.map((mission, index) => (
+            <TaskCard
+              userName={mission.user.name}
+              taskTitle={mission.title}
+              miledge={mission.point}
+              key={mission.id + index}
+            />
+          ))}
+        </S.Contents>
+        <S.Contents>
+          {data &&
+            data.map((ranking, index) => (
+              <RankingCard
+                user={ranking.user}
+                cumulatePoint={ranking.cumulatePoint}
+                rank={index + 1}
+                id={ranking.id}
+                key={ranking.id + index}
+              />
+            ))}
+        </S.Contents>
+      </S.ContentWrapper>
+    </>
+  );
+};
 
 export default Banner;
