@@ -5,6 +5,12 @@ import * as S from './style';
 
 import { useState } from 'react';
 
+import { Grading } from 'types';
+
+const gradingData: Grading = {
+  solveStatus: 'NOT_SOLVE',
+};
+
 const GradingPage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
