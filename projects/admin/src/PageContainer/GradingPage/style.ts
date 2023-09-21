@@ -11,10 +11,10 @@ export const PageWrapper = styled.div`
 export const GradingWrapper = styled.div``;
 
 export const TopContentWrapper = styled.div`
-  padding-left: 7px;
+  padding-left: 0.4375rem;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 3.75rem;
 `;
 
 export const Title = styled.span`
@@ -26,7 +26,7 @@ export const Title = styled.span`
 export const SectionContainer = styled.span`
   display: flex;
   gap: 24.75rem;
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
 `;
 
 export const SectionWrapper = styled.div`
@@ -38,12 +38,12 @@ export const Section = styled.div`
   ${({ theme }) => theme.typo.button};
   margin-bottom: 1.25rem;
   font-weight: 400;
-  margin: 0 5px 0 5px;
+  margin: 0 0.3125rem 0 0.3125rem;
 `;
 
 export const IncorrectWrapper = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
 `;
 
 export const AnswerSection = styled.span`
@@ -53,19 +53,21 @@ export const AnswerSection = styled.span`
 
 export const AnswerWrapper = styled.div`
   display: flex;
-  gap: 6px;
+  gap: 0.375rem;
 `;
 
 export const NotAnswerWrapper = styled.div`
   display: flex;
-  gap: 6px;
+  gap: 0.375rem;
 `;
 
 export const ClickSection = styled.div<{ isSelected: boolean }>`
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   border: ${({ isSelected, theme }) =>
-    isSelected ? `3px solid ${theme.color.primary}` : `1px solid #787878`};
+    isSelected
+      ? `0.1875rem solid ${theme.color.primary}`
+      : `0.0625rem solid #787878`};
   cursor: pointer;
 `;
