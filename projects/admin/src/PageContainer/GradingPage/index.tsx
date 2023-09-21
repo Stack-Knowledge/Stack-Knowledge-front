@@ -7,10 +7,6 @@ import { useState } from 'react';
 
 import { Grading } from 'types';
 
-const gradingData: Grading = {
-  solveStatus: 'NOT_SOLVE',
-};
-
 interface GradingPageProps {
   solveId: string;
 }

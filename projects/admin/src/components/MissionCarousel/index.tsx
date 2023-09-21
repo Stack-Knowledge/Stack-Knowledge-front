@@ -25,6 +25,7 @@ const MissionCarousel = () => {
       <S.ContentWrapper>
         {data?.map((item, index) => (
           <TaskCard
+            onClick={() => onCardClick(item.solveId)}
             key={item.solveId + index}
             userName={item.user.name}
             taskTitle={item.title}
