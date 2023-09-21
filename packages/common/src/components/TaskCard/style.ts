@@ -8,6 +8,7 @@ export const CardWrapper = styled.div<{ isShadow: boolean }>`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 0 1.25rem;
   cursor: pointer;
   ${({ isShadow }) =>
     isShadow &&
