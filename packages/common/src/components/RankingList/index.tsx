@@ -3,26 +3,26 @@
 import * as S from './style';
 import { RankingItem } from 'common/components';
 
-import { RankingPropsType } from 'types';
+import { useGetRankingList } from 'api/common';
 
-interface RankingListProps {
-  list: RankingPropsType[];
-}
+const RankingList = () => {
+  const { data } = useGetRankingList();
 
-const RankingList: React.FC<RankingListProps> = ({ list }) => (
-  <S.RankingListWrapper>
-    <div>
-      <S.RankingText>랭킹</S.RankingText>
-      <S.ItemListWrapper>
-        {list.map((item, index) => (
-          <>
-            <RankingItem key={item.id} item={item} ranking={index + 1} />
-            {index !== list.length - 1 && <S.Line />}
-          </>
-        ))}
-      </S.ItemListWrapper>
-    </div>
-  </S.RankingListWrapper>
-);
+  return (
+    <S.RankingListWrapper>
+      <div>
+        <S.RankingText>랭킹</S.RankingText>
+        <S.ItemListWrapper>
+          {data?.map((item, index) => (
+            <div key={item.id + index}>
+              <RankingItem item={item} ranking={index + 1} />
+              {index !== data.length - 1 && <S.Line />}
+            </div>
+          ))}
+        </S.ItemListWrapper>
+      </div>
+    </S.RankingListWrapper>
+  );
+};
 
 export default RankingList;
