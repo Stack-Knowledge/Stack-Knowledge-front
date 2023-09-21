@@ -7,10 +7,15 @@ import { TaskCard } from 'common/components';
 
 import { useGetScoringList } from 'api/admin';
 
+import { useRouter } from 'next/navigation';
+
 const MissionCarousel = () => {
   const { data } = useGetScoringList();
+  const { push } = useRouter();
 
-  const onCardClick = () => {};
+  const onCardClick = (solveId: string) => {
+    push(`mission/grading/${solveId}`);
+  };
 
   return (
     <S.CarouselWrapper>
