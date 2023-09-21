@@ -5,6 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "common/*": ["../../packages/common/src/*"],
+      "api/*": ["../../packages/api/*"],
       "admin/*": ["../admin/src/*"],
       "client/*": ["../client/src/*"]
     }
