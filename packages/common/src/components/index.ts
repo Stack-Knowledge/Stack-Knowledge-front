@@ -10,4 +10,3 @@ export { default as Header } from './Header';
 export { default as MissionDetailInput } from './MissionDetailInput ';
 export { default as MainContents } from './MainContents';
 export { default as RankingCard } from './RankingCard';
-export { default as MissionCarousel } from './MissionCarousel';

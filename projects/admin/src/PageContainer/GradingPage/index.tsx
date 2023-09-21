@@ -5,13 +5,11 @@ import * as S from './style';
 
 import { useState } from 'react';
 
-import { Grading } from 'types';
+interface GradingPageProps {
+  solveId: string;
+}
 
-const gradingData: Grading = {
-  solveStatus: 'NOT_SOLVE',
-};
-
-const GradingPage = () => {
+const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
   const handleAnswerClick = (isTrue: boolean) => {

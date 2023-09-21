@@ -4,7 +4,7 @@ import MissionCarousel from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'common/MissionCarousel',
+  title: 'admin/MissionCarousel',
   component: MissionCarousel,
 } as Meta<typeof MissionCarousel>;
 

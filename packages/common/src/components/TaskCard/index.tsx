@@ -4,20 +4,22 @@ import * as S from './style';
 
 import { slicePoint } from 'common/utils';
 
-interface RankingItemProps {
+interface TaskCardProps {
   userName: string;
   taskTitle: string;
   miledge: number;
   isShadow?: boolean;
+  onClick: () => void;
 }
 
-const RankingItem: React.FC<RankingItemProps> = ({
+const TaskCard: React.FC<TaskCardProps> = ({
   userName,
   taskTitle,
   miledge,
   isShadow = false,
+  onClick,
 }) => (
-  <S.CardWrapper isShadow={isShadow}>
+  <S.CardWrapper onClick={onClick} isShadow={isShadow}>
     <S.UserName>{userName}</S.UserName>
     <S.TaskTitle>{taskTitle}</S.TaskTitle>
     <S.MiledgeWrapper>
@@ -27,4 +29,4 @@ const RankingItem: React.FC<RankingItemProps> = ({
   </S.CardWrapper>
 );
 
-export default RankingItem;
+export default TaskCard;

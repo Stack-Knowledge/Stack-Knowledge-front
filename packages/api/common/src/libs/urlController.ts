@@ -10,3 +10,8 @@ export const studentUrl = {
 export const authUrl = {
   auth: () => `/auth`,
 } as const;
+
+export const userUrl = {
+  scoring: (pageNumber: number) => `/user/scoring/${pageNumber}`,
+  scoringResult: (solveId: string) => `/user/scoring/${solveId}`,
+};
