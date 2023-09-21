@@ -4,11 +4,7 @@ import { GradingContainer } from 'admin/components';
 import * as S from './style';
 import { useState } from 'react';
 
-const sectionContents = [
-  '법흥왕이 세운 업적을 3가지 이상 서술 하세요.',
-  '이승제 ㅎㅇㅇ',
-  'ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇ',
-];
+
 
 const GradingPage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
