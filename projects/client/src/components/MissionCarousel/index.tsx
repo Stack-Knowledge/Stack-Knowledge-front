@@ -20,8 +20,8 @@ const MissionCarousel = () => {
   const { data } = useGetMissionList();
   const { push } = useRouter();
 
-  const onCardClick = (taskId: string) => {
-    push(`/mission/resolve/${taskId}`);
+  const onCardClick = (missionId: string) => {
+    push(`/mission/resolve/${missionId}`);
   };
 
   useEffect(() => {
