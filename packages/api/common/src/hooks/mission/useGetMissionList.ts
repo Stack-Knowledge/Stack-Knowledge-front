@@ -6,7 +6,7 @@ import type { MissionListItemType } from 'types';
 
 import type { UseQueryOptions } from '@tanstack/react-query';
 
-export const useGetUserInfo = (
+export const useGetMissionList = (
   options?: UseQueryOptions<MissionListItemType[]>
 ) =>
   useQuery<MissionListItemType[]>(

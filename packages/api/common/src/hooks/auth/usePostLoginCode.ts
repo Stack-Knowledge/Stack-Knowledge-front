@@ -12,7 +12,6 @@ export const usePostLoginCode = () =>
       onSuccess: (data) => {
         localStorage.setItem('refresh_token', data.refreshToken);
         localStorage.setItem('access_token', data.accessToken);
-        console.log(data);
       },
     }
   );

@@ -6,12 +6,13 @@ import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
 
 import { usePostLoginCode } from 'api/common';
 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 import { useEffect } from 'react';
 
 const LoginPage = () => {
   const { get } = useSearchParams();
+  const { push } = useRouter();
   const { mutate } = usePostLoginCode();
 
   const handleLogin = () => {
@@ -21,6 +22,7 @@ const LoginPage = () => {
   useEffect(() => {
     if (get('code')) {
       mutate({ code: get('code') as string });
+      push('/');
     }
   }, []);
 
