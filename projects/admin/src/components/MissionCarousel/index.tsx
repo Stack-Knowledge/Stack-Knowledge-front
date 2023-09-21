@@ -14,7 +14,7 @@ const MissionCarousel = () => {
   const { push } = useRouter();
 
   const onCardClick = (solveId: string) => {
-    push(`mission/grading/${solveId}`);
+    push(`mission/scoring/${solveId}`);
   };
 
   return (

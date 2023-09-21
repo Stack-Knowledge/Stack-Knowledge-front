@@ -12,6 +12,6 @@ export const authUrl = {
 } as const;
 
 export const userUrl = {
-  scoring: () => `/user/scoring`,
+  scoring: (pageNumber: number) => `/user/scoring${pageNumber}`,
   scoringResult: (solveId: string) => `/user/scoring/${solveId}`,
 };
