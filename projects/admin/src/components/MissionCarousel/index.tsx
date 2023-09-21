@@ -21,26 +21,30 @@ const MissionCarousel = () => {
   };
 
   return (
-    <S.CarouselWrapper>
-      <S.PointerWrapper>
-        <VectorIcon direction='left' />
-      </S.PointerWrapper>
-      <S.ContentWrapper>
-        {data?.map((item, index) => (
-          <TaskCard
-            onClick={() => onCardClick(item.solveId)}
-            key={item.solveId + index}
-            userName={item.user.name}
-            taskTitle={item.title}
-            miledge={item.point}
-            isShadow={true}
-          />
-        ))}
-      </S.ContentWrapper>
-      <S.PointerWrapper>
-        <VectorIcon direction='right' />
-      </S.PointerWrapper>
-    </S.CarouselWrapper>
+    <>
+      {data?.length != 0 && (
+        <S.CarouselWrapper>
+          <S.PointerWrapper>
+            <VectorIcon direction='left' />
+          </S.PointerWrapper>
+          <S.ContentWrapper>
+            {data?.map((item, index) => (
+              <TaskCard
+                onClick={() => onCardClick(item.solveId)}
+                key={item.solveId + index}
+                userName={item.user.name}
+                taskTitle={item.title}
+                miledge={item.point}
+                isShadow={true}
+              />
+            ))}
+          </S.ContentWrapper>
+          <S.PointerWrapper>
+            <VectorIcon direction='right' />
+          </S.PointerWrapper>
+        </S.CarouselWrapper>
+      )}
+    </>
   );
 };
 
