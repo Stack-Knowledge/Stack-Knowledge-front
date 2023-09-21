@@ -16,8 +16,9 @@ const RankingItem: React.FC<RankingItemProps> = ({
   taskTitle,
   miledge,
   isShadow = false,
+  ...attributes
 }) => (
-  <S.CardWrapper isShadow={isShadow}>
+  <S.CardWrapper {...attributes} isShadow={isShadow}>
     <S.UserName>{userName}</S.UserName>
     <S.TaskTitle>{taskTitle}</S.TaskTitle>
     <S.MiledgeWrapper>
