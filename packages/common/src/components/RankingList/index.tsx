@@ -14,10 +14,10 @@ const RankingList = () => {
         <S.RankingText>랭킹</S.RankingText>
         <S.ItemListWrapper>
           {data?.map((item, index) => (
-            <>
-              <RankingItem key={item.id} item={item} ranking={index + 1} />
+            <div key={item.id + index}>
+              <RankingItem item={item} ranking={index + 1} />
               {index !== data.length - 1 && <S.Line />}
-            </>
+            </div>
           ))}
         </S.ItemListWrapper>
       </div>
