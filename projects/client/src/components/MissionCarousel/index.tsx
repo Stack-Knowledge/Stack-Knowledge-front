@@ -9,10 +9,13 @@ import { useGetMissionList } from 'api/common';
 
 import { useRouter } from 'next/navigation';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { MissionListItemType } from 'types';
 
 const MissionCarousel = () => {
-  const [pageIndex, setPageIndex] = useState(0);
+  const [pageIndex, setPageIndex] = useState<number>(0);
+  const [missionList, setMissionList] = useState<MissionListItemType[][]>();
 
   const { data } = useGetMissionList();
   const { push } = useRouter();
@@ -21,25 +24,37 @@ const MissionCarousel = () => {
     push(`/mission/resolve/${taskId}`);
   };
 
+  useEffect(() => {
+    const newMissionList: MissionListItemType[][] = [];
+    let temp: MissionListItemType[] = [];
+    data?.forEach((item, index) => {
+      temp.push(item);
+      if ((index + 1) % 10 === 0) {
+        newMissionList.push(temp);
+        temp = [];
+      }
+    });
+    setMissionList(newMissionList);
+  }, [data]);
+
   return (
     <>
-      {data?.length != 0 && (
+      {missionList?.length != 0 && missionList && (
         <S.CarouselWrapper>
           <S.PointerWrapper>
             <VectorIcon direction='left' />
           </S.PointerWrapper>
           <S.ContentWrapper>
-            {data &&
-              data.map((item, index) => (
-                <TaskCard
-                  onClick={() => onCardClick(item.id)}
-                  key={item.id + index}
-                  userName={item.user.name}
-                  taskTitle={item.title}
-                  miledge={item.point}
-                  isShadow={true}
-                />
-              ))}
+            {missionList[pageIndex]?.map((item, index) => (
+              <TaskCard
+                onClick={() => onCardClick(item.id)}
+                key={item.id + index}
+                userName={item.user.name}
+                taskTitle={item.title}
+                miledge={item.point}
+                isShadow={true}
+              />
+            ))}
           </S.ContentWrapper>
           <S.PointerWrapper>
             <VectorIcon direction='right' />
