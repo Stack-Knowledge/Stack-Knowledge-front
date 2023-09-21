@@ -1,18 +1,12 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { post, authQueryKeys, authUrl } from 'api/common';
+import { post, missionQueryKeys, missionUrl, getHeaders } from 'api/common';
 
-import { TokenResponseType } from 'types';
-
-export const usePostLoginCode = () =>
-  useMutation<TokenResponseType, Error, { code: string }>(
-    authQueryKeys.postLoginCode(),
-    (loginCode) => post(authUrl.auth(), loginCode),
-    {
-      onSuccess: (data) => {
-        localStorage.setItem('refresh_token', data.refreshToken);
-        localStorage.setItem('access_token', data.accessToken);
-        console.log(data);
-      },
-    }
+export const usePostMission = () =>
+  useMutation<
+    void,
+    Error,
+    { title: string; content: string; timeLimit: number }
+  >(missionQueryKeys.postMission(), (newMission) =>
+    post(missionUrl.mission(), newMission, getHeaders())
   );
