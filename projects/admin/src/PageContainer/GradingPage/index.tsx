@@ -9,7 +9,6 @@ const GradingPage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
   const handleAnswerClick = (isTrue: boolean) => {
-    // setSelectedAnswer((prevSelectedAnswer) => !prevSelectedAnswer);
     setSelectedAnswer(isTrue);
   };
 
