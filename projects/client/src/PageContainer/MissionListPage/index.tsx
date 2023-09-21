@@ -7,7 +7,7 @@ import { MissionCarousel } from 'common';
 const MissionListPage = () => (
   <S.PageWrapper>
     <S.ScoringText>문제</S.ScoringText>
-    <MissionCarousel />
+    <MissionCarousel role='client' />
   </S.PageWrapper>
 );
 

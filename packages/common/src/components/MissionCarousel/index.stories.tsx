@@ -10,4 +10,8 @@ export default {
 
 type Story = StoryObj<typeof MissionCarousel>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    role: 'admin',
+  },
+};

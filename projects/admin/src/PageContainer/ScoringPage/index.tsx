@@ -7,7 +7,7 @@ import { MissionCarousel } from 'common';
 const ScoringPage = () => (
   <S.PageWrapper>
     <S.ScoringText>채점하기</S.ScoringText>
-    <MissionCarousel />
+    <MissionCarousel role='admin' />
   </S.PageWrapper>
 );
 
