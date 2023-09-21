@@ -5,7 +5,7 @@ import { RankingItem } from 'common/components';
 
 import { useGetRankingList } from 'api/common';
 
-const RankingList = ({ list }) => {
+const RankingList = () => {
   const { data } = useGetRankingList();
 
   return (
@@ -16,7 +16,7 @@ const RankingList = ({ list }) => {
           {data?.map((item, index) => (
             <>
               <RankingItem key={item.id} item={item} ranking={index + 1} />
-              {index !== list.length - 1 && <S.Line />}
+              {index !== data.length - 1 && <S.Line />}
             </>
           ))}
         </S.ItemListWrapper>
