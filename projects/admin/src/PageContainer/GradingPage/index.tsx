@@ -11,7 +11,11 @@ const gradingData: Grading = {
   solveStatus: 'NOT_SOLVE',
 };
 
-const GradingPage = () => {
+interface GradingPageProps {
+  solveId: string;
+}
+
+const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
   const handleAnswerClick = (isTrue: boolean) => {
