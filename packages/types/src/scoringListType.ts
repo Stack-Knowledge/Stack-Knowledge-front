@@ -5,7 +5,6 @@ export interface ScoringListType {
   // SCORING : 채점중
   // CORRECT_ANSWER : 정답
   // WRONG_ANSWER : 오답
-  point: number;
   user: {
     id: string;
     email: string;
