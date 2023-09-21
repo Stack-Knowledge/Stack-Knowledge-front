@@ -1,8 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { post, userQueryKeys, userUrl } from 'api/common';
-
-import { getHeaders } from 'api/common';
+import { post, userQueryKeys, userUrl, getHeaders } from 'api/common';
 
 import { SolveStatus } from 'types';
 
