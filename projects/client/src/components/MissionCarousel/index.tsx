@@ -37,9 +37,12 @@ const MissionCarousel = () => {
     setMissionList(newMissionList);
   }, [data]);
 
-  const onActive = (direction: 'left' | 'right') => {
-    if (direction === 'left' && pageIndex > 0) setPageIndex((prev) => prev - 1);
-    if (direction === 'right' && missionList && pageIndex < missionList.length)
+  const moveLeft = () => {
+    if (pageIndex > 0) setPageIndex((prev) => prev - 1);
+  };
+
+  const moveRight = () => {
+    if (missionList && pageIndex < missionList.length - 1)
       setPageIndex((prev) => prev + 1);
   };
 
@@ -47,7 +50,7 @@ const MissionCarousel = () => {
     <>
       {missionList?.length != 0 && missionList && (
         <S.CarouselWrapper>
-          <S.PointerWrapper onClick={() => onActive('left')}>
+          <S.PointerWrapper onClick={moveLeft}>
             <VectorIcon direction='left' />
           </S.PointerWrapper>
           <S.ContentWrapper>
@@ -62,7 +65,7 @@ const MissionCarousel = () => {
               />
             ))}
           </S.ContentWrapper>
-          <S.PointerWrapper onClick={() => onActive('right')}>
+          <S.PointerWrapper onClick={moveRight}>
             <VectorIcon direction='right' />
           </S.PointerWrapper>
         </S.CarouselWrapper>
