@@ -169,6 +169,9 @@ importers:
 
   projects/storybook:
     dependencies:
+      api:
+        specifier: workspace:^
+        version: link:../../packages/api
       common:
         specifier: workspace:^
         version: link:../../packages/common
