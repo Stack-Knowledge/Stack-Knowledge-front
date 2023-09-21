@@ -6,7 +6,7 @@ import { MissionDetailModal } from 'client/components';
 import { Timer } from 'client/components';
 import * as S from './style';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const timerData = {
   hour: '10',
@@ -22,6 +22,8 @@ const sectionContents = [
 const MissionDetailPage = () => {
   const dialog = useRef<HTMLDialogElement>(null);
 
+  const [inputValue, setInputValue] = useState<string>('');
+
   return (
     <S.PageWrapper>
       <div>
@@ -36,6 +38,8 @@ const MissionDetailPage = () => {
           <MissionDetailInput
             role='client'
             onClick={() => dialog.current?.showModal()}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
           />
         </S.MissionWrapper>
       </div>
