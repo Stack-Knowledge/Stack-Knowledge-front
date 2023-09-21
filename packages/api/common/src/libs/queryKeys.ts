@@ -12,3 +12,7 @@ export const authQueryKeys = {
   patchAccessToken: () => ['auth', 'accessToken'],
   postLoginCode: () => ['auth', 'loginCode'],
 };
+
+export const solveQueryKeys = {
+  postSolve: (missionId: string) => ['solve', missionId],
+};
