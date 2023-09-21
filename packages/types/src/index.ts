@@ -5,4 +5,4 @@ export * from './missionListItemType';
 export * from './tokenResponseType';
 export * from './mission';
 export * from './scoringListType';
-export * from './grading';
+export * from './solveStatusType';

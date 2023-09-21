@@ -5,8 +5,6 @@ import * as S from './style';
 
 import { useState } from 'react';
 
-import { Grading } from 'types';
-
 interface GradingPageProps {
   solveId: string;
 }

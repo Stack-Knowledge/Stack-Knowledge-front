@@ -1,4 +1,4 @@
-export interface Grading {
+export interface SolveStatus {
   solveStatus: 'NOT_SOLVE' | 'SCORING' | 'CORRECT_ANSWER' | 'WRONG_ANSWER';
 
   // NOT_SOLVE : 아직 풀지 않음
