@@ -3,15 +3,9 @@
 import * as S from './style';
 import { RankingItem } from 'common/components';
 
-import { RankingPropsType } from 'types';
-
 import { useGetRankingList } from 'api/common';
 
-interface RankingListProps {
-  list: RankingPropsType[];
-}
-
-const RankingList: React.FC<RankingListProps> = ({ list }) => {
+const RankingList = ({ list }) => {
   const { data } = useGetRankingList();
 
   return (
