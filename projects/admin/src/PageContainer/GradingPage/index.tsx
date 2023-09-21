@@ -14,7 +14,7 @@ const GradingPage = () => {
 
   return (
     <S.PageWrapper>
-      <S.GradingWrapper>
+      <div>
         <S.TopContentWrapper>
           <S.Title>채점하기</S.Title>
           <S.SectionContainer>
@@ -41,7 +41,7 @@ const GradingPage = () => {
           </S.SectionContainer>
         </S.TopContentWrapper>
         <GradingContainer>김하온은 남자다.</GradingContainer>
-      </S.GradingWrapper>
+      </div>
     </S.PageWrapper>
   );
 };
