@@ -41,4 +41,31 @@ export const Section = styled.div`
   margin: 0 5px 0 5px;
 `;
 
-export const IncorrectWrapper = styled.div``;
+export const IncorrectWrapper = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const AnswerSection = styled.span`
+  color: ${({ theme }) => theme.color.black};
+  ${({ theme }) => theme.typo.body2};
+`;
+
+export const AnswerWrapper = styled.div`
+  display: flex;
+  gap: 6px;
+`;
+
+export const NotAnswerWrapper = styled.div`
+  display: flex;
+  gap: 6px;
+`;
+
+export const ClickSection = styled.div<{ isSelected: boolean }>`
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: ${({ isSelected, theme }) =>
+    isSelected ? `3px solid ${theme.color.primary}` : `1px solid #787878`};
+  cursor: pointer;
+`;
