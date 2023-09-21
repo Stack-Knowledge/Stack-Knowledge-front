@@ -18,7 +18,7 @@ const MissionCarousel = () => {
   const { push } = useRouter();
 
   const onCardClick = (taskId: string) => {
-    push(`mission/resolve/${taskId}`);
+    push(`/mission/resolve/${taskId}`);
   };
 
   return (
@@ -29,16 +29,17 @@ const MissionCarousel = () => {
             <VectorIcon direction='left' />
           </S.PointerWrapper>
           <S.ContentWrapper>
-            {data?.map((item, index) => (
-              <TaskCard
-                onClick={() => onCardClick(item.id)}
-                key={item.id + index}
-                userName={item.user.name}
-                taskTitle={item.title}
-                miledge={item.point}
-                isShadow={true}
-              />
-            ))}
+            {data &&
+              data.map((item, index) => (
+                <TaskCard
+                  onClick={() => onCardClick(item.id)}
+                  key={item.id + index}
+                  userName={item.user.name}
+                  taskTitle={item.title}
+                  miledge={item.point}
+                  isShadow={true}
+                />
+              ))}
           </S.ContentWrapper>
           <S.PointerWrapper>
             <VectorIcon direction='right' />
