@@ -9,12 +9,21 @@ import { usePostMission } from 'api/admin';
 
 import { useState } from 'react';
 
+import { useRouter } from 'next/navigation';
+
 const CreatePage = () => {
   const [titleValue, setTitleValue] = useState<string>('');
   const [detailValue, setDetailValue] = useState<string>('');
   const [time, setTime] = useState<number>(0);
 
-  const { mutate } = usePostMission();
+  const { push } = useRouter();
+
+  const onSuccessFunc = () => {
+    push('/');
+    alert('문제가 등록되었습니다 !');
+  };
+
+  const { mutate } = usePostMission(onSuccessFunc);
 
   const handleSubmit = () => {
     if (titleValue && detailValue && time)
