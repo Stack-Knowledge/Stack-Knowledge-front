@@ -12,3 +12,8 @@ export const authQueryKeys = {
   patchAccessToken: () => ['auth', 'accessToken'],
   postLoginCode: () => ['auth', 'loginCode'],
 };
+
+export const userQueryKeys = {
+  getScoringList: () => ['user', 'scoring'],
+  postScoringResult: (solveId: string) => ['user', 'scoring', solveId],
+};
