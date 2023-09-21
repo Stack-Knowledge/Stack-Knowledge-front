@@ -4,3 +4,4 @@ export * from './orderdItem';
 export * from './missionListItemType';
 export * from './tokenResponseType';
 export * from './mission';
+export * from './scoringListType';
