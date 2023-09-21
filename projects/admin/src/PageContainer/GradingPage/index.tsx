@@ -11,10 +11,11 @@ const sectionContents = [
 ];
 
 const GradingPage = () => {
-  const [SelectedAnswer, setSelectedAnswer] = useState<boolean>(true);
+  const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
-  const handleAnswerClick = () => {
-    setSelectedAnswer(!SelectedAnswer);
+  const handleAnswerClick = (isTrue: boolean) => {
+    // setSelectedAnswer((prevSelectedAnswer) => !prevSelectedAnswer);
+    setSelectedAnswer(isTrue);
   };
 
   return (
@@ -31,21 +32,21 @@ const GradingPage = () => {
               <S.AnswerWrapper>
                 <S.AnswerSection>정답</S.AnswerSection>
                 <S.ClickSection
-                  isSelected={SelectedAnswer}
-                  onClick={handleAnswerClick}
+                  isSelected={selectedAnswer}
+                  onClick={() => handleAnswerClick(true)}
                 />
               </S.AnswerWrapper>
               <S.NotAnswerWrapper>
                 <S.AnswerSection>오답</S.AnswerSection>
                 <S.ClickSection
-                  isSelected={!SelectedAnswer}
-                  onClick={handleAnswerClick}
+                  isSelected={!selectedAnswer}
+                  onClick={() => handleAnswerClick(false)}
                 />
               </S.NotAnswerWrapper>
             </S.IncorrectWrapper>
           </S.SectionContainer>
         </S.TopContentWrapper>
-        <GradingContainer>니 얼굴 ㅋ</GradingContainer>
+        <GradingContainer>김하온은 남자다.</GradingContainer>
       </S.GradingWrapper>
     </S.PageWrapper>
   );
