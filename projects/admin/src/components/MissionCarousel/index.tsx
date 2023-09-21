@@ -8,9 +8,12 @@ import { TaskCard } from 'common/components';
 import { useGetScoringList } from 'api/admin';
 
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const MissionCarousel = () => {
-  const { data } = useGetScoringList();
+  const [pageIndex, setPageIndex] = useState(0);
+
+  const { data } = useGetScoringList(pageIndex);
   const { push } = useRouter();
 
   const onCardClick = (solveId: string) => {
