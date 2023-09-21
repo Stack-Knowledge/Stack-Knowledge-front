@@ -4,8 +4,6 @@ import { GradingContainer } from 'admin/components';
 import * as S from './style';
 import { useState } from 'react';
 
-
-
 const GradingPage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
@@ -22,7 +20,7 @@ const GradingPage = () => {
           <S.SectionContainer>
             <S.SectionWrapper>
               <S.Section>[문제]</S.Section>
-              <S.Section>{sectionContents[0]}</S.Section>
+              <S.Section>여기에 문제를 작성을 할 거에요~</S.Section>
             </S.SectionWrapper>
             <S.IncorrectWrapper>
               <S.AnswerWrapper>
