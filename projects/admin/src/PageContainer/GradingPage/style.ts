@@ -8,8 +8,6 @@ export const PageWrapper = styled.div`
   align-items: center;
 `;
 
-export const GradingWrapper = styled.div``;
-
 export const TopContentWrapper = styled.div`
   padding-left: 0.4375rem;
   display: flex;
