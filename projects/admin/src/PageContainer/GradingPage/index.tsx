@@ -34,7 +34,7 @@ const GradingPage = () => {
                 <S.ClickSection
                   isSelected={selectedAnswer}
                   onClick={() => handleAnswerClick(true)}
-                />
+                
               </S.AnswerWrapper>
               <S.NotAnswerWrapper>
                 <S.AnswerSection>오답</S.AnswerSection>
