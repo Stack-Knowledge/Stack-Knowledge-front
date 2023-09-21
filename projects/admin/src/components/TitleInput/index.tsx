@@ -1,10 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import * as S from './style';
 
-const TitleInput = () => {
-  const [inputValue, setInputValue] = useState<string>('');
+interface TitleInputProps {
+  inputValue: string;
+  setInputValue: Dispatch<SetStateAction<string>>;
+}
+
+const TitleInput: React.FC<TitleInputProps> = ({
+  inputValue,
+  setInputValue,
+}) => {
   const MAXLENGTH = 50 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

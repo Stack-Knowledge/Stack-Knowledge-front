@@ -11,6 +11,6 @@ export const useGetMissionList = (
 ) =>
   useQuery<MissionListItemType[]>(
     missionQueryKeys.getMissionList(),
-    () => get(missionUrl.missionList(), getHeaders()),
+    () => get(missionUrl.mission(), getHeaders()),
     options
   );

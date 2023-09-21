@@ -1,5 +1,5 @@
 export const missionUrl = {
-  missionList: () => `/mission`,
+  mission: () => `/mission`,
   missionDetail: (missionId: string) => `/mission/${missionId}`,
 } as const;
 

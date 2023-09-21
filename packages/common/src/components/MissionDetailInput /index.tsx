@@ -1,18 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import * as S from './style';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
   onClick?: () => void;
+  inputValue: string;
+  setInputValue: Dispatch<SetStateAction<string>>;
 }
 
 const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
   role,
   onClick,
+  inputValue,
+  setInputValue,
 }) => {
-  const [inputValue, setInputValue] = useState<string>('');
   const MAXLENGTH = 500 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
