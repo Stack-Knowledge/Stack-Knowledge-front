@@ -10,3 +10,7 @@ export const studentUrl = {
 export const authUrl = {
   auth: () => `/auth`,
 } as const;
+
+export const solveUrl = {
+  solve: (solveId: string) => `/solve/${solveId}`,
+} as const;
