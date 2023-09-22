@@ -31,6 +31,9 @@ apiInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   async (error) => {
+    const { mutate } = usePatchAccessToken();
+    await mutate();
+    console.log(error.config.url, error.response.status);
     if (error.config.url === authUrl.auth()) {
       isRefreshing = false;
 
@@ -48,7 +51,7 @@ apiInstance.interceptors.response.use(
 
       isRefreshing = true;
 
-      await usePatchAccessToken();
+      await mutate();
 
       return apiInstance(error.config);
     }
