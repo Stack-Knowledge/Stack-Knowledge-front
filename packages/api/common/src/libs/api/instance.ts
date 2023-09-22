@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { usePatchAccessToken, authUrl } from 'api/common';
+import { authUrl, patchAccessToken } from 'api/common';
 
 export const apiInstance = axios.create({
   baseURL: '/api',
@@ -31,12 +31,10 @@ apiInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   async (error) => {
-    const { mutate } = await usePatchAccessToken();
-    alert(error.config.url);
     if (error.config.url === authUrl.auth()) {
       isRefreshing = false;
 
-      location.replace('/auth/login');
+      location.replace('/auth/signin');
 
       return Promise.reject(error);
     }
@@ -50,7 +48,7 @@ apiInstance.interceptors.response.use(
 
       isRefreshing = true;
 
-      await mutate();
+      await patchAccessToken();
 
       return apiInstance(error.config);
     }
