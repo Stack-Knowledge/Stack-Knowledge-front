@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { studentQueryKeys, studentUrl, get, getHeaders } from 'api/common';
+import { studentQueryKeys, studentUrl, get } from 'api/common';
 
 import type { RankingPropsType } from 'types';
 
@@ -11,6 +11,6 @@ export const useGetRankingList = (
 ) =>
   useQuery<RankingPropsType[]>(
     studentQueryKeys.getRankingList(),
-    () => get(studentUrl.rankingList(), getHeaders()),
+    () => get(studentUrl.rankingList()),
     options
   );

@@ -21,8 +21,9 @@ const waitRefreshEnd = () =>
 
 apiInstance.interceptors.request.use(
   (request) => {
-    request.headers['access-token'] =
-      window.localStorage.getItem('access_token');
+    request.headers['Authorization'] = `Bearer ${window.localStorage.getItem(
+      'access_token'
+    )}`;
     return request;
   },
   (error) => {
