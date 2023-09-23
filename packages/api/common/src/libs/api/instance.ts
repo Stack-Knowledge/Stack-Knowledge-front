@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-import { authUrl, patchAccessToken } from 'api/common';
+import { authUrl, patch, patchAccessToken } from 'api/common';
+import { TokenResponseType } from 'types';
 
 export const apiInstance = axios.create({
   baseURL: '/api',
@@ -17,6 +18,17 @@ const waitRefreshEnd = () =>
       setTimeout(() => waitRefreshEnd(), 100);
     }
   });
+
+apiInstance.interceptors.request.use(
+  (request) => {
+    request.headers['access-token'] =
+      window.localStorage.getItem('access_token');
+    return request;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 apiInstance.interceptors.response.use(
   (response) => {
@@ -48,7 +60,21 @@ apiInstance.interceptors.response.use(
 
       isRefreshing = true;
 
-      await patchAccessToken();
+      const { data }: { data: TokenResponseType } = await patch(
+        authUrl.auth(),
+        {},
+        {
+          headers: {
+            RefreshToken: `Bearer ${window.localStorage.getItem(
+              'refresh_token'
+            )}`,
+          },
+        }
+      );
+
+      localStorage.setItem('refresh_token', data.refreshToken);
+      localStorage.setItem('access_token', data.accessToken);
+      error.config.headers['access-token'] = data.accessToken;
 
       return apiInstance(error.config);
     }

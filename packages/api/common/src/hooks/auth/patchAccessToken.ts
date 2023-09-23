@@ -17,6 +17,7 @@ export const patchAccessToken = async () => {
     console.log(data);
     localStorage.setItem('refresh_token', data.refreshToken);
     localStorage.setItem('access_token', data.accessToken);
+    location.reload();
 
     return data;
   } catch (error) {
