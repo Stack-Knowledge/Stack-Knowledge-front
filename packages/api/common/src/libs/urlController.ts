@@ -12,5 +12,5 @@ export const authUrl = {
 } as const;
 
 export const solveUrl = {
-  solve: (solveId: string) => `/solve/${solveId}`,
+  solve: (missionId: string) => `/solve/${missionId}`,
 } as const;

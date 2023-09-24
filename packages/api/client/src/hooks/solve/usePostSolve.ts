@@ -2,11 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 
 import { post, solveQueryKeys, getHeaders, solveUrl } from 'api/common';
 
-export const usePostSolve = (
-  onSuccessFunc: () => void,
-  missionId: string,
-  solveId: string
-) =>
+export const usePostSolve = (onSuccessFunc: () => void, missionId: string) =>
   useMutation<
     void,
     Error,
@@ -15,7 +11,7 @@ export const usePostSolve = (
     }
   >(
     solveQueryKeys.postSolve(missionId),
-    (newSolve) => post(solveUrl.solve(solveId), newSolve),
+    (newSolve) => post(solveUrl.solve(missionId), newSolve),
     {
       onSuccess: () => {
         onSuccessFunc();

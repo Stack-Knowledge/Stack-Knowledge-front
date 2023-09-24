@@ -33,7 +33,7 @@ const MissionDetailPage = () => {
     alert('문제가 등록되었습니다 !');
   };
 
-  const { mutate } = usePostSolve(onSuccessFunc, solveId, missionId);
+  const { mutate } = usePostSolve(onSuccessFunc, missionId);
 
   const handleSubmit = () => {
     if (inputValue)
