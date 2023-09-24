@@ -48,7 +48,10 @@ apiInstance.interceptors.response.use(
     if (error.config.url === authUrl.auth()) {
       isRefreshing = false;
 
-      location.replace('/auth/login');
+      // location.reload();
+      // setTimeout(() => {
+      //   location.replace('/auth/login');
+      // }, 3000);
 
       return Promise.reject(error);
     }
