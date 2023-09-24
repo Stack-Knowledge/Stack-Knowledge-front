@@ -8,17 +8,6 @@ export const apiInstance = axios.create({
   withCredentials: true,
 });
 
-let isRefreshing = false;
-
-const waitRefreshEnd = () =>
-  new Promise<void>((resolve) => {
-    if (isRefreshing === false) {
-      resolve();
-    } else {
-      setTimeout(() => waitRefreshEnd(), 100);
-    }
-  });
-
 apiInstance.interceptors.request.use(
   (request) => {
     if (request.url !== '/auth')
@@ -34,10 +23,6 @@ apiInstance.interceptors.request.use(
 
 apiInstance.interceptors.response.use(
   (response) => {
-    if (response.config.url === authUrl.auth()) {
-      isRefreshing = false;
-    }
-
     if (response.status >= 200 && response.status <= 300) {
       return response.data;
     }
@@ -46,37 +31,31 @@ apiInstance.interceptors.response.use(
   },
   async (error) => {
     if (error.config.url === authUrl.auth()) {
-      isRefreshing = false;
-
       location.replace('/auth/login');
 
       return Promise.reject(error);
     }
 
     if (error.response.status === 401) {
-      if (isRefreshing) {
-        await waitRefreshEnd();
+      try {
+        const { data }: { data: TokenResponseType } = await patch(
+          authUrl.auth(),
+          {},
+          {
+            headers: {
+              RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
+            },
+          }
+        );
+
+        localStorage.setItem('refresh_token', data.refreshToken);
+        localStorage.setItem('access_token', data.accessToken);
+        error.config.headers['Authorization'] = `Bearer ${data.accessToken}`;
 
         return apiInstance(error.config);
+      } catch (error) {
+        console.error('Error occurred during patch call:', error);
       }
-
-      isRefreshing = true;
-
-      const { data }: { data: TokenResponseType } = await patch(
-        authUrl.auth(),
-        {},
-        {
-          headers: {
-            RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
-          },
-        }
-      );
-
-      localStorage.setItem('refresh_token', data.refreshToken);
-      localStorage.setItem('access_token', data.accessToken);
-      error.config.headers['Authorization'] = `Bearer ${data.accessToken}`;
-
-      return apiInstance(error.config);
     }
 
     return Promise.reject(error);
