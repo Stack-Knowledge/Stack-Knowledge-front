@@ -1,5 +1,11 @@
+import { useRouter } from 'next/router';
 import { MissionDetailPage } from 'client/PageContainer';
 
-export default function MissionDetail() {
-  return <MissionDetailPage />;
+function MissionPage() {
+  const router = useRouter();
+  const missionId = router.query.missionId as string;
+
+  return <MissionDetailPage missionId={missionId} />;
 }
+
+export default MissionPage;

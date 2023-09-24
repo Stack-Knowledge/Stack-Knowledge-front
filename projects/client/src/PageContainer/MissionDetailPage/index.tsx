@@ -23,7 +23,11 @@ const sectionContents = [
   'ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇ',
 ];
 
-const MissionDetailPage = () => {
+interface MissionDetailProps {
+  missionId: string;
+}
+
+const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const [inputValue, setInputValue] = useState<string>('');
