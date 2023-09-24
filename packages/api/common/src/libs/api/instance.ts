@@ -75,7 +75,7 @@ apiInstance.interceptors.response.use(
 
       localStorage.setItem('refresh_token', data.refreshToken);
       localStorage.setItem('access_token', data.accessToken);
-      error.config.headers['access-token'] = data.accessToken;
+      error.config.headers['Authorization'] = `Bearer ${data.accessToken}`;
 
       return apiInstance(error.config);
     }
