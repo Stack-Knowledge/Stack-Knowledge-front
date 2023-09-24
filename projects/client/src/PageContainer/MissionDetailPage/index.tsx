@@ -7,6 +7,10 @@ import { Timer } from 'client/components';
 import * as S from './style';
 
 import { useRef, useState } from 'react';
+import { usePostSolve } from '../../../../../packages/api/client/src/hooks/solve/usePostSolve';
+import { useRouter } from 'next/router';
+
+const { push } = useRouter();
 
 const timerData = {
   hour: '10',
@@ -23,6 +27,21 @@ const MissionDetailPage = () => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const [inputValue, setInputValue] = useState<string>('');
+
+  const onSuccessFunc = () => {
+    push('/');
+    alert('문제가 등록되었습니다 !');
+  };
+
+  const { mutate } = usePostSolve(onSuccessFunc, solveId, missionId);
+
+  const handleSubmit = () => {
+    if (inputValue)
+      mutate({
+        solvation: inputValue,
+      });
+    else alert('답변 제출에 실패하였습니다.');
+  };
 
   return (
     <S.PageWrapper>
