@@ -15,7 +15,7 @@ export const usePostSolve = (
     }
   >(
     solveQueryKeys.postSolve(missionId),
-    (newSolve) => post(solveUrl.solve(solveId), newSolve, getHeaders()),
+    (newSolve) => post(solveUrl.solve(solveId), newSolve),
     {
       onSuccess: () => {
         onSuccessFunc();
