@@ -2,12 +2,12 @@
 
 import * as S from './style';
 
-// import { MissionCarousel } from 'common';
+import { MissionCarousel } from 'client/components';
 
 const MissionListPage = () => (
   <S.PageWrapper>
     <S.ScoringText>문제</S.ScoringText>
-    {/* <MissionCarousel role='client' /> */}
+    <MissionCarousel />
   </S.PageWrapper>
 );
 

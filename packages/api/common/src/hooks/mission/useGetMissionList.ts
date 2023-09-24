@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { missionQueryKeys, missionUrl, get, getHeaders } from 'api/common';
+import { missionQueryKeys, missionUrl, get } from 'api/common';
 
 import type { MissionListItemType } from 'types';
 
@@ -11,6 +11,6 @@ export const useGetMissionList = (
 ) =>
   useQuery<MissionListItemType[]>(
     missionQueryKeys.getMissionList(),
-    () => get(missionUrl.mission(), getHeaders()),
+    () => get(missionUrl.mission()),
     options
   );

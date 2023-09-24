@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { userQueryKeys, userUrl, get, getHeaders } from 'api/common';
+import { userQueryKeys, userUrl, get } from 'api/common';
 
 import type { ScoringListType } from 'types';
 
@@ -12,6 +12,6 @@ export const useGetScoringList = (
 ) =>
   useQuery<ScoringListType[]>(
     userQueryKeys.getScoringList(),
-    () => get(userUrl.scoring(pageNumber), getHeaders()),
+    () => get(userUrl.scoring(pageNumber)),
     options
   );

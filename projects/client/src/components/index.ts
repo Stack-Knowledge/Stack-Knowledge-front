@@ -4,3 +4,4 @@ export { default as ShopModalItem } from './ShopModalItem';
 export { default as Timer } from './Timer';
 export { default as MissionDetailModal } from './MissionDetailModal';
 export { default as RankingHeader } from './RankingHeader';
+export { default as MissionCarousel } from './MissionCarousel';
