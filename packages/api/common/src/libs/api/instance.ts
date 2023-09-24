@@ -67,9 +67,7 @@ apiInstance.interceptors.response.use(
         {},
         {
           headers: {
-            RefreshToken: `Bearer ${window.localStorage.getItem(
-              'refresh_token'
-            )}`,
+            RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
           },
         }
       );
