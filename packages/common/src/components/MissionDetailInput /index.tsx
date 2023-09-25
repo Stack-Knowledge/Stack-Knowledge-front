@@ -27,8 +27,6 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
   const router = useRouter();
 
   const onSuccessFunc = () => {
-    // 원하는 작업을 수행한 후
-    // 페이지를 이동하고 alert를 표시합니다.
     router.push('/');
     alert('문제가 등록되었습니다 !');
   };
