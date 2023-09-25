@@ -19,6 +19,7 @@ export const usePatchAccessToken = () =>
       ),
     {
       onSuccess: (data) => {
+        console.log(data);
         localStorage.setItem('refresh_token', data.refreshToken);
         localStorage.setItem('access_token', data.accessToken);
       },
