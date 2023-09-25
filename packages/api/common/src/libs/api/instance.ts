@@ -38,7 +38,7 @@ apiInstance.interceptors.response.use(
 
     if (error.response.status === 401) {
       try {
-        const { data }: { data: TokenResponseType } = await patch(
+        const data: { data: TokenResponseType } = await patch(
           authUrl.auth(),
           {},
           {

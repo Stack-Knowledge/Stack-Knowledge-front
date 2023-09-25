@@ -1,6 +1,8 @@
+'use client';
+
 import { Dispatch, SetStateAction, useState } from 'react';
 import * as S from './style';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';

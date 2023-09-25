@@ -8,9 +8,9 @@ import type { UseQueryOptions } from '@tanstack/react-query';
 
 export const useGetMissionDetail = (
   missionId: string,
-  options?: UseQueryOptions<MissionDetailType[]>
+  options?: UseQueryOptions<MissionDetailType>
 ) =>
-  useQuery<MissionDetailType[]>(
+  useQuery<MissionDetailType>(
     missionQueryKeys.getMissionDetail(missionId),
     () => get(missionUrl.missionDetail(missionId)),
     options
