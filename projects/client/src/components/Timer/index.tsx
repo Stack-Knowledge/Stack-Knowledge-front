@@ -2,13 +2,13 @@ import * as S from './style';
 import { useEffect, useState } from 'react';
 
 interface TimerProps {
-  hour: string;
-  minute: string;
+  hour: number;
+  minute: number;
 }
 
 const Timer: React.FC<TimerProps> = ({ hour, minute }) => {
-  const [currentHour, setCurrentHour] = useState(parseInt(hour));
-  const [currentMinute, setCurrentMinute] = useState(parseInt(minute));
+  const [currentHour, setCurrentHour] = useState(hour);
+  const [currentMinute, setCurrentMinute] = useState(minute);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -30,7 +30,7 @@ const Timer: React.FC<TimerProps> = ({ hour, minute }) => {
         <S.Collon>:</S.Collon>
         <S.Timer>{currentMinute.toString().padStart(2, '0')}</S.Timer>
       </S.TimerWrapper>
-      <S.NoticeText>* 문제는12:30 ~19:30분까지 풀 수 있습니다.</S.NoticeText>
+      <S.NoticeText>* 문제는 12:30 ~ 19:30분까지 풀 수 있습니다.</S.NoticeText>
     </S.Wrapper>
   );
 };
