@@ -1,7 +1,6 @@
-'use client';
-
 import { Dispatch, SetStateAction, useState } from 'react';
 import * as S from './style';
+import { useRouter } from 'next/router';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
@@ -25,6 +24,15 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
     }
   };
 
+  const router = useRouter();
+
+  const onSuccessFunc = () => {
+    // 원하는 작업을 수행한 후
+    // 페이지를 이동하고 alert를 표시합니다.
+    router.push('/');
+    alert('문제가 등록되었습니다 !');
+  };
+
   return (
     <S.SubmitContainer>
       <S.MissionDetailInputWrapper>
@@ -43,7 +51,7 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
         <span>
           {inputValue.length} / {MAXLENGTH}
         </span>
-        <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
+        <S.SubmitButton onClick={onSuccessFunc}>제출하기</S.SubmitButton>
       </S.SubmitButtonWrapper>
     </S.SubmitContainer>
   );
