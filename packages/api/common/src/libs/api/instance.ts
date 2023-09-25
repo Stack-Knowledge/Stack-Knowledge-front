@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { authUrl, patch, patchAccessToken } from 'api/common';
+import { authUrl, patch } from 'api/common';
 import { TokenResponseType } from 'types';
 
 export const apiInstance = axios.create({
@@ -38,7 +38,7 @@ apiInstance.interceptors.response.use(
 
     if (error.response.status === 401) {
       try {
-        const data: { data: TokenResponseType } = await patch(
+        const data: TokenResponseType = await patch(
           authUrl.auth(),
           {},
           {
