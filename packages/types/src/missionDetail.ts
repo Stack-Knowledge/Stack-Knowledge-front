@@ -1,5 +1,5 @@
 export interface MissionDetailType {
-  title: String;
-  content: String;
+  title: string;
+  content: string;
   timeLimit: number;
 }
