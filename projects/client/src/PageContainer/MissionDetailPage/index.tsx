@@ -7,7 +7,7 @@ import { Timer } from 'client/components';
 import * as S from './style';
 
 import { useRef, useState } from 'react';
-import { usePostSolve } from '../../../../../packages/api/client/src/hooks/solve/usePostSolve';
+import { usePostSolve } from 'api/client';
 import { useRouter } from 'next/router';
 
 const { push } = useRouter();
