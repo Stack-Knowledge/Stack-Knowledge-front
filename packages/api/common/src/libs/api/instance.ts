@@ -38,7 +38,7 @@ apiInstance.interceptors.response.use(
 
     if (error.response.status === 401) {
       try {
-        const { data }: { data: TokenResponseType } = await patch(
+        const data: { data: TokenResponseType } = await patch(
           authUrl.auth(),
           {},
           {
@@ -47,7 +47,7 @@ apiInstance.interceptors.response.use(
             },
           }
         );
-
+        console.log(data);
         localStorage.setItem('refresh_token', data.refreshToken);
         localStorage.setItem('access_token', data.accessToken);
         error.config.headers['Authorization'] = `Bearer ${data.accessToken}`;
