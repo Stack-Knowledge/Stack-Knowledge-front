@@ -6,9 +6,15 @@ import { TaskCard, RankingCard } from 'common/components';
 
 import { useGetRankingList, useGetMissionList } from 'api/common';
 
+import { useRouter } from 'next/navigation';
+
 const Banner = () => {
+  const { push } = useRouter();
+
   const { data: rankingList } = useGetRankingList();
   const { data: missionList } = useGetMissionList();
+
+  const onCardClick = () => {};
 
   return (
     <>
@@ -22,6 +28,7 @@ const Banner = () => {
                 taskTitle={mission.title}
                 miledge={mission.point}
                 key={mission.id + index}
+                onClick={onCardClick}
               />
             ))}
         </S.Contents>
