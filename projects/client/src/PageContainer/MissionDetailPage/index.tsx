@@ -20,8 +20,11 @@ interface MissionDetailProps {
 
 const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const { push } = useRouter();
+
   const dialog = useRef<HTMLDialogElement>(null);
+
   const [inputValue, setInputValue] = useState<string>('');
+
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
 
