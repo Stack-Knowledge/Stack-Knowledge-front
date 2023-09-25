@@ -30,7 +30,6 @@ const RankingCard: React.FC<RankingCardType> = ({
     <S.FlexWrapper>
       <S.Point>{cumulatePoint}</S.Point>
       <S.PointUnit>M</S.PointUnit>
-      ds
     </S.FlexWrapper>
   </S.CardWrapper>
 );
