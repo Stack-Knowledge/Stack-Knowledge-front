@@ -47,7 +47,6 @@ apiInstance.interceptors.response.use(
             },
           }
         );
-        console.log(data);
         localStorage.setItem('refresh_token', data.refreshToken);
         localStorage.setItem('access_token', data.accessToken);
         error.config.headers['Authorization'] = `Bearer ${data.accessToken}`;
