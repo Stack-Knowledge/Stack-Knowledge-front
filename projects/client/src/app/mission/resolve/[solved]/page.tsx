@@ -1,11 +1,9 @@
 import { MissionDetailPage } from 'client/PageContainer';
-import { useRouter } from 'next/router';
 
-function MissionPage() {
-  const router = useRouter();
-  const missionId = router.query.missionId as string;
-
-  return <MissionDetailPage missionId={missionId} />;
+interface SolveProps {
+  params: { missionId: string };
 }
 
-export default MissionPage;
+export default function SolvePage({ params: { missionId } }: SolveProps) {
+  return <MissionDetailPage missionId={missionId} />;
+}
