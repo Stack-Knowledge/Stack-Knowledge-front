@@ -36,8 +36,8 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
   };
 
   const handleSubmit = () => {
-    const orderList = selectedList.map((item, i) => {
-      return { itemId: item.itemId, count: countList[i] };
+    const orderList = countList.map((item, i) => {
+      return { itemId: selectedList[i].itemId, count: item };
     });
     mutate(orderList);
   };
@@ -48,7 +48,10 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
   }
 
   if (isError) {
-    if (error && error.response?.status) alert('마일리지가 부족합니다');
+    if (error && error.response?.status) {
+      alert('마일리지가 부족합니다');
+      location.reload();
+    }
   }
 
   return (
