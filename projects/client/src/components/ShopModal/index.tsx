@@ -10,12 +10,18 @@ import { usePostItemOrder } from 'api/client';
 
 import { ShopItemType } from 'types';
 
+import { useRouter } from 'next/navigation';
+
 interface ShopModalProps {
   selectedList: ShopItemType[] | [];
 }
 
 const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
   const [countList, setCountList] = useState<number[]>([]);
+
+  const { push } = useRouter();
+
+  const { mutate, isSuccess, isError, error } = usePostItemOrder();
 
   useEffect(() => {
     setCountList(new Array(selectedList.length).fill(1));
@@ -29,6 +35,22 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
     setCountList(newCountList);
   };
 
+  const handleSubmit = () => {
+    const orderList = selectedList.map((item, i) => {
+      return { itemId: item.itemId, count: countList[i] };
+    });
+    mutate(orderList);
+  };
+
+  if (isSuccess) {
+    push('/');
+    alert('상품이 구매되었습니다!');
+  }
+
+  if (isError) {
+    if (error && error.response?.status) alert('마일리지가 부족합니다');
+  }
+
   return (
     <S.ModalWrapper>
       <form method='dialog'>
@@ -40,7 +62,7 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
       <S.ItemList>
         {selectedList?.map((selectedItem, index) => (
           <ShopModalItem
-            key={selectedItem.itemId + index}
+            key={selectedItem.itemId}
             data={selectedItem}
             count={countList[index]}
             calculateCount={calculateCount}
@@ -49,7 +71,7 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
         ))}
       </S.ItemList>
       <form method='dialog'>
-        <S.PurchusButton>구매하기</S.PurchusButton>
+        <S.PurchusButton onClick={handleSubmit}>구매하기</S.PurchusButton>
       </form>
     </S.ModalWrapper>
   );

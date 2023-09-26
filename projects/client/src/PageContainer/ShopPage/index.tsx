@@ -41,7 +41,7 @@ const ShopPage = () => {
               <ShopItem
                 index={index}
                 onItemClick={onItemClick}
-                key={item.itemId + index}
+                key={item.itemId}
                 data={item}
                 itemStatus={itemStatus[index]}
               />

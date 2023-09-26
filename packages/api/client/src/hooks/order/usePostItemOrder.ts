@@ -2,13 +2,15 @@ import { useMutation } from '@tanstack/react-query';
 
 import { post, orderQueryKeys, orderUrl } from 'api/common';
 
+import { AxiosError } from 'axios';
+
 interface ItemOrderRequestType {
   itemId: string;
   count: number;
 }
 
 export const usePostItemOrder = () =>
-  useMutation<void, Error, ItemOrderRequestType[]>(
+  useMutation<void, AxiosError, ItemOrderRequestType[]>(
     orderQueryKeys.postItem(),
     (orderList) => post(orderUrl.orderItem(), orderList)
   );
