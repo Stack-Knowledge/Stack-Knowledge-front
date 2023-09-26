@@ -3,7 +3,10 @@
 import * as S from './style';
 import { XIcon } from 'client/assets';
 import { ShopModalItem } from 'client/components';
+
 import { useEffect, useState } from 'react';
+
+import { usePostItemOrder } from 'api/client';
 
 import { ShopItemType } from 'types';
 
