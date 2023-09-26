@@ -15,14 +15,14 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
   const [countList, setCountList] = useState<number[]>([]);
 
   useEffect(() => {
-    setCountList(new Array(selectedList.length).fill(0));
+    setCountList(new Array(selectedList.length).fill(1));
   }, [selectedList]);
 
   const calculateCount = (index: number, isPlus: boolean) => {
     const newCountList = [...countList];
     isPlus
       ? newCountList[index]++
-      : newCountList[index] !== 0 && newCountList[index]--;
+      : newCountList[index] !== 1 && newCountList[index]--;
     setCountList(newCountList);
   };
 
