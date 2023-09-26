@@ -48,7 +48,7 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
   }
 
   if (isError) {
-    if (error && error.response?.status) {
+    if (error && error.response?.status === 400) {
       alert('마일리지가 부족합니다');
       location.reload();
     }
