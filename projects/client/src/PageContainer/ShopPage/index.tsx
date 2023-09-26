@@ -7,12 +7,13 @@ import { slicePoint } from 'common';
 
 import { useEffect, useRef, useState } from 'react';
 
-import { useGetItemList } from 'api/client';
+import { useGetItemList, useGetStudentInfo } from 'api/client';
 
 const ShopPage = () => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const { data } = useGetItemList();
+  const { data: student } = useGetStudentInfo();
 
   const [itemStatus, setItemStatus] = useState<boolean[]>([]);
 
@@ -30,7 +31,9 @@ const ShopPage = () => {
     <S.PageWrapper>
       <S.MiledgeTitle>현재 마일리지</S.MiledgeTitle>
       <S.FlexWrapper>
-        <S.MilidgePoint>{slicePoint(1000)}</S.MilidgePoint>
+        <S.MilidgePoint>
+          {slicePoint(student?.cumulatePoint ?? 0)}
+        </S.MilidgePoint>
         <S.MilidgeUnit>M</S.MilidgeUnit>
       </S.FlexWrapper>
       <S.ListWrapper>
