@@ -21,3 +21,7 @@ export const userQueryKeys = {
 export const itemQueryKeys = {
   getItemList: () => ['item', 'list'],
 };
+
+export const orderQueryKeys = {
+  postItem: () => ['order'],
+};
