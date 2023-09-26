@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction, useState } from 'react';
 
 import * as S from './style';
 
-import { useRouter } from 'next/navigation';
+import { usePostSolve } from 'api/client';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
@@ -19,6 +19,8 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
   inputValue,
   setInputValue,
 }) => {
+  const [solvation, setSolvation] = useState<string>('');
+
   const MAXLENGTH = 500 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -26,13 +28,6 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
     if (inputValue.length <= MAXLENGTH) {
       setInputValue(inputValue);
     }
-  };
-
-  const router = useRouter();
-
-  const onSuccessFunc = () => {
-    router.push('/');
-    alert('문제가 등록되었습니다 !');
   };
 
   return (
@@ -53,7 +48,7 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
         <span>
           {inputValue.length} / {MAXLENGTH}
         </span>
-        <S.SubmitButton onClick={onSuccessFunc}>제출하기</S.SubmitButton>
+        <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
       </S.SubmitButtonWrapper>
     </S.SubmitContainer>
   );
