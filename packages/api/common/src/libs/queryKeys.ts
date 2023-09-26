@@ -17,3 +17,7 @@ export const userQueryKeys = {
   getScoringList: () => ['user', 'scoring'],
   postScoringResult: (solveId: string) => ['user', 'scoring', solveId],
 };
+
+export const itemQueryKeys = {
+  getItemList: () => ['item', 'list'],
+};
