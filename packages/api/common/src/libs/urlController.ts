@@ -19,3 +19,7 @@ export const userUrl = {
 export const itemUrl = {
   itemList: () => `/item`,
 };
+
+export const orderUrl = {
+  orderItem: () => `/order`,
+};
