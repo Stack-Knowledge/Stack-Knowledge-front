@@ -1,17 +1,12 @@
 'use client';
 
 import { MissionDetailInput } from 'common';
-
 import { MissionDetailModal } from 'client/components';
 import { Timer } from 'client/components';
 import * as S from './style';
-
 import { useGetMissionDetail } from 'api/common';
-
 import { useEffect, useRef, useState } from 'react';
-
 import { usePostSolve } from 'api/client';
-
 import { useRouter } from 'next/navigation';
 
 interface MissionDetailProps {
@@ -20,20 +15,23 @@ interface MissionDetailProps {
 
 const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const { push } = useRouter();
-
   const dialog = useRef<HTMLDialogElement>(null);
-
   const [inputValue, setInputValue] = useState<string>('');
-
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
+  const { data } = useGetMissionDetail(missionId);
 
   const onSuccessFunc = () => {
-    push(`/`);
-    alert('문제가 등록되었습니다 !');
+    if (inputValue) {
+      mutate({
+        solvation: inputValue,
+      });
+      push(`/`);
+      alert('문제를 제출하였습니다. !');
+    } else {
+      alert('답변 제출에 실패하였습니다.');
+    }
   };
-
-  const { data } = useGetMissionDetail(missionId);
 
   const { mutate } = usePostSolve(onSuccessFunc, missionId);
 
@@ -41,16 +39,9 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     if (data) {
       setHours(Math.floor(data.timeLimit / 3600));
       setMinutes(Math.floor((data.timeLimit % 3600) / 60));
+      onSuccessFunc();
     }
   }, [data]);
-
-  const handleSubmit = () => {
-    if (inputValue)
-      mutate({
-        solvation: inputValue,
-      });
-    else alert('답변 제출에 실패하였습니다.');
-  };
 
   return (
     <S.PageWrapper>
@@ -74,7 +65,10 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
             </S.MissionWrapper>
           </div>
           <S.ModalWrapper ref={dialog}>
-            <MissionDetailModal />
+            <MissionDetailModal
+              onConfirm={onSuccessFunc}
+              onCancel={() => dialog.current?.close()}
+            />
           </S.ModalWrapper>
         </>
       )}
