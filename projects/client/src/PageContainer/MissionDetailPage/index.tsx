@@ -17,8 +17,9 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const { push } = useRouter();
   const dialog = useRef<HTMLDialogElement>(null);
   const [inputValue, setInputValue] = useState<string>('');
-  const [hours, setHours] = useState<number>(0);
+  const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
+
   const { data } = useGetMissionDetail(missionId);
 
   const onSuccessFunc = () => {
@@ -36,11 +37,8 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const { mutate } = usePostSolve(onSuccessFunc, missionId);
 
   useEffect(() => {
-    if (data) {
-      setHours(Math.floor(data.timeLimit / 3600));
-      setMinutes(Math.floor((data.timeLimit % 3600) / 60));
-      onSuccessFunc();
-    }
+    setSeconds(Math.floor(data?.timeLimit ?? 0 / 3600));
+    setMinutes(Math.floor((data?.timeLimit ?? 0 % 3600) / 60));
   }, [data]);
 
   return (
@@ -49,7 +47,12 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
         <>
           <div>
             <S.TimerWrapper>
-              <Timer hour={hours} minute={minutes} />
+              <Timer
+                setSeconds={setSeconds}
+                setMinutes={setMinutes}
+                second={seconds}
+                minute={minutes}
+              />
             </S.TimerWrapper>
             <S.MissionWrapper>
               <S.SectionWrapper>
