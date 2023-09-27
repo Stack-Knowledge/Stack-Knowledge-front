@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { userQueryKeys, userUrl, get } from 'api/common';
+import { userUrl, userQueryKeys, get } from 'api/common';
 
 interface SolveDetailResponseType {
   solveId: string;
@@ -8,8 +8,14 @@ interface SolveDetailResponseType {
   solvation: string;
 }
 
-export const useGetSolveDetail = (solvedId: string) =>
+import type { UseQueryOptions } from '@tanstack/react-query';
+
+export const useGetSolveDetail = (
+  missionId: string,
+  options?: UseQueryOptions<SolveDetailResponseType>
+) =>
   useQuery<SolveDetailResponseType>(
-    userQueryKeys.getSolveDetail(solvedId),
-    () => get(userUrl.scoringResult(solvedId))
+    userQueryKeys.getSolveDetail(missionId),
+    () => get(userUrl.solveDetail(missionId)),
+    options
   );
