@@ -3,22 +3,39 @@
 import { GradingContainer } from 'admin/components';
 import * as S from './style';
 
-import { useGetSolveDetail } from 'api/admin';
+import { useGetSolveDetail, usePostScoringResult } from 'api/admin';
 
 import { useState } from 'react';
+
+import { SolveStatus } from 'types';
+
+import { useRouter } from 'next/navigation';
 
 interface GradingPageProps {
   solveId: string;
 }
 
 const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
+  const { push } = useRouter();
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
 
   const { data } = useGetSolveDetail(solveId);
+  const { mutate, isSuccess } = usePostScoringResult(solveId);
 
   const handleAnswerClick = (isTrue: boolean) => {
     setSelectedAnswer(isTrue);
   };
+
+  const handleSubmit = () => {
+    const solveStatus = selectedAnswer ? 'CORRECT_ANSWER' : 'WRONG_ANSWER';
+
+    mutate({ solveStatus: solveStatus });
+  };
+
+  if (isSuccess) {
+    push('/mission/scoring');
+    alert('채점되었습니다!');
+  }
 
   return (
     <S.PageWrapper>
@@ -49,7 +66,9 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
               </S.IncorrectWrapper>
             </S.SectionContainer>
           </S.TopContentWrapper>
-          <GradingContainer>{data.solvation}</GradingContainer>
+          <GradingContainer onClick={handleSubmit}>
+            {data.solvation}
+          </GradingContainer>
         </div>
       )}
     </S.PageWrapper>
