@@ -1,11 +1,12 @@
 import * as S from './style';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface TimerProps {
-  second: number;
   minute: number;
-  setSeconds: Dispatch<SetStateAction<number>>;
+  second: number;
   setMinutes: Dispatch<SetStateAction<number>>;
+  setSeconds: Dispatch<SetStateAction<number>>;
 }
 
 const Timer: React.FC<TimerProps> = ({
@@ -14,6 +15,8 @@ const Timer: React.FC<TimerProps> = ({
   setMinutes,
   setSeconds,
 }) => {
+  const { push } = useRouter();
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (second > 0) {
@@ -21,11 +24,15 @@ const Timer: React.FC<TimerProps> = ({
       } else if (minute > 0) {
         setMinutes((prevMinute) => prevMinute - 1);
         setSeconds(59);
+      } else {
+        clearInterval(intervalId);
+        alert('시간이 다 되었습니다.');
+        push('/');
       }
-    }, 1000); // 1초마다 감소
+    }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [minute, second]);
+  }, [minute, second, push]);
 
   return (
     <S.Wrapper>
