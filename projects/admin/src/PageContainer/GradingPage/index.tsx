@@ -29,7 +29,7 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
             <S.SectionContainer>
               <S.SectionWrapper>
                 <S.Section>[문제]</S.Section>
-                <S.Section>{data}</S.Section>
+                <S.Section>{data.title}</S.Section>
               </S.SectionWrapper>
               <S.IncorrectWrapper>
                 <S.AnswerWrapper>
@@ -49,7 +49,7 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
               </S.IncorrectWrapper>
             </S.SectionContainer>
           </S.TopContentWrapper>
-          <GradingContainer>김하온은 남자다.</GradingContainer>
+          <GradingContainer>{data.solvation}</GradingContainer>
         </div>
       )}
     </S.PageWrapper>
