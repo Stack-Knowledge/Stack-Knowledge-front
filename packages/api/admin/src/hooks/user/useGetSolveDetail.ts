@@ -8,7 +8,8 @@ interface SolveDetailResponseType {
   solvation: string;
 }
 
-export const useGetSolveDetail = (solveId: string) =>
-  useQuery<SolveDetailResponseType>(userQueryKeys.getSolveDetail(solveId), () =>
-    get(userUrl.solveDetail(solveId))
+export const useGetSolveDetail = (solvedId: string) =>
+  useQuery<SolveDetailResponseType>(
+    userQueryKeys.getSolveDetail(solvedId),
+    () => get(userUrl.scoringResult(solvedId))
   );
