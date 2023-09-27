@@ -9,7 +9,6 @@ interface SolveDetailResponseType {
 }
 
 export const useGetSolveDetail = (solveId: string) =>
-  useQuery<SolveDetailResponseType>(
-    userQueryKeys.getSolveDetail(solveId),
-    (solveId: string) => get(userUrl.solveDetail(solveId))
+  useQuery<SolveDetailResponseType>(userQueryKeys.getSolveDetail(solveId), () =>
+    get(userUrl.solveDetail(solveId))
   );
