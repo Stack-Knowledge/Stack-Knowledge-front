@@ -2,16 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 
 import { userQueryKeys, userUrl, get } from 'api/common';
 
-import type { ScoringListType } from 'types';
+interface SolveDetailResponseType {
+  solveId: string;
+  title: string;
+  solvation: string;
+}
 
-import type { UseQueryOptions } from '@tanstack/react-query';
-
-export const useGetScoringList = (
-  pageNumber: number,
-  options?: UseQueryOptions<ScoringListType[]>
-) =>
-  useQuery<ScoringListType[]>(
-    userQueryKeys.getScoringList(),
-    () => get(userUrl.scoring(pageNumber)),
-    options
+export const useGetSolveDetail = (solveId: string) =>
+  useQuery<SolveDetailResponseType>(
+    userQueryKeys.getSolveDetail(solveId),
+    (solveId: string) => get(userUrl.solveDetail(solveId))
   );
