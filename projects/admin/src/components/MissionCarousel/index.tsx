@@ -17,10 +17,11 @@ const MissionCarousel = () => {
   const [data, setData] = useState<ScoringListType[] | undefined>([]);
 
   const { data: newData } = useGetScoringList(pageIndex);
+
   const { push } = useRouter();
 
   const onCardClick = (solveId: string) => {
-    push(`mission/scoring/${solveId}`);
+    push(`/mission/scoring/${solveId}`);
   };
 
   const moveRight = () => {
