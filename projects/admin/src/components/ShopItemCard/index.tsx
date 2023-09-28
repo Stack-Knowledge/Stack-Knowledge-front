@@ -10,6 +10,10 @@ import { OrderdItemType } from 'types';
 
 import { usePatchOrderStatus } from 'api/admin';
 
+import { Modal } from 'admin/components';
+
+import { useRef } from 'react';
+
 interface ShopItemCardProps {
   data: OrderdItemType;
 }
@@ -17,6 +21,7 @@ interface ShopItemCardProps {
 const ShopItemCard: React.FC<ShopItemCardProps> = ({
   data: { item, price, count, user, id },
 }) => {
+  const dialog = useRef<HTMLDialogElement>(null);
   const { mutate, isSuccess } = usePatchOrderStatus(id);
 
   const onClick = () => {
@@ -29,7 +34,7 @@ const ShopItemCard: React.FC<ShopItemCardProps> = ({
   }
 
   return (
-    <S.CardWrapper onClick={onClick}>
+    <S.CardWrapper onClick={() => dialog.current?.showModal()}>
       <S.ImageWrapper>
         <Image src={item.image} alt='item image' unoptimized fill />
       </S.ImageWrapper>
@@ -44,6 +49,9 @@ const ShopItemCard: React.FC<ShopItemCardProps> = ({
           <S.WonText>M</S.WonText>
         </S.PriceWrapper>
       </S.TextWrapper>
+      <S.ModalWrapper ref={dialog}>
+        <Modal onClick={onClick} content='상품을 차감하시겠습니까?' />
+      </S.ModalWrapper>
     </S.CardWrapper>
   );
 };
