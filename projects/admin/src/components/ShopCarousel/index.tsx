@@ -12,17 +12,11 @@ import type { OrderdItemType } from 'types';
 
 import { useEffect, useState } from 'react';
 
-import { useRouter } from 'next/navigation';
-
 const ShopCarousel = () => {
   const [pageIndex, setPageIndex] = useState<number>(0);
   const [orderedItemList, setOrderedItemList] = useState<OrderdItemType[][]>();
 
   const { data } = useGetOrderedItemList();
-
-  const { push } = useRouter();
-
-  const onCardClick = (orderId: string) => {};
 
   useEffect(() => {
     const newOrderedItemList: OrderdItemType[][] = [];
@@ -59,11 +53,7 @@ const ShopCarousel = () => {
           </S.PointerWrapper>
           <S.ContentWrapper>
             {orderedItemList[pageIndex].map((item, index) => (
-              <ShopItemCard
-                onClick={() => onCardClick(item.id)}
-                key={item.id + index}
-                data={item}
-              />
+              <ShopItemCard key={item.id + index} data={item} />
             ))}
           </S.ContentWrapper>
           <S.PointerWrapper onClick={moveRight}>
