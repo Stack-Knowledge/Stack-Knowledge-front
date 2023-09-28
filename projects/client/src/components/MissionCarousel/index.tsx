@@ -57,7 +57,7 @@ const MissionCarousel = () => {
             {missionList[pageIndex]?.map((item, index) => (
               <TaskCard
                 onClick={() => onCardClick(item.id)}
-                key={item.id + index}
+                key={item.id}
                 userName={item.user.name}
                 taskTitle={item.title}
                 miledge={item.point}

@@ -6,6 +6,7 @@ export const missionQueryKeys = {
 
 export const studentQueryKeys = {
   getRankingList: () => ['student', 'rankingList'],
+  getStudentInfo: () => ['student', 'info'],
 };
 
 export const authQueryKeys = {
@@ -17,4 +18,12 @@ export const userQueryKeys = {
   getScoringList: () => ['user', 'scoring'],
   postScoringResult: (solveId: string) => ['user', 'scoring', solveId],
   getSolveDetail: (solveId: string) => ['user', 'solve', solveId],
+};
+
+export const itemQueryKeys = {
+  getItemList: () => ['item', 'list'],
+};
+
+export const orderQueryKeys = {
+  postItem: () => ['order'],
 };

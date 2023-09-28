@@ -5,6 +5,7 @@ export const missionUrl = {
 
 export const studentUrl = {
   rankingList: () => `/student/ranking`,
+  studentInfo: () => `/student/my`,
 };
 
 export const authUrl = {
@@ -15,4 +16,12 @@ export const userUrl = {
   scoring: (pageNumber: number) => `/user/scoring/list/${pageNumber}`,
   scoringResult: (solveId: string) => `/user/scoring/${solveId}`,
   solveDetail: (solveId: string) => `/user/scoring/${solveId}`,
+};
+
+export const itemUrl = {
+  itemList: () => `/item`,
+};
+
+export const orderUrl = {
+  orderItem: () => `/order`,
 };
