@@ -27,4 +27,5 @@ export const itemQueryKeys = {
 export const orderQueryKeys = {
   postItem: () => ['order'],
   getOrderedItemList: () => ['order', 'list'],
+  patchOrderStatus: (orderId: string) => ['order', 'status', orderId],
 };
