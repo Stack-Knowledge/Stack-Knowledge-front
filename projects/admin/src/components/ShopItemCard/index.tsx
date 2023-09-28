@@ -8,8 +8,6 @@ import { slicePoint } from 'common';
 
 import { OrderdItemType } from 'types';
 
-import { useRouter } from 'next/navigation';
-
 import { usePatchOrderStatus } from 'api/admin';
 
 interface ShopItemCardProps {
@@ -19,15 +17,15 @@ interface ShopItemCardProps {
 const ShopItemCard: React.FC<ShopItemCardProps> = ({
   data: { item, price, count, user, id },
 }) => {
-  const { push } = useRouter();
-
   const { mutate, isSuccess } = usePatchOrderStatus(id);
 
   const onClick = () => {
-    mutate();
+    mutate([{ count: 1, orderId: id }]);
   };
 
   if (isSuccess) {
+    window.location.reload();
+    alert('개수 차감되었습니다.');
   }
 
   return (

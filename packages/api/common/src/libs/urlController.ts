@@ -24,5 +24,4 @@ export const itemUrl = {
 
 export const orderUrl = {
   orderItem: () => `/order`,
-  itemStatus: (orderId: string) => `/order/${orderId}`,
 };

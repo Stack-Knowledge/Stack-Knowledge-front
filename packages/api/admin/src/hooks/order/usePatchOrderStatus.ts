@@ -2,12 +2,14 @@ import { useMutation } from '@tanstack/react-query';
 
 import { orderQueryKeys, orderUrl, patch } from 'api/common';
 
+interface OrderStatusRequestType {
+  count: number;
+  orderId: string;
+}
+
 export const usePatchOrderStatus = (orderId: string) =>
-  useMutation(
+  useMutation<void, Error, OrderStatusRequestType[]>(
     orderQueryKeys.patchOrderStatus(orderId),
-    () =>
-      patch(orderUrl.itemStatus(orderId), {
-        count: 1,
-      }),
+    (data) => patch(orderUrl.orderItem(), data),
     {}
   );
