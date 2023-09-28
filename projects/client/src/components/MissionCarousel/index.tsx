@@ -34,6 +34,8 @@ const MissionCarousel = () => {
         temp = [];
       }
     });
+    if (data)
+      newMissionList.push(data.slice(newMissionList.length * 10, data.length));
     setMissionList(newMissionList);
   }, [data]);
 
