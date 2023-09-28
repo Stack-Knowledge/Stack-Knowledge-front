@@ -5,7 +5,6 @@ export const ModalWrapper = styled.div`
   ${({ theme }) => theme.color.black};
   width: 17.5rem;
   height: 9.375rem;
-
   border-radius: 1.25rem;
 `;
 
@@ -18,6 +17,7 @@ export const ModalContentWrapper = styled.div`
 `;
 
 export const ModalContent = styled.span`
+  ${({ theme }) => theme.typo.body2};
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
 `;
@@ -28,25 +28,24 @@ export const ModalButtonWrapper = styled.form`
   gap: 1rem;
 `;
 
-export const ModalDeleted = styled.button`
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.white};
+export const Button = styled.button`
   ${({ theme }) => theme.typo.body2};
   width: 7.25rem;
   border-radius: 0.625rem;
-  border: 0;
+  margin-right: 0.5rem;
   padding: 0.625rem;
-  margin-left: 0.5rem;
   cursor: pointer;
 `;
-export const ModalConfirm = styled.button`
+
+export const ModalDeleted = styled(Button)`
+  background-color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.white};
+  border: 0;
+  cursor: pointer;
+`;
+
+export const ModalConfirm = styled(Button)`
   background-color: ${({ theme }) => theme.color.white};
   border: 0.0625rem solid ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.primary};
-  ${({ theme }) => theme.typo.body2};
-  width: 7.25rem;
-  border-radius: 0.625rem;
-  padding: 0.625rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
 `;
