@@ -6,7 +6,7 @@ import type { OrderdItemType } from 'types';
 
 import type { UseQueryOptions } from '@tanstack/react-query';
 
-export const useGetRankingList = (
+export const useGetOrderedItemList = (
   options?: UseQueryOptions<OrderdItemType[]>
 ) =>
   useQuery<OrderdItemType[]>(
