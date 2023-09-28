@@ -1,22 +1,25 @@
+'use client';
+
 import * as S from './style';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface TimerProps {
-  minute: number;
   second: number;
-  setMinutes: Dispatch<SetStateAction<number>>;
+  minute: number;
+  onTimeUp: (timeUp: boolean) => void;
   setSeconds: Dispatch<SetStateAction<number>>;
+  setMinutes: Dispatch<SetStateAction<number>>;
 }
 
 const Timer: React.FC<TimerProps> = ({
   minute,
   second,
+  onTimeUp,
   setMinutes,
   setSeconds,
 }) => {
   const { push } = useRouter();
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (second > 0) {
@@ -25,14 +28,14 @@ const Timer: React.FC<TimerProps> = ({
         setMinutes((prevMinute) => prevMinute - 1);
         setSeconds(59);
       } else {
+        // Time is up
         clearInterval(intervalId);
-        alert('시간이 다 되었습니다.');
-        push('/');
+        onTimeUp(true);
       }
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [minute, second, push]);
+  }, [minute, second]);
 
   return (
     <S.Wrapper>
