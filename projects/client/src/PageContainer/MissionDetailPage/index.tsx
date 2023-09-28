@@ -22,14 +22,31 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
 
   const { data } = useGetMissionDetail(missionId);
 
+  const preventClose = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+    e.returnValue = '';
+    history.go(0);
+  };
+
+  useEffect(() => {
+    const handleBeforeUnload = () =>
+      window.addEventListener('beforeunload', preventClose);
+    handleBeforeUnload();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
+
   const onSuccessFunc = () => {
     if (inputValue) {
       mutate({
         solvation: inputValue,
       });
       push(`/`);
-      alert('문제를 제출하였습니다. !');
+      alert('문제를 제출하였습니다.');
     } else {
+      push(`/`);
       alert('답변 제출에 실패하였습니다.');
     }
   };
@@ -48,6 +65,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
           <div>
             <S.TimerWrapper>
               <Timer
+                onTimeUp={() => onSuccessFunc()}
                 setSeconds={setSeconds}
                 setMinutes={setMinutes}
                 second={seconds}
@@ -69,7 +87,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
           </div>
           <S.ModalWrapper ref={dialog}>
             <MissionDetailModal
-              onConfirm={onSuccessFunc}
+              onConfirm={() => onSuccessFunc()}
               onCancel={() => dialog.current?.close()}
             />
           </S.ModalWrapper>
