@@ -2,13 +2,8 @@ import { useMutation } from '@tanstack/react-query';
 
 import { post, userQueryKeys, userUrl } from 'api/common';
 
-import { SolveStatus } from 'types';
-
 export const usePostScoringResult = (solveId: string) =>
-  useMutation<void, Error, { solveStatus: SolveStatus }>(
+  useMutation<void, Error, { solveStatus: string }>(
     userQueryKeys.postScoringResult(solveId),
-    (solveStatus) => post(userUrl.scoringResult(solveId), solveStatus),
-    {
-      onSuccess: () => {},
-    }
+    (solveStatus) => post(userUrl.scoringResult(solveId), solveStatus)
   );
