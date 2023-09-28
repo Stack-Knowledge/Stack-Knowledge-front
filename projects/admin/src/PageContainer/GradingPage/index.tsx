@@ -3,49 +3,74 @@
 import { GradingContainer } from 'admin/components';
 import * as S from './style';
 
+import { useGetSolveDetail, usePostScoringResult } from 'api/admin';
+
 import { useState } from 'react';
+
+import { SolveStatus } from 'types';
+
+import { useRouter } from 'next/navigation';
 
 interface GradingPageProps {
   solveId: string;
 }
 
 const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
+  const { push } = useRouter();
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
+
+  const { data } = useGetSolveDetail(solveId);
+  const { mutate, isSuccess } = usePostScoringResult(solveId);
 
   const handleAnswerClick = (isTrue: boolean) => {
     setSelectedAnswer(isTrue);
   };
 
+  const handleSubmit = () => {
+    const solveStatus = selectedAnswer ? 'CORRECT_ANSWER' : 'WRONG_ANSWER';
+
+    mutate({ solveStatus: solveStatus });
+  };
+
+  if (isSuccess) {
+    push('/mission/scoring');
+    alert('채점되었습니다!');
+  }
+
   return (
     <S.PageWrapper>
-      <div>
-        <S.TopContentWrapper>
-          <S.Title>채점하기</S.Title>
-          <S.SectionContainer>
-            <S.SectionWrapper>
-              <S.Section>[문제]</S.Section>
-              <S.Section>여기에 문제를 작성을 할 거에요~</S.Section>
-            </S.SectionWrapper>
-            <S.IncorrectWrapper>
-              <S.AnswerWrapper>
-                <S.AnswerSection>정답</S.AnswerSection>
-                <S.ClickSection
-                  isSelected={selectedAnswer}
-                  onClick={() => handleAnswerClick(true)}
-                />
-              </S.AnswerWrapper>
-              <S.NotAnswerWrapper>
-                <S.AnswerSection>오답</S.AnswerSection>
-                <S.ClickSection
-                  isSelected={!selectedAnswer}
-                  onClick={() => handleAnswerClick(false)}
-                />
-              </S.NotAnswerWrapper>
-            </S.IncorrectWrapper>
-          </S.SectionContainer>
-        </S.TopContentWrapper>
-        <GradingContainer>김하온은 남자다.</GradingContainer>
-      </div>
+      {data && (
+        <div>
+          <S.TopContentWrapper>
+            <S.Title>채점하기</S.Title>
+            <S.SectionContainer>
+              <S.SectionWrapper>
+                <S.Section>[문제]</S.Section>
+                <S.Section>{data.title}</S.Section>
+              </S.SectionWrapper>
+              <S.IncorrectWrapper>
+                <S.AnswerWrapper>
+                  <S.AnswerSection>정답</S.AnswerSection>
+                  <S.ClickSection
+                    isSelected={selectedAnswer}
+                    onClick={() => handleAnswerClick(true)}
+                  />
+                </S.AnswerWrapper>
+                <S.NotAnswerWrapper>
+                  <S.AnswerSection>오답</S.AnswerSection>
+                  <S.ClickSection
+                    isSelected={!selectedAnswer}
+                    onClick={() => handleAnswerClick(false)}
+                  />
+                </S.NotAnswerWrapper>
+              </S.IncorrectWrapper>
+            </S.SectionContainer>
+          </S.TopContentWrapper>
+          <GradingContainer onClick={handleSubmit}>
+            {data.solvation}
+          </GradingContainer>
+        </div>
+      )}
     </S.PageWrapper>
   );
 };

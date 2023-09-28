@@ -10,8 +10,10 @@ export const usePostLoginCode = () =>
     (loginCode) => post(authUrl.auth(), loginCode),
     {
       onSuccess: (data) => {
-        localStorage.setItem('refresh_token', data.refreshToken);
-        localStorage.setItem('access_token', data.accessToken);
+        if (data.refreshToken)
+          localStorage.setItem('refresh_token', data.refreshToken);
+        if (data.accessToken)
+          localStorage.setItem('access_token', data.accessToken);
       },
     }
   );
