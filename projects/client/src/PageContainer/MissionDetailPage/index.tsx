@@ -37,8 +37,8 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const { mutate } = usePostSolve(onSuccessFunc, missionId);
 
   useEffect(() => {
-    setSeconds(Math.floor(data?.timeLimit ?? 0 / 3600));
-    setMinutes(Math.floor((data?.timeLimit ?? 0 % 3600) / 60));
+    setMinutes(Math.floor((data?.timeLimit ?? 0) / 60));
+    setSeconds((data?.timeLimit ?? 0) % 60);
   }, [data]);
 
   return (
