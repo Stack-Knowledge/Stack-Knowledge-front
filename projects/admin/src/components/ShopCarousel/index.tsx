@@ -22,9 +22,7 @@ const ShopCarousel = () => {
 
   const { push } = useRouter();
 
-  const onCardClick = (missionId: string) => {
-    push(`/mission/resolve/${missionId}`);
-  };
+  const onCardClick = (orderId: string) => {};
 
   useEffect(() => {
     const newOrderedItemList: OrderdItemType[][] = [];
@@ -57,7 +55,11 @@ const ShopCarousel = () => {
           </S.PointerWrapper>
           <S.ContentWrapper>
             {orderedItemList[pageIndex].map((item, index) => (
-              <ShopItemCard key={item.id + index} data={item} />
+              <ShopItemCard
+                onClick={() => onCardClick(item.id)}
+                key={item.id + index}
+                data={item}
+              />
             ))}
           </S.ContentWrapper>
           <S.PointerWrapper onClick={moveRight}>

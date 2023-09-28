@@ -10,12 +10,14 @@ import { OrderdItemType } from 'types';
 
 interface ShopItemCardProps {
   data: OrderdItemType;
+  onClick: () => void;
 }
 
 const ShopItemCard: React.FC<ShopItemCardProps> = ({
   data: { item, price, count, user },
+  onClick,
 }) => (
-  <S.CardWrapper>
+  <S.CardWrapper onClick={onClick}>
     <S.ImageWrapper>
       <Image src={item.image} alt='item image' unoptimized fill />
     </S.ImageWrapper>
