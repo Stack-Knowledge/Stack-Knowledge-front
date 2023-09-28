@@ -34,6 +34,11 @@ const ShopCarousel = () => {
         temp = [];
       }
     });
+    if (data)
+      newOrderedItemList.push(
+        data.slice(newOrderedItemList.length * 10, data.length)
+      );
+    console.log(newOrderedItemList, data);
     setOrderedItemList(newOrderedItemList);
   }, [data]);
 
