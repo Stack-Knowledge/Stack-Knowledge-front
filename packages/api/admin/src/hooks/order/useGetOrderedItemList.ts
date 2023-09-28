@@ -11,6 +11,6 @@ export const useGetRankingList = (
 ) =>
   useQuery<OrderdItemType[]>(
     orderQueryKeys.getOrderedItemList(),
-    () => get(orderUrl.orderedItemList()),
+    () => get(orderUrl.orderItem()),
     options
   );
