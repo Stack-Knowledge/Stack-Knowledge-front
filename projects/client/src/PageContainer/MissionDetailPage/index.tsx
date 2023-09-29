@@ -32,7 +32,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const preventClose = (e: BeforeUnloadEvent) => {
     e.preventDefault();
     e.returnValue = '';
-    history.go(0);
+    mutate({ solvation: '새로고침하여 제출된 사용자입니다.' });
   };
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     alert('문제를 제출하였습니다.');
   };
 
-  const { mutate } = usePostSolve(onSuccessFunc, missionId);
+  const { mutate } = usePostSolve(missionId);
 
   useEffect(() => {
     setMinutes(Math.floor((data?.timeLimit ?? 0) / 60));

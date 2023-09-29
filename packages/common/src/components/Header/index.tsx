@@ -12,8 +12,6 @@ import {
   MadeIcon,
 } from 'common/assets';
 
-import { useEffect, useState } from 'react';
-
 interface HeaderProps {
   role: 'admin' | 'client';
 }
