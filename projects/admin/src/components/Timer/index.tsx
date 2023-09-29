@@ -22,7 +22,6 @@ const Timer: React.FC<TimerProps> = ({ time, setTime }) => {
     const newSecond = parseInt(e.target.value);
     setSecond(newSecond);
     setTime(minute + newSecond);
-    console.log(minute + newSecond);
   };
 
   return (
