@@ -16,7 +16,6 @@ const Timer: React.FC<TimerProps> = ({ time, setTime }) => {
     const newMinute = parseInt(e.target.value) * 60;
     setMinute(newMinute);
     setTime(newMinute + second);
-    console.log(newMinute + second);
   };
 
   const onSecondChange = (e: React.ChangeEvent<HTMLInputElement>) => {
