@@ -20,6 +20,7 @@ const Timer: React.FC<TimerProps> = ({
   setSeconds,
 }) => {
   const { push } = useRouter();
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (second > 0) {

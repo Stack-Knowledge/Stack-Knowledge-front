@@ -1,12 +1,16 @@
 'use client';
 
 import { MissionDetailInput } from 'common';
+
 import { MissionDetailModal } from 'client/components';
 import { Timer } from 'client/components';
 import * as S from './style';
+
 import { useGetMissionDetail } from 'api/common';
-import { useEffect, useRef, useState } from 'react';
 import { usePostSolve } from 'api/client';
+
+import { useEffect, useRef, useState } from 'react';
+
 import { useRouter } from 'next/navigation';
 
 interface MissionDetailProps {
@@ -15,8 +19,11 @@ interface MissionDetailProps {
 
 const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const { push } = useRouter();
+
   const dialog = useRef<HTMLDialogElement>(null);
+
   const [inputValue, setInputValue] = useState<string>('');
+
   const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
 
@@ -38,17 +45,20 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     };
   }, []);
 
+  useEffect(() => {
+    history.pushState(null, location.href);
+
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
+
   const onSuccessFunc = () => {
-    if (inputValue) {
-      mutate({
-        solvation: inputValue,
-      });
-      push(`/`);
-      alert('문제를 제출하였습니다.');
-    } else {
-      push(`/`);
-      alert('답변 제출에 실패하였습니다.');
-    }
+    mutate({
+      solvation: inputValue,
+    });
+    push(`/`);
+    alert('문제를 제출하였습니다.');
   };
 
   const { mutate } = usePostSolve(onSuccessFunc, missionId);
