@@ -21,7 +21,6 @@ const CreatePage = () => {
   const { mutate, isSuccess } = usePostMission();
 
   const handleSubmit = () => {
-    console.log(time);
     if (titleValue && detailValue && time)
       mutate({ title: titleValue, content: detailValue, timeLimit: time });
     else alert('똑바로 다 적어라 ㅋㅋ');
