@@ -53,7 +53,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     };
   }, []);
 
-  const onSuccessFunc = () => {
+  const handleSuccess = () => {
     mutate({
       solvation: inputValue,
     });
@@ -61,7 +61,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     alert('문제를 제출하였습니다.');
   };
 
-  const { mutate } = usePostSolve(missionId);
+  const { mutate, isSuccess } = usePostSolve(missionId);
 
   useEffect(() => {
     setMinutes(Math.floor((data?.timeLimit ?? 0) / 60));
@@ -75,7 +75,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
           <div>
             <S.TimerWrapper>
               <Timer
-                onTimeUp={() => onSuccessFunc()}
+                onTimeUp={() => handleSuccess()}
                 setSeconds={setSeconds}
                 setMinutes={setMinutes}
                 second={seconds}
@@ -97,7 +97,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
           </div>
           <S.ModalWrapper ref={dialog}>
             <MissionDetailModal
-              onConfirm={() => onSuccessFunc()}
+              onConfirm={handleSuccess}
               onCancel={() => dialog.current?.close()}
             />
           </S.ModalWrapper>
