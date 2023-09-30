@@ -15,8 +15,12 @@ export const ProfileImageWrapper = styled.div`
   position: relative;
   right: 0.5rem;
   border-radius: 6.25rem;
-  img {
+  background-color: rgba(143, 143, 143, 0.8); /* 배경색 지정 */
+
+  &:hover img {
     object-fit: cover;
+    cursor: pointer;
+    opacity: 30%;
   }
 `;
 
