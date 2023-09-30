@@ -53,7 +53,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     };
   }, []);
 
-  const handleSuccess = () => {
+  const submitSolution = () => {
     mutate({
       solvation: inputValue,
     });
@@ -75,7 +75,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
           <div>
             <S.TimerWrapper>
               <Timer
-                onTimeUp={() => handleSuccess()}
+                onTimeUp={() => submitSolution()}
                 setSeconds={setSeconds}
                 setMinutes={setMinutes}
                 second={seconds}
@@ -97,7 +97,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
           </div>
           <S.ModalWrapper ref={dialog}>
             <MissionDetailModal
-              onConfirm={handleSuccess}
+              onConfirm={submitSolution}
               onCancel={() => dialog.current?.close()}
             />
           </S.ModalWrapper>
