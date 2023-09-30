@@ -61,7 +61,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     alert('문제를 제출하였습니다.');
   };
 
-  const { mutate, isSuccess } = usePostSolve(missionId);
+  const { mutate } = usePostSolve(missionId);
 
   useEffect(() => {
     setMinutes(Math.floor((data?.timeLimit ?? 0) / 60));
