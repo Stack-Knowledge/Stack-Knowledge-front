@@ -14,6 +14,10 @@ export const authQueryKeys = {
   postLoginCode: () => ['auth', 'loginCode'],
 };
 
+export const solveQueryKeys = {
+  postSolve: (missionId: string) => ['solve', missionId],
+};
+
 export const userQueryKeys = {
   getScoringList: () => ['user', 'scoring'],
   postScoringResult: (solveId: string) => ['user', 'scoring', solveId],

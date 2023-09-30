@@ -6,4 +6,6 @@ export * from './tokenResponseType';
 export * from './mission';
 export * from './scoringListType';
 export * from './solveStatusType';
+export * from './missionDetail';
 export * from './studentType';
+

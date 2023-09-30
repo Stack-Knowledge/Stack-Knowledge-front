@@ -15,6 +15,7 @@ export const Section = styled.div`
   ${({ theme }) => theme.typo.button};
   margin-bottom: 1.25rem;
   font-weight: 400;
+  max-width: 55.625rem;
 `;
 
 export const MissionWrapper = styled.div`

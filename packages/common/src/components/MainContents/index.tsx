@@ -8,13 +8,15 @@ import { useGetRankingList, useGetMissionList } from 'api/common';
 
 import { useRouter } from 'next/navigation';
 
-const Banner = () => {
+const MainContents = () => {
   const { push } = useRouter();
 
   const { data: rankingList } = useGetRankingList();
   const { data: missionList } = useGetMissionList();
 
-  const onCardClick = () => {};
+  const onCardClick = (missionId: string) => {
+    push(`/mission/resolve/${missionId}`);
+  };
 
   return (
     <>
@@ -28,7 +30,7 @@ const Banner = () => {
                 taskTitle={mission.title}
                 miledge={mission.point}
                 key={mission.id + index}
-                onClick={onCardClick}
+                onClick={() => onCardClick(mission.id)}
               />
             ))}
         </S.Contents>
@@ -49,4 +51,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default MainContents;
