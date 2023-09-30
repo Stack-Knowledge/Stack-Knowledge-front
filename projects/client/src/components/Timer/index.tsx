@@ -1,36 +1,51 @@
+'use client';
+
 import * as S from './style';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface TimerProps {
-  hour: string;
-  minute: string;
+  second: number;
+  minute: number;
+  onTimeUp: (timeUp: boolean) => void;
+  setSeconds: Dispatch<SetStateAction<number>>;
+  setMinutes: Dispatch<SetStateAction<number>>;
 }
 
-const Timer: React.FC<TimerProps> = ({ hour, minute }) => {
-  const [currentHour, setCurrentHour] = useState(parseInt(hour));
-  const [currentMinute, setCurrentMinute] = useState(parseInt(minute));
+const Timer: React.FC<TimerProps> = ({
+  minute,
+  second,
+  onTimeUp,
+  setMinutes,
+  setSeconds,
+}) => {
+  const { push } = useRouter();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if (currentMinute > 0) {
-        setCurrentMinute((prevMinute) => prevMinute - 1);
-      } else if (currentHour > 0) {
-        setCurrentHour((prevHour) => prevHour - 1);
-        setCurrentMinute(59);
+      if (second > 0) {
+        setSeconds((prevSecond) => prevSecond - 1);
+      } else if (minute > 0) {
+        setMinutes((prevMinute) => prevMinute - 1);
+        setSeconds(59);
+      } else {
+        // Time is up
+        clearInterval(intervalId);
+        onTimeUp(true);
       }
-    }, 60000);
+    }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [currentHour, currentMinute]);
+  }, [minute, second]);
 
   return (
     <S.Wrapper>
       <S.TimerWrapper>
-        <S.Timer>{currentHour.toString().padStart(2, '0')}</S.Timer>
+        <S.Timer>{minute.toString().padStart(2, '0')}</S.Timer>
         <S.Collon>:</S.Collon>
-        <S.Timer>{currentMinute.toString().padStart(2, '0')}</S.Timer>
+        <S.Timer>{second.toString().padStart(2, '0')}</S.Timer>
       </S.TimerWrapper>
-      <S.NoticeText>* 문제는12:30 ~19:30분까지 풀 수 있습니다.</S.NoticeText>
+      <S.NoticeText>* 문제는 12:30 ~ 19:30분까지 풀 수 있습니다.</S.NoticeText>
     </S.Wrapper>
   );
 };

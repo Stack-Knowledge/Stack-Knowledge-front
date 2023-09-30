@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   cursor: pointer;

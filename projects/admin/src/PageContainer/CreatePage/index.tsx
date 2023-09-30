@@ -18,18 +18,18 @@ const CreatePage = () => {
 
   const { push } = useRouter();
 
-  const onSuccessFunc = () => {
-    push('/');
-    alert('문제가 등록되었습니다 !');
-  };
-
-  const { mutate } = usePostMission(onSuccessFunc);
+  const { mutate, isSuccess } = usePostMission();
 
   const handleSubmit = () => {
     if (titleValue && detailValue && time)
       mutate({ title: titleValue, content: detailValue, timeLimit: time });
     else alert('똑바로 다 적어라 ㅋㅋ');
   };
+
+  if (isSuccess) {
+    push('/');
+    alert('문제가 등록되었습니다 !');
+  }
 
   return (
     <S.PageWrapper>

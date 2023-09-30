@@ -1,7 +1,10 @@
 'use client';
 
 import { Dispatch, SetStateAction, useState } from 'react';
+
 import * as S from './style';
+
+import { usePostSolve } from 'api/client';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
@@ -16,6 +19,8 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
   inputValue,
   setInputValue,
 }) => {
+  const [solvation, setSolvation] = useState<string>('');
+
   const MAXLENGTH = 500 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
