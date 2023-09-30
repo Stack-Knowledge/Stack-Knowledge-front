@@ -37,6 +37,7 @@ export const ProfileImageWrapper = styled.div`
 
 export const UserContentWrapper = styled.div`
   display: flex;
+  width: 350px;
 `;
 
 export const UserRank = styled.div`
