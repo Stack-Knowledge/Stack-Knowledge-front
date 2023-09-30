@@ -24,7 +24,11 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
   return (
     <S.RankingHeaderWrapper>
       <S.ProfileImageWrapper>
-        <Image fill alt='profile' src={profileImage ?? DefaultProfile} />
+        <Image
+          fill
+          alt='profile'
+          src={profileImage === '' ? DefaultProfile : profileImage}
+        />
       </S.ProfileImageWrapper>
       <S.UserContentWrapper>
         <S.UserRank>현재 {ranking}위</S.UserRank>
