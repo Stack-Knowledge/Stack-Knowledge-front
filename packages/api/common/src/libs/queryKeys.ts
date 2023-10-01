@@ -33,3 +33,7 @@ export const orderQueryKeys = {
   getOrderedItemList: () => ['order', 'list'],
   patchOrderStatus: (orderId: string) => ['order', 'status', orderId],
 };
+
+export const uploadQueryKey = {
+  postUploadProfile: () => ['upload', 'profile'],
+};
