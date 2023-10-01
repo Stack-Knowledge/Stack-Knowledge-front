@@ -20,18 +20,18 @@ const CreatePage = () => {
 
   const { push } = useRouter();
 
-  const onSuccessFunc = () => {
-    push('/');
-    toast.success('문제가 성공적으로 등롱되었습니다.');
-  };
-
-  const { mutate } = usePostMission(onSuccessFunc);
+  const { mutate, isSuccess } = usePostMission();
 
   const handleSubmit = () => {
     if (titleValue && detailValue && time)
       mutate({ title: titleValue, content: detailValue, timeLimit: time });
     else toast.error('작성되지 않은 빈칸이 있습니다.');
   };
+
+  if (isSuccess) {
+    push('/');
+    toast.success('문제가 성공적으로 등롱되었습니다.');
+  }
 
   return (
     <S.PageWrapper>

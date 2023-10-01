@@ -12,6 +12,10 @@ export const authUrl = {
   auth: () => `/auth`,
 } as const;
 
+export const solveUrl = {
+  solve: (missionId: string) => `/solve/${missionId}`,
+} as const;
+
 export const userUrl = {
   scoring: (pageNumber: number) => `/user/scoring/list/${pageNumber}`,
   scoringResult: (solveId: string) => `/user/scoring/${solveId}`,
