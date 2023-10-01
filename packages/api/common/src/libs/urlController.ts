@@ -29,3 +29,7 @@ export const itemUrl = {
 export const orderUrl = {
   orderItem: () => `/order`,
 };
+
+export const uploadUrl = {
+  uploadProfile: () => `/image`,
+};
