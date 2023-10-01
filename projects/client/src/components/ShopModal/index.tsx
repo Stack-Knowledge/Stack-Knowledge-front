@@ -46,7 +46,7 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
 
   if (isSuccess) {
     push('/');
-    toast.success('상품이 성공적으로 구매되었숩니다.');
+    toast.success('상품이 성공적으로 구매되었습니다.');
   }
 
   if (isError) {

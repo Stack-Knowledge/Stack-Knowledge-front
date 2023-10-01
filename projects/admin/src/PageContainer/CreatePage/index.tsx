@@ -30,7 +30,7 @@ const CreatePage = () => {
 
   if (isSuccess) {
     push('/');
-    toast.success('문제가 성공적으로 등롱되었습니다.');
+    toast.success('문제가 성공적으로 등록되었습니다.');
   }
 
   return (
