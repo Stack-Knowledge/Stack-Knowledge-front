@@ -13,7 +13,7 @@ export const ProfileImageWrapper = styled.div`
   height: 7.5rem;
   overflow: hidden;
   position: relative;
-  right: 0.5rem;
+  right: 1.3rem;
   border-radius: 6.25rem;
   background-color: rgba(143, 143, 143, 1);
 
@@ -37,7 +37,7 @@ export const ProfileImageWrapper = styled.div`
 
 export const UserContentWrapper = styled.div`
   display: flex;
-  width: 21.875rem;
+  width: 16.875rem;
 `;
 
 export const UserRank = styled.div`
@@ -45,6 +45,7 @@ export const UserRank = styled.div`
   ${({ theme }) => theme.typo.button};
   padding-right: 0.625rem;
 `;
+
 export const UserName = styled.div`
   color: ${({ theme }) => theme.color.black};
   ${({ theme }) => theme.typo.button};
