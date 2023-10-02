@@ -18,7 +18,7 @@ const RankingPage = () => {
   }
 
   const userRanking =
-    rankingList.findIndex((item) => item.id === studentInfo.user.id) + 2;
+    rankingList.findIndex((item) => item.id === studentInfo.id) + 1;
 
   return (
     <S.RankingWrapper>
