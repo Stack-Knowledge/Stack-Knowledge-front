@@ -1,17 +1,14 @@
-'use client';
-
-import * as S from './style';
-
+import React, { useRef } from 'react';
+import Image from 'next/image';
+import { usePostUploadProfile } from 'api/client';
 import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
+import * as S from './style';
+import { RankingPropsType } from 'types';
 import { slicePoint } from 'common';
 
-import { RankingPropsType } from 'types';
-
-import Image from 'next/image';
-
 interface RankingHeaderProps {
-  data: RankingPropsType;
   ranking: number;
+  data: RankingPropsType;
 }
 
 const RankingHeader: React.FC<RankingHeaderProps> = ({
@@ -21,10 +18,50 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
     user: { name, profileImage },
   },
 }) => {
+  const { mutate } = usePostUploadProfile();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      try {
+        uploadImageToServer(file);
+        alert('이미지 업로드가 완료되었습니다.');
+      } catch (error) {
+        console.error('Error uploading image:', error);
+        alert('이미지 업로드에 실패했습니다.');
+      }
+    }
+  };
+
+  const uploadImageToServer = async (image: File) => {
+    console.log(image);
+    const formData = new FormData();
+    formData.append('image', image);
+
+    try {
+      mutate((data) => {
+        console.log('asdasdasd');
+        return { ...data, image: formData };
+      });
+    } catch (error) {
+      alert('실패');
+      console.error('Error uploading image:', error);
+    }
+  };
+
   return (
     <S.RankingHeaderWrapper>
-      <S.ProfileImageWrapper>
+      <S.ProfileImageWrapper onClick={() => fileInputRef.current?.click()}>
+        <input
+          type='file'
+          accept='image/*'
+          style={{ display: 'none' }}
+          ref={fileInputRef}
+          onChange={handleImageChange}
+        />
         <Image
+          key={profileImage}
           fill
           alt='profile'
           src={profileImage === '' ? DefaultProfile : profileImage}
