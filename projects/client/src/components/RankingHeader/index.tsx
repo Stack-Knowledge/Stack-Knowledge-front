@@ -18,16 +18,33 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
     user: { name, profileImage },
   },
 }) => {
-  const { mutate } = usePostUploadProfile();
+  const { mutate, isSuccess } = usePostUploadProfile();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const formData = new FormData();
       formData.append('file', e.target.files[0], e.target.files[0].name);
-      mutate(formData);
+      mutate({ image: formData });
+      // for (let value of formData.values()) {
+      //   console.log(value);
+      // }
+      //   await fetch('/api/student/image', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'multipart/form-data',
+      //     },
+      //     body: {
+      //       image: formData,
+      //     },
+      //   })
+      //     .then((res) => res.json())
+      //     .then((data) => console.log(data));
     }
   };
+
+  if (isSuccess) {
+  }
 
   return (
     <S.RankingHeaderWrapper>

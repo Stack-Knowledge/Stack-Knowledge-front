@@ -10,6 +10,9 @@ const nextConfig = {
       destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
     },
   ],
+  images: {
+    domains: ['https://stack-knowledge.s3.ap-northeast-2.amazonaws.com'],
+  },
 };
 
 module.exports = nextConfig;
