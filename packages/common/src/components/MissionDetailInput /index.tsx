@@ -6,8 +6,8 @@ import * as S from './style';
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
   onClick?: () => void;
-  inputValue: string;
-  setInputValue: Dispatch<SetStateAction<string>>;
+  inputValue?: string;
+  setInputValue?: Dispatch<SetStateAction<string>>;
 }
 
 const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
@@ -20,7 +20,7 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
 
   const onInputHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value;
-    if (inputValue.length <= MAXLENGTH) {
+    if (inputValue.length <= MAXLENGTH && setInputValue) {
       setInputValue(inputValue);
     }
   };
@@ -39,12 +39,14 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
           onChange={onInputHandler}
         />
       </S.MissionDetailInputWrapper>
-      <S.SubmitButtonWrapper inputValue={inputValue.length}>
-        <span>
-          {inputValue.length} / {MAXLENGTH}
-        </span>
-        <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
-      </S.SubmitButtonWrapper>
+      {inputValue && (
+        <S.SubmitButtonWrapper inputValue={inputValue.length}>
+          <span>
+            {inputValue.length} / {MAXLENGTH}
+          </span>
+          <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
+        </S.SubmitButtonWrapper>
+      )}
     </S.SubmitContainer>
   );
 };
