@@ -8,14 +8,18 @@ import { useGetRankingList, useGetMissionList } from 'api/common';
 
 import { useRouter } from 'next/navigation';
 
-const MainContents = () => {
+interface MainContentsProps {
+  isClient: boolean;
+}
+
+const MainContents: React.FC<MainContentsProps> = ({ isClient }) => {
   const { push } = useRouter();
 
   const { data: rankingList } = useGetRankingList();
   const { data: missionList } = useGetMissionList();
 
   const onCardClick = (missionId: string) => {
-    push(`/mission/resolve/${missionId}`);
+    if (isClient) push(`/mission/resolve/${missionId}`);
   };
 
   return (
