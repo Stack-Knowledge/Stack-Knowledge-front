@@ -6,6 +6,7 @@ export const missionUrl = {
 export const studentUrl = {
   rankingList: () => `/student/ranking`,
   studentInfo: () => `/student/my`,
+  uploadProfile: () => `/image`,
 };
 
 export const authUrl = {
@@ -28,8 +29,4 @@ export const itemUrl = {
 
 export const orderUrl = {
   orderItem: () => `/order`,
-};
-
-export const uploadUrl = {
-  uploadProfile: () => `/image`,
 };
