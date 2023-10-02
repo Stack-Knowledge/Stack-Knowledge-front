@@ -1,19 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
+
 import * as S from './style';
 
 interface MissionDetailInputProps {
   role: 'admin' | 'client';
+  onClick?: () => void;
+  inputValue: string;
+  setInputValue: Dispatch<SetStateAction<string>>;
 }
 
-const MissionDetailInput: React.FC<MissionDetailInputProps> = ({ role }) => {
-  const [inputValue, setInputValue] = useState<string>('');
+const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
+  role,
+  onClick,
+  inputValue,
+  setInputValue,
+}) => {
   const MAXLENGTH = 500 as const;
 
   const onInputHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value;
-    if (inputValue.length <= 500) {
+    if (inputValue.length <= MAXLENGTH) {
       setInputValue(inputValue);
     }
   };
@@ -25,9 +33,9 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({ role }) => {
           placeholder={
             role === 'admin'
               ? '문제를 작성해주시기 바랍니다.'
-              : '답변을 작성해주기 바랍니다.'
+              : '답변을 작성해주시기 바랍니다.'
           }
-          maxLength={500}
+          maxLength={MAXLENGTH}
           value={inputValue}
           onChange={onInputHandler}
         />
@@ -36,7 +44,7 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({ role }) => {
         <span>
           {inputValue.length} / {MAXLENGTH}
         </span>
-        <S.SubmitButton>제출하기</S.SubmitButton>
+        <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
       </S.SubmitButtonWrapper>
     </S.SubmitContainer>
   );

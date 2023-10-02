@@ -7,8 +7,8 @@ import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
 import { RankingPropsType } from 'types';
 
 interface RankingItemProps {
-  ranking: number;
   item: RankingPropsType;
+  ranking: number;
 }
 
 const RankingItem: React.FC<RankingItemProps> = ({
@@ -25,7 +25,7 @@ const RankingItem: React.FC<RankingItemProps> = ({
         alt='profile image'
         width={40}
         height={40}
-        src={profileImage ?? DefaultProfile}
+        src={profileImage ? profileImage : DefaultProfile}
       />
       <S.UserName>{name}</S.UserName>
     </S.FlexWrapper>

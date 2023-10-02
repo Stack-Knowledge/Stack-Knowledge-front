@@ -3,19 +3,20 @@ import Link from 'next/link';
 
 export const HeaderWrapper = styled.div`
   width: 100vw;
-  height: 5.625rem;
+  height: 5rem;
   background: ${({ theme }) => theme.color.gray['010']};
+  display: flex;
+  justify-content: center;
 `;
 
 export const HeaderContainer = styled.div`
+  width: 80rem;
   display: flex;
   align-items: center;
-  height: 100%;
   justify-content: space-between;
-  padding-left: 18.75rem;
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -30,7 +31,6 @@ export const Title = styled.span`
 
 export const MenuNav = styled.div`
   display: flex;
-  padding-right: 18.75rem;
   gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 

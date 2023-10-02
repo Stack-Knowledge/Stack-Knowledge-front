@@ -28,13 +28,13 @@ export const Contents = styled.div`
     display: none;
   }
 
-  .medalWrapper:nth-child(1n) .medal {
+  .medalWrapper:nth-of-type(1n) .medal {
     background-color: #ffd79b;
   }
-  .medalWrapper:nth-child(2n) .medal {
+  .medalWrapper:nth-of-type(2n) .medal {
     background-color: ${({ theme }) => theme.color.gray['040']};
   }
-  .medalWrapper:nth-child(3n) .medal {
+  .medalWrapper:nth-of-type(3n) .medal {
     background-color: #ce865d;
   }
 `;

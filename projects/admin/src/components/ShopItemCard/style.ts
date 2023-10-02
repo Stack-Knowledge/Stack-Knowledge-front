@@ -59,3 +59,12 @@ export const PriceWrapper = styled.div`
   display: flex;
   gap: 0.25rem;
 `;
+
+export const ModalWrapper = styled.dialog`
+  border-radius: 1.25rem;
+  border: 0;
+  padding: 0;
+  ::backdrop {
+    background: rgba(5, 5, 5, 0.4);
+  }
+`;

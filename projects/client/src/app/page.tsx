@@ -1,10 +1,5 @@
-import { Example } from "common";
+import { MainPage } from 'common';
 
 export default function Home() {
-  return (
-    <div>
-      client
-      <Example />
-    </div>
-  );
+  return <MainPage />;
 }

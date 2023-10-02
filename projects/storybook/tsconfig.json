@@ -5,7 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "common/*": ["../../packages/common/src/*"],
-      "admin/*": ["../admin/src/*"]
+      "api/*": ["../../packages/api/*"],
+      "admin/*": ["../admin/src/*"],
+      "client/*": ["../client/src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

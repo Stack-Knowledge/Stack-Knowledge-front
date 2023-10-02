@@ -35,6 +35,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      react-toastify:
+        specifier: ^9.1.3
+        version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
 
   packages/api:
     dependencies:
@@ -60,6 +63,9 @@ importers:
 
   packages/common:
     dependencies:
+      api:
+        specifier: workspace:^
+        version: link:../api
       emotion-reset:
         specifier: ^3.0.1
         version: 3.0.1(@emotion/react@11.10.6)
@@ -104,6 +110,9 @@ importers:
       '@types/react-dom':
         specifier: 18.2.7
         version: 18.2.7
+      api:
+        specifier: workspace:^
+        version: link:../../packages/api
       common:
         specifier: workspace:^
         version: link:../../packages/common
@@ -138,6 +147,9 @@ importers:
       '@types/react-dom':
         specifier: 18.2.7
         version: 18.2.7
+      api:
+        specifier: workspace:^
+        version: link:../../packages/api
       common:
         specifier: workspace:^
         version: link:../../packages/common
@@ -150,12 +162,22 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      types:
+        specifier: workspace:^
+        version: link:../../packages/types
       typescript:
         specifier: 5.1.6
         version: 5.1.6
+    devDependencies:
+      tsconfig:
+        specifier: workspace:^
+        version: link:../../packages/tsconfig
 
   projects/storybook:
     dependencies:
+      api:
+        specifier: workspace:^
+        version: link:../../packages/api
       common:
         specifier: workspace:^
         version: link:../../packages/common
@@ -5418,6 +5440,11 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -9237,6 +9264,17 @@ packages:
       react: 18.2.0
       tslib: 2.6.1
     dev: true
+
+  /react-toastify@9.1.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fPfb8ghtn/XMxw3LkxQBk3IyagNpF/LIKjOBflbexr2AWxAH1MJgvnESwEwBn9liLFXgTKWgBSdZpw9m4OTHTg==}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

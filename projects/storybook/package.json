@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "common": "workspace:^"
+    "common": "workspace:^",
+    "api": "workspace:^"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.2.1",
