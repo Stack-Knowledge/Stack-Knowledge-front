@@ -22,24 +22,11 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files && e.target.files[0];
-    if (file) {
-      try {
-        uploadImageToServer(file);
-        alert('이미지 업로드가 완료되었습니다.');
-      } catch (error) {
-        console.error('Error uploading image:', error);
-        alert('이미지 업로드에 실패했습니다.');
-      }
+    if (e.target.files) {
+      const formData = new FormData();
+      formData.append('file', e.target.files[0], e.target.files[0].name);
+      mutate(formData);
     }
-  };
-
-  const uploadImageToServer = async (image: File) => {
-    console.log(image);
-    const formData = new FormData();
-    formData.append('image', image);
-
-    mutate({ image: formData });
   };
 
   return (

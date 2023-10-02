@@ -6,7 +6,7 @@ export const missionUrl = {
 export const studentUrl = {
   rankingList: () => `/student/ranking`,
   studentInfo: () => `/student/my`,
-  uploadProfile: () => `/image`,
+  uploadProfile: () => `/student/image`,
 };
 
 export const authUrl = {
