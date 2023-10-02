@@ -1,4 +1,3 @@
 export interface UploadProfileType {
-  image: 'Multipart';
-  fileName: string;
+  image: FormData;
 }
