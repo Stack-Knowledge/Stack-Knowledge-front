@@ -12,6 +12,8 @@ import { ShopItemType } from 'types';
 
 import { useRouter } from 'next/navigation';
 
+import { toast } from 'react-toastify';
+
 interface ShopModalProps {
   selectedList: ShopItemType[] | [];
 }
@@ -44,12 +46,12 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
 
   if (isSuccess) {
     push('/');
-    alert('상품이 구매되었습니다!');
+    toast.success('상품이 성공적으로 구매되었습니다.');
   }
 
   if (isError) {
     if (error && error.response?.status === 400) {
-      alert('마일리지가 부족합니다');
+      toast.error('마일리지가 부족합니다.');
       location.reload();
     }
   }

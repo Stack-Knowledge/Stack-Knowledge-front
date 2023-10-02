@@ -14,6 +14,8 @@ import { Modal } from 'admin/components';
 
 import { useRef } from 'react';
 
+import { toast } from 'react-toastify';
+
 interface ShopItemCardProps {
   data: OrderdItemType;
 }
@@ -30,7 +32,7 @@ const ShopItemCard: React.FC<ShopItemCardProps> = ({
 
   if (isSuccess) {
     window.location.reload();
-    alert('개수 차감되었습니다.');
+    toast.success('상품 개수가 1개 차감되었습니다.');
   }
 
   return (

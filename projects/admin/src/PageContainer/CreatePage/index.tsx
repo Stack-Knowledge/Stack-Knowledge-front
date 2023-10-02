@@ -11,6 +11,8 @@ import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { toast } from 'react-toastify';
+
 const CreatePage = () => {
   const [titleValue, setTitleValue] = useState<string>('');
   const [detailValue, setDetailValue] = useState<string>('');
@@ -23,12 +25,12 @@ const CreatePage = () => {
   const handleSubmit = () => {
     if (titleValue && detailValue && time)
       mutate({ title: titleValue, content: detailValue, timeLimit: time });
-    else alert('똑바로 다 적어라 ㅋㅋ');
+    else toast.error('작성되지 않은 빈칸이 있습니다.');
   };
 
   if (isSuccess) {
     push('/');
-    alert('문제가 등록되었습니다 !');
+    toast.success('문제가 성공적으로 등록되었습니다.');
   }
 
   return (

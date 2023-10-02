@@ -9,6 +9,8 @@ import { useState } from 'react';
 
 import { SolveStatus } from 'types';
 
+import { toast } from 'react-toastify';
+
 import { useRouter } from 'next/navigation';
 
 interface GradingPageProps {
@@ -34,7 +36,7 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
 
   if (isSuccess) {
     push('/mission/scoring');
-    alert('채점되었습니다!');
+    toast.success('성공적으로 채점되었습니다.');
   }
 
   return (
