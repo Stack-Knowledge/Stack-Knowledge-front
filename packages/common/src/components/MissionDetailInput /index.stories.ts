@@ -18,6 +18,6 @@ export const Admin: Story = {
 
 export const Client: Story = {
   args: {
-    role: 'admin',
+    role: 'client',
   },
 };
