@@ -1,17 +1,33 @@
 'use client';
 
+import * as S from './style';
+
 import { RankingList } from 'common';
 
 import { RankingHeader } from 'client/components';
-import * as S from './style';
 
-const RankingPage = () => (
-  <S.RankingWrapper>
-    <div>
-      {/* <RankingHeader data={rankingData.data} ranking={rankingData.ranking} /> */}
-    </div>
-    <RankingList />
-  </S.RankingWrapper>
-);
+import { useGetStudentInfo } from 'api/client';
+import { useGetRankingList } from 'api/common';
+
+const RankingPage = () => {
+  const { data: studentInfo } = useGetStudentInfo();
+  const { data: rankingList } = useGetRankingList();
+
+  if (!studentInfo || !rankingList) {
+    return null;
+  }
+
+  const userRanking =
+    rankingList.findIndex((item) => item.id === studentInfo.id) + 1;
+
+  return (
+    <S.RankingWrapper>
+      {studentInfo && (
+        <RankingHeader data={studentInfo} ranking={userRanking} />
+      )}
+      <RankingList />
+    </S.RankingWrapper>
+  );
+};
 
 export default RankingPage;

@@ -7,6 +7,7 @@ export const missionQueryKeys = {
 export const studentQueryKeys = {
   getRankingList: () => ['student', 'rankingList'],
   getStudentInfo: () => ['student', 'info'],
+  postUploadProfile: () => ['upload', 'profile'],
 };
 
 export const authQueryKeys = {
