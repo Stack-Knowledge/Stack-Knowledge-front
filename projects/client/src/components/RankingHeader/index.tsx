@@ -39,15 +39,7 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
     const formData = new FormData();
     formData.append('image', image);
 
-    try {
-      mutate((data) => {
-        console.log('asdasdasd');
-        return { ...data, image: formData };
-      });
-    } catch (error) {
-      alert('실패');
-      console.error('Error uploading image:', error);
-    }
+    mutate({ image: formData });
   };
 
   return (
