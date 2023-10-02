@@ -7,13 +7,24 @@ import { RankingList } from 'common';
 import { RankingHeader } from 'client/components';
 
 import { useGetStudentInfo } from 'api/client';
+import { useGetRankingList } from 'api/common';
 
 const RankingPage = () => {
-  const { data } = useGetStudentInfo();
+  const { data: studentInfo } = useGetStudentInfo();
+  const { data: rankingList } = useGetRankingList();
+
+  if (!studentInfo || !rankingList) {
+    return null;
+  }
+
+  const userRanking =
+    rankingList.findIndex((item) => item.id === studentInfo.user.id) + 2;
 
   return (
     <S.RankingWrapper>
-      {data && <RankingHeader data={data} ranking={data.cumulatePoint} />}
+      {studentInfo && (
+        <RankingHeader data={studentInfo} ranking={userRanking} />
+      )}
       <RankingList />
     </S.RankingWrapper>
   );
