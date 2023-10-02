@@ -30,7 +30,10 @@ apiInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   async (error) => {
-    if (error.config.url === authUrl.auth() && error.response.status === 404) {
+    if (
+      error.config.url === authUrl.auth() &&
+      (error.response.status === 404 || error.response.status === 403)
+    ) {
       location.replace('/auth/login');
 
       return Promise.reject(error);
