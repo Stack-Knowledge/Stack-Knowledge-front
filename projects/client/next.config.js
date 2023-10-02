@@ -11,7 +11,7 @@ const nextConfig = {
     },
   ],
   images: {
-    domains: ['https://stack-knowledge.s3.ap-northeast-2.amazonaws.com'],
+    domains: ['stack-knowledge.s3.ap-northeast-2.amazonaws.com'],
   },
 };
 
