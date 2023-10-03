@@ -6,6 +6,8 @@ import * as S from './style';
 import { RankingPropsType } from 'types';
 import { slicePoint } from 'common';
 
+import { toast } from 'react-toastify';
+
 interface RankingHeaderProps {
   ranking: number;
   data: RankingPropsType;
@@ -21,25 +23,13 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
   const { mutate, isSuccess } = usePostUploadProfile();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const formData = new FormData();
       formData.append('file', e.target.files[0], e.target.files[0].name);
       mutate({ image: formData });
-      // for (let value of formData.values()) {
-      //   console.log(value);
-      // }
-      //   await fetch('/api/student/image', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'multipart/form-data',
-      //     },
-      //     body: {
-      //       image: formData,
-      //     },
-      //   })
-      //     .then((res) => res.json())
-      //     .then((data) => console.log(data));
+    } else {
+      toast.error('잘못된 파일 유형입니다.');
     }
   };
 
@@ -51,7 +41,6 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
       <S.ProfileImageWrapper onClick={() => fileInputRef.current?.click()}>
         <input
           type='file'
-          accept='image/*'
           style={{ display: 'none' }}
           ref={fileInputRef}
           onChange={handleImageChange}
