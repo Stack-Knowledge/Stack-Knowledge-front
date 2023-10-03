@@ -1,10 +1,16 @@
+'use client';
+
 import React, { useRef } from 'react';
+
 import Image from 'next/image';
+
 import { usePostUploadProfile } from 'api/client';
 import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
-import * as S from './style';
-import { RankingPropsType } from 'types';
 import { slicePoint } from 'common';
+
+import * as S from './style';
+
+import { RankingPropsType } from 'types';
 
 import { toast } from 'react-toastify';
 
@@ -20,7 +26,7 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
     user: { name, profileImage },
   },
 }) => {
-  const { mutate, isSuccess } = usePostUploadProfile();
+  const { mutate, isSuccess, isError } = usePostUploadProfile();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,12 +34,17 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
       const formData = new FormData();
       formData.append('image', e.target.files[0], e.target.files[0].name);
       mutate(formData);
-    } else {
-      toast.error('잘못된 파일 유형입니다.');
     }
   };
 
   if (isSuccess) {
+    toast.success('이미지 등록에 성공했습니다.');
+    location.reload();
+  }
+
+  if (isError) {
+    toast.error('잘못된 파일 유형입니다.');
+    location.reload();
   }
 
   return (
