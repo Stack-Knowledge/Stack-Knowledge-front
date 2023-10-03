@@ -32,7 +32,7 @@ const ShopPage = () => {
       <S.MiledgeTitle>현재 마일리지</S.MiledgeTitle>
       <S.FlexWrapper>
         <S.MilidgePoint>
-          {slicePoint(student?.cumulatePoint ?? 0)}
+          {slicePoint(student?.currentPoint ?? 0)}
         </S.MilidgePoint>
         <S.MilidgeUnit>M</S.MilidgeUnit>
       </S.FlexWrapper>
