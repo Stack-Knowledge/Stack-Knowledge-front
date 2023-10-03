@@ -26,8 +26,8 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const formData = new FormData();
-      formData.append('file', e.target.files[0], e.target.files[0].name);
-      mutate({ image: formData });
+      formData.append('image', e.target.files[0], e.target.files[0].name);
+      mutate(formData);
     } else {
       toast.error('잘못된 파일 유형입니다.');
     }
