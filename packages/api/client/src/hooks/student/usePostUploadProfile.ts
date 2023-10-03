@@ -3,7 +3,7 @@ import { useMutation } from '@tanstack/react-query';
 import { post, studentQueryKeys, studentUrl } from 'api/common';
 
 export const usePostUploadProfile = () =>
-  useMutation<{ imageName: string }, Error, { image: FormData }>(
+  useMutation<{ profileImage: string }, Error, FormData>(
     studentQueryKeys.postUploadProfile(),
     (uploadProfile) =>
       post(studentUrl.uploadProfile(), uploadProfile, {

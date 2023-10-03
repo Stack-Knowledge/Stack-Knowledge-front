@@ -1,10 +1,18 @@
+'use client';
+
 import React, { useRef } from 'react';
+
 import Image from 'next/image';
+
 import { usePostUploadProfile } from 'api/client';
 import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
-import * as S from './style';
-import { RankingPropsType } from 'types';
 import { slicePoint } from 'common';
+
+import * as S from './style';
+
+import { RankingPropsType } from 'types';
+
+import { toast } from 'react-toastify';
 
 interface RankingHeaderProps {
   ranking: number;
@@ -18,32 +26,25 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
     user: { name, profileImage },
   },
 }) => {
-  const { mutate, isSuccess } = usePostUploadProfile();
+  const { mutate, isSuccess, isError } = usePostUploadProfile();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const formData = new FormData();
-      formData.append('file', e.target.files[0], e.target.files[0].name);
-      mutate({ image: formData });
-      // for (let value of formData.values()) {
-      //   console.log(value);
-      // }
-      //   await fetch('/api/student/image', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'multipart/form-data',
-      //     },
-      //     body: {
-      //       image: formData,
-      //     },
-      //   })
-      //     .then((res) => res.json())
-      //     .then((data) => console.log(data));
+      formData.append('image', e.target.files[0], e.target.files[0].name);
+      mutate(formData);
     }
   };
 
   if (isSuccess) {
+    toast.success('이미지 등록에 성공했습니다.');
+    location.reload();
+  }
+
+  if (isError) {
+    toast.error('잘못된 파일 유형입니다.');
+    location.reload();
   }
 
   return (
@@ -51,7 +52,6 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
       <S.ProfileImageWrapper onClick={() => fileInputRef.current?.click()}>
         <input
           type='file'
-          accept='image/*'
           style={{ display: 'none' }}
           ref={fileInputRef}
           onChange={handleImageChange}
