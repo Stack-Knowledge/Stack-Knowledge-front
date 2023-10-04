@@ -32,7 +32,6 @@ export const Button = styled.button`
   ${({ theme }) => theme.typo.body2};
   width: 7.25rem;
   border-radius: 0.625rem;
-  margin-right: 0.5rem;
   padding: 0.625rem;
   cursor: pointer;
 `;
@@ -43,7 +42,7 @@ export const ModalButton = styled(Button)`
   color: ${({ theme }) => theme.color.primary};
   cursor: pointer;
 
-  :hover {
+  &:hover {
     background-color: ${({ theme }) => theme.color.primary};
     color: ${({ theme }) => theme.color.white};
     border: 0;

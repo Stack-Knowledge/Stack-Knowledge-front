@@ -15,8 +15,8 @@ const MissionDetailModal: React.FC<MissionDetailModalProps> = ({
       <S.ModalContent>문제를 제출하시겠습니까?</S.ModalContent>
     </S.ModalContentWrapper>
     <S.ModalButtonWrapper method='dialog'>
-      <S.ModalDeleted onClick={onCancel}>취소</S.ModalDeleted>
-      <S.ModalConfirm onClick={onConfirm}>확인</S.ModalConfirm>
+      <S.ModalButton onClick={onCancel}>취소</S.ModalButton>
+      <S.ModalButton onClick={onConfirm}>확인</S.ModalButton>
     </S.ModalButtonWrapper>
   </S.ModalWrapper>
 );
