@@ -12,8 +12,8 @@ const Modal: React.FC<ModalProps> = ({ content, onClick }) => (
       <S.ModalContent>{content}</S.ModalContent>
     </S.ModalContentWrapper>
     <S.ModalButtonWrapper method='dialog'>
-      <S.ModalDeleted>취소</S.ModalDeleted>
-      <S.ModalConfirm onClick={onClick}>확인</S.ModalConfirm>
+      <S.ModalButton>취소</S.ModalButton>
+      <S.ModalButton onClick={onClick}>확인</S.ModalButton>
     </S.ModalButtonWrapper>
   </S.ModalWrapper>
 );
