@@ -32,7 +32,7 @@ apiInstance.interceptors.response.use(
   async (error) => {
     if (
       error.config.url === authUrl.auth() &&
-      (error.response.status === 404 || error.response.status === 403)
+      [403, 404].includes(error.response.status)
     ) {
       location.replace('/auth/login');
 

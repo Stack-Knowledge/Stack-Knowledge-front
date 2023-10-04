@@ -17,7 +17,7 @@ const RankingCard: React.FC<RankingCardType> = ({
   cumulatePoint,
   user: { profileImage, name },
 }) => (
-  <S.CardWrapper className='medalWrapper'>
+  <S.CardWrapper href={'/ranking'} className='medalWrapper'>
     {rank <= 3 && <S.Medal className='medal'>{rank}</S.Medal>}
     <S.ProfileWrapper>
       <Image

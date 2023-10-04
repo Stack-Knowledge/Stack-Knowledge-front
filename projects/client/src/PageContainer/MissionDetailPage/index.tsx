@@ -13,6 +13,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { toast } from 'react-toastify';
+
 interface MissionDetailProps {
   missionId: string;
 }
@@ -57,16 +59,24 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     mutate({
       solvation: inputValue,
     });
-    push(`/`);
-    alert('문제를 제출하였습니다.');
   };
 
-  const { mutate } = usePostSolve(missionId);
+  const { mutate, isSuccess, isError } = usePostSolve(missionId);
 
   useEffect(() => {
     setMinutes(Math.floor((data?.timeLimit ?? 0) / 60));
     setSeconds((data?.timeLimit ?? 0) % 60);
   }, [data]);
+
+  if (isSuccess) {
+    push(`/`);
+    toast.success('문제를 제출하였습니다.');
+  }
+
+  if (isError) {
+    push(`/`);
+    toast.error('이미 푼 문제입니다.');
+  }
 
   return (
     <S.PageWrapper>

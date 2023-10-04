@@ -28,25 +28,23 @@ export const ModalButtonWrapper = styled.form`
   gap: 1rem;
 `;
 
-export const ModalDeleted = styled.button`
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.white};
+export const Button = styled.button`
   ${({ theme }) => theme.typo.body2};
   width: 7.25rem;
   border-radius: 0.625rem;
-  border: 0;
   padding: 0.625rem;
-  margin-left: 0.5rem;
   cursor: pointer;
 `;
-export const ModalConfirm = styled.button`
+
+export const ModalButton = styled(Button)`
   background-color: ${({ theme }) => theme.color.white};
   border: 0.0625rem solid ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.primary};
-  ${({ theme }) => theme.typo.body2};
-  width: 7.25rem;
-  border-radius: 0.625rem;
-  padding: 0.625rem;
-  margin-right: 0.5rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.color.white};
+    border: 0;
+  }
 `;

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-export const CardWrapper = styled.div`
+import Link from 'next/link';
+
+export const CardWrapper = styled(Link)`
   width: 14rem;
   height: 19rem;
   border-radius: 1.25rem;

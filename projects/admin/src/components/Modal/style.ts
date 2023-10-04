@@ -32,20 +32,19 @@ export const Button = styled.button`
   ${({ theme }) => theme.typo.body2};
   width: 7.25rem;
   border-radius: 0.625rem;
-  margin-right: 0.5rem;
   padding: 0.625rem;
   cursor: pointer;
 `;
 
-export const ModalDeleted = styled(Button)`
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.white};
-  border: 0;
-  cursor: pointer;
-`;
-
-export const ModalConfirm = styled(Button)`
+export const ModalButton = styled(Button)`
   background-color: ${({ theme }) => theme.color.white};
   border: 0.0625rem solid ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.primary};
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.color.white};
+    border: 0;
+  }
 `;
