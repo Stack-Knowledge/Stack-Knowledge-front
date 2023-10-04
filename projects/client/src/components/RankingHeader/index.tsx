@@ -38,13 +38,17 @@ const RankingHeader: React.FC<RankingHeaderProps> = ({
   };
 
   if (isSuccess) {
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
     toast.success('이미지 등록에 성공했습니다.');
-    location.reload();
   }
 
   if (isError) {
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
     toast.error('잘못된 파일 유형입니다.');
-    location.reload();
   }
 
   return (

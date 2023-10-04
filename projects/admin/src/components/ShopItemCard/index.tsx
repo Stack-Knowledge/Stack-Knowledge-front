@@ -31,7 +31,9 @@ const ShopItemCard: React.FC<ShopItemCardProps> = ({
   };
 
   if (isSuccess) {
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
     toast.success('상품 개수가 1개 차감되었습니다.');
   }
 
