@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const CardWrapper = styled(Link)`
   width: 14rem;
@@ -15,16 +16,8 @@ export const CardWrapper = styled(Link)`
   cursor: pointer;
 `;
 
-export const ProfileWrapper = styled.div`
-  width: 5.625rem;
-  height: 5.625rem;
+export const ProfileImage = styled(Image)`
   border-radius: 50%;
-
-  overflow: hidden;
-  position: relative;
-  img {
-    object-fit: cover;
-  }
 `;
 
 export const UserName = styled.span`
