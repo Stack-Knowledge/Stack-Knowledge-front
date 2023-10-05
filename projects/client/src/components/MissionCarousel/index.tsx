@@ -45,7 +45,11 @@ const MissionCarousel = () => {
 
   const moveRight = () => {
     if (missionList && pageIndex < missionList.length - 1)
-      setPageIndex((prev) => prev + 1);
+      if (
+        pageIndex !== missionList.length - 2 ||
+        missionList[missionList.length - 1][0]
+      )
+        setPageIndex((prev) => prev + 1);
   };
 
   return (
