@@ -11,12 +11,13 @@ import { useGetScoringList } from 'api/admin';
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const MissionCarousel = () => {
   const [pageIndex, setPageIndex] = useState(0);
   const [missionList, setMissionList] = useState<ScoringListType[][]>();
 
-  const { data } = useGetScoringList();
+  const { data, isError } = useGetScoringList();
   const { push } = useRouter();
 
   const onCardClick = (solveId: string) => {
@@ -50,6 +51,10 @@ const MissionCarousel = () => {
       newMissionList.push(data.slice(newMissionList.length * 10, data.length));
     setMissionList(newMissionList);
   }, [data]);
+
+  if (isError) {
+    toast.error('권한이 없는 사용자입니다.');
+  }
 
   return (
     <>
