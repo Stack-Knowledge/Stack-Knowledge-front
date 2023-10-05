@@ -43,4 +43,8 @@ export const ItemTitle = styled.span`
   ${({ theme }) => theme.typo.body3};
   color: ${({ theme }) => theme.color.black};
   margin-left: 0.9375rem;
+
+  &:hover {
+    color: #ffa927;
+  }
 `;
