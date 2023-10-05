@@ -6,8 +6,6 @@ import { RankingPropsType } from 'types';
 
 import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
 
-import Image from 'next/image';
-
 interface RankingCardType extends RankingPropsType {
   rank: number;
 }
