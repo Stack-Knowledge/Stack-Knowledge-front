@@ -11,13 +11,13 @@ import { useGetScoringList } from 'api/admin';
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const MissionCarousel = () => {
   const [pageIndex, setPageIndex] = useState(0);
-  const [data, setData] = useState<ScoringListType[] | undefined>([]);
+  const [missionList, setMissionList] = useState<ScoringListType[][]>();
 
-  const { data: newData } = useGetScoringList(pageIndex);
-
+  const { data, isError } = useGetScoringList();
   const { push } = useRouter();
 
   const onCardClick = (solveId: string) => {
@@ -25,26 +25,46 @@ const MissionCarousel = () => {
   };
 
   const moveRight = () => {
-    if (data?.length === 10) setPageIndex((cur) => cur + 1);
+    if (missionList && pageIndex < missionList.length - 1)
+      if (
+        pageIndex !== missionList.length - 2 ||
+        missionList[missionList.length - 1][0]
+      )
+        setPageIndex((prev) => prev + 1);
   };
 
   const moveLeft = () => {
-    if (pageIndex > 0) setPageIndex((cur) => cur - 1);
+    if (pageIndex > 0) setPageIndex((prev) => prev - 1);
   };
 
   useEffect(() => {
-    setData(newData);
-  }, [newData]);
+    const newMissionList: ScoringListType[][] = [];
+    let temp: ScoringListType[] = [];
+    data?.forEach((item, index) => {
+      temp.push(item);
+      if ((index + 1) % 10 === 0) {
+        newMissionList.push(temp);
+        temp = [];
+      }
+    });
+    if (data)
+      newMissionList.push(data.slice(newMissionList.length * 10, data.length));
+    setMissionList(newMissionList);
+  }, [data]);
+
+  if (isError) {
+    toast.error('권한이 없는 사용자입니다.');
+  }
 
   return (
     <>
-      {data?.length != 0 && (
+      {missionList?.length != 0 && missionList && (
         <S.CarouselWrapper>
           <S.PointerWrapper onClick={moveLeft}>
             <VectorIcon direction='left' />
           </S.PointerWrapper>
           <S.ContentWrapper>
-            {data?.map((item, index) => (
+            {missionList[pageIndex]?.map((item, index) => (
               <TaskCard
                 onClick={() => onCardClick(item.solveId)}
                 key={item.solveId + index}

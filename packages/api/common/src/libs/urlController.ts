@@ -18,7 +18,7 @@ export const solveUrl = {
 } as const;
 
 export const userUrl = {
-  scoring: (pageNumber: number) => `/user/scoring/list/${pageNumber}`,
+  scoring: () => `/user/scoring`,
   scoringResult: (solveId: string) => `/user/scoring/${solveId}`,
   solveDetail: (solveId: string) => `/user/scoring/${solveId}`,
 };

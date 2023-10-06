@@ -41,7 +41,11 @@ const ShopCarousel = () => {
 
   const moveRight = () => {
     if (orderedItemList && pageIndex < orderedItemList.length - 1)
-      setPageIndex((prev) => prev + 1);
+      if (
+        pageIndex !== orderedItemList.length - 2 ||
+        orderedItemList[orderedItemList.length - 1][0]
+      )
+        setPageIndex((prev) => prev + 1);
   };
 
   return (

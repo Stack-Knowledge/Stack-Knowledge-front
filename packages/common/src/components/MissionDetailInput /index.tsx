@@ -32,8 +32,8 @@ const MissionDetailInput: React.FC<MissionDetailInputProps> = ({
         <S.MissionDetailInput
           placeholder={
             role === 'admin'
-              ? '문제를 작성해주시기 바랍니다.'
-              : '답변을 작성해주시기 바랍니다.'
+              ? '문제를 작성해 주시기 바랍니다.'
+              : '답변을 작성해 주시기 바랍니다.'
           }
           maxLength={MAXLENGTH}
           value={inputValue}
