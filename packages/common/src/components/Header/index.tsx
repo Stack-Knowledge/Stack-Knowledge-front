@@ -2,6 +2,7 @@
 
 import * as S from './style';
 import { usePathname } from 'next/navigation';
+import styled from '@emotion/styled';
 
 import {
   HomeIcon,
@@ -15,7 +16,6 @@ import {
 interface HeaderProps {
   role: 'admin' | 'client';
 }
-
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
   if (pathname === '/auth/login') return <></>;
@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuItemWrapper href='/' onClick={handleLinkClick}>
+          <S.MenuItemWrapper href='/' isActive={pathname === '/'}>
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
           </S.MenuItemWrapper>
@@ -42,30 +42,33 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <>
               <S.MenuItemWrapper
                 href='/mission/scoring'
-                onClick={handleLinkClick}
+                isActive={pathname === '/mission/scoring'}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
               </S.MenuItemWrapper>
               <S.MenuItemWrapper
                 href='/mission/create'
-                onClick={handleLinkClick}
+                isActive={pathname === '/mission/create'}
               >
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
               </S.MenuItemWrapper>
             </>
           ) : (
-            <S.MenuItemWrapper href='/mission/list' onClick={handleLinkClick}>
+            <S.MenuItemWrapper
+              href='/mission/list'
+              isActive={pathname === '/mission/list'}
+            >
               <QuestionIcon />
               <S.ItemTitle>문제</S.ItemTitle>
             </S.MenuItemWrapper>
           )}
-          <S.MenuItemWrapper href='/shop' onClick={handleLinkClick}>
+          <S.MenuItemWrapper href='/shop' isActive={pathname === '/shop'}>
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
           </S.MenuItemWrapper>
-          <S.MenuItemWrapper href='/ranking' onClick={handleLinkClick}>
+          <S.MenuItemWrapper href='/ranking' isActive={pathname === '/ranking'}>
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
           </S.MenuItemWrapper>

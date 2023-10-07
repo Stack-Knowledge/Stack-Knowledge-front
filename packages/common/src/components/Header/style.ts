@@ -34,17 +34,49 @@ export const MenuNav = styled.div`
   gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 
-export const MenuItemWrapper = styled(Link)`
+export const MenuItemWrapper = styled(Link)<{ isActive?: boolean }>`
   display: flex;
   align-items: center;
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.color.primary : theme.color.black};
+
+  & svg,
+  circle {
+    stroke: ${({ isActive, theme }) =>
+      isActive ? theme.color.primary : theme.color.black};
+
+    & path {
+      stroke: ${({ isActive, theme }) =>
+        isActive ? theme.color.primary : theme.color.black};
+    }
+  }
+
+  &:hover {
+    span,
+    & svg {
+      color: ${({ isActive, theme }) =>
+        isActive ? theme.color.black : theme.color.primary};
+
+      & path {
+        stroke: ${({ isActive, theme }) =>
+          isActive ? theme.color.black : theme.color.primary};
+      }
+
+      circle {
+        stroke: ${({ isActive, theme }) =>
+          isActive ? theme.color.black : theme.color.primary};
+      }
+
+      rect {
+        stroke: ${({ isActive, theme }) =>
+          isActive ? theme.color.black : theme.color.primary};
+      }
+    }
+  }
 `;
 
 export const ItemTitle = styled.span`
   ${({ theme }) => theme.typo.body3};
-  color: ${({ theme }) => theme.color.black};
-  margin-left: 0.9375rem;
 
-  &:hover {
-    color: #ffa927;
-  }
+  margin-left: 0.9375rem;
 `;
