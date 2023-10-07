@@ -34,44 +34,47 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuItemWrapper href='/' isActive={pathname === '/'}>
+          <S.MenuStrokeItemWrapper href='/' isActive={pathname === '/'}>
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
-          </S.MenuItemWrapper>
+          </S.MenuStrokeItemWrapper>
           {role === 'admin' ? (
             <>
-              <S.MenuItemWrapper
+              <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
                 isActive={pathname === '/mission/scoring'}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
-              </S.MenuItemWrapper>
-              <S.MenuItemWrapper
+              </S.MenuStrokeItemWrapper>
+              <S.MenuFillItemWrapper
                 href='/mission/create'
                 isActive={pathname === '/mission/create'}
               >
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
-              </S.MenuItemWrapper>
+              </S.MenuFillItemWrapper>
             </>
           ) : (
-            <S.MenuItemWrapper
+            <S.MenuFillItemWrapper
               href='/mission/list'
               isActive={pathname === '/mission/list'}
             >
               <QuestionIcon />
               <S.ItemTitle>문제</S.ItemTitle>
-            </S.MenuItemWrapper>
+            </S.MenuFillItemWrapper>
           )}
-          <S.MenuItemWrapper href='/shop' isActive={pathname === '/shop'}>
+          <S.MenuFillItemWrapper href='/shop' isActive={pathname === '/shop'}>
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
-          </S.MenuItemWrapper>
-          <S.MenuItemWrapper href='/ranking' isActive={pathname === '/ranking'}>
+          </S.MenuFillItemWrapper>
+          <S.MenuFillItemWrapper
+            href='/ranking'
+            isActive={pathname === '/ranking'}
+          >
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
-          </S.MenuItemWrapper>
+          </S.MenuFillItemWrapper>
         </S.MenuNav>
       </S.HeaderContainer>
     </S.HeaderWrapper>

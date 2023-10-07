@@ -34,18 +34,14 @@ export const MenuNav = styled.div`
   gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 
-export const MenuItemWrapper = styled(Link)<{ isActive?: boolean }>`
+export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
   display: flex;
   align-items: center;
   color: ${({ isActive, theme }) =>
     isActive ? theme.color.primary : theme.color.black};
 
-  & svg,
-  circle {
-    stroke: ${({ isActive, theme }) =>
-      isActive ? theme.color.primary : theme.color.black};
-
-    & path {
+  & svg {
+    path {
       stroke: ${({ isActive, theme }) =>
         isActive ? theme.color.primary : theme.color.black};
     }
@@ -54,22 +50,53 @@ export const MenuItemWrapper = styled(Link)<{ isActive?: boolean }>`
   &:hover {
     span,
     & svg {
-      color: ${({ isActive, theme }) =>
-        isActive ? theme.color.black : theme.color.primary};
+      color: ${({ theme }) => theme.color.primary};
 
-      & path {
-        stroke: ${({ isActive, theme }) =>
-          isActive ? theme.color.black : theme.color.primary};
+      path {
+        stroke: ${({ theme }) => theme.color.primary};
+      }
+    }
+  }
+`;
+
+export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
+  display: flex;
+  align-items: center;
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.color.primary : theme.color.black};
+
+  & svg {
+    circle {
+      stroke: ${({ isActive, theme }) =>
+        isActive ? theme.color.primary : theme.color.black};
+    }
+
+    rect {
+      fill: ${({ isActive, theme }) =>
+        isActive ? theme.color.primary : theme.color.black};
+    }
+
+    path {
+      fill: ${({ isActive, theme }) =>
+        isActive ? theme.color.primary : theme.color.black};
+    }
+  }
+
+  &:hover {
+    span,
+    & svg {
+      color: ${({ theme }) => theme.color.primary};
+
+      rect {
+        fill: ${({ theme }) => theme.color.primary};
       }
 
       circle {
-        stroke: ${({ isActive, theme }) =>
-          isActive ? theme.color.black : theme.color.primary};
+        stroke: ${({ theme }) => theme.color.primary};
       }
 
-      rect {
-        stroke: ${({ isActive, theme }) =>
-          isActive ? theme.color.black : theme.color.primary};
+      path {
+        fill: ${({ theme }) => theme.color.primary};
       }
     }
   }
