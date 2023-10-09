@@ -2,7 +2,6 @@
 
 import * as S from './style';
 import { usePathname } from 'next/navigation';
-import styled from '@emotion/styled';
 
 import {
   HomeIcon,
