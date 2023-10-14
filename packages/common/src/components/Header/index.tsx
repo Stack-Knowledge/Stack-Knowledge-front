@@ -15,8 +15,12 @@ import {
 interface HeaderProps {
   role: 'admin' | 'client';
 }
+
+const getIsActive = (currentPath, targetPath) => currentPath === targetPath;
+
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
+
   if (pathname === '/auth/login') return <></>;
 
   const handleLinkClick = (e: any) => {
@@ -33,43 +37,55 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuStrokeItemWrapper href='/' isActive={pathname === '/'}>
+          <S.MenuStrokeItemWrapper
+            href='/'
+            isActive={getIsActive(pathname, '/')}
+          >
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
           </S.MenuStrokeItemWrapper>
+
           {role === 'admin' ? (
             <>
               <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
-                isActive={pathname === '/mission/scoring'}
+                isActive={getIsActive(pathname, '/mission/scoring')}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
               </S.MenuStrokeItemWrapper>
+
               <S.MenuFillItemWrapper
                 href='/mission/create'
-                isActive={pathname === '/mission/create'}
+                isActive={getIsActive(pathname, '/mission/create')}
               >
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
               </S.MenuFillItemWrapper>
             </>
           ) : (
-            <S.MenuFillItemWrapper
-              href='/mission/list'
-              isActive={pathname === '/mission/list'}
-            >
-              <QuestionIcon />
-              <S.ItemTitle>문제</S.ItemTitle>
-            </S.MenuFillItemWrapper>
+            <>
+              <S.MenuFillItemWrapper
+                href='/mission/list'
+                isActive={getIsActive(pathname, '/mission/list')}
+              >
+                <QuestionIcon />
+                <S.ItemTitle>문제</S.ItemTitle>
+              </S.MenuFillItemWrapper>
+            </>
           )}
-          <S.MenuFillItemWrapper href='/shop' isActive={pathname === '/shop'}>
+
+          <S.MenuFillItemWrapper
+            href='/shop'
+            isActive={getIsActive(pathname, '/shop')}
+          >
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
           </S.MenuFillItemWrapper>
+
           <S.MenuFillItemWrapper
             href='/ranking'
-            isActive={pathname === '/ranking'}
+            isActive={getIsActive(pathname, '/ranking')}
           >
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
