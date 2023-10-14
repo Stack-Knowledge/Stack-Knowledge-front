@@ -60,46 +60,32 @@ export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
 `;
 
 export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
-  display: flex;
-  align-items: center;
-  color: ${({ isActive, theme }) =>
-    isActive ? theme.color.primary : theme.color.black};
+  ${({ isActive, theme }) => {
+    const activeColor = isActive ? theme.color.primary : theme.color.black;
+    const hoverColor = theme.color.primary;
+    return `
+     display: flex;
+     align-items: center;
+     color:${activeColor};
 
-  & svg {
-    circle {
-      stroke: ${({ isActive, theme }) =>
-        isActive ? theme.color.primary : theme.color.black};
-    }
+     & svg {
+       circle { stroke:${activeColor};}
+       
+       rect, path {fill:${activeColor};}
+     }
 
-    rect {
-      fill: ${({ isActive, theme }) =>
-        isActive ? theme.color.primary : theme.color.black};
-    }
+     &:hover{
+       span,
+       & svg{
+         color:${hoverColor};
 
-    path {
-      fill: ${({ isActive, theme }) =>
-        isActive ? theme.color.primary : theme.color.black};
-    }
-  }
+         circle{stroke:${hoverColor};}
 
-  &:hover {
-    span,
-    & svg {
-      color: ${({ theme }) => theme.color.primary};
-
-      rect {
-        fill: ${({ theme }) => theme.color.primary};
-      }
-
-      circle {
-        stroke: ${({ theme }) => theme.color.primary};
-      }
-
-      path {
-        fill: ${({ theme }) => theme.color.primary};
-      }
-    }
-  }
+         rect,path{fill:${hoverColor};}
+       }
+     }
+   `;
+  }}
 `;
 
 export const ItemTitle = styled.span`
