@@ -90,6 +90,5 @@ export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
 
 export const ItemTitle = styled.span`
   ${({ theme }) => theme.typo.body3};
-
   margin-left: 0.9375rem;
 `;
