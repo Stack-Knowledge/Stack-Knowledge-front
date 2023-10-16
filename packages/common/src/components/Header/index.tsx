@@ -16,8 +16,6 @@ interface HeaderProps {
   role: 'admin' | 'client';
 }
 
-const getIsActive = (currentPath, targetPath) => currentPath === targetPath;
-
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
 
@@ -29,6 +27,8 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
     }
   };
 
+  const getIsActive = (targetPath: string) => pathname === targetPath;
+
   return (
     <S.HeaderWrapper>
       <S.HeaderContainer>
@@ -37,10 +37,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuStrokeItemWrapper
-            href='/'
-            isActive={getIsActive(pathname, '/')}
-          >
+          <S.MenuStrokeItemWrapper href='/' isActive={getIsActive('/')}>
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
           </S.MenuStrokeItemWrapper>
@@ -49,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <>
               <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
-                isActive={getIsActive(pathname, '/mission/scoring')}
+                isActive={getIsActive('mission/scoring')}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
@@ -57,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
               <S.MenuFillItemWrapper
                 href='/mission/create'
-                isActive={getIsActive(pathname, '/mission/create')}
+                isActive={getIsActive('/mission/create')}
               >
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
@@ -67,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <>
               <S.MenuFillItemWrapper
                 href='/mission/list'
-                isActive={getIsActive(pathname, '/mission/list')}
+                isActive={getIsActive('/mission/list')}
               >
                 <QuestionIcon />
                 <S.ItemTitle>문제</S.ItemTitle>
@@ -75,17 +72,14 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             </>
           )}
 
-          <S.MenuFillItemWrapper
-            href='/shop'
-            isActive={getIsActive(pathname, '/shop')}
-          >
+          <S.MenuFillItemWrapper href='/shop' isActive={getIsActive('/shop')}>
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
           </S.MenuFillItemWrapper>
 
           <S.MenuFillItemWrapper
             href='/ranking'
-            isActive={getIsActive(pathname, '/ranking')}
+            isActive={getIsActive('/ranking')}
           >
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
