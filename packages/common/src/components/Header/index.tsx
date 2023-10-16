@@ -18,6 +18,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
+
   if (pathname === '/auth/login') return <></>;
 
   const handleLinkClick = (e: any) => {
@@ -25,6 +26,8 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
       e.preventDefault();
     }
   };
+
+  const getIsActive = (targetPath: string) => pathname === targetPath;
 
   return (
     <S.HeaderWrapper>
@@ -34,41 +37,53 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuItemWrapper href='/' onClick={handleLinkClick}>
+          <S.MenuStrokeItemWrapper href='/' isActive={getIsActive('/')}>
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
-          </S.MenuItemWrapper>
+          </S.MenuStrokeItemWrapper>
+
           {role === 'admin' ? (
             <>
-              <S.MenuItemWrapper
+              <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
-                onClick={handleLinkClick}
+                isActive={getIsActive('mission/scoring')}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
-              </S.MenuItemWrapper>
-              <S.MenuItemWrapper
+              </S.MenuStrokeItemWrapper>
+
+              <S.MenuFillItemWrapper
                 href='/mission/create'
-                onClick={handleLinkClick}
+                isActive={getIsActive('/mission/create')}
               >
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
-              </S.MenuItemWrapper>
+              </S.MenuFillItemWrapper>
             </>
           ) : (
-            <S.MenuItemWrapper href='/mission/list' onClick={handleLinkClick}>
-              <QuestionIcon />
-              <S.ItemTitle>문제</S.ItemTitle>
-            </S.MenuItemWrapper>
+            <>
+              <S.MenuFillItemWrapper
+                href='/mission/list'
+                isActive={getIsActive('/mission/list')}
+              >
+                <QuestionIcon />
+                <S.ItemTitle>문제</S.ItemTitle>
+              </S.MenuFillItemWrapper>
+            </>
           )}
-          <S.MenuItemWrapper href='/shop' onClick={handleLinkClick}>
+
+          <S.MenuFillItemWrapper href='/shop' isActive={getIsActive('/shop')}>
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
-          </S.MenuItemWrapper>
-          <S.MenuItemWrapper href='/ranking' onClick={handleLinkClick}>
+          </S.MenuFillItemWrapper>
+
+          <S.MenuFillItemWrapper
+            href='/ranking'
+            isActive={getIsActive('/ranking')}
+          >
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
-          </S.MenuItemWrapper>
+          </S.MenuFillItemWrapper>
         </S.MenuNav>
       </S.HeaderContainer>
     </S.HeaderWrapper>

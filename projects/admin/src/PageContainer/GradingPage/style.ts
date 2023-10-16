@@ -23,7 +23,8 @@ export const Title = styled.span`
 
 export const SectionContainer = styled.span`
   display: flex;
-  gap: 24.75rem;
+  display: flex;
+  justify-content: space-between;
   padding-bottom: 1.25rem;
 `;
 

@@ -34,13 +34,61 @@ export const MenuNav = styled.div`
   gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 
-export const MenuItemWrapper = styled(Link)`
+export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
   display: flex;
   align-items: center;
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.color.primary : theme.color.black};
+
+  & svg {
+    path {
+      stroke: ${({ isActive, theme }) =>
+        isActive ? theme.color.primary : theme.color.black};
+    }
+  }
+
+  &:hover {
+    span,
+    & svg {
+      color: ${({ theme }) => theme.color.primary};
+
+      path {
+        stroke: ${({ theme }) => theme.color.primary};
+      }
+    }
+  }
+`;
+
+export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
+  ${({ isActive, theme }) => {
+    const activeColor = isActive ? theme.color.primary : theme.color.black;
+    const hoverColor = theme.color.primary;
+    return `
+     display: flex;
+     align-items: center;
+     color:${activeColor};
+
+     & svg {
+       circle { stroke:${activeColor};}
+       
+       rect, path {fill:${activeColor};}
+     }
+
+     &:hover{
+       span,
+       & svg{
+         color:${hoverColor};
+
+         circle{stroke:${hoverColor};}
+
+         rect,path{fill:${hoverColor};}
+       }
+     }
+   `;
+  }}
 `;
 
 export const ItemTitle = styled.span`
   ${({ theme }) => theme.typo.body3};
-  color: ${({ theme }) => theme.color.black};
   margin-left: 0.9375rem;
 `;
