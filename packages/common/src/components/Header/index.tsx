@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <>
               <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
-                isActive={getIsActive('mission/scoring')}
+                isActive={getIsActive('/mission/scoring')}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
@@ -62,13 +62,13 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             </>
           ) : (
             <>
-              <S.MenuFillItemWrapper
+              <S.MenuStrokeItemWrapper
                 href='/mission/list'
                 isActive={getIsActive('/mission/list')}
               >
                 <QuestionIcon />
                 <S.ItemTitle>문제</S.ItemTitle>
-              </S.MenuFillItemWrapper>
+              </S.MenuStrokeItemWrapper>
             </>
           )}
 
