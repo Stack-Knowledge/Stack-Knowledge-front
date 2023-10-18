@@ -8,7 +8,8 @@ export const BannerWrapper = styled.div`
     #f6f7ff 100%
   );
 
-  width: 80rem;
+  max-width: 80rem;
+  width: 100%;
   height: 18.75rem;
   border-radius: 1.25rem;
   display: flex;

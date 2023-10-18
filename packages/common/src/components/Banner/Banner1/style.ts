@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 
 export const BannerWrapper = styled.div`
   background: #f4ccba;
-  width: 80rem;
+  max-width: 80rem;
+  width: 100%;
   height: 18.75rem;
   border-radius: 1.25rem;
   display: flex;

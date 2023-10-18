@@ -14,6 +14,8 @@ export const BannerContainer = styled.div<{
   currentBanner: number;
   bannerCount: number;
 }>`
+  max-width: 80rem;
+  width: 100%;
   display: flex;
   transition: transform 0.5s ease-in-out;
   transform: translateX(
@@ -27,7 +29,8 @@ export const BannerItem = styled.div`
 `;
 
 export const DotWrapper = styled.div`
-  width: 80rem;
+  max-width: 80rem;
+  width: 100%;
   height: 18.75rem;
   position: absolute;
   display: flex;
