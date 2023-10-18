@@ -1,34 +1,30 @@
 import styled from '@emotion/styled';
 
 export const BannerWrapper = styled.div`
-  max-width: 80rem;
-  width: 100%;
+  width: 80rem;
   height: 18.75rem;
   border-radius: 1.25rem;
   display: flex;
   position: relative;
   overflow: hidden;
+
+  @media ${({ theme }) => theme.breakPoint[1440]} {
+    width: calc(100vw - 12.5rem);
+  }
 `;
 
 export const BannerContainer = styled.div<{
   currentBanner: number;
   bannerCount: number;
 }>`
-  max-width: 80rem;
-  width: 100%;
+  width: 80rem;
   display: flex;
   transition: transform 0.5s ease-in-out;
   transform: translateX(${({ currentBanner }) => -currentBanner * 80}rem);
 
-  @media ${({ theme }) => theme.breakPoint[1728]} {
-    transform: translateX(
-      calc(${({ currentBanner }) => -currentBanner} * (100vw - 13.75rem))
-    );
-  }
-
   @media ${({ theme }) => theme.breakPoint[1440]} {
     transform: translateX(
-      calc(${({ currentBanner }) => -currentBanner} * (100vw - 6.25rem))
+      calc(${({ currentBanner }) => -currentBanner} * (100vw - 12.5rem))
     );
   }
 `;
