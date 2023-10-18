@@ -18,10 +18,19 @@ export const BannerContainer = styled.div<{
   width: 100%;
   display: flex;
   transition: transform 0.5s ease-in-out;
-  transform: translateX(
-    ${({ currentBanner, bannerCount }) =>
-      -currentBanner * ((bannerCount * 80) / bannerCount)}rem
-  );
+  transform: translateX(${({ currentBanner }) => -currentBanner * 80}rem);
+
+  @media ${({ theme }) => theme.breakPoint[1728]} {
+    transform: translateX(
+      calc(${({ currentBanner }) => -currentBanner} * (100vw - 13.75rem))
+    );
+  }
+
+  @media ${({ theme }) => theme.breakPoint[1440]} {
+    transform: translateX(
+      calc(${({ currentBanner }) => -currentBanner} * (100vw - 6.25rem))
+    );
+  }
 `;
 
 export const BannerItem = styled.div`

@@ -8,11 +8,18 @@ export const BannerWrapper = styled.div`
     #f6f7ff 100%
   );
 
-  max-width: 80rem;
-  width: 100%;
+  width: 80rem;
   height: 18.75rem;
   border-radius: 1.25rem;
   display: flex;
+
+  @media ${({ theme }) => theme.breakPoint[1728]} {
+    width: calc(100vw - 13.75rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint[1440]} {
+    width: calc(100vw - 6.25rem);
+  }
 `;
 
 export const BannerTitleContainer = styled.div`

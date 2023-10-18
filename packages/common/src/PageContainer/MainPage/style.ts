@@ -5,14 +5,6 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 3.75rem 0 10.75rem;
-
-  @media ${({ theme }) => theme.breakPoint[1728]} {
-    padding: 3.75rem 13.75rem 10.75rem 13.75rem;
-  }
-
-  @media ${({ theme }) => theme.breakPoint[1440]} {
-    padding: 3.75rem 6.25rem 10.75rem 6.25rem;
-  }
 `;
 
 export const MissionAlertText = styled.p`
