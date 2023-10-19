@@ -47,6 +47,11 @@ export const SunIconWrapper = styled.div`
     width: 20vw;
     height: 13vw;
   }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: 30vw;
+    height: 18vw;
+  }
 `;
 
 export const LetgoIconContainer = styled.div`
@@ -56,6 +61,10 @@ export const LetgoIconContainer = styled.div`
 
   @media (max-width: 1240px) {
     padding: 3.8rem 0 1rem 20vw;
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    padding-top: 5rem;
   }
 `;
 
@@ -67,5 +76,10 @@ export const LetgoIconWrapper = styled.div`
   @media (max-width: 1240px) {
     width: 22vw;
     height: 16vw;
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: 30vw;
+    height: 18vw;
   }
 `;
