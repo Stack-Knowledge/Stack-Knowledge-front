@@ -37,7 +37,7 @@ const LoginPage = () => {
       </S.BottomIconWrapper>
       <LoginLogoIcon />
       <S.StackKnowledge>Stack Knowledge</S.StackKnowledge>
-      <LoginButton onClick={handleLogin} />
+      <LoginButton disabled={get('code')} onClick={handleLogin} />
     </S.MainWrapper>
   );
 };
