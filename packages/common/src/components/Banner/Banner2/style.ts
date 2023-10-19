@@ -16,6 +16,10 @@ export const BannerWrapper = styled.div`
   @media (max-width: 1240px) {
     width: calc(100vw - 12.5rem);
   }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 3rem);
+  }
 `;
 
 export const BannerTitleContainer = styled.div`

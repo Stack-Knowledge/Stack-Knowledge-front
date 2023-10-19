@@ -11,6 +11,10 @@ export const BannerWrapper = styled.div`
   @media (max-width: 1240px) {
     width: calc(100vw - 12.5rem);
   }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 3rem);
+  }
 `;
 
 export const BannerContainer = styled.div<{
@@ -25,6 +29,12 @@ export const BannerContainer = styled.div<{
   @media (max-width: 1240px) {
     transform: translateX(
       calc(${({ currentBanner }) => -currentBanner} * (100vw - 12.5rem))
+    );
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    transform: translateX(
+      calc(${({ currentBanner }) => -currentBanner} * (100vw - 3rem))
     );
   }
 `;
