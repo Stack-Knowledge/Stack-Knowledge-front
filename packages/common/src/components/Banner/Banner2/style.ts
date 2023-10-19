@@ -13,7 +13,7 @@ export const BannerWrapper = styled.div`
   border-radius: 1.25rem;
   display: flex;
 
-  @media ${({ theme }) => theme.breakPoint[1440]} {
+  @media (max-width: 1240px) {
     width: calc(100vw - 12.5rem);
   }
 `;

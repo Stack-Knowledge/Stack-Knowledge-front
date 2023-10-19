@@ -8,7 +8,7 @@ export const BannerWrapper = styled.div`
   position: relative;
   overflow: hidden;
 
-  @media ${({ theme }) => theme.breakPoint[1440]} {
+  @media (max-width: 1240px) {
     width: calc(100vw - 12.5rem);
   }
 `;
@@ -22,7 +22,7 @@ export const BannerContainer = styled.div<{
   transition: transform 0.5s ease-in-out;
   transform: translateX(${({ currentBanner }) => -currentBanner * 80}rem);
 
-  @media ${({ theme }) => theme.breakPoint[1440]} {
+  @media (max-width: 1240px) {
     transform: translateX(
       calc(${({ currentBanner }) => -currentBanner} * (100vw - 12.5rem))
     );
