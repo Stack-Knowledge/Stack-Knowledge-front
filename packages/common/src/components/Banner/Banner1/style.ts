@@ -16,6 +16,7 @@ export const BannerTitleContainer = styled.div`
   width: 40rem;
   height: 18.75rem;
   padding: 4.375rem 0 0 3.75rem;
+
   @media (max-width: 1240px) {
     width: 50vw;
   }
