@@ -10,13 +10,13 @@ const Banner = () => {
   const banners: JSX.Element[] = [<Banner1 />, <Banner2 />, <Banner3 />];
   const [currentBanner, setCurrentBanner] = useState<number>(0);
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setCurrentBanner((prev) => (prev + 1) % banners.length);
-  //   }, 5000);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setCurrentBanner((prev) => (prev + 1) % banners.length);
+    }, 5000);
 
-  //   return () => clearTimeout(timeout);
-  // }, [currentBanner]);
+    return () => clearTimeout(timeout);
+  }, [currentBanner]);
 
   return (
     <S.BannerWrapper>
