@@ -31,7 +31,7 @@ export const BannerTitleContainer = styled.div`
   gap: 1.25rem;
 
   @media (max-width: 1240px) {
-    width: 50vw;
+    width: 80vw;
   }
 `;
 
