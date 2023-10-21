@@ -22,7 +22,7 @@ export const BannerTitleContainer = styled.div`
   padding: 4.375rem 0 0 3.75rem;
 
   @media (max-width: 1240px) {
-    width: 50vw;
+    width: 80vw;
   }
 `;
 
@@ -30,6 +30,7 @@ export const BannerTitle = styled.span`
   color: ${({ theme }) => theme.color.white};
   ${({ theme }) => theme.typo.h1};
   font-weight: 700;
+  word-break: keep-all;
 
   @media (max-width: 1240px) {
     ${({ theme }) => theme.typo.h2};
@@ -55,12 +56,11 @@ export const SunIconWrapper = styled.div`
 `;
 
 export const LetgoIconContainer = styled.div`
-  width: 40rem;
   height: 18.75rem;
   padding: 2.5rem 3.75rem 1rem 11.25rem;
 
   @media (max-width: 1240px) {
-    padding: 3.8rem 0 1rem 20vw;
+    padding: 3.8rem 0 1rem 0;
   }
 
   @media ${({ theme }) => theme.breakPoint[600]} {
@@ -79,7 +79,7 @@ export const LetgoIconWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint[600]} {
-    width: 30vw;
+    width: 27vw;
     height: 18vw;
   }
 `;

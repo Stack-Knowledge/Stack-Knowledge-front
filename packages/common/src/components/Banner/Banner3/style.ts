@@ -33,6 +33,7 @@ export const BannerTitle = styled.span`
   color: ${({ theme }) => theme.color.white};
   ${({ theme }) => theme.typo.h1};
   font-weight: 700;
+  word-break: keep-all;
 
   @media (max-width: 1240px) {
     ${({ theme }) => theme.typo.h2};
