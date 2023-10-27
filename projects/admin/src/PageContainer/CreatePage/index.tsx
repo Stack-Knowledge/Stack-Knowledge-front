@@ -16,15 +16,20 @@ import { toast } from 'react-toastify';
 const CreatePage = () => {
   const [titleValue, setTitleValue] = useState<string>('');
   const [detailValue, setDetailValue] = useState<string>('');
-  const [time, setTime] = useState<number>(0);
+  const [minute, setMinute] = useState(0);
+  const [second, setSecond] = useState(0);
 
   const { push } = useRouter();
 
   const { mutate, isSuccess } = usePostMission();
 
   const handleSubmit = () => {
-    if (titleValue && detailValue && time)
-      mutate({ title: titleValue, content: detailValue, timeLimit: time });
+    if (titleValue && detailValue && minute + second !== 0)
+      mutate({
+        title: titleValue,
+        content: detailValue,
+        timeLimit: minute * 60 + second,
+      });
     else toast.error('작성되지 않은 빈칸이 있습니다.');
   };
 
@@ -37,7 +42,12 @@ const CreatePage = () => {
     <S.PageWrapper>
       <div>
         <S.TimerWrapper>
-          <Timer time={time} setTime={setTime} />
+          <Timer
+            minute={minute}
+            setMinute={setMinute}
+            second={second}
+            setSecond={setSecond}
+          />
         </S.TimerWrapper>
         <S.Section>[제목]</S.Section>
         <TitleInput inputValue={titleValue} setInputValue={setTitleValue} />
