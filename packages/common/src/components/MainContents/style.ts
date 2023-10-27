@@ -24,6 +24,7 @@ export const Contents = styled.div`
   padding: 2.375rem 2.5rem;
   gap: 3rem;
   overflow-x: scroll;
+  overflow-y: hidden;
 
   .medalWrapper:nth-of-type(1n) .medal {
     background-color: #ffd79b;
