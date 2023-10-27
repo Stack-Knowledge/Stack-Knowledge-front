@@ -20,7 +20,6 @@ const Timer: React.FC<TimerProps> = ({
     <S.TimerWrapper>
       <S.Input
         maxLength={2}
-        placeholder='00'
         value={minute}
         onChange={(e) =>
           e.target.value ? setMinute(parseInt(e.target.value)) : setMinute(0)
@@ -30,7 +29,6 @@ const Timer: React.FC<TimerProps> = ({
       <S.Input
         maxLength={2}
         value={second}
-        placeholder='00'
         onChange={(e) =>
           e.target.value ? setSecond(parseInt(e.target.value)) : setSecond(0)
         }
