@@ -28,5 +28,8 @@
   "license": "ISC",
   "resolutions": {
     "@types/react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/gtag.js": "^0.0.17"
   }
 }
