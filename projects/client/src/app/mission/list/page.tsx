@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '문제 목록',
     description: 'StackKnowledge 문제 목록 페이지입니다.',
-    url: 'https://stack-knowledge-client.vercel.app/mission/list/',
+    url: 'https://stackknowledge.vercel.app/mission/list/',
   },
 };
 
