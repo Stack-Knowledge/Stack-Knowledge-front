@@ -38,6 +38,8 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   };
 
   useEffect(() => {
+    toast.success('문제를 푸는 동안에는 다른 페이지로 이동할 수 없습니다.');
+
     const handleBeforeUnload = () =>
       window.addEventListener('beforeunload', preventClose);
     handleBeforeUnload();
