@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'StackKnowledge',
     description: '학습 장려 게임화 플랫폼입니다.',
-    url: 'https://stack-knowledge-client.vercel.app/',
+    url: 'https://stackknowledge.vercel.app/',
     siteName: 'StackKnowledge',
     images: [
       {

@@ -17,7 +17,7 @@ export const generateMetadata = async ({
     openGraph: {
       title: '문제 풀이',
       description: 'StackKnowledge 문제 풀이 페이지입니다.',
-      url: `https://stack-knowledge-client.vercel.app/mission/resolve/${missionId}`,
+      url: `https://stackknowledge.vercel.app/mission/resolve/${missionId}`,
     },
   };
 };

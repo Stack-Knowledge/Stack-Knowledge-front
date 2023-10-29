@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '랭킹',
     description: 'StackKnowledge 랭킹 페이지입니다.',
-    url: 'https://stack-knowledge-client.vercel.app/ranking/',
+    url: 'https://stackknowledge.vercel.app/ranking/',
   },
 };
 
