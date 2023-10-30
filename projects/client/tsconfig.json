@@ -2,26 +2,14 @@
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "types": ["@types/gtag.js"],
     "paths": {
-      "common/*": [
-        "../../packages/common/src/*"
-      ],
-      "client/*": [
-        "./src/*"
-      ],
-      "api/*": [
-        "../../packages/api/*"
-      ]
+      "common/*": ["../../packages/common/src/*"],
+      "client/*": ["./src/*"],
+      "api/*": ["../../packages/api/*"]
     },
     "strict": false
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
