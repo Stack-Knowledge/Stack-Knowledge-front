@@ -37,7 +37,13 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuStrokeItemWrapper href='/' isActive={getIsActive('/')}>
+
+          <S.MenuStrokeItemWrapper
+            href='/'
+            isActive={getIsActive('/')}
+            onClick={handleLinkClick}
+          >
+
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
           </S.MenuStrokeItemWrapper>
@@ -72,7 +78,12 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             </>
           )}
 
-          <S.MenuFillItemWrapper href='/shop' isActive={getIsActive('/shop')}>
+
+          <S.MenuFillItemWrapper
+            href='/shop'
+            isActive={getIsActive('/shop')}
+            onClick={handleLinkClick}
+          >
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
           </S.MenuFillItemWrapper>

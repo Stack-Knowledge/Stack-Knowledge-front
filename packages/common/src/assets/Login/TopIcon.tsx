@@ -1,8 +1,8 @@
 const TopIcon = () => (
   <svg
+    width='32.875rem'
+    height='22.5625rem'
     xmlns='http://www.w3.org/2000/svg'
-    width='526'
-    height='361'
     viewBox='0 0 526 361'
     fill='none'
   >

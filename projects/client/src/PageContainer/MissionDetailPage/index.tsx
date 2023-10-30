@@ -38,6 +38,8 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   };
 
   useEffect(() => {
+    toast.error('문제를 푸는 동안에는 다른 페이지로 이동할 수 없습니다.');
+
     const handleBeforeUnload = () =>
       window.addEventListener('beforeunload', preventClose);
     handleBeforeUnload();
@@ -57,7 +59,8 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
 
   const submitSolution = () => {
     mutate({
-      solvation: inputValue,
+      solvation:
+        inputValue.length > 0 ? inputValue : '시간초과로 제출된 사용자입니다.',
     });
   };
 

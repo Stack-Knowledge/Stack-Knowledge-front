@@ -1,8 +1,8 @@
 const BottomIcon = () => (
   <svg
+    width='26.625rem'
+    height='27.9375rem'
     xmlns='http://www.w3.org/2000/svg'
-    width='426'
-    height='447'
     viewBox='0 0 426 447'
     fill='none'
   >
