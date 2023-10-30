@@ -7,7 +7,7 @@ import { Header } from 'common';
 
 import Script from 'next/script';
 
-import * as gtag from '../libs/gtag';
+import * as gtag from 'client/libs/gtag';
 
 import Providers from './providers';
 
