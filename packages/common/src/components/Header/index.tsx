@@ -37,7 +37,11 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.Title>Stack Knowledge</S.Title>
         </S.LogoContainer>
         <S.MenuNav role={role}>
-          <S.MenuStrokeItemWrapper href='/' isActive={getIsActive('/')}>
+          <S.MenuStrokeItemWrapper
+            href='/'
+            isActive={getIsActive('/')}
+            onClick={handleLinkClick}
+          >
             <HomeIcon />
             <S.ItemTitle>홈</S.ItemTitle>
           </S.MenuStrokeItemWrapper>
@@ -47,6 +51,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
               <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
                 isActive={getIsActive('/mission/scoring')}
+                onClick={handleLinkClick}
               >
                 <QuestionIcon />
                 <S.ItemTitle>채점하기</S.ItemTitle>
@@ -55,6 +60,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
               <S.MenuFillItemWrapper
                 href='/mission/create'
                 isActive={getIsActive('/mission/create')}
+                onClick={handleLinkClick}
               >
                 <MadeIcon />
                 <S.ItemTitle>만들기</S.ItemTitle>
@@ -65,6 +71,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
               <S.MenuStrokeItemWrapper
                 href='/mission/list'
                 isActive={getIsActive('/mission/list')}
+                onClick={handleLinkClick}
               >
                 <QuestionIcon />
                 <S.ItemTitle>문제</S.ItemTitle>
@@ -72,7 +79,11 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             </>
           )}
 
-          <S.MenuFillItemWrapper href='/shop' isActive={getIsActive('/shop')}>
+          <S.MenuFillItemWrapper
+            href='/shop'
+            isActive={getIsActive('/shop')}
+            onClick={handleLinkClick}
+          >
             <ShopIcon />
             <S.ItemTitle>상점</S.ItemTitle>
           </S.MenuFillItemWrapper>
@@ -80,6 +91,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           <S.MenuFillItemWrapper
             href='/ranking'
             isActive={getIsActive('/ranking')}
+            onClick={handleLinkClick}
           >
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
