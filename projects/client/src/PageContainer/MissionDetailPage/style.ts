@@ -16,6 +16,7 @@ export const Section = styled.div`
   margin-bottom: 1.25rem;
   font-weight: 400;
   max-width: 55.625rem;
+  word-break: break-all;
 `;
 
 export const MissionWrapper = styled.div`
