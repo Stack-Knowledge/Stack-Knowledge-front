@@ -24,7 +24,7 @@ export const UserName = styled.span`
 
 export const TaskWrapper = styled.div`
   width: 100%;
-  height: 100px;
+  height: 6.25rem;
   word-break: break-all;
 `;
 
@@ -55,4 +55,6 @@ export const MildegeUnit = styled.span`
   color: ${({ theme }) => theme.color.black};
   font-family: Roboto;
   font-weight: 500;
+  position: relative;
+  top: 0.1875rem;
 `;
