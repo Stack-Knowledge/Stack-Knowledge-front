@@ -21,7 +21,10 @@ const TaskCard: React.FC<TaskCardProps> = ({
 }) => (
   <S.CardWrapper onClick={onClick} isShadow={isShadow}>
     <S.UserName>{userName}</S.UserName>
-    <S.TaskTitle>{taskTitle}</S.TaskTitle>
+    <S.TaskWrapper>
+      asdasd
+      <S.TaskTitle>{taskTitle}</S.TaskTitle>
+    </S.TaskWrapper>
     <S.MiledgeWrapper>
       <S.Mildege>{slicePoint(miledge)}</S.Mildege>
       <S.MildegeUnit>M</S.MildegeUnit>

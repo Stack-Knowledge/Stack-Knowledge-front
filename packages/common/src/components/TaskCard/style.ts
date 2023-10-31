@@ -22,6 +22,12 @@ export const UserName = styled.span`
   margin: 2.5rem 0 2.25rem;
 `;
 
+export const TaskWrapper = styled.div`
+  width: 100%;
+  height: 100px;
+  word-break: break-all;
+`;
+
 export const TaskTitle = styled.span`
   ${({ theme }) => theme.typo.body1};
   color: ${({ theme }) => theme.color.gray['070']};
@@ -30,9 +36,10 @@ export const TaskTitle = styled.span`
 
 export const MiledgeWrapper = styled.div`
   width: 14rem;
+  height: auto;
   display: flex;
   gap: 0.25rem;
-  margin-top: 8rem;
+  margin-top: 3rem;
   align-items: center;
   justify-content: center;
 `;
