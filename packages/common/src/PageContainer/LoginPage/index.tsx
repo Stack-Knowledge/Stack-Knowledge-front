@@ -16,7 +16,7 @@ const LoginPage = () => {
   const { mutate, isSuccess } = usePostLoginCode();
 
   const handleLogin = () => {
-    window.location.href = `https://gauth.co.kr/login?client_id=e6e8ac7857c94ca7a24db504d33369078ab562d7a29a4c9db353204ae8080be9&redirect_uri=${window.location.href}`;
+    window.location.href = `${process.env.NEXT_PUBLIC_GAUTH_URL}${window.location.href}`;
   };
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const LoginPage = () => {
       </S.BottomIconWrapper>
       <LoginLogoIcon />
       <S.StackKnowledge>Stack Knowledge</S.StackKnowledge>
-      <LoginButton onClick={handleLogin} />
+      <LoginButton disabled={get('code')} onClick={handleLogin} />
     </S.MainWrapper>
   );
 };

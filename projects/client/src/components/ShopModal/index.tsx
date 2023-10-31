@@ -65,21 +65,27 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
           <XIcon />
         </S.CloseButton>
       </form>
-      <S.ModalTitle>선택하신 상품이 맞으십니까?</S.ModalTitle>
-      <S.ItemList>
-        {selectedList?.map((selectedItem, index) => (
-          <ShopModalItem
-            key={selectedItem.itemId}
-            data={selectedItem}
-            count={countList[index]}
-            calculateCount={calculateCount}
-            index={index}
-          />
-        ))}
-      </S.ItemList>
-      <form method='dialog'>
-        <S.PurchusButton onClick={handleSubmit}>구매하기</S.PurchusButton>
-      </form>
+      {selectedList.length > 0 ? (
+        <>
+          <S.ModalTitle>선택하신 상품이 맞습니까?</S.ModalTitle>
+          <S.ItemList>
+            {selectedList?.map((selectedItem, index) => (
+              <ShopModalItem
+                key={selectedItem.itemId}
+                data={selectedItem}
+                count={countList[index]}
+                calculateCount={calculateCount}
+                index={index}
+              />
+            ))}
+          </S.ItemList>
+          <form method='dialog'>
+            <S.PurchusButton onClick={handleSubmit}>구매하기</S.PurchusButton>
+          </form>
+        </>
+      ) : (
+        <S.ModalTitle>선택하신 상품이 없습니다...</S.ModalTitle>
+      )}
     </S.ModalWrapper>
   );
 };

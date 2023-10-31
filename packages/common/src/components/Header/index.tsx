@@ -78,7 +78,6 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
               </S.MenuStrokeItemWrapper>
             </>
           )}
-
           <S.MenuFillItemWrapper
             href='/shop'
             isActive={getIsActive('/shop')}

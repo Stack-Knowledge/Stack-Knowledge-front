@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '상점',
     description: 'StackKnowledge 상점 페이지입니다.',
-    url: 'https://stack-knowledge-client.vercel.app/shop/',
+    url: 'https://stackknowledge.vercel.app/shop/',
   },
 };
 

@@ -3,11 +3,25 @@
   "compilerOptions": {
     "jsx": "preserve",
     "paths": {
-      "common/*": ["../../packages/common/src/*"],
-      "admin/*": ["./src/*"],
-      "api/*": ["../../packages/api/*"]
-    }
+      "common/*": [
+        "../../packages/common/src/*"
+      ],
+      "admin/*": [
+        "./src/*"
+      ],
+      "api/*": [
+        "../../packages/api/*"
+      ]
+    },
+    "strict": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
