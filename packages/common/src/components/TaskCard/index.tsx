@@ -22,7 +22,6 @@ const TaskCard: React.FC<TaskCardProps> = ({
   <S.CardWrapper onClick={onClick} isShadow={isShadow}>
     <S.UserName>{userName}</S.UserName>
     <S.TaskWrapper>
-      asdasd
       <S.TaskTitle>{taskTitle}</S.TaskTitle>
     </S.TaskWrapper>
     <S.MiledgeWrapper>
