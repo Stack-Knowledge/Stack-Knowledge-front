@@ -1,12 +1,12 @@
 'use client';
 
-import { useGetScoringList } from 'api/admin';
+import { useGetOrderedItemList } from 'api/admin';
 import * as S from './style';
 
 import { ShopCarousel } from 'admin/components';
 
 const ShopPage = () => {
-  const { data } = useGetScoringList();
+  const { data } = useGetOrderedItemList();
 
   return (
     <S.PageWrapper>
