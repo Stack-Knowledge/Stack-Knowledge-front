@@ -60,7 +60,11 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const submitSolution = () => {
     mutate({
       solvation:
-        inputValue.length > 0 ? inputValue : '시간초과로 제출된 사용자입니다.',
+        inputValue.length === 0
+          ? ' '
+          : inputValue.length > 0
+          ? inputValue
+          : '시간초과로 제출된 사용자입니다.',
     });
   };
 
