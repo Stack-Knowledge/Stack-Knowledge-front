@@ -26,6 +26,8 @@ export const TaskWrapper = styled.div`
   width: 100%;
   height: 6.25rem;
   word-break: break-all;
+  display: flex;
+  justify-content: center;
 `;
 
 export const TaskTitle = styled.span`
