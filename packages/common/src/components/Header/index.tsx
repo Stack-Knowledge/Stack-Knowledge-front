@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
         <S.MenuNav role={role}>
           <S.MenuStrokeItemWrapper
             href='/'
-            isActive={getIsActive('/')}
+            data-isactive={getIsActive('/')}
             onClick={handleLinkClick}
           >
             <HomeIcon />
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <>
               <S.MenuStrokeItemWrapper
                 href='/mission/scoring'
-                isActive={getIsActive('/mission/scoring')}
+                data-isactive={getIsActive('/mission/scoring')}
                 onClick={handleLinkClick}
               >
                 <QuestionIcon />
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
               <S.MenuFillItemWrapper
                 href='/mission/create'
-                isActive={getIsActive('/mission/create')}
+                data-isactive={getIsActive('/mission/create')}
                 onClick={handleLinkClick}
               >
                 <MadeIcon />
@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <>
               <S.MenuStrokeItemWrapper
                 href='/mission/list'
-                isActive={getIsActive('/mission/list')}
+                data-isactive={getIsActive('/mission/list')}
                 onClick={handleLinkClick}
               >
                 <QuestionIcon />
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
           )}
           <S.MenuFillItemWrapper
             href='/shop'
-            isActive={getIsActive('/shop')}
+            data-isactive={getIsActive('/shop')}
             onClick={handleLinkClick}
           >
             <ShopIcon />
@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
           <S.MenuFillItemWrapper
             href='/ranking'
-            isActive={getIsActive('/ranking')}
+            data-isactive={getIsActive('/ranking')}
             onClick={handleLinkClick}
           >
             <RankingIcon />
