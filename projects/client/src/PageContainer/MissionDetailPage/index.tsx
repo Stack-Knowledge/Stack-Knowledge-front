@@ -81,7 +81,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
 
     if (error.response.status === 400) {
       toast.error('시간 제한을 초과하였습니다.');
-    } else {
+    } else if (error.response.status === 409) {
       toast.error('이미 푼 문제입니다.');
     }
   }
