@@ -34,9 +34,9 @@ export const MenuNav = styled.div`
   gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 
-export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
-  ${({ isActive, theme }) => {
-    const activeColor = isActive ? theme.color.primary : theme.color.black;
+export const MenuStrokeItemWrapper = styled(Link)<{ $isActive?: boolean }>`
+  ${({ $isActive, theme }) => {
+    const activeColor = $isActive ? theme.color.primary : theme.color.black;
     const hoverColor = theme.color.primary;
     return `
       display: flex;
@@ -63,9 +63,9 @@ export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
   }}
 `;
 
-export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
-  ${({ isActive, theme }) => {
-    const activeColor = isActive ? theme.color.primary : theme.color.black;
+export const MenuFillItemWrapper = styled(Link)<{ $isActive?: boolean }>`
+  ${({ $isActive, theme }) => {
+    const activeColor = $isActive ? theme.color.primary : theme.color.black;
     const hoverColor = theme.color.primary;
     return `
       display: flex;

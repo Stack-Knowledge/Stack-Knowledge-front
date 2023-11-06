@@ -39,11 +39,13 @@ export const Point = styled.span`
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
   margin-right: 0.25rem;
+  font-family: Roboto;
 `;
 
 export const PointUnit = styled.span`
   ${({ theme }) => theme.typo.body2};
   color: ${({ theme }) => theme.color.black};
+  font-family: Roboto;
   font-weight: 500;
 `;
 
