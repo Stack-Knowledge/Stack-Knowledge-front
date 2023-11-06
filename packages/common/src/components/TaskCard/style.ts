@@ -34,6 +34,7 @@ export const TaskTitle = styled.span`
   ${({ theme }) => theme.typo.body1};
   color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 500;
+  text-align: center;
 `;
 
 export const MiledgeWrapper = styled.div`
@@ -47,9 +48,11 @@ export const MiledgeWrapper = styled.div`
 `;
 
 export const Mildege = styled.span`
-  ${({ theme }) => theme.typo.button};
+  ${({ theme }) => theme.typo.body2};
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
+  position: relative;
+  bottom: 2px;
 `;
 
 export const MildegeUnit = styled.span`
@@ -58,5 +61,4 @@ export const MildegeUnit = styled.span`
   font-family: Roboto;
   font-weight: 500;
   position: relative;
-  top: 0.1875rem;
 `;
