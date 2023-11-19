@@ -7,11 +7,8 @@ export const SubmitContainer = styled.div`
   border-radius: 0.625rem;
   box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
 
-  @media (max-width: 1024px) {
-    width: calc(100vw - 2.5rem);
-  }
   @media ${({ theme }) => theme.breakPoint[600]} {
-    width: calc(100vw - 5rem);
+    width: calc(100vw - 10rem);
   }
 `;
 export const MissionDetailInputWrapper = styled.div`
@@ -29,8 +26,9 @@ export const MissionDetailInput = styled.textarea`
   resize: none;
   border: 0;
 
-  @media (max-width: 1024px) {
-    text-indent: 18px;
+  @media (max-width: 600px) {
+    width: calc(100vw - 10rem);
+    text-indent: 9px;
   }
 
   ::placeholder {
@@ -63,4 +61,8 @@ export const SubmitButton = styled.button`
   font-weight: 400;
   border: 0;
   cursor: pointer;
+
+  /* @media (max-width: 270px) {
+    width: calc(100% - 50%);
+  } */
 `;
