@@ -8,7 +8,7 @@ export const SubmitContainer = styled.div`
   box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
 
   @media ${({ theme }) => theme.breakPoint[600]} {
-    width: calc(100vw - 10rem);
+    width: calc(100vw - 16rem);
   }
 `;
 export const MissionDetailInputWrapper = styled.div`
@@ -27,7 +27,7 @@ export const MissionDetailInput = styled.textarea`
   border: 0;
 
   @media (max-width: 600px) {
-    width: calc(100vw - 10rem);
+    width: calc(100vw - 16rem);
     text-indent: 9px;
   }
 
