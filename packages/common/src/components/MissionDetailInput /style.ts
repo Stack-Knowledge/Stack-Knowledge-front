@@ -26,7 +26,7 @@ export const MissionDetailInput = styled.textarea`
   resize: none;
   border: 0;
 
-  @media (max-width: 600px) {
+  @media ${({ theme }) => theme.breakPoint[600]} {
     width: calc(100vw - 16rem);
     text-indent: 0.5625rem;
   }
