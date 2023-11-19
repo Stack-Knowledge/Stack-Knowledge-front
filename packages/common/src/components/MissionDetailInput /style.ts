@@ -28,7 +28,7 @@ export const MissionDetailInput = styled.textarea`
 
   @media (max-width: 600px) {
     width: calc(100vw - 16rem);
-    text-indent: 9px;
+    text-indent: 0.5625rem;
   }
 
   ::placeholder {
@@ -61,8 +61,4 @@ export const SubmitButton = styled.button`
   font-weight: 400;
   border: 0;
   cursor: pointer;
-
-  /* @media (max-width: 270px) {
-    width: calc(100% - 50%);
-  } */
 `;
