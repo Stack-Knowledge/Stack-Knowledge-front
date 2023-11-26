@@ -1,7 +1,7 @@
 const HomeIcon = () => (
   <svg
-    width='26'
-    height='22'
+    width='1.625rem'
+    height='1.375rem'
     viewBox='0 0 26 22'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
