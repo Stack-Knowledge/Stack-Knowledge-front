@@ -31,10 +31,6 @@ export const Title = styled.span`
   color: #444872;
   font-weight: 700;
   margin-left: 0.9375rem;
-
-  @media (max-width: 320px) {
-    font-size: 0.5rem;
-  }
 `;
 
 export const MenuNav = styled.div`
@@ -44,7 +40,7 @@ export const MenuNav = styled.div`
 
 export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
   @media (max-width: 300px) {
-    width: 1.875rem;
+    width: 30px;
   }
   ${({ isActive, theme }) => {
     const activeColor = isActive ? theme.color.primary : theme.color.black;
@@ -76,7 +72,7 @@ export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
 
 export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
   @media (max-width: 300px) {
-    width: 1.875rem;
+    width: 30px;
   }
   ${({ isActive, theme }) => {
     const activeColor = isActive ? theme.color.primary : theme.color.black;
