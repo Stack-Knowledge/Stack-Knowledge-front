@@ -15,7 +15,10 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 650px) {
+  @media (max-width: 1240px) {
+    width: calc(100vw - 12.5rem);
+  }
+  @media ${({ theme }) => theme.breakPoint[600]} {
     width: calc(100vw - 3rem);
   }
 `;
@@ -38,14 +41,12 @@ export const MenuNav = styled.div`
   gap: ${({ role }) => (role === 'admin' ? '1.5rem' : '2.25rem')};
 `;
 
-
 export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
   @media (max-width: 300px) {
     width: 30px;
   }
   ${({ isActive, theme }) => {
     const activeColor = isActive ? theme.color.primary : theme.color.black;
-
     const hoverColor = theme.color.primary;
     return `
       display: flex;
@@ -72,14 +73,12 @@ export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
   }}
 `;
 
-
 export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
   @media (max-width: 300px) {
     width: 30px;
   }
   ${({ isActive, theme }) => {
     const activeColor = isActive ? theme.color.primary : theme.color.black;
-
     const hoverColor = theme.color.primary;
     return `
       display: flex;
