@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+export const MissionTextContainer = styled.div`
+  width: 80rem;
+  @media (max-width: 700px) {
+    width: calc(100vw - 5rem);
+  }
+`;
+
 export const MissionText = styled.h4`
   ${({ theme }) => theme.typo.h4};
   color: ${({ theme }) => theme.color.black};
@@ -34,5 +41,8 @@ export const Contents = styled.div`
   }
   .medalWrapper:nth-of-type(3n) .medal {
     background-color: #ce865d;
+  }
+  @media (max-width: 700px) {
+    width: calc(100vw - 5rem);
   }
 `;
