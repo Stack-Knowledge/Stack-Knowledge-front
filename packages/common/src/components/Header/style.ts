@@ -14,6 +14,10 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 650px) {
+    width: calc(100vw - 3rem);
+  }
 `;
 
 export const LogoContainer = styled(Link)`
@@ -27,6 +31,10 @@ export const Title = styled.span`
   color: #444872;
   font-weight: 700;
   margin-left: 0.9375rem;
+
+  @media (max-width: 320px) {
+    font-size: 0.5rem;
+  }
 `;
 
 export const MenuNav = styled.div`
@@ -35,6 +43,9 @@ export const MenuNav = styled.div`
 `;
 
 export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
+  @media (max-width: 300px) {
+    width: 1.875rem;
+  }
   ${({ isActive, theme }) => {
     const activeColor = isActive ? theme.color.primary : theme.color.black;
     const hoverColor = theme.color.primary;
@@ -64,6 +75,9 @@ export const MenuStrokeItemWrapper = styled(Link)<{ isActive?: boolean }>`
 `;
 
 export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
+  @media (max-width: 300px) {
+    width: 1.875rem;
+  }
   ${({ isActive, theme }) => {
     const activeColor = isActive ? theme.color.primary : theme.color.black;
     const hoverColor = theme.color.primary;
@@ -78,7 +92,7 @@ export const MenuFillItemWrapper = styled(Link)<{ isActive?: boolean }>`
         rect, path {fill:${activeColor};}
       }
 
-      &:hover{
+        &:hover{
         span,
         & svg{
           color:${hoverColor};
