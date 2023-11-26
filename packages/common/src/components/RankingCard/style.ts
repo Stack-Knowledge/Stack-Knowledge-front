@@ -18,6 +18,11 @@ export const CardWrapper = styled(Link)`
 
 export const ProfileImage = styled(Image)`
   border-radius: 50%;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100% - 50%);
+    height: calc(100% - 65%);
+  }
 `;
 
 export const UserName = styled.span`
