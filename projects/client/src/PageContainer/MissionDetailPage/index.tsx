@@ -64,7 +64,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
     });
   };
 
-  const { mutate, isSuccess, isError } = usePostSolve(missionId);
+  const { mutate, isSuccess, isError, error } = usePostSolve(missionId);
 
   useEffect(() => {
     setMinutes(Math.floor((data?.timeLimit ?? 0) / 60));
@@ -78,7 +78,12 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
 
   if (isError) {
     push(`/`);
-    toast.error('이미 푼 문제입니다.');
+
+    if (error.response.status === 400) {
+      toast.error('시간 제한을 초과하였습니다.');
+    } else if (error.response.status === 409) {
+      toast.error('이미 푼 문제입니다.');
+    }
   }
 
   return (
