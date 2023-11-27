@@ -13,23 +13,47 @@ import { useEffect, useState } from 'react';
 
 import { MissionListItemType } from 'types';
 
+import { useWindowResizeEffect } from 'common';
+
 const MissionCarousel = () => {
   const [pageIndex, setPageIndex] = useState<number>(0);
   const [missionList, setMissionList] = useState<MissionListItemType[][]>();
 
+  const width = useWindowResizeEffect();
+
   const { data } = useGetMissionList();
   const { push } = useRouter();
+
+  const [count, setCount] = useState<number>(10);
 
   const onCardClick = (missionId: string) => {
     push(`/mission/resolve/${missionId}`);
   };
+
+  const widthHandle = () => {
+    if (852 <= width && width <= 1920) {
+      setCount(10);
+    } else if (610 <= width && width < 852) {
+      setCount(8);
+    } else if (525 <= width && width < 610) {
+      setCount(6);
+    } else if (281 <= width && width < 525) {
+      setCount(4);
+    } else {
+      setCount(2);
+    }
+  };
+
+  useEffect(() => {
+    widthHandle();
+  }, [width]);
 
   useEffect(() => {
     const newMissionList: MissionListItemType[][] = [];
     let temp: MissionListItemType[] = [];
     data?.forEach((item, index) => {
       temp.push(item);
-      if ((index + 1) % 10 === 0) {
+      if ((index + 1) % count === 0) {
         newMissionList.push(temp);
         temp = [];
       }
@@ -37,7 +61,7 @@ const MissionCarousel = () => {
     if (data)
       newMissionList.push(data.slice(newMissionList.length * 10, data.length));
     setMissionList(newMissionList);
-  }, [data]);
+  }, [data, width]);
 
   const moveLeft = () => {
     if (pageIndex > 0) setPageIndex((prev) => prev - 1);
@@ -59,7 +83,7 @@ const MissionCarousel = () => {
           <S.PointerWrapper onClick={moveLeft}>
             <VectorIcon direction='left' />
           </S.PointerWrapper>
-          <S.ContentWrapper>
+          <S.ContentWrapper taskCard={count / 2}>
             {missionList[pageIndex]?.map((item, index) => (
               <TaskCard
                 onClick={() => onCardClick(item.id)}
