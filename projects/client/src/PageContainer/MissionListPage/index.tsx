@@ -10,7 +10,9 @@ const MissionListPage = () => {
 
   return (
     <S.PageWrapper>
-      <S.ScoringText>문제</S.ScoringText>
+      <S.ScoringTextContainer>
+        <S.ScoringText>문제</S.ScoringText>
+      </S.ScoringTextContainer>
       {data?.length > 0 ? <MissionCarousel /> : <h1>문제가 없습니다...</h1>}
     </S.PageWrapper>
   );
