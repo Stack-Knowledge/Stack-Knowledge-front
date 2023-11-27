@@ -13,9 +13,13 @@ import { useEffect, useState } from 'react';
 
 import { MissionListItemType } from 'types';
 
+import { useWindowResizeEffect } from 'common';
+
 const MissionCarousel = () => {
   const [pageIndex, setPageIndex] = useState<number>(0);
   const [missionList, setMissionList] = useState<MissionListItemType[][]>();
+
+  const width = useWindowResizeEffect();
 
   const { data } = useGetMissionList();
   const { push } = useRouter();

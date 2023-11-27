@@ -1,9 +1,11 @@
+'use client';
+
 import { useEffect } from 'react';
 
 import { useWidthState } from 'stores';
 
 const useWindowResizeEffect = () => {
-  const { setWidth } = useWidthState();
+  const { width, setWidth } = useWidthState();
 
   const handleResize = () => {
     setWidth(window.innerWidth);
@@ -16,6 +18,8 @@ const useWindowResizeEffect = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  return width;
 };
 
 export default useWindowResizeEffect;
