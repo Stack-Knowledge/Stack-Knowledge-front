@@ -14,11 +14,9 @@ export const ContentWrapper = styled.div<{ taskCard?: number }>`
 
   @media ${({ theme }) => theme.breakPoint[1024]} {
     width: calc(100vw - 20rem);
-    background-color: red;
   }
   @media (max-width: 750px) {
     width: calc(100vw - 18.5rem);
-    background-color: blue;
   }
 `;
 
