@@ -24,16 +24,41 @@ const MissionCarousel = () => {
   const { data } = useGetMissionList();
   const { push } = useRouter();
 
+  const [count, setCount] = useState<number>(10);
+
   const onCardClick = (missionId: string) => {
     push(`/mission/resolve/${missionId}`);
   };
+
+  const widthHandle = () => {
+    if (852 <= width && width <= 1920) {
+      setCount(10);
+      console.log(count);
+    } else if (533 <= width && width < 853) {
+      setCount(8);
+      console.log(count);
+    } else if (397 <= width && width < 533) {
+      setCount(6);
+      console.log(count);
+    } else if (260 <= width && width < 397) {
+      setCount(4);
+      console.log(count);
+    } else if (width < 260) {
+      setCount(2);
+      console.log(count);
+    }
+  };
+
+  useEffect(() => {
+    widthHandle();
+  }, [width]);
 
   useEffect(() => {
     const newMissionList: MissionListItemType[][] = [];
     let temp: MissionListItemType[] = [];
     data?.forEach((item, index) => {
       temp.push(item);
-      if ((index + 1) % 10 === 0) {
+      if ((index + 1) % count === 0) {
         newMissionList.push(temp);
         temp = [];
       }
@@ -41,7 +66,7 @@ const MissionCarousel = () => {
     if (data)
       newMissionList.push(data.slice(newMissionList.length * 10, data.length));
     setMissionList(newMissionList);
-  }, [data]);
+  }, [data, width]);
 
   const moveLeft = () => {
     if (pageIndex > 0) setPageIndex((prev) => prev - 1);
@@ -63,7 +88,7 @@ const MissionCarousel = () => {
           <S.PointerWrapper onClick={moveLeft}>
             <VectorIcon direction='left' />
           </S.PointerWrapper>
-          <S.ContentWrapper>
+          <S.ContentWrapper taskCard={count / 2}>
             {missionList[pageIndex]?.map((item, index) => (
               <TaskCard
                 onClick={() => onCardClick(item.id)}
