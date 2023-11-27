@@ -33,19 +33,14 @@ const MissionCarousel = () => {
   const widthHandle = () => {
     if (852 <= width && width <= 1920) {
       setCount(10);
-      console.log(count);
-    } else if (610 <= width && width < 853) {
+    } else if (610 <= width && width < 852) {
       setCount(8);
-      console.log(count);
     } else if (525 <= width && width < 610) {
       setCount(6);
-      console.log(count);
     } else if (281 <= width && width < 525) {
       setCount(4);
-      console.log(count);
     } else {
       setCount(2);
-      console.log(count);
     }
   };
 
