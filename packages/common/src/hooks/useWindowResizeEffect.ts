@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import { useWidthState } from 'stores';
+import { useWidthState } from 'common/stores';
 
 const useWindowResizeEffect = () => {
   const { width, setWidth } = useWidthState();
