@@ -8,9 +8,12 @@ export const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4.625rem;
-  padding-bottom: 4.375rem;
+  padding: 4.625rem 0 4.375rem;
   position: relative;
+
+  @media (max-width: 300px) {
+    width: 90vw;
+  }
 `;
 
 export const ModalTitle = styled.p`
