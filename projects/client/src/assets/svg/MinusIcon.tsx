@@ -1,7 +1,7 @@
 const MinusIcon = () => (
   <svg
-    width='14'
-    height='2'
+    width='0.875rem'
+    height='0.125rem'
     viewBox='0 0 14 2'
     xmlns='http://www.w3.org/2000/svg'
   >
