@@ -11,10 +11,11 @@ export const PageWrapper = styled.div`
 
 export const ScoringTextContainer = styled.div`
   @media ${({ theme }) => theme.breakPoint[1024]} {
-    width: calc(100vw - 20rem);
+    width: calc(100vw - 12.5rem);
   }
-  @media (max-width: 750px) {
-    width: calc(100vw - 18.5rem);
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 3rem);
   }
 `;
 
@@ -22,6 +23,10 @@ export const ScoringText = styled.h2`
   ${({ theme }) => theme.typo.h2}
   color: ${({ theme }) => theme.color.black};
   font-weight: 600;
-  width: 82rem;
+  width: 80rem;
   margin: 3.75rem 0 1.75rem;
+
+  @media (max-width: 1240px) {
+    width: calc(100vw - 12.5rem);
+  }
 `;
