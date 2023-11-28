@@ -41,6 +41,14 @@ export const BannerContainer = styled.div<{
 
 export const BannerItem = styled.div`
   width: 80rem;
+
+  @media (max-width: 1240px) {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 3rem);
+  }
 `;
 
 export const DotWrapper = styled.div`

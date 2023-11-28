@@ -24,7 +24,9 @@ const MainContents: React.FC<MainContentsProps> = ({ isClient }) => {
 
   return (
     <>
-      <S.MissionText>문제</S.MissionText>
+      <S.MissionTextContainer>
+        <S.MissionText>문제</S.MissionText>
+      </S.MissionTextContainer>
       <S.ContentWrapper>
         <S.Contents>
           {missionList &&

@@ -5,8 +5,8 @@ interface VectorIconProps {
 const VectorIcon: React.FC<VectorIconProps> = ({ direction }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='80'
-    height='80'
+    width='5rem'
+    height='5rem'
     viewBox='0 0 80 80'
     fill='none'
     transform={`${direction === 'right' ? 'rotate(-180)' : ''}`}

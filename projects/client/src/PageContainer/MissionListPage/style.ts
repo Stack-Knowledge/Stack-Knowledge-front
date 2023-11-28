@@ -9,6 +9,15 @@ export const PageWrapper = styled.div`
   padding-bottom: 10.625rem;
 `;
 
+export const ScoringTextContainer = styled.div`
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 20rem);
+  }
+  @media (max-width: 750px) {
+    width: calc(100vw - 18.5rem);
+  }
+`;
+
 export const ScoringText = styled.h2`
   ${({ theme }) => theme.typo.h2}
   color: ${({ theme }) => theme.color.black};

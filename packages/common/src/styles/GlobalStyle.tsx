@@ -11,12 +11,20 @@ export function GlobalStyle() {
         ${emotionReset}
 
         html {
-          @media ${theme.breakPoint['600']} {
-            font-size: 0.75rem;
+          @media (max-width: 1600px) {
+            font-size: 15px;
           }
-
-          @media (max-width: 400px) {
-            font-size: 0.625rem;
+          @media (max-width: 1300px) {
+            font-size: 12px;
+          }
+          @media (max-width: 1000px) {
+            font-size: 10px;
+          }
+          @media (max-width: 850px) {
+            font-size: 9px;
+          }
+          @media (max-width: 750px) {
+            font-size: 8px;
           }
         }
 
