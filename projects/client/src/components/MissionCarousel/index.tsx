@@ -30,27 +30,36 @@ const MissionCarousel = () => {
     push(`/mission/resolve/${missionId}`);
   };
 
-  useEffect(() => {
-    if (width > 1480) setCount(10);
-    else if (width > 1020) setCount(8);
-    else if (width > 515) setCount(6);
-    else if (width > 380) setCount(4);
-    else setCount(2);
-  }, [width]);
+  const resetCount = async () => {
+    let cnt: number;
+    if (width > 1480) cnt = 10;
+    else if (width > 1020) cnt = 8;
+    else if (width > 515) cnt = 6;
+    else if (width > 380) cnt = 4;
+    else cnt = 2;
+    await setCount(cnt);
+    return cnt;
+  };
 
-  useEffect(() => {
+  const setArray = async () => {
+    const cnt = await resetCount();
+
     const newMissionList: MissionListItemType[][] = [];
     let temp: MissionListItemType[] = [];
     data?.forEach((item, index) => {
       temp.push(item);
-      if ((index + 1) % count === 0) {
+      if ((index + 1) % cnt === 0) {
         newMissionList.push(temp);
         temp = [];
       }
     });
     if (data)
-      newMissionList.push(data.slice(newMissionList.length * 10, data.length));
+      newMissionList.push(data.slice(newMissionList.length * cnt, data.length));
     setMissionList(newMissionList);
+  };
+
+  useEffect(() => {
+    setArray();
   }, [data, width]);
 
   const moveLeft = () => {
