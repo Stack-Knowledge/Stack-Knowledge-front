@@ -16,7 +16,7 @@ export const MissionText = styled.h4`
   color: ${({ theme }) => theme.color.black};
   font-weight: 600;
   margin: 4.0625rem 0 1.25rem;
-  width: 80rem;
+  width: 100%;
 `;
 
 export const ContentWrapper = styled.div`
