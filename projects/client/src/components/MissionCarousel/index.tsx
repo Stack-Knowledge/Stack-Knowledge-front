@@ -33,7 +33,9 @@ const MissionCarousel = () => {
   useEffect(() => {
     if (width > 1480) setCount(10);
     else if (width > 1020) setCount(8);
-    else setCount(6);
+    else if (width > 515) setCount(6);
+    else if (width > 380) setCount(4);
+    else setCount(2);
   }, [width]);
 
   useEffect(() => {
