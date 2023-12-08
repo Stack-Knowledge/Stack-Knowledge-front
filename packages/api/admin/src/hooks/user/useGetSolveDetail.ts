@@ -6,11 +6,6 @@ interface SolveDetailResponseType {
   solveId: string;
   title: String;
   solvation: string;
-  user: {
-    id: string;
-    name: String;
-    profileImage: string | '';
-  };
 }
 
 import type { UseQueryOptions } from '@tanstack/react-query';

@@ -7,8 +7,6 @@ import { useGetSolveDetail, usePostScoringResult } from 'api/admin';
 
 import { useState } from 'react';
 
-import { SolveStatus } from 'types';
-
 import { toast } from 'react-toastify';
 
 import { useRouter } from 'next/navigation';
