@@ -4,8 +4,12 @@ import { userUrl, userQueryKeys, get } from 'api/common';
 
 interface SolveDetailResponseType {
   solveId: string;
-  title: string;
-  solvation: string;
+  title: String;
+  user: {
+    id: string;
+    name: String;
+    profileImage: string | '';
+  };
 }
 
 import type { UseQueryOptions } from '@tanstack/react-query';
