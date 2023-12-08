@@ -5,6 +5,7 @@ import { userUrl, userQueryKeys, get } from 'api/common';
 interface SolveDetailResponseType {
   solveId: string;
   title: String;
+  solvation: string;
   user: {
     id: string;
     name: String;
