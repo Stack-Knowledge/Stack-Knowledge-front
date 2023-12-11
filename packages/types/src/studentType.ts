@@ -4,7 +4,6 @@ export interface StudentType {
   currentPoint: number;
   user: {
     id: string;
-    email: string;
     name: string;
     profileImage: string | '';
   };

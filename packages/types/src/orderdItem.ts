@@ -2,7 +2,6 @@ export interface OrderdItemType {
   id: string;
   count: number;
   price: number;
-  orderStatus: 'IS_ORDERED' | 'COMPLETED';
   item: {
     id: string;
     name: string;
@@ -11,7 +10,6 @@ export interface OrderdItemType {
   };
   user: {
     id: string;
-    email: string;
     name: string;
     profileImage: string;
   };
