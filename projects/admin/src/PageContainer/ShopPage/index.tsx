@@ -1,9 +1,10 @@
 'use client';
 
-import { useGetOrderedItemList } from 'api/admin';
-import * as S from './style';
-
 import { ShopCarousel } from 'admin/components';
+
+import { useGetOrderedItemList } from 'api/admin';
+
+import * as S from './style';
 
 const ShopPage = () => {
   const { data } = useGetOrderedItemList();
