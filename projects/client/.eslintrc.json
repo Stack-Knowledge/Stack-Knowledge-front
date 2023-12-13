@@ -18,6 +18,8 @@
     /* 작은따옴표('')를 문자열에 사용합니다. */
     "quotes": ["error", "single"],
 
+    "react-hooks/exhaustive-deps": "off",
+
     /* 사용되지 않는 변수를 경고로 표시합니다. */
     "no-unused-vars": "error",
 
@@ -29,9 +31,6 @@
 
     /* 한 줄의 최대 길이를 80자로 제한합니다. */
     "max-len": ["warn", { "code": 80 }],
-
-    /* export문을 정렬합니다. */
-    "sort-export-all": "error",
 
     /* 사용하지 않는 import문을 제거합니다. */
     "unused-imports/no-unused-imports-ts": ["error"],
@@ -47,7 +46,6 @@
 
     "arrow-body-style": ["error", "as-needed"],
     "react/self-closing-comp": ["error", { "component": true, "html": true }],
-    "react-hooks/exhaustive-deps": "error",
     "@typescript-eslint/consistent-type-imports": [
       "error",
       {
@@ -80,11 +78,6 @@
           },
           {
             "pattern": "@emotion/**",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "react-hook-form",
             "group": "external",
             "position": "before"
           },

@@ -20,6 +20,7 @@
     "@tanstack/react-query-devtools": "^4.29.7",
     "@types/react": "^18.2.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "5.0.0-canary-0cdfef19b-20231211",
     "eslint-plugin-sort-exports": "^0.8.0",
     "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-unused-imports": "^3.0.0",

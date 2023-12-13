@@ -60,7 +60,7 @@ const MissionCarousel = () => {
 
   useEffect(() => {
     setArray();
-  }, [data, width]);
+  }, [data, setArray, width]);
 
   const moveLeft = () => {
     if (pageIndex > 0) setPageIndex((prev) => prev - 1);
@@ -83,7 +83,7 @@ const MissionCarousel = () => {
             <VectorIcon direction='left' />
           </S.PointerWrapper>
           <S.ContentWrapper taskCard={count / 2}>
-            {missionList[pageIndex]?.map((item, index) => (
+            {missionList[pageIndex]?.map((item) => (
               <TaskCard
                 onClick={() => onCardClick(item.id)}
                 key={item.id}
