@@ -1,16 +1,18 @@
 'use client';
 
-import * as S from './style';
-import { CheckBoxIcon, CheckedBoxIcon } from 'client/assets';
+import Image from 'next/image';
 
-import { ShopItemType } from 'types';
+import { CheckBoxIcon, CheckedBoxIcon } from 'client/assets';
 
 import { slicePoint } from 'common';
 
-import Image from 'next/image';
+import * as S from './style';
+
+import type { ShopItemType } from 'types';
 
 interface ShopItemProps {
   data: ShopItemType;
+  // eslint-disable-next-line no-unused-vars
   onItemClick: (index: number) => void;
   index: number;
   itemStatus: boolean;
