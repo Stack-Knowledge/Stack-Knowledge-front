@@ -1,6 +1,7 @@
 'use client';
 
 import CreatePage from '.';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
