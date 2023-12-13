@@ -1,6 +1,5 @@
 'use client';
 
-import * as S from './style';
 import { usePathname } from 'next/navigation';
 
 import {
@@ -12,6 +11,8 @@ import {
   MadeIcon,
 } from 'common/assets';
 
+import * as S from './style';
+
 interface HeaderProps {
   role: 'admin' | 'client';
 }
@@ -21,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
   if (pathname === '/auth/login') return <></>;
 
-  const handleLinkClick = (e: any) => {
+  const handleLinkClick = (e) => {
     if (pathname.includes('/mission/resolve')) {
       e.preventDefault();
     }

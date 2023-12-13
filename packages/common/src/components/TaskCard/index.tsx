@@ -1,8 +1,8 @@
 'use client';
 
-import * as S from './style';
-
 import { slicePoint } from 'common/utils';
+
+import * as S from './style';
 
 interface TaskCardProps {
   userName: string;

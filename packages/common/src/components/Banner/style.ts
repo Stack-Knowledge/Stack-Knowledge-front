@@ -1,22 +1,5 @@
 import styled from '@emotion/styled';
 
-export const BannerWrapper = styled.div`
-  width: 80rem;
-  height: 18.75rem;
-  border-radius: 1.25rem;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-
-  @media (max-width: 1240px) {
-    width: calc(100vw - 12.5rem);
-  }
-
-  @media ${({ theme }) => theme.breakPoint[600]} {
-    width: calc(100vw - 3rem);
-  }
-`;
-
 export const BannerContainer = styled.div<{
   currentBanner: number;
   bannerCount: number;
@@ -51,15 +34,21 @@ export const BannerItem = styled.div`
   }
 `;
 
-export const DotWrapper = styled.div`
-  max-width: 80rem;
-  width: 100%;
+export const BannerWrapper = styled.div`
+  width: 80rem;
   height: 18.75rem;
-  position: absolute;
+  border-radius: 1.25rem;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 1240px) {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 3rem);
+  }
 `;
 
 export const Dot = styled.div<{ active: boolean }>`
@@ -70,4 +59,15 @@ export const Dot = styled.div<{ active: boolean }>`
   width: 0.375rem;
   cursor: pointer;
   margin-bottom: 1rem;
+`;
+
+export const DotWrapper = styled.div`
+  max-width: 80rem;
+  width: 100%;
+  height: 18.75rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.25rem;
 `;

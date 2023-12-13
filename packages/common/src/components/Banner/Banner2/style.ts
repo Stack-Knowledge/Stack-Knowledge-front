@@ -1,5 +1,29 @@
 import styled from '@emotion/styled';
 
+export const BannerTitle = styled.span`
+  color: ${({ theme }) => theme.color.white};
+  ${({ theme }) => theme.typo.h1};
+  font-weight: 700;
+  word-break: keep-all;
+
+  @media (max-width: 1240px) {
+    ${({ theme }) => theme.typo.h2};
+  }
+`;
+
+export const BannerTitleContainer = styled.div`
+  width: 40rem;
+  height: 18.75rem;
+  padding: 4.375rem 0 0 3.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  @media (max-width: 1240px) {
+    width: 80vw;
+  }
+`;
+
 export const BannerWrapper = styled.div`
   background: linear-gradient(
     93deg,
@@ -22,27 +46,15 @@ export const BannerWrapper = styled.div`
   }
 `;
 
-export const BannerTitleContainer = styled.div`
-  width: 40rem;
-  height: 18.75rem;
-  padding: 4.375rem 0 0 3.75rem;
+export const DocumentContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 6.25rem;
 
   @media (max-width: 1240px) {
-    width: 80vw;
-  }
-`;
-
-export const BannerTitle = styled.span`
-  color: ${({ theme }) => theme.color.white};
-  ${({ theme }) => theme.typo.h1};
-  font-weight: 700;
-  word-break: keep-all;
-
-  @media (max-width: 1240px) {
-    ${({ theme }) => theme.typo.h2};
+    padding-right: 2vw;
   }
 `;
 
@@ -54,17 +66,5 @@ export const DocumentIconWrapper = styled.div`
   @media (max-width: 1240px) {
     width: 25vw;
     height: 18vw;
-  }
-`;
-
-export const DocumentContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  padding-right: 6.25rem;
-
-  @media (max-width: 1240px) {
-    padding-right: 2vw;
   }
 `;
