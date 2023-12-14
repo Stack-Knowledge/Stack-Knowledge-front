@@ -1,14 +1,15 @@
 'use client';
 
-import * as S from './style';
-import { LoginButton } from 'common/components';
-import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
-
-import { usePostLoginCode } from 'api/common';
+import { useEffect } from 'react';
 
 import { useSearchParams, useRouter } from 'next/navigation';
 
-import { useEffect } from 'react';
+import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
+import { LoginButton } from 'common/components';
+
+import { usePostLoginCode } from 'api/common';
+
+import * as S from './style';
 
 const LoginPage = () => {
   const { get } = useSearchParams();

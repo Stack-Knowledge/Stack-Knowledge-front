@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 
 import { authQueryKeys, authUrl, patch } from 'api/common';
 
-import { TokenResponseType } from 'types';
+import type { TokenResponseType } from 'types';
 
 export const usePatchAccessToken = () =>
   useMutation<TokenResponseType>(

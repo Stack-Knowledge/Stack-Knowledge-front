@@ -1,6 +1,6 @@
 import { ShopPage } from 'client/PageContainer';
 
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   description: 'StackKnowledge 상점 페이지입니다.',

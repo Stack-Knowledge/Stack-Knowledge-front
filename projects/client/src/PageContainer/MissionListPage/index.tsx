@@ -1,9 +1,10 @@
 'use client';
 
-import { useGetMissionList } from 'api/common';
-import * as S from './style';
-
 import { MissionCarousel } from 'client/components';
+
+import { useGetMissionList } from 'api/common';
+
+import * as S from './style';
 
 const MissionListPage = () => {
   const { data } = useGetMissionList();

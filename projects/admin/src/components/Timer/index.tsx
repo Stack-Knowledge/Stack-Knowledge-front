@@ -1,7 +1,8 @@
 'use client';
 
+import type { Dispatch, SetStateAction } from 'react';
+
 import * as S from './style';
-import { Dispatch, SetStateAction } from 'react';
 
 interface TimerProps {
   minute: number;

@@ -4,15 +4,16 @@ import React, { useRef } from 'react';
 
 import Image from 'next/image';
 
-import { usePostUploadProfile } from 'api/client';
 import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
+import { toast } from 'react-toastify';
+
+import { usePostUploadProfile } from 'api/client';
+
 import { slicePoint } from 'common';
 
 import * as S from './style';
 
-import { RankingPropsType } from 'types';
-
-import { toast } from 'react-toastify';
+import type { RankingPropsType } from 'types';
 
 interface RankingHeaderProps {
   ranking: number;

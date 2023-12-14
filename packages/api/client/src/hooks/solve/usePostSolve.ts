@@ -1,7 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
 
 import { post, solveQueryKeys, solveUrl } from 'api/common';
-import { AxiosError } from 'axios';
+
+import type { AxiosError } from 'axios';
 
 export const usePostSolve = (missionId: string) =>
   useMutation<

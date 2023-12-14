@@ -1,0 +1,9 @@
+**/.next
+**/node_modules
+**/style.ts
+*.d.ts
+
+packages/api/admin/src/libs/api/admin.ts
+packages/api/client/src/libs/api/client.ts
+
+**/styles/page/*.ts

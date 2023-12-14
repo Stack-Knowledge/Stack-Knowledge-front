@@ -1,10 +1,10 @@
 'use client';
 
-import * as S from './style';
-
 import Image from 'next/image';
 
 import GAuthIcon from 'common/assets/Login/GAuthIcon.png';
+
+import * as S from './style';
 
 const LoginButton = ({ ...attributes }) => (
   <S.ButtonWrapper {...attributes}>

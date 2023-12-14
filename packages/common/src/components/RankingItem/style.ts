@@ -1,6 +1,11 @@
+import Image from 'next/image';
+
 import styled from '@emotion/styled';
 
-import Image from 'next/image';
+export const FlexWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const ItemWrapper = styled.div`
   width: 33.75rem;
@@ -19,29 +24,6 @@ export const ItemWrapper = styled.div`
   }
 `;
 
-export const FlexWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Ranking = styled.span`
-  ${({ theme }) => theme.typo.h3};
-  color: ${({ theme }) => theme.color.black};
-  font-weight: 500;
-  width: 1.125rem;
-`;
-
-export const ProfileImage = styled(Image)`
-  border-radius: 50%;
-  margin: 0 1rem 0 2.25rem;
-`;
-
-export const UserName = styled.span`
-  ${({ theme }) => theme.typo.h4};
-  color: ${({ theme }) => theme.color.black};
-  font-weight: 500;
-`;
-
 export const Point = styled.span`
   ${({ theme }) => theme.typo.button};
   color: ${({ theme }) => theme.color.black};
@@ -51,6 +33,24 @@ export const Point = styled.span`
 
 export const PointUnit = styled.span`
   ${({ theme }) => theme.typo.body2};
+  color: ${({ theme }) => theme.color.black};
+  font-weight: 500;
+`;
+
+export const ProfileImage = styled(Image)`
+  border-radius: 50%;
+  margin: 0 1rem 0 2.25rem;
+`;
+
+export const Ranking = styled.span`
+  ${({ theme }) => theme.typo.h3};
+  color: ${({ theme }) => theme.color.black};
+  font-weight: 500;
+  width: 1.125rem;
+`;
+
+export const UserName = styled.span`
+  ${({ theme }) => theme.typo.h4};
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
 `;

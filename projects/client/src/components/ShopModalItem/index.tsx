@@ -1,15 +1,17 @@
 'use client';
 
-import * as S from './style';
 import { MinusIcon, PlusIcon } from 'client/assets';
 
 import { slicePoint } from 'common';
 
-import { ShopItemType } from 'types';
+import * as S from './style';
+
+import type { ShopItemType } from 'types';
 
 interface ShopModalItemProps {
   data: ShopItemType;
   count: number;
+  // eslint-disable-next-line no-unused-vars
   calculateCount: (index: number, isPlus: boolean) => void;
   index: number;
 }

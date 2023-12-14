@@ -1,6 +1,6 @@
 'use client';
 
-import * as S from './style';
+import { useEffect, useState } from 'react';
 
 import { VectorIcon } from 'common/assets';
 
@@ -8,9 +8,9 @@ import { ShopItemCard } from 'admin/components';
 
 import { useGetOrderedItemList } from 'api/admin';
 
-import type { OrderdItemType } from 'types';
+import * as S from './style';
 
-import { useEffect, useState } from 'react';
+import type { OrderdItemType } from 'types';
 
 const ShopCarousel = () => {
   const [pageIndex, setPageIndex] = useState<number>(0);
