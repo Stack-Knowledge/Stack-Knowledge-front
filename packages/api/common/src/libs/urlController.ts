@@ -1,5 +1,5 @@
 export const authUrl = {
-  auth: () => '/auth',
+  auth: () => `/auth/${process.env.NEXT_PUBLIC_ROLE}`,
 } as const;
 
 export const itemUrl = {

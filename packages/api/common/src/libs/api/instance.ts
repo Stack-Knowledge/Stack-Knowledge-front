@@ -11,7 +11,7 @@ export const apiInstance = axios.create({
 
 apiInstance.interceptors.request.use(
   (request) => {
-    if (request.url !== '/auth')
+    if (!request.url.includes('/auth'))
       request.headers['Authorization'] = `Bearer ${window.localStorage.getItem(
         'access_token'
       )}`;
