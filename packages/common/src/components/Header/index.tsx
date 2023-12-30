@@ -11,6 +11,8 @@ import {
   ShopIcon,
   MadeIcon,
 } from 'common/assets';
+import Modal from '../Modal';
+import { useRef } from 'react';
 
 interface HeaderProps {
   role: 'admin' | 'client';
@@ -18,6 +20,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
+  const dialog = useRef<HTMLDialogElement>(null);
 
   if (pathname === '/auth/login') return <></>;
 
@@ -28,6 +31,10 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   };
 
   const getIsActive = (targetPath: string) => pathname === targetPath;
+
+  const onClick = () => {
+    alert('성공!!');
+  };
 
   return (
     <S.HeaderWrapper>
@@ -95,8 +102,14 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
           </S.MenuFillItemWrapper>
+          <S.LogoutTitle onClick={() => dialog.current?.showModal()}>
+            로그아웃
+          </S.LogoutTitle>
         </S.MenuNav>
       </S.HeaderContainer>
+      <S.ModalWrapper ref={dialog}>
+        <Modal onClick={onClick} content='로그아웃 하시겠습니까?' />
+      </S.ModalWrapper>
     </S.HeaderWrapper>
   );
 };
