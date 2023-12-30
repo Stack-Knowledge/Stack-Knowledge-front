@@ -10,7 +10,7 @@ import { OrderdItemType } from 'types';
 
 import { usePatchOrderStatus } from 'api/admin';
 
-import { Modal } from 'admin/components';
+import { Modal } from 'common';
 
 import { useRef } from 'react';
 

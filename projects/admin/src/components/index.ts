@@ -4,4 +4,3 @@ export { default as ShopCarousel } from './ShopCarousel';
 export { default as Timer } from './Timer';
 export { default as GradingContainer } from './GradingCotainer';
 export { default as MissionCarousel } from './MissionCarousel';
-export { default as Modal } from './Modal';
