@@ -1,7 +1,7 @@
 'use client';
 
 import * as S from './style';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import {
   HomeIcon,
@@ -22,6 +22,8 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
   const dialog = useRef<HTMLDialogElement>(null);
 
+  const { push } = useRouter();
+
   if (pathname === '/auth/login') return <></>;
 
   const handleLinkClick = (e: any) => {
@@ -36,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
     ['access_token', 'refresh_token'].forEach((token) =>
       localStorage.removeItem(token)
     );
-    location.reload();
+    push(`/auth/login`);
   };
 
   return (
