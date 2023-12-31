@@ -33,7 +33,10 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   const getIsActive = (targetPath: string) => pathname === targetPath;
 
   const onClick = () => {
-    alert('성공!!');
+    ['access_token', 'refresh_token'].forEach((token) =>
+      localStorage.removeItem(token)
+    );
+    location.reload();
   };
 
   return (
