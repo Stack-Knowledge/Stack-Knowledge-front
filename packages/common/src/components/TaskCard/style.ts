@@ -20,7 +20,7 @@ export const Mildege = styled.span`
   color: ${({ theme }) => theme.color.black};
   font-weight: 500;
   position: relative;
-  bottom: 2px;
+  bottom: 0.125rem;
 `;
 
 export const MildegeUnit = styled.span`
