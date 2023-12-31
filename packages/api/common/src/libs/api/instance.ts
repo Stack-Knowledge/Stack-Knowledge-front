@@ -30,7 +30,7 @@ apiInstance.interceptors.response.use(
   },
   async (error) => {
     if (
-      error.config.url === authUrl.auth() &&
+      error.config.url === authUrl.patchToken() &&
       [403, 404].includes(error.response.status)
     ) {
       location.replace('/auth/login');
@@ -41,7 +41,7 @@ apiInstance.interceptors.response.use(
     if (error.response.status === 401) {
       try {
         const data: TokenResponseLoginType = await patch(
-          authUrl.auth(),
+          authUrl.patchToken(),
           {},
           {
             headers: {

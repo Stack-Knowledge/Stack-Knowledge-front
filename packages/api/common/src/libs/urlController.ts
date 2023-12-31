@@ -1,5 +1,6 @@
 export const authUrl = {
   auth: () => `/auth/${process.env.NEXT_PUBLIC_ROLE}`,
+  patchToken: () => '/auth',
 } as const;
 
 export const itemUrl = {
