@@ -1,6 +1,7 @@
 export const authQueryKeys = {
   patchAccessToken: () => ['auth', 'accessToken'],
   postLoginCode: () => ['auth', 'loginCode'],
+  deleteLogout: () => ['auth', 'logout'],
 };
 
 export const itemQueryKeys = {
