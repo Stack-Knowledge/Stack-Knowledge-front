@@ -13,8 +13,9 @@ import {
   ShopIcon,
   MadeIcon,
 } from 'common/assets';
-import Modal from '../Modal';
+
 import { useRef } from 'react';
+import { Modal } from 'common/components';
 
 interface HeaderProps {
   role: 'admin' | 'client';
