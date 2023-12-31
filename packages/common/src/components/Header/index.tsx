@@ -3,6 +3,8 @@
 import * as S from './style';
 import { usePathname, useRouter } from 'next/navigation';
 
+import { useDeleteLogout } from 'api/common';
+
 import {
   HomeIcon,
   LogoIcon,
@@ -24,6 +26,8 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
   const { push } = useRouter();
 
+  const { mutate } = useDeleteLogout();
+
   if (pathname === '/auth/login') return <></>;
 
   const handleLinkClick = (e) => {
@@ -35,10 +39,10 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   const getIsActive = (targetPath: string) => pathname === targetPath;
 
   const onClick = () => {
+    mutate();
     ['access_token', 'refresh_token'].forEach((token) =>
       localStorage.removeItem(token)
     );
-    push(`/auth/login`);
   };
 
   return (
