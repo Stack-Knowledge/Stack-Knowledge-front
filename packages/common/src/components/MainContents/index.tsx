@@ -1,12 +1,12 @@
 'use client';
 
-import * as S from './style';
+import { useRouter } from 'next/navigation';
 
 import { TaskCard, RankingCard } from 'common/components';
 
 import { useGetRankingList, useGetMissionList } from 'api/common';
 
-import { useRouter } from 'next/navigation';
+import * as S from './style';
 
 interface MainContentsProps {
   isClient: boolean;

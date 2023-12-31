@@ -1,19 +1,19 @@
 'use client';
 
-import * as S from './style';
+import { useEffect, useState } from 'react';
+
+import { useRouter } from 'next/navigation';
 
 import { VectorIcon } from 'common/assets';
 import { TaskCard } from 'common/components';
 
 import { useGetMissionList } from 'api/common';
 
-import { useRouter } from 'next/navigation';
-
-import { useEffect, useState } from 'react';
-
-import { MissionListItemType } from 'types';
-
 import { useWindowResizeEffect } from 'common';
+
+import * as S from './style';
+
+import type { MissionListItemType } from 'types';
 
 const MissionCarousel = () => {
   const [pageIndex, setPageIndex] = useState<number>(0);
@@ -60,7 +60,7 @@ const MissionCarousel = () => {
 
   useEffect(() => {
     setArray();
-  }, [data, width]);
+  }, [data, setArray, width]);
 
   const moveLeft = () => {
     if (pageIndex > 0) setPageIndex((prev) => prev - 1);
@@ -83,7 +83,7 @@ const MissionCarousel = () => {
             <VectorIcon direction='left' />
           </S.PointerWrapper>
           <S.ContentWrapper taskCard={count / 2}>
-            {missionList[pageIndex]?.map((item, index) => (
+            {missionList[pageIndex]?.map((item) => (
               <TaskCard
                 onClick={() => onCardClick(item.id)}
                 key={item.id}

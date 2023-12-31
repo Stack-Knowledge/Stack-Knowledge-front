@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 import { authUrl, patch } from 'api/common';
-import { TokenResponseLoginType } from 'types';
+
+import type { TokenResponseLoginType } from 'types';
 
 export const apiInstance = axios.create({
   baseURL: '/api',
@@ -15,9 +17,7 @@ apiInstance.interceptors.request.use(
       )}`;
     return request;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 apiInstance.interceptors.response.use(

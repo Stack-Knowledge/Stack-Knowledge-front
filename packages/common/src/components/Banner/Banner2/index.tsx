@@ -1,8 +1,10 @@
 'use client';
 
-import * as S from './style';
 import Image from 'next/image';
+
 import DocumentIcon from 'common/assets/Banner/DocumentIcon.png';
+
+import * as S from './style';
 
 const Banner2 = () => (
   <S.BannerWrapper>

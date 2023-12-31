@@ -1,20 +1,5 @@
+/* eslint-disable indent */
 import styled from '@emotion/styled';
-
-export const SubmitContainer = styled.div`
-  background: ${({ theme }) => theme.color.gray['010']};
-  width: 59.375rem;
-  height: 18.75rem;
-  border-radius: 0.625rem;
-  box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
-
-  @media ${({ theme }) => theme.breakPoint[600]} {
-    width: calc(100vw - 16rem);
-  }
-`;
-export const MissionDetailInputWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 
 export const MissionDetailInput = styled.textarea`
   background: ${({ theme }) => theme.color.gray['010']};
@@ -36,6 +21,22 @@ export const MissionDetailInput = styled.textarea`
     font-weight: 500;
   }
 `;
+export const MissionDetailInputWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const SubmitButton = styled.button`
+  background: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.white};
+  ${({ theme }) => theme.typo.body1};
+  width: 7.6875rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  font-weight: 400;
+  border: 0;
+  cursor: pointer;
+`;
 
 export const SubmitButtonWrapper = styled.div<{ inputValue: number }>`
   display: flex;
@@ -51,14 +52,14 @@ export const SubmitButtonWrapper = styled.div<{ inputValue: number }>`
   }
 `;
 
-export const SubmitButton = styled.button`
-  background: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.white};
-  ${({ theme }) => theme.typo.body1};
-  width: 7.6875rem;
-  height: 2.5rem;
+export const SubmitContainer = styled.div`
+  background: ${({ theme }) => theme.color.gray['010']};
+  width: 59.375rem;
+  height: 18.75rem;
   border-radius: 0.625rem;
-  font-weight: 400;
-  border: 0;
-  cursor: pointer;
+  box-shadow: 0.1875rem 0.1875rem 0.25rem 0rem rgba(120, 120, 120, 0.25);
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 16rem);
+  }
 `;

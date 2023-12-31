@@ -1,10 +1,10 @@
 'use client';
 
+import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
+
 import * as S from './style';
 
-import { RankingPropsType } from 'types';
-
-import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
+import type { RankingPropsType } from 'types';
 
 interface RankingCardType extends RankingPropsType {
   rank: number;

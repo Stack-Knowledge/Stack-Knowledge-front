@@ -1,13 +1,17 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
-import { Banner1, Banner2, Banner3 } from '../index';
+import { Banner1, Banner2, Banner3 } from 'common/components';
 
 import * as S from './style';
 
 const Banner = () => {
-  const banners: JSX.Element[] = [<Banner1 />, <Banner2 />, <Banner3 />];
+  const banners: JSX.Element[] = [
+    <Banner1 key={0} />,
+    <Banner2 key={1} />,
+    <Banner3 key={2} />,
+  ];
   const [currentBanner, setCurrentBanner] = useState<number>(0);
 
   useEffect(() => {

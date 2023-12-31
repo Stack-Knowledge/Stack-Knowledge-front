@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 
 import { post, orderQueryKeys, orderUrl } from 'api/common';
 
-import { AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
 
 interface ItemOrderRequestType {
   itemId: string;

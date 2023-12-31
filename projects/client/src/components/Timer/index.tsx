@@ -1,12 +1,14 @@
 'use client';
 
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
+
 import * as S from './style';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 interface TimerProps {
   second: number;
   minute: number;
+  // eslint-disable-next-line no-unused-vars
   onTimeUp: (timeUp: boolean) => void;
   setSeconds: Dispatch<SetStateAction<number>>;
   setMinutes: Dispatch<SetStateAction<number>>;
@@ -19,8 +21,6 @@ const Timer: React.FC<TimerProps> = ({
   setMinutes,
   setSeconds,
 }) => {
-  const { push } = useRouter();
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (second > 0) {

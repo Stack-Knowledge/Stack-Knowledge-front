@@ -1,10 +1,11 @@
 'use client';
 
-import * as S from './style';
-import { slicePoint } from 'common/utils';
 import DefaultProfile from 'common/assets/svg/DefaultProfile.svg';
+import { slicePoint } from 'common/utils';
 
-import { RankingPropsType } from 'types';
+import * as S from './style';
+
+import type { RankingPropsType } from 'types';
 
 interface RankingItemProps {
   item: RankingPropsType;

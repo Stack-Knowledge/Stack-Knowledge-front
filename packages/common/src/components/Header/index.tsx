@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
   if (pathname === '/auth/login') return <></>;
 
-  const handleLinkClick = (e: any) => {
+  const handleLinkClick = (e) => {
     if (pathname.includes('/mission/resolve')) {
       e.preventDefault();
     }
