@@ -11,7 +11,7 @@ export const apiInstance = axios.create({
 
 apiInstance.interceptors.request.use(
   (request) => {
-    if (request.url !== '/auth')
+    if (!request.url.includes('/auth'))
       request.headers['Authorization'] = `Bearer ${window.localStorage.getItem(
         'access_token'
       )}`;
@@ -29,19 +29,10 @@ apiInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   async (error) => {
-    if (
-      error.config.url === authUrl.auth() &&
-      [403, 404].includes(error.response.status)
-    ) {
-      location.replace('/auth/login');
-
-      return Promise.reject(error);
-    }
-
     if (error.response.status === 401) {
       try {
         const data: TokenResponseLoginType = await patch(
-          authUrl.auth(),
+          authUrl.patchToken(),
           {},
           {
             headers: {
@@ -57,6 +48,15 @@ apiInstance.interceptors.response.use(
       } catch (error) {
         console.error('Error occurred during patch call:', error);
       }
+    }
+
+    if (
+      error.config.url === authUrl.patchToken() &&
+      [403, 404].includes(error.response.status)
+    ) {
+      location.replace('/auth/login');
+
+      return Promise.reject(error);
     }
 
     return Promise.reject(error);
