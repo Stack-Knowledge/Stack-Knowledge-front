@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import {
   HomeIcon,
@@ -26,7 +26,9 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
   const dialog = useRef<HTMLDialogElement>(null);
 
-  const { mutate } = useDeleteLogout();
+  const { push } = useRouter();
+
+  const { mutate, isSuccess } = useDeleteLogout();
 
   if (pathname === '/auth/login') return <></>;
 
@@ -40,10 +42,14 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
   const onClick = () => {
     mutate();
+  };
+
+  if (isSuccess) {
     ['access_token', 'refresh_token'].forEach((token) =>
       localStorage.removeItem(token)
     );
-  };
+    push('/auth/login');
+  }
 
   return (
     <S.HeaderWrapper>
