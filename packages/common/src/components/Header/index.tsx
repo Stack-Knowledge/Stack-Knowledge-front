@@ -1,9 +1,8 @@
 'use client';
 
-import * as S from './style';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRef } from 'react';
 
-import { useDeleteLogout } from 'api/common';
+import { usePathname } from 'next/navigation';
 
 import {
   HomeIcon,
@@ -13,9 +12,11 @@ import {
   ShopIcon,
   MadeIcon,
 } from 'common/assets';
-
-import { useRef } from 'react';
 import { Modal } from 'common/components';
+
+import { useDeleteLogout } from 'api/common';
+
+import * as S from './style';
 
 interface HeaderProps {
   role: 'admin' | 'client';
@@ -24,8 +25,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
   const dialog = useRef<HTMLDialogElement>(null);
-
-  const { push } = useRouter();
 
   const { mutate } = useDeleteLogout();
 
