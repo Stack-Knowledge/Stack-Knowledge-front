@@ -5,7 +5,7 @@ export const useDeleteLogout = () => {
   return useMutation(authQueryKeys.deleteLogout(), () =>
     del(authUrl.auth(), {
       headers: {
-        RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
+        RefreshToken: `${localStorage.getItem('refresh_token')}`,
         Authorization: `Bearer ${localStorage.getItem('access_token')}`,
       },
     })
