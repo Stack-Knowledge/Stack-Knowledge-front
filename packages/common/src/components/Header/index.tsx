@@ -13,6 +13,7 @@ import {
   MadeIcon,
 } from 'common/assets';
 import { Modal } from 'common/components';
+import { toast } from 'react-toastify';
 
 import { useDeleteLogout } from 'api/common';
 
@@ -28,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
 
   const { push } = useRouter();
 
-  const { mutate, isSuccess } = useDeleteLogout();
+  const { mutate, isSuccess, isError } = useDeleteLogout();
 
   if (pathname === '/auth/login') return <></>;
 
@@ -49,7 +50,10 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
       localStorage.removeItem(token)
     );
     push('/auth/login');
+    toast.success('로그아웃 되었습니다.');
   }
+
+  if (isError) toast.success('로그아웃에 실패했습니다.');
 
   return (
     <S.HeaderWrapper>
