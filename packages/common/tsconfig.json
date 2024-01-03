@@ -6,7 +6,6 @@
     "rootDir": ".",
     "baseUrl": "./src",
     "paths": {
-      "components/*": ["./components/*"],
       "common/*": ["./*"]
     }
   }
