@@ -6,11 +6,9 @@ import Image from 'next/image';
 
 import { toast } from 'react-toastify';
 
-import { Modal } from 'common';
-
 import { usePatchOrderStatus } from 'api/admin';
 
-import { slicePoint } from 'common';
+import { slicePoint, Modal } from 'common';
 
 import * as S from './style';
 
