@@ -7,6 +7,7 @@ export { default as LoginButton } from './LoginButton';
 export { default as MainContents } from './MainContents';
 export { default as MissionDetailInput } from './MissionDetailInput ';
 export { default as RankingCard } from './RankingCard';
+export { default as Modal } from './Modal';
 export { default as RankingItem } from './RankingItem';
 export { default as RankingList } from './RankingList';
 export { default as TaskCard } from './TaskCard';

@@ -1,6 +1,8 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { useRef } from 'react';
+
+import { usePathname, useRouter } from 'next/navigation';
 
 import {
   HomeIcon,
@@ -10,6 +12,10 @@ import {
   ShopIcon,
   MadeIcon,
 } from 'common/assets';
+import { Modal } from 'common/components';
+import { toast } from 'react-toastify';
+
+import { useDeleteLogout } from 'api/common';
 
 import * as S from './style';
 
@@ -19,6 +25,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ role }) => {
   const pathname = usePathname();
+  const dialog = useRef<HTMLDialogElement>(null);
+
+  const { push } = useRouter();
+
+  const { mutate, isSuccess, isError } = useDeleteLogout();
 
   if (pathname === '/auth/login') return <></>;
 
@@ -29,6 +40,20 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   };
 
   const getIsActive = (targetPath: string) => pathname === targetPath;
+
+  const onClick = () => {
+    mutate();
+  };
+
+  if (isSuccess) {
+    ['access_token', 'refresh_token'].forEach((token) =>
+      localStorage.removeItem(token)
+    );
+    push('/auth/login');
+    toast.success('로그아웃 되었습니다.');
+  }
+
+  if (isError) toast.success('로그아웃에 실패했습니다.');
 
   return (
     <S.HeaderWrapper>
@@ -96,8 +121,14 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
             <RankingIcon />
             <S.ItemTitle>랭킹</S.ItemTitle>
           </S.MenuFillItemWrapper>
+          <S.LogoutTitle onClick={() => dialog.current?.showModal()}>
+            로그아웃
+          </S.LogoutTitle>
         </S.MenuNav>
       </S.HeaderContainer>
+      <S.ModalWrapper ref={dialog}>
+        <Modal onClick={onClick} content='로그아웃 하시겠습니까?' />
+      </S.ModalWrapper>
     </S.HeaderWrapper>
   );
 };

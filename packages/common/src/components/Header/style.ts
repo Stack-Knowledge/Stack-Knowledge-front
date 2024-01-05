@@ -109,4 +109,24 @@ export const Title = styled.span`
   color: #444872;
   font-weight: 700;
   margin-left: 0.9375rem;
+  display: flex;
+  align-items: center;
+`;
+
+export const LogoutTitle = styled.span`
+  ${({ theme }) => theme.typo.body3};
+  color: ${({ theme }) => theme.color.primary};
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffd79b;
+  }
+`;
+export const ModalWrapper = styled.dialog`
+  border-radius: 1.25rem;
+  border: 0;
+  padding: 0;
 `;
