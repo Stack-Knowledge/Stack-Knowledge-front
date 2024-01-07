@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { XIcon } from 'admin/assets';
 import { ApproveModalButton } from 'admin/components';
@@ -12,16 +12,23 @@ import * as S from './style';
 const MainPageComponent = () => {
   const dialog = useRef<HTMLDialogElement>(null);
 
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleModalOpen = () => {
+    dialog.current?.showModal();
+    setIsOpen(true);
+  };
+
   return (
     <>
-      <S.Modal ref={dialog}>
+      <S.Modal ref={dialog} isOpen={isOpen}>
         <form method='dialog'>
-          <S.ModalButton>
+          <S.ModalButton onClick={() => setIsOpen(false)}>
             <XIcon />
           </S.ModalButton>
         </form>
       </S.Modal>
-      <S.Wrapper onClick={() => dialog.current?.showModal()}>
+      <S.Wrapper onClick={handleModalOpen}>
         <ApproveModalButton />
       </S.Wrapper>
       <MainPage isClient={false} />
