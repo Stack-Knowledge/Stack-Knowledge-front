@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
 
 export const ButtonWrapper = styled.div`
-  position: absolute;
-  right: 10vw;
-  top: 45vh;
   cursor: pointer;
   transition: ease-in-out transform 0.2s;
+  position: absolute;
 
   :hover {
     transform: rotate(180deg);
