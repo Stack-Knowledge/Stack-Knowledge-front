@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 
+import { XIcon } from 'admin/assets';
 import { ApproveModalButton } from 'admin/components';
 
 import { MainPage } from 'common';
@@ -13,7 +14,13 @@ const MainPageComponent = () => {
 
   return (
     <>
-      <S.Modal ref={dialog} />
+      <S.Modal ref={dialog}>
+        <form method='dialog'>
+          <S.ModalButton>
+            <XIcon />
+          </S.ModalButton>
+        </form>
+      </S.Modal>
       <S.Wrapper onClick={() => dialog.current?.showModal()}>
         <ApproveModalButton />
       </S.Wrapper>

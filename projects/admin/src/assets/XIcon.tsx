@@ -1,17 +1,17 @@
 const XIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='1.25rem'
-    height='1.25rem'
-    viewBox='0 0 20 20'
+    width='1.5rem'
+    height='1.5rem'
+    viewBox='0 0 24 24'
     fill='none'
   >
     <path
-      d='M1 19L19 1M1 1L19 19'
+      d='M6 18L18 6M6 6L18 18'
       stroke='black'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
+      stroke-width='1.5'
+      stroke-linecap='round'
+      stroke-linejoin='round'
     />
   </svg>
 );
