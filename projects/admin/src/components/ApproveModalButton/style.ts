@@ -4,7 +4,7 @@ export const ButtonWrapper = styled.div`
   cursor: pointer;
   transition: ease-in-out transform 0.2s;
   position: absolute;
-
+  border-radius: 50%;
   :hover {
     transform: rotate(180deg);
   }
