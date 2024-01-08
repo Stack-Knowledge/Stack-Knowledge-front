@@ -1,5 +1,5 @@
-import { MainPage } from 'common';
+import { MainPage } from 'admin/PageContainer';
 
 export default function Home() {
-  return <MainPage isClient={false} />;
+  return <MainPage />;
 }

@@ -1,3 +1,4 @@
+export { default as ApproveModalButton } from './ApproveModalButton';
 export { default as GradingContainer } from './GradingCotainer';
 export { default as MissionCarousel } from './MissionCarousel';
 export { default as ShopCarousel } from './ShopCarousel';
