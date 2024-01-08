@@ -1,5 +1,9 @@
 import { MainPage } from 'admin/PageContainer';
 
-export default function Home() {
-  return <MainPage />;
+interface UserProps {
+  params: { userId: string };
+}
+
+export default function Home({ params: { userId } }: UserProps) {
+  return <MainPage userId={userId} />;
 }
