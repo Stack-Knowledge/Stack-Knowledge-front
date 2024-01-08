@@ -34,4 +34,6 @@ export const userQueryKeys = {
   getScoringList: () => ['user', 'scoring'],
   postScoringResult: (solveId: string) => ['user', 'scoring', solveId],
   getSolveDetail: (solveId: string) => ['user', 'solve', solveId],
+  getApprovedList: () => ['user', 'list'],
+  patchApproved: (userId: string) => ['user', 'approved', userId],
 };
