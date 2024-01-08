@@ -3,14 +3,10 @@ import styled from '@emotion/styled';
 
 const slideAndScaleAnimation = keyframes`
   from {
-    left: 43.75rem;
-    top: 31.25rem;
-    transform: scale(0.1);
+    transform: translateX(33.75rem) translateY(16.25rem)  scale(0.1);
   }
   to {
-    left: 0;
-    top: 0;
-    transform: scale(1);
+    transform: translateX(0) translateY(0) scale(1);
   }
 `;
 
