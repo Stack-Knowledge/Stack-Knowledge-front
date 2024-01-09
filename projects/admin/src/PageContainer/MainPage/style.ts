@@ -56,44 +56,17 @@ export const ModalWrapper = styled.div`
   gap: 1.625rem;
 `;
 
-export const ModalItem = styled.div`
-  width: 100%;
+export const ApprovedNone = styled.div`
+  width: 15.875rem;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  padding-top: 2.875rem;
   align-items: center;
-  display: flex;
-`;
+  gap: 1.9756rem;
 
-export const TitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-  width: 100%;
-`;
-
-export const Title = styled.span`
-  ${({ theme }) => theme.typo.body2};
-  color: ${({ theme }) => theme.color.black};
-`;
-
-export const ApprovedContainer = styled.div`
-  display: flex;
-  margin-left: 20px;
-  gap: 0.5rem;
-`;
-
-export const ApprovedButton = styled.div`
-  background-color: ${({ theme }) => theme.color.gray['020']};
-  color: ${({ theme }) => theme.color.black};
-  ${({ theme }) => theme.typo.body3};
-  display: flex;
-  border-radius: 0.125rem;
-  justify-content: center;
-  align-items: center;
-  width: 2.8125rem;
-  height: 1.3125rem;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.color.primary};
-    color: ${({ theme }) => theme.color.white};
+  span {
+    ${({ theme }) => theme.typo.body1};
+    color: ${({ theme }) => theme.color.gray['030']};
   }
 `;
