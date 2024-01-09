@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
     toast.success('로그아웃 되었습니다.');
   }
 
-  if (isError) toast.success('로그아웃에 실패했습니다.');
+  if (isError) toast.error('로그아웃에 실패했습니다.');
 
   return (
     <S.HeaderWrapper>
