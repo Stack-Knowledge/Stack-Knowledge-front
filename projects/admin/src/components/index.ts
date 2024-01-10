@@ -5,3 +5,4 @@ export { default as ShopCarousel } from './ShopCarousel';
 export { default as ShopItemCard } from './ShopItemCard';
 export { default as Timer } from './Timer';
 export { default as TitleInput } from './TitleInput';
+export { default as ModalItem } from './ModalItem';

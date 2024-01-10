@@ -2,7 +2,9 @@
 
 import { useRef, useState } from 'react';
 
-import { XIcon, BarIcon } from 'admin/assets';
+import { XIcon, CapIcon } from 'admin/assets';
+
+import { ModalItem } from 'admin/components';
 
 import { useGetApprovedList, usePatchApproved } from 'api/admin';
 
@@ -12,19 +14,10 @@ import { MainPage } from 'common';
 
 import * as S from './style';
 
-interface MainPageProps {
-  userId: string;
-}
-
-const MainPageComponent: React.FC<MainPageProps> = ({ userId }) => {
-  const { mutate, isSuccess } = usePatchApproved(userId);
+const MainPageComponent = () => {
   const { data } = useGetApprovedList();
 
-  if (isSuccess) {
-    alert('성공');
-  } else {
-    console.log('실패');
-  }
+  console.log(data);
 
   const dialog = useRef<HTMLDialogElement>(null);
 
@@ -35,22 +28,6 @@ const MainPageComponent: React.FC<MainPageProps> = ({ userId }) => {
     setIsOpen(true);
   };
 
-  const formatDate = (isoDate: string) => {
-    const options = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    } as Intl.DateTimeFormatOptions;
-    const formattedDate = new Date(isoDate).toLocaleDateString(
-      'en-US',
-      options
-    );
-
-    const [month, day, year] = formattedDate.split('/');
-
-    return `${year}.${month}.${day}`;
-  };
-
   return (
     <>
       <S.Modal ref={dialog} isOpen={isOpen}>
@@ -59,28 +36,16 @@ const MainPageComponent: React.FC<MainPageProps> = ({ userId }) => {
             <XIcon />
           </S.ModalButton>
           <S.ModalWrapper>
-            {data &&
+            {data && data.length > 0 ? (
               data.map((item, index) => (
-                <S.ModalItem key={index}>
-                  <S.TitleContainer>
-                    <S.Title>{item.name}</S.Title>
-                    <BarIcon />
-                    <S.Title>{formatDate(item.createdAt)}</S.Title>
-                  </S.TitleContainer>
-                  <S.ApprovedContainer>
-                    <S.ApprovedButton
-                      onClick={() => mutate({ approveStatus: 'APPROVED' })}
-                    >
-                      수락
-                    </S.ApprovedButton>
-                    <S.ApprovedButton
-                      onClick={() => mutate({ approveStatus: 'REJECT' })}
-                    >
-                      거절
-                    </S.ApprovedButton>
-                  </S.ApprovedContainer>
-                </S.ModalItem>
-              ))}
+                <ModalItem key={index} teacherItem={item} />
+              ))
+            ) : (
+              <S.ApprovedNone>
+                <CapIcon />
+                <span>대기중인 선생님이 없습니다..</span>
+              </S.ApprovedNone>
+            )}
           </S.ModalWrapper>
         </form>
       </S.Modal>
