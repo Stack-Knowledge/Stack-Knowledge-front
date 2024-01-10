@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { post, authQueryKeys, authUrl } from 'api/common';
+import { authQueryKeys, authUrl, post } from 'api/common';
 
 import type { TokenResponseLoginType } from 'types';
 
