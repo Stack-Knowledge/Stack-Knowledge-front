@@ -2,11 +2,11 @@
 
 import { useRef, useState } from 'react';
 
-import { XIcon, CapIcon } from 'admin/assets';
+import { CapIcon, XIcon } from 'admin/assets';
 
 import { ModalItem } from 'admin/components';
 
-import { useGetApprovedList, usePatchApproved } from 'api/admin';
+import { useGetApprovedList } from 'api/admin';
 
 import { ApproveModalButton } from 'admin/components';
 
