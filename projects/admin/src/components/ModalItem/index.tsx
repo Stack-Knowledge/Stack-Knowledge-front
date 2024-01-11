@@ -1,8 +1,11 @@
 'use client';
 
-import { usePatchApproved } from 'api/admin';
-import * as S from './style';
 import { BarIcon } from 'admin/assets';
+
+import { usePatchApproved } from 'api/admin';
+
+import * as S from './style';
+
 import type { approvedType } from 'types';
 
 interface ModalItemProps {
@@ -12,8 +15,6 @@ interface ModalItemProps {
 const ModalItem: React.FC<ModalItemProps> = ({ teacherItem }) => {
   const { userId, name, createdAt } = teacherItem;
   const { mutate } = usePatchApproved(userId);
-
-  console.log(teacherItem);
 
   const formatDate = (isoDate: string) => {
     const options = {

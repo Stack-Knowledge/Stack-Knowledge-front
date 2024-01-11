@@ -3,12 +3,9 @@
 import { useRef, useState } from 'react';
 
 import { CapIcon, XIcon } from 'admin/assets';
-
-import { ModalItem } from 'admin/components';
+import { ModalItem, ApproveModalButton } from 'admin/components';
 
 import { useGetApprovedList } from 'api/admin';
-
-import { ApproveModalButton } from 'admin/components';
 
 import { MainPage } from 'common';
 
@@ -17,10 +14,7 @@ import * as S from './style';
 const MainPageComponent = () => {
   const { data } = useGetApprovedList();
 
-  console.log(data);
-
   const dialog = useRef<HTMLDialogElement>(null);
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleModalOpen = () => {
