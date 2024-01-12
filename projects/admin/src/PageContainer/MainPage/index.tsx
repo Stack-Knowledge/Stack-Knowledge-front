@@ -31,8 +31,8 @@ const MainPageComponent = () => {
           </S.ModalButton>
           <S.ModalWrapper>
             {data && data.length > 0 ? (
-              data.map((item, index) => (
-                <ModalItem key={index} teacherItem={item} />
+              data.map((item) => (
+                <ModalItem key={item.userId} teacherItem={item} />
               ))
             ) : (
               <S.ApprovedNone>
