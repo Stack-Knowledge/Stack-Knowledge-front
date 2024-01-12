@@ -12,8 +12,9 @@ interface ModalItemProps {
   teacherItem: approvedType;
 }
 
-const ModalItem: React.FC<ModalItemProps> = ({ teacherItem }) => {
-  const { userId, name, createdAt } = teacherItem;
+const ModalItem: React.FC<ModalItemProps> = ({
+  teacherItem: { userId, name, createdAt },
+}) => {
   const { mutate } = usePatchApprovalStatus(userId);
 
   const formatDate = (isoDate: string) => {
