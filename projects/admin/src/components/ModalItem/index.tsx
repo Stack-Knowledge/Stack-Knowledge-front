@@ -2,7 +2,7 @@
 
 import { BarIcon } from 'admin/assets';
 
-import { usePatchApproved } from 'api/admin';
+import { usePatchApprovalStatus } from 'api/admin';
 
 import * as S from './style';
 
@@ -14,7 +14,7 @@ interface ModalItemProps {
 
 const ModalItem: React.FC<ModalItemProps> = ({ teacherItem }) => {
   const { userId, name, createdAt } = teacherItem;
-  const { mutate } = usePatchApproved(userId);
+  const { mutate } = usePatchApprovalStatus(userId);
 
   const formatDate = (isoDate: string) => {
     const options = {

@@ -6,7 +6,7 @@ interface ApprovedStatus {
   approveStatus: 'REJECT' | 'APPROVED';
 }
 
-export const usePatchApproved = (userId: string) =>
+export const usePatchApprovalStatus = (userId: string) =>
   useMutation<void, Error, ApprovedStatus>(
     userQueryKeys.patchApproved(userId),
     (data) => patch(userUrl.approved(userId), data)
