@@ -31,6 +31,6 @@ export const userUrl = {
   scoring: () => '/user/scoring',
   scoringResult: (solveId: string) => `/user/scoring/${solveId}`,
   solveDetail: (solveId: string) => `/user/scoring/${solveId}`,
-  approvedList: () => `/user/teacher`,
-  approved: (userId: string) => `/user/${userId}`,
+  approvedList: () => '/user/teacher',
+  approvedStatus: (userId: string) => `/user/${userId}`,
 };

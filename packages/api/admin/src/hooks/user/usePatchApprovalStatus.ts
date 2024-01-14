@@ -9,5 +9,5 @@ interface ApprovedStatus {
 export const usePatchApprovalStatus = (userId: string) =>
   useMutation<void, Error, ApprovedStatus>(
     userQueryKeys.patchApproved(userId),
-    (data) => patch(userUrl.approved(userId), data)
+    (data) => patch(userUrl.approvedStatus(userId), data)
   );
