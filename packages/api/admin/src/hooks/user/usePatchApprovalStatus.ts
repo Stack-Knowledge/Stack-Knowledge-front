@@ -8,6 +8,6 @@ interface ApprovedStatus {
 
 export const usePatchApprovalStatus = (userId: string) =>
   useMutation<void, Error, ApprovedStatus>(
-    userQueryKeys.patchApproved(userId),
+    userQueryKeys.patchApprovedStatus(userId),
     (data) => patch(userUrl.approvedStatus(userId), data)
   );
