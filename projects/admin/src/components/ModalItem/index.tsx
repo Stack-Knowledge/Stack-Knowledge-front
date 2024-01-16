@@ -17,21 +17,8 @@ const ModalItem: React.FC<ModalItemProps> = ({
 }) => {
   const { mutate } = usePatchApprovalStatus(userId);
 
-  const formatDate = (isoDate: string) => {
-    const options = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    } as Intl.DateTimeFormatOptions;
-    const formattedDate = new Date(isoDate).toLocaleDateString(
-      'en-US',
-      options
-    );
-
-    const [month, day, year] = formattedDate.split('/');
-
-    return `${year}.${month}.${day}`;
-  };
+  const formatDate = (isoDate: string) =>
+    isoDate.slice(0, 10).replaceAll('-', '.');
 
   return (
     <S.ModalItem id={userId}>
