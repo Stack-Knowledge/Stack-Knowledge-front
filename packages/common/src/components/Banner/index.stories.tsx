@@ -1,6 +1,7 @@
 'use client';
 
 import Banner from '.';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {

@@ -19,6 +19,11 @@
     "@tanstack/react-query": "^4.29.7",
     "@tanstack/react-query-devtools": "^4.29.7",
     "@types/react": "^18.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "5.0.0-canary-0cdfef19b-20231211",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "next": "13.4.2",
     "react": "^18.2.0",
     "react-toastify": "^9.1.3",
@@ -31,6 +36,11 @@
     "@types/react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/gtag.js": "^0.0.17"
+    "@types/gtag.js": "^0.0.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-react": "^7.33.2"
   }
 }

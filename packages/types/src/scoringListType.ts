@@ -7,7 +7,6 @@ export interface ScoringListType {
   point: number;
   user: {
     id: string;
-    email: string;
     name: string;
     profileImage: string | '';
   };

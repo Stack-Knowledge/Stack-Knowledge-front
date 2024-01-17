@@ -1,9 +1,10 @@
 'use client';
 
-import { useGetScoringList } from 'api/admin';
-import * as S from './style';
-
 import { MissionCarousel } from 'admin/components';
+
+import { useGetScoringList } from 'api/admin';
+
+import * as S from './style';
 
 const ScoringPage = () => {
   const { data } = useGetScoringList();

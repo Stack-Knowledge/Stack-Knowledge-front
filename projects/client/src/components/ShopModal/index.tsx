@@ -1,18 +1,19 @@
 'use client';
 
-import * as S from './style';
-import { XIcon } from 'client/assets';
-import { ShopModalItem } from 'client/components';
-
 import { useEffect, useState } from 'react';
-
-import { usePostItemOrder } from 'api/client';
-
-import { ShopItemType } from 'types';
 
 import { useRouter } from 'next/navigation';
 
 import { toast } from 'react-toastify';
+
+import { XIcon } from 'client/assets';
+import { ShopModalItem } from 'client/components';
+
+import { usePostItemOrder } from 'api/client';
+
+import * as S from './style';
+
+import type { ShopItemType } from 'types';
 
 interface ShopModalProps {
   selectedList: ShopItemType[] | [];
@@ -38,9 +39,10 @@ const ShopModal: React.FC<ShopModalProps> = ({ selectedList }) => {
   };
 
   const handleSubmit = () => {
-    const orderList = countList.map((item, i) => {
-      return { itemId: selectedList[i].itemId, count: item };
-    });
+    const orderList = countList.map((item, i) => ({
+      itemId: selectedList[i].itemId,
+      count: item,
+    }));
     mutate(orderList);
   };
 

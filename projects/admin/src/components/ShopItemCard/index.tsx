@@ -1,20 +1,18 @@
 'use client';
 
-import * as S from './style';
+import { useRef } from 'react';
 
 import Image from 'next/image';
 
-import { slicePoint } from 'common';
-
-import { OrderdItemType } from 'types';
+import { toast } from 'react-toastify';
 
 import { usePatchOrderStatus } from 'api/admin';
 
-import { Modal } from 'admin/components';
+import { slicePoint, Modal } from 'common';
 
-import { useRef } from 'react';
+import * as S from './style';
 
-import { toast } from 'react-toastify';
+import type { OrderdItemType } from 'types';
 
 interface ShopItemCardProps {
   data: OrderdItemType;

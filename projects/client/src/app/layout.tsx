@@ -1,15 +1,15 @@
-import type { Metadata } from 'next';
+import Script from 'next/script';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+import * as gtag from 'client/libs/gtag';
 
 import { GlobalStyle } from 'common';
 import { Header } from 'common';
 
-import Script from 'next/script';
-
-import * as gtag from 'client/libs/gtag';
-
 import Providers from './providers';
+
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   applicationName: 'StackKnowledge',

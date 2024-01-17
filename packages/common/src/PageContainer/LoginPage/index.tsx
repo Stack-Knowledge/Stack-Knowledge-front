@@ -1,14 +1,15 @@
 'use client';
 
-import * as S from './style';
-import { LoginButton } from 'common/components';
-import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
-
-import { usePostLoginCode } from 'api/common';
+import { useEffect } from 'react';
 
 import { useSearchParams, useRouter } from 'next/navigation';
 
-import { useEffect } from 'react';
+import { BottomIcon, TopIcon, LoginLogoIcon } from 'common/assets';
+import { LoginButton } from 'common/components';
+
+import { usePostLoginCode } from 'api/common';
+
+import * as S from './style';
 
 const LoginPage = () => {
   const { get } = useSearchParams();
@@ -16,7 +17,7 @@ const LoginPage = () => {
   const { mutate, isSuccess } = usePostLoginCode();
 
   const handleLogin = () => {
-    window.location.href = `${process.env.NEXT_PUBLIC_GAUTH_URL}${window.location.href}`;
+    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?ei5r49r2ou9pflsn9bas5hvj4c13uroq.apps.googleusercontent.com&response_type=code&redirect_uri=${window.location.href}&scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}`;
   };
 
   useEffect(() => {

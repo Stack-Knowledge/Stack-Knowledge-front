@@ -1,19 +1,20 @@
 'use client';
 
-import { MissionDetailInput } from 'common';
-
-import { MissionDetailModal } from 'client/components';
-import { Timer } from 'client/components';
-import * as S from './style';
-
-import { useGetMissionDetail } from 'api/common';
-import { usePostSolve } from 'api/client';
-
 import { useEffect, useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
 import { toast } from 'react-toastify';
+
+import { Timer } from 'client/components';
+import { MissionDetailModal } from 'client/components';
+
+import { usePostSolve } from 'api/client';
+import { useGetMissionDetail } from 'api/common';
+
+import { MissionDetailInput } from 'common';
+
+import * as S from './style';
 
 interface MissionDetailProps {
   missionId: string;
@@ -72,12 +73,12 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   }, [data]);
 
   if (isSuccess) {
-    push(`/`);
+    push('/');
     toast.success('문제를 제출하였습니다.');
   }
 
   if (isError) {
-    push(`/`);
+    push('/');
 
     if (error.response.status === 400) {
       toast.error('시간 제한을 초과하였습니다.');

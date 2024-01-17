@@ -1,17 +1,16 @@
 'use client';
 
-import { GradingContainer } from 'admin/components';
-import * as S from './style';
-
-import { useGetSolveDetail, usePostScoringResult } from 'api/admin';
-
 import { useState } from 'react';
 
-import { SolveStatus } from 'types';
+import { useRouter } from 'next/navigation';
 
 import { toast } from 'react-toastify';
 
-import { useRouter } from 'next/navigation';
+import { GradingContainer } from 'admin/components';
+
+import { useGetSolveDetail, usePostScoringResult } from 'api/admin';
+
+import * as S from './style';
 
 interface GradingPageProps {
   solveId: string;

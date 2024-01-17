@@ -1,13 +1,14 @@
 'use client';
 
-import * as S from './style';
+import { useEffect, useRef, useState } from 'react';
+
 import { ShopItem, ShopModal } from 'client/components';
+
+import { useGetItemList, useGetStudentInfo } from 'api/client';
 
 import { slicePoint } from 'common';
 
-import { useEffect, useRef, useState } from 'react';
-
-import { useGetItemList, useGetStudentInfo } from 'api/client';
+import * as S from './style';
 
 const ShopPage = () => {
   const dialog = useRef<HTMLDialogElement>(null);

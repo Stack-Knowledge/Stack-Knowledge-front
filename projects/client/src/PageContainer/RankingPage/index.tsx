@@ -1,13 +1,13 @@
 'use client';
 
-import * as S from './style';
-
-import { RankingList } from 'common';
-
 import { RankingHeader } from 'client/components';
 
 import { useGetStudentInfo } from 'api/client';
 import { useGetRankingList } from 'api/common';
+
+import { RankingList } from 'common';
+
+import * as S from './style';
 
 const RankingPage = () => {
   const { data: studentInfo } = useGetStudentInfo();

@@ -1,11 +1,11 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { post, authQueryKeys, authUrl } from 'api/common';
+import { authQueryKeys, authUrl, post } from 'api/common';
 
-import { TokenResponseType } from 'types';
+import type { TokenResponseLoginType } from 'types';
 
 export const usePostLoginCode = () =>
-  useMutation<TokenResponseType, Error, { code: string }>(
+  useMutation<TokenResponseLoginType, Error, { code: string }>(
     authQueryKeys.postLoginCode(),
     (loginCode) => post(authUrl.auth(), loginCode),
     {

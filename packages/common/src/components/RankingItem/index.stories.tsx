@@ -16,57 +16,6 @@ export default {
 
 type Story = StoryObj<typeof RankingItem>;
 
-export const Primary: Story = {
-  args: {
-    ranking: 1,
-    item: {
-      id: 'sampleId',
-      cumulatePoint: 1000,
-      user: {
-        id: 'sampleId',
-        email: 'sample@gmail.com',
-        name: 'user',
-        profileImage:
-          'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
-      },
-    },
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    ranking: 2,
-    item: {
-      id: 'sampleId',
-      cumulatePoint: 800,
-      user: {
-        id: 'sampleId',
-        email: 'sample@gmail.com',
-        name: '이태랑',
-        profileImage:
-          'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
-      },
-    },
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    ranking: 3,
-    item: {
-      id: 'sampleId',
-      cumulatePoint: 700,
-      user: {
-        id: 'sampleId',
-        email: 'sample@gmail.com',
-        name: '하제우와이정우와정찬교',
-        profileImage:
-          'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
-      },
-    },
-  },
-};
-
 export const Hund: Story = {
   args: {
     ranking: 100,
@@ -75,7 +24,6 @@ export const Hund: Story = {
       cumulatePoint: 0,
       user: {
         id: '100등',
-        email: 'sample@gmail.com',
         name: '100등',
         profileImage:
           'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
@@ -92,9 +40,56 @@ export const NoIMG: Story = {
       cumulatePoint: 50,
       user: {
         id: '정찬교',
-        email: 'sample@gmail.com',
         name: '정찬교',
         profileImage: null,
+      },
+    },
+  },
+};
+
+export const Primary: Story = {
+  args: {
+    ranking: 1,
+    item: {
+      id: 'sampleId',
+      cumulatePoint: 1000,
+      user: {
+        id: 'sampleId',
+        name: 'user',
+        profileImage:
+          'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
+      },
+    },
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    ranking: 2,
+    item: {
+      id: 'sampleId',
+      cumulatePoint: 800,
+      user: {
+        id: 'sampleId',
+        name: '이태랑',
+        profileImage:
+          'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
+      },
+    },
+  },
+};
+
+export const Tertiary: Story = {
+  args: {
+    ranking: 3,
+    item: {
+      id: 'sampleId',
+      cumulatePoint: 700,
+      user: {
+        id: 'sampleId',
+        name: '하제우와이정우와정찬교',
+        profileImage:
+          'https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/133823_20230516174511852.png',
       },
     },
   },

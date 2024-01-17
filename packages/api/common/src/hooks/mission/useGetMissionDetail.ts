@@ -2,9 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 
 import { missionUrl, missionQueryKeys, get } from 'api/common';
 
-import type { MissionDetailType } from 'types';
-
 import type { UseQueryOptions } from '@tanstack/react-query';
+import type { MissionDetailType } from 'types';
 
 export const useGetMissionDetail = (
   missionId: string,

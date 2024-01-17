@@ -1,8 +1,10 @@
 'use client';
 
-import * as S from './style';
 import Image from 'next/image';
+
 import GiftIcon from 'common/assets/Banner/GiftIcon.png';
+
+import * as S from './style';
 
 const Banner3 = () => (
   <S.BannerWrapper>

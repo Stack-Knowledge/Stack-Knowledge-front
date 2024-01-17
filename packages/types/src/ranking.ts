@@ -3,7 +3,6 @@ export interface RankingPropsType {
   cumulatePoint: number;
   user: {
     id: string;
-    email: string;
     name: string;
     profileImage: string | null;
   };

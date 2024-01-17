@@ -1,8 +1,8 @@
 'use client';
 
 import { Global, css } from '@emotion/react';
+
 import emotionReset from 'emotion-reset';
-import { theme } from './theme';
 
 export function GlobalStyle() {
   return (

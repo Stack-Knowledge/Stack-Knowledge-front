@@ -1,24 +1,5 @@
 import styled from '@emotion/styled';
 
-export const MissionTextContainer = styled.div`
-  width: 80rem;
-  @media (max-width: 1240px) {
-    width: calc(100vw - 12.5rem);
-  }
-
-  @media ${({ theme }) => theme.breakPoint[600]} {
-    width: calc(100vw - 3rem);
-  }
-`;
-
-export const MissionText = styled.h4`
-  ${({ theme }) => theme.typo.h4};
-  color: ${({ theme }) => theme.color.black};
-  font-weight: 600;
-  margin: 4.0625rem 0 1.25rem;
-  width: 100%;
-`;
-
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,6 +27,25 @@ export const Contents = styled.div`
   .medalWrapper:nth-of-type(3n) .medal {
     background-color: #ce865d;
   }
+  @media (max-width: 1240px) {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 3rem);
+  }
+`;
+
+export const MissionText = styled.h4`
+  ${({ theme }) => theme.typo.h4};
+  color: ${({ theme }) => theme.color.black};
+  font-weight: 600;
+  margin: 4.0625rem 0 1.25rem;
+  width: 100%;
+`;
+
+export const MissionTextContainer = styled.div`
+  width: 80rem;
   @media (max-width: 1240px) {
     width: calc(100vw - 12.5rem);
   }

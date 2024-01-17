@@ -1,9 +1,10 @@
 'use client';
 
-import * as S from './style';
 import { RankingItem } from 'common/components';
 
 import { useGetRankingList } from 'api/common';
+
+import * as S from './style';
 
 const RankingList = () => {
   const { data } = useGetRankingList();
