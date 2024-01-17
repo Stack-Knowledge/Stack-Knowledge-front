@@ -10,7 +10,7 @@ import type { approvedType } from 'types';
 
 interface ModalItemProps {
   teacherItem: approvedType;
-  onSuccessApproved?: (isAccepted: boolean) => void;
+  onSuccessApproved: (isAccepted: boolean) => void;
 }
 
 const ModalItem: React.FC<ModalItemProps> = ({
