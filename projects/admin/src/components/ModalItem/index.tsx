@@ -6,10 +6,10 @@ import { usePatchApprovalStatus } from 'api/admin';
 
 import * as S from './style';
 
-import type { approvedType } from 'types';
+import type { ApprovalStatusType } from 'types';
 
 interface ModalItemProps {
-  teacherItem: approvedType;
+  teacherItem: ApprovalStatusType;
   // eslint-disable-next-line no-unused-vars
   onSuccessApproved: (isAccepted: boolean) => void;
 }
