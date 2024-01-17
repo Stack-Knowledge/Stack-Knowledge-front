@@ -25,8 +25,9 @@ const MainPageComponent = () => {
   };
 
   const handleSuccessApproved = (isAccepted: boolean) => {
-    const message = isAccepted ? '수락되었습니다.' : '거절되었습니다.';
-    toast.success(message);
+    isAccepted
+      ? toast.success('수락되었습니다.')
+      : toast.error('거절되었습니다.');
     refetch();
   };
 

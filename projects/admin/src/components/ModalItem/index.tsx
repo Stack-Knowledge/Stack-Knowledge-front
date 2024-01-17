@@ -10,6 +10,7 @@ import type { approvedType } from 'types';
 
 interface ModalItemProps {
   teacherItem: approvedType;
+  // eslint-disable-next-line no-unused-vars
   onSuccessApproved: (isAccepted: boolean) => void;
 }
 
