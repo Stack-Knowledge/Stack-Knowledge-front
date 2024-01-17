@@ -2,6 +2,7 @@
 
 import { BarIcon } from 'admin/assets';
 
+import type { ApprovedStatus } from 'api/admin';
 import { usePatchApprovalStatus } from 'api/admin';
 
 import * as S from './style';
@@ -24,7 +25,7 @@ const ModalItem: React.FC<ModalItemProps> = ({
   const formatDate = (isoDate: string) =>
     isoDate.slice(0, 10).replaceAll('-', '.');
 
-  const handleApproval = (approveStatus: 'APPROVED' | 'REJECT') => {
+  const handleApproval = (approveStatus: ApprovedStatus['approveStatus']) => {
     mutate({ approveStatus });
     onSuccessApproved(approveStatus === 'APPROVED');
   };
@@ -40,7 +41,7 @@ const ModalItem: React.FC<ModalItemProps> = ({
         <S.ApprovedButton onClick={() => handleApproval('APPROVED')}>
           수락
         </S.ApprovedButton>
-        <S.ApprovedButton onClick={() => handleApproval('REJECT')}>
+        <S.ApprovedButton onClick={() => handleApproval('REJECTED')}>
           거절
         </S.ApprovedButton>
       </S.ApprovedContainer>

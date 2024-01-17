@@ -2,8 +2,8 @@ import { useMutation } from '@tanstack/react-query';
 
 import { userQueryKeys, userUrl, patch } from 'api/common';
 
-interface ApprovedStatus {
-  approveStatus: 'REJECT' | 'APPROVED';
+export interface ApprovedStatus {
+  approveStatus: 'REJECTED' | 'APPROVED';
 }
 
 export const usePatchApprovalStatus = (userId: string) =>
