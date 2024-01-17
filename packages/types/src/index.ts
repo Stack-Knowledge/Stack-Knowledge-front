@@ -9,3 +9,4 @@ export * from './solveStatusType';
 export * from './missionDetail';
 export * from './studentType';
 export * from './uploadProfile';
+export * from './approvalStatus';
