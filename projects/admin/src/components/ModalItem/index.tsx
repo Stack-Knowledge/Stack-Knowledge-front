@@ -24,7 +24,7 @@ const ModalItem: React.FC<ModalItemProps> = ({
   const formatDate = (isoDate: string) =>
     isoDate.slice(0, 10).replaceAll('-', '.');
 
-  const handleApproval = (approveStatus: 'APPROVED' | 'REJECT') => {
+  const handleApproval = (approveStatus: 'APPROVED' | 'REJECTED') => {
     mutate({ approveStatus });
     onSuccessApproved(approveStatus === 'APPROVED');
   };
@@ -40,7 +40,7 @@ const ModalItem: React.FC<ModalItemProps> = ({
         <S.ApprovedButton onClick={() => handleApproval('APPROVED')}>
           수락
         </S.ApprovedButton>
-        <S.ApprovedButton onClick={() => handleApproval('REJECT')}>
+        <S.ApprovedButton onClick={() => handleApproval('REJECTED')}>
           거절
         </S.ApprovedButton>
       </S.ApprovedContainer>
