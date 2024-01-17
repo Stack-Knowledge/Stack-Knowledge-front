@@ -10,11 +10,14 @@ import type { approvedType } from 'types';
 
 interface ModalItemProps {
   teacherItem: approvedType;
+  onSuccessApproved?: (isAccepted: boolean) => void;
 }
 
 const ModalItem: React.FC<ModalItemProps> = ({
-  teacherItem: { userId, name, createdAt },
+  teacherItem,
+  onSuccessApproved,
 }) => {
+  const { userId, name, createdAt } = teacherItem;
   const { mutate } = usePatchApprovalStatus(userId);
 
   const formatDate = (isoDate: string) =>
@@ -28,10 +31,20 @@ const ModalItem: React.FC<ModalItemProps> = ({
         <S.Title>{formatDate(createdAt)}</S.Title>
       </S.TitleContainer>
       <S.ApprovedContainer>
-        <S.ApprovedButton onClick={() => mutate({ approveStatus: 'APPROVED' })}>
+        <S.ApprovedButton
+          onClick={() => {
+            mutate({ approveStatus: 'APPROVED' });
+            onSuccessApproved(true);
+          }}
+        >
           수락
         </S.ApprovedButton>
-        <S.ApprovedButton onClick={() => mutate({ approveStatus: 'REJECT' })}>
+        <S.ApprovedButton
+          onClick={() => {
+            mutate({ approveStatus: 'REJECT' });
+            onSuccessApproved(false);
+          }}
+        >
           거절
         </S.ApprovedButton>
       </S.ApprovedContainer>

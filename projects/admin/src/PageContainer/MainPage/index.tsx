@@ -2,6 +2,8 @@
 
 import { useRef, useState } from 'react';
 
+import { toast } from 'react-toastify';
+
 import { CapIcon, XIcon } from 'admin/assets';
 import { ModalItem, ApproveModalButton } from 'admin/components';
 
@@ -12,7 +14,7 @@ import { MainPage } from 'common';
 import * as S from './style';
 
 const MainPageComponent = () => {
-  const { data } = useGetApprovedList();
+  const { data, refetch } = useGetApprovedList();
 
   const dialog = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -20,6 +22,12 @@ const MainPageComponent = () => {
   const handleModalOpen = () => {
     dialog.current?.showModal();
     setIsOpen(true);
+  };
+
+  const handleSuccessApproved = (isAccepted: boolean) => {
+    const message = isAccepted ? '수락되었습니다.' : '거절되었습니다.';
+    toast.success(message);
+    refetch();
   };
 
   return (
@@ -32,7 +40,11 @@ const MainPageComponent = () => {
           <S.ModalWrapper>
             {data && data.length > 0 ? (
               data.map((item) => (
-                <ModalItem key={item.userId} teacherItem={item} />
+                <ModalItem
+                  key={item.userId}
+                  teacherItem={item}
+                  onSuccessApproved={handleSuccessApproved}
+                />
               ))
             ) : (
               <S.ApprovedNone>

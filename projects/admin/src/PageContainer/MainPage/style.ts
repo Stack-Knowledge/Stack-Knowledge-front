@@ -10,6 +10,21 @@ const slideAndScaleAnimation = keyframes`
   }
 `;
 
+export const ApprovedNone = styled.div`
+  width: 15.875rem;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  padding-top: 2.875rem;
+  align-items: center;
+  gap: 1.9756rem;
+
+  span {
+    ${({ theme }) => theme.typo.body1};
+    color: ${({ theme }) => theme.color.gray['030']};
+  }
+`;
+
 export const Modal = styled.dialog<{ isOpen: boolean }>`
   width: fit-content;
   height: 24.0625rem;
@@ -40,13 +55,6 @@ export const ModalButton = styled.button`
   outline: none;
 `;
 
-export const Wrapper = styled.div`
-  position: absolute;
-  right: 9vw;
-  top: 88vh;
-  z-index: 3;
-`;
-
 export const ModalWrapper = styled.div`
   width: 100%;
   height: 24.0625rem;
@@ -56,17 +64,9 @@ export const ModalWrapper = styled.div`
   gap: 1.625rem;
 `;
 
-export const ApprovedNone = styled.div`
-  width: 15.875rem;
-  height: 100%;
-  flex-direction: column;
-  display: flex;
-  padding-top: 2.875rem;
-  align-items: center;
-  gap: 1.9756rem;
-
-  span {
-    ${({ theme }) => theme.typo.body1};
-    color: ${({ theme }) => theme.color.gray['030']};
-  }
+export const Wrapper = styled.div`
+  position: absolute;
+  right: 9vw;
+  top: 88vh;
+  z-index: 3;
 `;
