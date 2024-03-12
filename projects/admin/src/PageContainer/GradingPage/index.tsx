@@ -18,6 +18,11 @@ interface GradingPageProps {
   solveId: string;
 }
 
+const Answer = {
+  true: 'CORRECT_ANSWER',
+  false: 'WRONG_ANSWER',
+} as const;
+
 const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
   const { push } = useRouter();
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
@@ -50,15 +55,12 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
       ],
       model: 'gpt-3.5-turbo',
     });
-    const answer = completion.choices[0].message.content
-      ? 'CORRECT_ANSWER'
-      : 'WRONG_ANSWER';
 
-    mutate({ solveStatus: answer });
+    handleSubmit(completion.choices[0].message.content as 'true' | 'false');
   };
 
-  const handleSubmit = () => {
-    const solveStatus = selectedAnswer ? 'CORRECT_ANSWER' : 'WRONG_ANSWER';
+  const handleSubmit = (answer: 'true' | 'false') => {
+    const solveStatus = Answer[answer];
 
     mutate({ solveStatus: solveStatus });
   };
@@ -105,7 +107,9 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
           <GradingContainer
             isLoading={isLoading}
             onAiClick={aiScoring}
-            onClick={handleSubmit}
+            onClick={() =>
+              handleSubmit(selectedAnswer.toString() as 'true' | 'false')
+            }
           >
             {data.solution}
           </GradingContainer>
