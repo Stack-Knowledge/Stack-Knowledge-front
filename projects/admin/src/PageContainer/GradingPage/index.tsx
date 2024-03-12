@@ -50,7 +50,11 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
       ],
       model: 'gpt-3.5-turbo',
     });
-    console.log(completion.choices[0].message.content);
+    const answer = completion.choices[0].message.content
+      ? 'CORRECT_ANSWER'
+      : 'WRONG_ANSWER';
+
+    mutate({ solveStatus: answer });
   };
 
   const handleSubmit = () => {
