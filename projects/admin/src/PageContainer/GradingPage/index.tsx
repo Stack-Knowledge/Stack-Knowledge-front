@@ -23,6 +23,11 @@ const Answer = {
   false: 'WRONG_ANSWER',
 } as const;
 
+const Word = {
+  true: '정답',
+  false: '오답',
+} as const;
+
 const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
   const { push } = useRouter();
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
@@ -46,28 +51,33 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
 
   const aiScoring = async () => {
     await setIsLoading(true);
-    const completion = await openai.chat.completions.create({
-      messages: [
-        {
-          role: 'user',
-          content: `문제 : ${data.title} 내용 : ${data.content} 이 문제의 답이 이게 맞아? ${data.solution} true false로 대답해줘.`,
-        },
-      ],
-      model: 'gpt-3.5-turbo',
-    });
+    try {
+      const completion = await openai.chat.completions.create({
+        messages: [
+          {
+            role: 'user',
+            content: `문제 : ${data.title} 내용 : ${data.content} 이 문제의 답이 맞는지 틀린지 알려줘. 답 : ${data.solution} 답이 오류가 없는 것 같으면 true 아니면 false로 대답해줘.`,
+          },
+        ],
+        model: 'gpt-3.5-turbo',
+      });
 
-    handleSubmit(completion.choices[0].message.content as 'true' | 'false');
+      const answer = completion.choices[0].message.content;
+      handleSubmit(answer.includes('true').toString() as 'true' | 'false');
+    } catch (error) {
+      toast.success(error);
+    }
   };
 
   const handleSubmit = (answer: 'true' | 'false') => {
     const solveStatus = Answer[answer];
+    toast.success(`${Word[answer]}으로 처리되었습니다.`);
 
     mutate({ solveStatus: solveStatus });
   };
 
   if (isSuccess) {
     push('/mission/scoring');
-    toast.success('성공적으로 채점되었습니다.');
   }
 
   return (
