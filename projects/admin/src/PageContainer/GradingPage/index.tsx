@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import OpenAI from 'openai';
 import { toast } from 'react-toastify';
 
 import { GradingContainer } from 'admin/components';
@@ -19,12 +20,34 @@ interface GradingPageProps {
 const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
   const { push } = useRouter();
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const key = process.env.NEXT_PUBLIC_OPENAI_KEY;
+
+  const openai = new OpenAI({
+    apiKey: key,
+    dangerouslyAllowBrowser: true,
+  });
 
   const { data } = useGetSolveDetail(solveId);
   const { mutate, isSuccess } = usePostScoringResult(solveId);
 
   const handleAnswerClick = (isTrue: boolean) => {
     setSelectedAnswer(isTrue);
+  };
+
+  const aiScoring = async () => {
+    await setIsLoading(true);
+    const completion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: 'user',
+          content: `문제 : ${data.title} 내용 : ${data.content} 이 문제의 답이 이게 맞아? ${data.solution} true false로 대답해줘.`,
+        },
+      ],
+      model: 'gpt-3.5-turbo',
+    });
+    console.log(completion.choices[0].message.content);
   };
 
   const handleSubmit = () => {
@@ -67,7 +90,11 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
               </S.IncorrectWrapper>
             </S.SectionContainer>
           </S.TopContentWrapper>
-          <GradingContainer onClick={handleSubmit}>
+          <GradingContainer
+            isLoading={isLoading}
+            onAiClick={aiScoring}
+            onClick={handleSubmit}
+          >
             {data.solution}
           </GradingContainer>
         </div>

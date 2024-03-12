@@ -6,12 +6,14 @@ interface GradingProps {
   children: React.ReactNode;
   onClick: () => void;
   onAiClick: () => void;
+  isLoading: boolean;
 }
 
 const GradingContainer: React.FC<GradingProps> = ({
   children,
   onClick,
   onAiClick,
+  isLoading,
 }) => (
   <S.GradingtContainer>
     <S.MissionDetailInputWrapper>
@@ -19,7 +21,9 @@ const GradingContainer: React.FC<GradingProps> = ({
     </S.MissionDetailInputWrapper>
     <S.SubmitButtonWrapper>
       <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
-      <S.AIButton onClick={onAiClick}>AI로 채첨하기</S.AIButton>
+      <S.AIButton disabled={isLoading} onClick={onAiClick}>
+        AI로 채첨하기
+      </S.AIButton>
     </S.SubmitButtonWrapper>
   </S.GradingtContainer>
 );
