@@ -6,6 +6,7 @@ interface SolveDetailResponseType {
   solveId: string;
   title: string;
   solution: string;
+  content: string;
 }
 
 import type { UseQueryOptions } from '@tanstack/react-query';

@@ -24,6 +24,7 @@
     "eslint-plugin-sort-exports": "^0.8.0",
     "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "ldrs": "^1.0.1",
     "next": "13.4.2",
     "react": "^18.2.0",
     "react-toastify": "^9.1.3",

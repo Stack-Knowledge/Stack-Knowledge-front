@@ -1,5 +1,36 @@
 import styled from '@emotion/styled';
 
+export const AnswerSection = styled.span`
+  color: ${({ theme }) => theme.color.black};
+  ${({ theme }) => theme.typo.body2};
+`;
+
+export const AnswerWrapper = styled.div`
+  display: flex;
+  gap: 0.375rem;
+`;
+
+export const ClickSection = styled.div<{ isSelected: boolean }>`
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: ${({ isSelected, theme }) =>
+    isSelected
+      ? `0.1875rem solid ${theme.color.primary}`
+      : '0.0625rem solid #787878'};
+  cursor: pointer;
+`;
+
+export const IncorrectWrapper = styled.div`
+  display: flex;
+  gap: 0.75rem;
+`;
+
+export const NotAnswerWrapper = styled.div`
+  display: flex;
+  gap: 0.375rem;
+`;
+
 export const PageWrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -8,17 +39,12 @@ export const PageWrapper = styled.div`
   align-items: center;
 `;
 
-export const TopContentWrapper = styled.div`
-  padding-left: 0.4375rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.75rem;
-`;
-
-export const Title = styled.span`
+export const Section = styled.div`
   color: ${({ theme }) => theme.color.black};
-  ${({ theme }) => theme.typo.h2};
-  font-weight: 600;
+  ${({ theme }) => theme.typo.button};
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+  margin: 0 0.3125rem 0 0.3125rem;
 `;
 
 export const SectionContainer = styled.span`
@@ -32,41 +58,21 @@ export const SectionWrapper = styled.div`
   display: flex;
 `;
 
-export const Section = styled.div`
+export const SpinnerWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+`;
+
+export const Title = styled.span`
   color: ${({ theme }) => theme.color.black};
-  ${({ theme }) => theme.typo.button};
-  margin-bottom: 1.25rem;
-  font-weight: 400;
-  margin: 0 0.3125rem 0 0.3125rem;
+  ${({ theme }) => theme.typo.h2};
+  font-weight: 600;
 `;
 
-export const IncorrectWrapper = styled.div`
+export const TopContentWrapper = styled.div`
+  padding-left: 0.4375rem;
   display: flex;
-  gap: 0.75rem;
-`;
-
-export const AnswerSection = styled.span`
-  color: ${({ theme }) => theme.color.black};
-  ${({ theme }) => theme.typo.body2};
-`;
-
-export const AnswerWrapper = styled.div`
-  display: flex;
-  gap: 0.375rem;
-`;
-
-export const NotAnswerWrapper = styled.div`
-  display: flex;
-  gap: 0.375rem;
-`;
-
-export const ClickSection = styled.div<{ isSelected: boolean }>`
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  border: ${({ isSelected, theme }) =>
-    isSelected
-      ? `0.1875rem solid ${theme.color.primary}`
-      : `0.0625rem solid #787878`};
-  cursor: pointer;
+  flex-direction: column;
+  gap: 3.75rem;
 `;

@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { dotSpinner } from 'ldrs';
+import OpenAI from 'openai';
 import { toast } from 'react-toastify';
 
 import { GradingContainer } from 'admin/components';
@@ -16,9 +18,29 @@ interface GradingPageProps {
   solveId: string;
 }
 
+const Answer = {
+  true: 'CORRECT_ANSWER',
+  false: 'WRONG_ANSWER',
+} as const;
+
+const Word = {
+  true: '정답',
+  false: '오답',
+} as const;
+
 const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
   const { push } = useRouter();
   const [selectedAnswer, setSelectedAnswer] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const key = process.env.NEXT_PUBLIC_OPENAI_KEY;
+
+  const openai = new OpenAI({
+    apiKey: key,
+    dangerouslyAllowBrowser: true,
+  });
+
+  dotSpinner.register();
 
   const { data } = useGetSolveDetail(solveId);
   const { mutate, isSuccess } = usePostScoringResult(solveId);
@@ -27,15 +49,35 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
     setSelectedAnswer(isTrue);
   };
 
-  const handleSubmit = () => {
-    const solveStatus = selectedAnswer ? 'CORRECT_ANSWER' : 'WRONG_ANSWER';
+  const aiScoring = async () => {
+    await setIsLoading(true);
+    try {
+      const completion = await openai.chat.completions.create({
+        messages: [
+          {
+            role: 'user',
+            content: `문제 : ${data.title} 내용 : ${data.content} 이 문제의 답이 맞는지 틀린지 알려줘. 답 : ${data.solution} 답이 오류가 없는 것 같으면 true 아니면 false로 대답해줘.`,
+          },
+        ],
+        model: 'gpt-3.5-turbo',
+      });
+
+      const answer = completion.choices[0].message.content;
+      handleSubmit(answer.includes('true').toString() as 'true' | 'false');
+    } catch (error) {
+      toast.success(error);
+    }
+  };
+
+  const handleSubmit = (answer: 'true' | 'false') => {
+    const solveStatus = Answer[answer];
+    toast.success(`${Word[answer]}으로 처리되었습니다.`);
 
     mutate({ solveStatus: solveStatus });
   };
 
   if (isSuccess) {
     push('/mission/scoring');
-    toast.success('성공적으로 채점되었습니다.');
   }
 
   return (
@@ -43,6 +85,11 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
       {data && (
         <div>
           <S.TopContentWrapper>
+            {isLoading && (
+              <S.SpinnerWrapper>
+                <l-dot-spinner size='60' speed='0.9' color='#FFA927' />
+              </S.SpinnerWrapper>
+            )}
             <S.Title>채점하기</S.Title>
             <S.SectionContainer>
               <S.SectionWrapper>
@@ -67,7 +114,13 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
               </S.IncorrectWrapper>
             </S.SectionContainer>
           </S.TopContentWrapper>
-          <GradingContainer onClick={handleSubmit}>
+          <GradingContainer
+            isLoading={isLoading}
+            onAiClick={aiScoring}
+            onClick={() =>
+              handleSubmit(selectedAnswer.toString() as 'true' | 'false')
+            }
+          >
             {data.solution}
           </GradingContainer>
         </div>
