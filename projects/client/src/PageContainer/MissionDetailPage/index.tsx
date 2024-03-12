@@ -35,7 +35,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
   const preventClose = (e: BeforeUnloadEvent) => {
     e.preventDefault();
     e.returnValue = '';
-    mutate({ solvation: '새로고침하여 제출된 사용자입니다.' });
+    mutate({ solution: '새로고침하여 제출된 사용자입니다.' });
   };
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const MissionDetailPage: React.FC<MissionDetailProps> = ({ missionId }) => {
 
   const submitSolution = () => {
     mutate({
-      solvation:
+      solution:
         inputValue.length > 0 ? inputValue : '시간초과로 제출된 사용자입니다.',
     });
   };

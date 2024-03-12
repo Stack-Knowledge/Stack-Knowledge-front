@@ -68,7 +68,7 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
             </S.SectionContainer>
           </S.TopContentWrapper>
           <GradingContainer onClick={handleSubmit}>
-            {data.solvation}
+            {data.solution}
           </GradingContainer>
         </div>
       )}

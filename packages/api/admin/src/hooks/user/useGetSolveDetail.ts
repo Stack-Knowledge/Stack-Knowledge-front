@@ -5,7 +5,7 @@ import { userUrl, userQueryKeys, get } from 'api/common';
 interface SolveDetailResponseType {
   solveId: string;
   title: string;
-  solvation: string;
+  solution: string;
 }
 
 import type { UseQueryOptions } from '@tanstack/react-query';
