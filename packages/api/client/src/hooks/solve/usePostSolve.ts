@@ -9,7 +9,7 @@ export const usePostSolve = (missionId: string) =>
     void,
     AxiosError,
     {
-      solvation: string;
+      solution: string;
     }
   >(solveQueryKeys.postSolve(missionId), (newSolve) =>
     post(solveUrl.solve(missionId), newSolve)
