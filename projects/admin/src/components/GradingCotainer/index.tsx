@@ -20,7 +20,9 @@ const GradingContainer: React.FC<GradingProps> = ({
       <S.GradingWrapper>{children}</S.GradingWrapper>
     </S.MissionDetailInputWrapper>
     <S.SubmitButtonWrapper>
-      <S.SubmitButton onClick={onClick}>제출하기</S.SubmitButton>
+      <S.SubmitButton disabled={isLoading} onClick={onClick}>
+        제출하기
+      </S.SubmitButton>
       <S.AIButton disabled={isLoading} onClick={onAiClick}>
         AI로 채첨하기
       </S.AIButton>

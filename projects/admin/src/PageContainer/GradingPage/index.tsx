@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { dotSpinner } from 'ldrs';
 import OpenAI from 'openai';
 import { toast } from 'react-toastify';
 
@@ -28,6 +29,8 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
     apiKey: key,
     dangerouslyAllowBrowser: true,
   });
+
+  dotSpinner.register();
 
   const { data } = useGetSolveDetail(solveId);
   const { mutate, isSuccess } = usePostScoringResult(solveId);
@@ -66,6 +69,11 @@ const GradingPage: React.FC<GradingPageProps> = ({ solveId }) => {
       {data && (
         <div>
           <S.TopContentWrapper>
+            {isLoading && (
+              <S.SpinnerWrapper>
+                <l-dot-spinner size='60' speed='0.9' color='#FFA927' />
+              </S.SpinnerWrapper>
+            )}
             <S.Title>채점하기</S.Title>
             <S.SectionContainer>
               <S.SectionWrapper>
