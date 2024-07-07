@@ -1,4 +1,4 @@
-import { postLoginCode } from 'api/common';
+import { postLoginCode } from 'client/app/apis';
 
 import { LoginPage } from 'common';
 
@@ -6,7 +6,7 @@ interface Params {
   searchParams?: { [key: string]: string | undefined };
 }
 
-const Login: React.FC<Params> = async ({ searchParams }) => {
+const Login = async ({ searchParams }: Params) => {
   const loginCode = searchParams?.code;
 
   if (loginCode) {
