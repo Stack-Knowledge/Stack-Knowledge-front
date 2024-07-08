@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
 import axios from 'axios';
+import { getCookie } from 'common/src/utils';
+import { setCookie } from 'common/src/utils';
 
 import { authUrl, patch } from 'api/common';
 
@@ -12,9 +14,7 @@ export const apiInstance = axios.create({
 apiInstance.interceptors.request.use(
   (request) => {
     if (!request.url.includes('/auth'))
-      request.headers['Authorization'] = `Bearer ${window.localStorage.getItem(
-        'access_token'
-      )}`;
+      request.headers['Authorization'] = `Bearer ${getCookie('access_token')}`;
     return request;
   },
   (error) => Promise.reject(error)
@@ -36,12 +36,12 @@ apiInstance.interceptors.response.use(
           {},
           {
             headers: {
-              RefreshToken: `Bearer ${localStorage.getItem('refresh_token')}`,
+              RefreshToken: `Bearer ${getCookie('refresh_token')}`,
             },
           }
         );
-        localStorage.setItem('refresh_token', data.refreshToken);
-        localStorage.setItem('access_token', data.accessToken);
+        setCookie('refresh_token', data.refreshToken);
+        setCookie('access_token', data.accessToken);
         error.config.headers['Authorization'] = `Bearer ${data.accessToken}`;
 
         return apiInstance(error.config);

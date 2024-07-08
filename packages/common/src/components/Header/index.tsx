@@ -13,6 +13,7 @@ import {
   MadeIcon,
 } from 'common/assets';
 import { Modal } from 'common/components';
+import { deleteCookie } from 'common/utils';
 import { toast } from 'react-toastify';
 
 import { useDeleteLogout } from 'api/common';
@@ -46,9 +47,7 @@ const Header: React.FC<HeaderProps> = ({ role }) => {
   };
 
   if (isSuccess) {
-    ['access_token', 'refresh_token'].forEach((token) =>
-      localStorage.removeItem(token)
-    );
+    ['access_token', 'refresh_token'].forEach((token) => deleteCookie(token));
     push('/auth/login');
     toast.success('로그아웃 되었습니다.');
   }

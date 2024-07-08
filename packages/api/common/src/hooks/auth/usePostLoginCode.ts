@@ -1,4 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
+import { setCookie } from 'common/src/utils';
 
 import { authQueryKeys, authUrl, post } from 'api/common';
 
@@ -10,10 +11,8 @@ export const usePostLoginCode = () =>
     (loginCode) => post(authUrl.auth(), loginCode),
     {
       onSuccess: (data) => {
-        if (data.refreshToken)
-          localStorage.setItem('refresh_token', data.refreshToken);
-        if (data.accessToken)
-          localStorage.setItem('access_token', data.accessToken);
+        if (data.refreshToken) setCookie('refresh_token', data.refreshToken);
+        if (data.accessToken) setCookie('access_token', data.accessToken);
       },
     }
   );
