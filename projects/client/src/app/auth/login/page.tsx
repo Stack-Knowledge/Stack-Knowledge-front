@@ -18,7 +18,6 @@ const Login = async ({ searchParams }: Params) => {
     );
 
     redirect(res.url);
-    // postLoginCode(loginCode);
   }
 
   return <LoginPage />;
