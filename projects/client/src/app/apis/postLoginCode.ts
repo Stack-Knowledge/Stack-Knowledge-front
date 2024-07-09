@@ -11,15 +11,18 @@ import type { TokenResponseLoginType } from 'types';
  * @returns 로그인 성공 시 메인 페이지로 리다이렉트합니다.
  */
 export const postLoginCode = async (loginCode: string) => {
-  const response = await fetch(`/api${authUrl.auth}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      code: loginCode,
-    }),
-  });
+  const response = await fetch(
+    new URL(`/api${authUrl.auth()}`, process.env.BASE_URL),
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        code: loginCode,
+      }),
+    }
+  );
 
   if (!response.ok) {
     return redirect('/auth/login');

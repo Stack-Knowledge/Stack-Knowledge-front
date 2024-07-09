@@ -1,4 +1,4 @@
-import { postLoginCode } from 'client/app/apis';
+import { redirect } from 'next/navigation';
 
 import { LoginPage } from 'common';
 
@@ -10,7 +10,15 @@ const Login = async ({ searchParams }: Params) => {
   const loginCode = searchParams?.code;
 
   if (loginCode) {
-    postLoginCode(loginCode);
+    const res = await fetch(
+      new URL(`/auth/login/post?code=${loginCode}`, process.env.BASE_URL),
+      {
+        method: 'POST',
+      }
+    );
+
+    redirect(res.url);
+    // postLoginCode(loginCode);
   }
 
   return <LoginPage />;
