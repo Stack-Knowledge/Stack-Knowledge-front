@@ -27,7 +27,6 @@ const LoginPage = () => {
   }, []);
 
   if (isSuccess){
-
     push('/');
   } 
   
