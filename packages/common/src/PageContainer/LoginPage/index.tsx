@@ -26,7 +26,11 @@ const LoginPage = () => {
     }
   }, []);
 
-  if (isSuccess) push('/');
+  if (isSuccess){
+
+    push('/');
+  } 
+  
 
   return (
     <S.MainWrapper>
